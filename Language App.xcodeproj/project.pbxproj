@@ -8,11 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		18BD536E1A33053300742D7F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BD536D1A33053300742D7F /* AppDelegate.swift */; };
-		18BD53701A33053300742D7F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BD536F1A33053300742D7F /* ViewController.swift */; };
+		18BD53701A33053300742D7F /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BD536F1A33053300742D7F /* GameViewController.swift */; };
 		18BD53731A33053300742D7F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18BD53711A33053300742D7F /* Main.storyboard */; };
 		18BD53751A33053300742D7F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18BD53741A33053300742D7F /* Images.xcassets */; };
 		18BD53781A33053300742D7F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18BD53761A33053300742D7F /* LaunchScreen.xib */; };
 		18BD53841A33053400742D7F /* Language_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BD53831A33053400742D7F /* Language_AppTests.swift */; };
+		18BDCE631A33F6B300C08890 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BDCE621A33F6B300C08890 /* RootViewController.swift */; };
+		18BDCE651A3410C500C08890 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BDCE641A3410C500C08890 /* SettingsController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,13 +31,15 @@
 		18BD53681A33053300742D7F /* Language App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Language App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		18BD536C1A33053300742D7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18BD536D1A33053300742D7F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		18BD536F1A33053300742D7F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		18BD536F1A33053300742D7F /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		18BD53721A33053300742D7F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		18BD53741A33053300742D7F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		18BD53771A33053300742D7F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		18BD537D1A33053400742D7F /* Language AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Language AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		18BD53821A33053400742D7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18BD53831A33053400742D7F /* Language_AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language_AppTests.swift; sourceTree = "<group>"; };
+		18BDCE621A33F6B300C08890 /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RootViewController.swift; path = ../RootViewController.swift; sourceTree = "<group>"; };
+		18BDCE641A3410C500C08890 /* SettingsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,7 +82,9 @@
 			isa = PBXGroup;
 			children = (
 				18BD536D1A33053300742D7F /* AppDelegate.swift */,
-				18BD536F1A33053300742D7F /* ViewController.swift */,
+				18BDCE621A33F6B300C08890 /* RootViewController.swift */,
+				18BD536F1A33053300742D7F /* GameViewController.swift */,
+				18BDCE641A3410C500C08890 /* SettingsController.swift */,
 				18BD53711A33053300742D7F /* Main.storyboard */,
 				18BD53741A33053300742D7F /* Images.xcassets */,
 				18BD53761A33053300742D7F /* LaunchScreen.xib */,
@@ -212,8 +218,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18BD53701A33053300742D7F /* ViewController.swift in Sources */,
+				18BDCE651A3410C500C08890 /* SettingsController.swift in Sources */,
+				18BD53701A33053300742D7F /* GameViewController.swift in Sources */,
 				18BD536E1A33053300742D7F /* AppDelegate.swift in Sources */,
+				18BDCE631A33F6B300C08890 /* RootViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -407,6 +415,7 @@
 				18BD53891A33053400742D7F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		18BD538A1A33053400742D7F /* Build configuration list for PBXNativeTarget "Language AppTests" */ = {
 			isa = XCConfigurationList;
@@ -415,6 +424,7 @@
 				18BD538C1A33053400742D7F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
