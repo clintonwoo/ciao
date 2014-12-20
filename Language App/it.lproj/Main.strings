@@ -11,8 +11,8 @@
 /* Class = "IBUITableViewSection"; headerTitle = "Sound"; ObjectID = "1na-sS-mPK"; */
 "1na-sS-mPK.headerTitle" = "Sound";
 
-/* Class = "IBUILabel"; text = "Favourite Language: Italian"; ObjectID = "28M-wk-ZG2"; */
-"28M-wk-ZG2.text" = "Favourite Language: Italiano";
+/* Class = "IBUILabel"; text = "Favourite Language: Italian"; ObjectID = "gxu-b4-iuf"; */
+"gxu-b4-iuf.text" = "Favourite Language: Italiano";
 
 /* Class = "IBUILabel"; text = "Sudden Death (Locked)"; ObjectID = "3Fi-BP-wb0"; */
 "3Fi-BP-wb0.text" = "Sudden Death (Locked)";
@@ -125,8 +125,8 @@
 /* Class = "IBUIButton"; normalTitle = "Sorry"; ObjectID = "u6K-4E-bUI"; */
 "u6K-4E-bUI.normalTitle" = "Sorry";
 
-/* Class = "IBUILabel"; text = "Words Correct: 67%"; ObjectID = "vHB-aU-D3h"; */
-"vHB-aU-D3h.text" = "Words Correct: 67%";
+/* Class = "IBUILabel"; text = "Words Correct: 67%"; ObjectID = "cAW-JA-BDw"; */
+"cAW-JA-BDw.text" = "Words Correct: 67%";
 
 /* Class = "IBUINavigationItem"; title = "About"; ObjectID = "wTH-tV-uA8"; */
 "wTH-tV-uA8.title" = "About";
