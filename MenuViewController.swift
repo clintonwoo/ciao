@@ -8,11 +8,11 @@
 
 import UIKit
 
-class RootViewController: UIViewController {
+
+class MenuViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -20,10 +20,10 @@ class RootViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    @IBAction func clickSettings(sender: UIButton) {
-        self.presentViewController(<#viewControllerToPresent: UIViewController#>, animated: <#Bool#>, completion: <#(() -> Void)?##() -> Void#>)
-    }
+
+    /*@IBAction func clickSettings(sender: UIButton) {
+        self.presentViewController(SettingsController(), animated: true, completion: nil)
+    }*/
     
     //func pushViewController(viewController: UIViewController, animated: Bool) {
         
