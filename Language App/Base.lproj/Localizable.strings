@@ -16,9 +16,9 @@
  var numberFormatter: NSNumberFormatter = NSNumberFormatter()
  numberFormatter.numberStyle = NSNumberFormatterStyle.DecimalStyle
  var numberString: String = numberFormatter.stringFromNumber(10_000_000)!
- label.text = String.localizedStringWithFormat(NSLocalizedString("Yesterday you sold %d apps", comment: "Example off the internet"), numberFormatter)
+ label.text = String.localizedStringWithFormat(NSLocalizedString("Yesterday you sold %s apps", comment: "Example off the internet"), numberString)
  
  */
 
 /* Class = "IBUILabel"; text = "Favourite Language: Italian"; ObjectID = "gxu-b4-iuf"; */
-"gxu-b4-iuf.text" = "Favourite Language: Italian mate!";
+"Favourite Language: Italian mate!" = "Favourite Language: Italian mate!";

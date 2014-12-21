@@ -22,9 +22,8 @@ class StatisticsViewController: UIViewController {
     }
     
     private func setup() {
-        self.favouriteLanguage.text = NSLocalizedString("gxu-b4-iuf.text", comment: "User's favourite language")
+        self.favouriteLanguage.text = NSLocalizedString("Favourite Language: Italian mate!", comment: "User's favourite language")
     }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
