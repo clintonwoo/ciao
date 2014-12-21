@@ -13,6 +13,13 @@ class StatisticsViewController: UIViewController {
     
     @IBOutlet weak var favouriteLanguage: UILabel!
     
+    @IBAction func ResetStats(sender: UIButton) {
+        
+        var storyBoard: UIStoryboard = UIStoryboard(name: "SecretStoryboard", bundle: NSBundle(path: "/Users/clintondannolfo/Desktop/Language App/Language App/SecretStoryboard.storyboard"))
+        var initialViewController: UIViewController = storyBoard.instantiateInitialViewController() as UIViewController
+        self.presentViewController(initialViewController, animated: true, completion: nil)
+    }
+    
     override init() {
         super.init()
     }

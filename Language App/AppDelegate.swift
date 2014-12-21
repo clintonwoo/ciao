@@ -16,21 +16,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-        //[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(localeDidChange:) name:NSCurrentLocaleDidChangeNotification object:nil];
-        //NSNotificationCenter.defaultCenter().addObserver(observer: self, selector: localeDidChange(<#notification: NSNotification#>)(<#notification: NSNotification#>), name: NSCurrentLocaleDidChangeNotification, object: self)
-        var mainQueue: NSOperationQueue = NSOperationQueue.mainQueue()
-        
-        //var localeChangeObserver = NSNotificationCenter.defaultCenter().addObserverForName(NSCurrentLocaleDidChangeNotification, object: nil, queue: mainQueue, usingBlock: (NSNotification){ //do some stuff because the locale changed})
         return true
     }
     
-    func localeDidChange (notification: NSNotification) {
-        
-    }
-    
-//    class func defaultCenter() -> NSNotificationCenter {
-//        return NSNotificationCenter
-//    }
+    /*
+    NSNotificationCenter.defaultCenter().addObserverForName(NSCurrentLocaleDidChangeNotification, object: nil, queue: NSOperationQueue.mainQueue(), usingBlock:localeDidChange)
+    func localeDidChange (notification: NSNotification!) {
+        //
+    }*/
 
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -53,7 +46,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
-
 }
 
