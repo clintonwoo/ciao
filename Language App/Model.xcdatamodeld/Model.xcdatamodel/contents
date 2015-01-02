@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6254" systemVersion="14B25" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Settings" representedClassName="Settings" syncable="YES">
+        <attribute name="difficulty" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <attribute name="hasSound" optional="YES" attributeType="Boolean" defaultValueString="YES" syncable="YES"/>
+        <attribute name="language" optional="YES" attributeType="Transformable" syncable="YES"/>
+    </entity>
+    <entity name="Statistics" representedClassName="Statistics" syncable="YES">
+        <attribute name="attempts" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="correctAttempts" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Settings" positionX="-54" positionY="-0" width="128" height="90"/>
+        <element name="Statistics" positionX="97" positionY="0" width="128" height="73"/>
+    </elements>
+</model>

@@ -13,7 +13,6 @@ class ModesNavigationController: UINavigationController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         //tableView.insertRowsAtIndexPaths(path, withRowAnimation: UITableViewRowAnimation.Right)
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -33,6 +32,4 @@ class ModesNavigationController: UINavigationController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    
 }

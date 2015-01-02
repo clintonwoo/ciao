@@ -2,27 +2,16 @@
 //  Statistics.swift
 //  Ciao Game
 //
-//  Created by Clinton D'Annolfo on 14/12/2014.
-//  Copyright (c) 2014 Clinton D'Annolfo. All rights reserved.
+//  Created by Clinton D'Annolfo on 2/01/2015.
+//  Copyright (c) 2015 Clinton D'Annolfo. All rights reserved.
 //
 
 import Foundation
+import CoreData
 
-class Statistics {
-    var attempts: Int = 5
-    var correctAttempts: Int = 1
-    
-    init() {
-        
-    }
-    
-    var percentageCorrect: Double {
-        if (attempts.description.isEmpty) {
-            return Double(correctAttempts) / Double(attempts)
-        } else {
-            return 0
-        }
-        
-    }
+class Statistics: NSManagedObject {
+
+    @NSManaged var attempts: NSNumber
+    @NSManaged var correctAttempts: NSNumber
 
 }
