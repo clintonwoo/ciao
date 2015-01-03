@@ -9,6 +9,8 @@
 import Foundation
 import CoreData
 
+@objc(Settings)
+
 class Settings: NSManagedObject {
 
     @NSManaged var difficulty: AnyObject

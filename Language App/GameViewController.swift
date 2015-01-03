@@ -27,6 +27,15 @@ class GameViewController: UIViewController {
     @IBOutlet var gameButtonCollection: [GameButton]!
     
     var hasSound = true
+    var managedObjectContext: NSManagedObjectContext? = nil
+//    var settings: Settings = {
+//        var fetchRequest: NSFetchRequest = NSFetchRequest()
+//        var entity: NSEntityDescription = NSEntityDescription.entityForName("Settings", inManagedObjectContext: managedObjectContext)
+//        fetchRequest.entity = entity
+//        
+//        var error: NSErrorPointer
+//        return self.managedObjectContext.executeFetchRequest(fetchRequest, error:error)
+//    }()
     
     //MARK: View controller methods
     
@@ -58,6 +67,7 @@ class GameViewController: UIViewController {
     @IBAction func clickSoundButton(sender: UIBarButtonItem) {
         if (self.hasSound) {
             self.hasSound = false
+            //Settings.
             sender.title = "Sound Off"
         } else {
             self.hasSound = true

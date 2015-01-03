@@ -8,10 +8,10 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--About View Controller-->
         <scene sceneID="6VL-aE-SbP">
             <objects>
-                <viewController id="Pb0-LS-PfQ" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="About" id="Pb0-LS-PfQ" customClass="AboutViewController" customModule="Language_App" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nZf-Nh-5ED"/>
                         <viewControllerLayoutGuide type="bottom" id="9hk-QT-i27"/>
@@ -63,7 +63,7 @@
         <!--Ciao Game-->
         <scene sceneID="nH9-Vg-Ken">
             <objects>
-                <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="65W-RS-L75" customClass="MenuViewController" customModule="Language_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Menu" useStoryboardIdentifierAsRestorationIdentifier="YES" id="65W-RS-L75" customClass="MenuViewController" customModule="Language_App" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="7nV-ab-hhj"/>
                         <viewControllerLayoutGuide type="bottom" id="544-8u-49l"/>
@@ -80,7 +80,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <state key="normal" title="Play Game"/>
                                 <connections>
-                                    <segue destination="3xl-OT-mTO" kind="show" id="mlh-Ye-XLz"/>
+                                    <segue destination="3xl-OT-mTO" kind="show" identifier="Show Game" id="mlh-Ye-XLz"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tp9-fi-qih">
@@ -89,7 +89,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="4Zr-Lc-7Fo" kind="show" id="Fo9-IG-Ror"/>
+                                    <segue destination="4Zr-Lc-7Fo" kind="show" identifier="Show Settings" id="Fo9-IG-Ror"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NrK-XJ-XEa">
@@ -98,7 +98,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="MoL-cu-bgX" kind="show" id="rSF-GL-AH1"/>
+                                    <segue destination="MoL-cu-bgX" kind="show" identifier="Show Statistics" id="rSF-GL-AH1"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ciao" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TLh-Ps-Y8G">
@@ -116,7 +116,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="wzQ-2j-FQM" kind="show" id="QzH-Sg-5T3"/>
+                                    <segue destination="wzQ-2j-FQM" kind="show" identifier="Show Modes" id="QzH-Sg-5T3"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o1c-OV-QZs">
@@ -125,7 +125,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Pb0-LS-PfQ" kind="show" id="29q-1t-p4U"/>
+                                    <segue destination="Pb0-LS-PfQ" kind="show" identifier="Show About" id="29q-1t-p4U"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -168,6 +168,11 @@
                     <navigationItem key="navigationItem" title="Ciao Game" id="a0o-R2-IHp"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
+                        <outlet property="aboutButton" destination="o1c-OV-QZs" id="o8W-IY-FMv"/>
+                        <outlet property="gameModeButton" destination="TIi-6p-DBL" id="009-bT-8re"/>
+                        <outlet property="playGameButton" destination="Zrk-EN-0SM" id="C9u-BQ-ndc"/>
+                        <outlet property="settingsButton" destination="Tp9-fi-qih" id="esM-m5-sVO"/>
+                        <outlet property="statisticsButton" destination="NrK-XJ-XEa" id="5lt-KO-tIg"/>
                         <outletCollection property="menuButtonCollection" destination="Zrk-EN-0SM" collectionClass="NSMutableArray" id="ze2-HQ-Qr8"/>
                         <outletCollection property="menuButtonCollection" destination="TIi-6p-DBL" collectionClass="NSMutableArray" id="mse-29-ZAp"/>
                         <outletCollection property="menuButtonCollection" destination="NrK-XJ-XEa" collectionClass="NSMutableArray" id="Ghy-ri-Lrk"/>
@@ -182,7 +187,7 @@
         <!--Settings-->
         <scene sceneID="Xfm-Z6-tyt">
             <objects>
-                <tableViewController id="O4Y-hs-TAH" customClass="SettingsController" customModule="Language_App" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="O4Y-hs-TAH" customClass="SettingsViewController" customModule="Language_App" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="BqD-tr-pCk">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -210,7 +215,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="hmM-FT-9Qr" kind="show" id="bSK-NT-QMI"/>
+                                            <segue destination="hmM-FT-9Qr" kind="show" identifier="Show Language" id="bSK-NT-QMI"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell tag="101" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="ono-fK-Fyq">
@@ -310,10 +315,10 @@
             </objects>
             <point key="canvasLocation" x="304" y="1007"/>
         </scene>
-        <!--Language Setting Controller-->
+        <!--Language Setting View Controller-->
         <scene sceneID="TN3-ha-pRW">
             <objects>
-                <tableViewController id="hmM-FT-9Qr" customClass="LanguageSettingController" customModule="Language_App" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="hmM-FT-9Qr" customClass="LanguageSettingViewController" customModule="Language_App" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="vqb-vm-m5G">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -350,7 +355,7 @@
         <!--Navigation Controller-->
         <scene sceneID="Lqi-tO-hf4">
             <objects>
-                <navigationController id="4Zr-Lc-7Fo" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="SettingsNavigation" id="4Zr-Lc-7Fo" sceneMemberID="viewController">
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="7d2-uK-3E2">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -542,7 +547,7 @@
         <!--Statistics View Controller-->
         <scene sceneID="zYF-7c-9DH">
             <objects>
-                <viewController id="MoL-cu-bgX" customClass="StatisticsViewController" customModule="Language_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Statistics" id="MoL-cu-bgX" customClass="StatisticsViewController" customModule="Language_App" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="lDu-2o-aPZ"/>
                         <viewControllerLayoutGuide type="bottom" id="mIJ-bs-cyR"/>

@@ -8,6 +8,8 @@
 
 import Foundation
 
+//@objc() the core data classes are flagging warnings without this
+
 class languageGame {
     
     init () {

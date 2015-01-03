@@ -9,6 +9,8 @@
 import Foundation
 import CoreData
 
+@objc(Statistics)
+
 class Statistics: NSManagedObject {
 
     @NSManaged var attempts: NSNumber

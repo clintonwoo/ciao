@@ -1,5 +1,5 @@
 //
-//  LanguageSettingController.swift
+//  LanguageSettingViewController.swift
 //  Ciao Game
 //
 //  Created by Clinton D'Annolfo on 14/12/2014.
@@ -9,9 +9,12 @@
 import Foundation
 import UIKit
 
-class LanguageSettingController: UITableViewController, UITableViewDelegate, UITableViewDataSource {
+class LanguageSettingViewController: UITableViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    //MARK: Properties
     var languages: NSMutableArray = ["Italian", "German", "Spanish", "Japanese", "Russian", "Chinese"]
     
+    //MARK: Initialisers
     override init() {
         super.init()
     }
