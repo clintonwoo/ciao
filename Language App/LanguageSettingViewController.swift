@@ -12,6 +12,7 @@ import UIKit
 class LanguageSettingViewController: UITableViewController, UITableViewDelegate, UITableViewDataSource {
     
     //MARK: Properties
+    var userDefaults = NSUserDefaults.standardUserDefaults()
     var languages: NSMutableArray = ["Italian", "German", "Spanish", "Japanese", "Russian", "Chinese"]
     
     //MARK: Initialisers
@@ -24,14 +25,12 @@ class LanguageSettingViewController: UITableViewController, UITableViewDelegate,
     }
     
     // MARK: Data Source Delegate
-    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath:  NSIndexPath) -> UITableViewCell {
         var cell: UITableViewCell = tableView.dequeueReusableCellWithIdentifier("tvcLanguage", forIndexPath: indexPath) as UITableViewCell
         //set the current language with a tick accessory cell.accessoryType = UITableViewCellAccessoryCheckmark
         let detailTagID: Int = 150
         var label: UILabel = cell.viewWithTag(detailTagID) as UILabel
         label.text = languages[indexPath.row] as? String
-        //
         return cell
     }
     
@@ -45,15 +44,13 @@ class LanguageSettingViewController: UITableViewController, UITableViewDelegate,
     }
     
     // MARK: Table View Delegate
-    
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         //Set the game's language
         self.navigationController?.popViewControllerAnimated(true)
     }
 
     
-    // MARK: Event Model
-    
+    // MARK: View Controller
     override func viewDidLoad() {
         super.viewDidLoad()
         

@@ -47,27 +47,29 @@ class MenuViewController: UIViewController {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if self.managedObjectContext != nil {
-            switch (segue.identifier!) {
-                case "Show Game":
-                    let destinationViewController = segue.destinationViewController as GameViewController
-                    destinationViewController.managedObjectContext = self.managedObjectContext
-                    println(destinationViewController.description)
-                case "Show Settings":
-                    let navController = segue.destinationViewController as UINavigationController
-                    let destinationViewController = navController.topViewController as SettingsViewController
-                    destinationViewController.managedObjectContext = self.managedObjectContext
-                    println(destinationViewController.description)
-            default:
-                println("prepareForSegue: Unidentified segue on \(segue.identifier)")
-            }
-        }
-//        if segue.identifier == "Show Game" {
-//            let viewController: GameViewController = segue.destinationViewController as GameViewController
-//            viewController.managedObjectContext = self.managedObjectContext
-//            println(viewController.description)
-//            println(viewController.managedObjectContext?.description)
+//        if self.managedObjectContext != nil {
+//            switch (segue.identifier!) {
+//                case "Show Game":
+//                    let destinationViewController = segue.destinationViewController as GameViewController
+//                    destinationViewController.managedObjectContext = self.managedObjectContext
+//                    println(destinationViewController.description)
+//                case "Show Settings":
+//                    let navController = segue.destinationViewController as UINavigationController
+//                    let destinationViewController = navController.topViewController as SettingsViewController
+//                    destinationViewController.managedObjectContext = self.managedObjectContext
+//                    println(destinationViewController.description)
+//            default:
+//                println("prepareForSegue: Unidentified segue on \(segue.identifier)")
+//            }
 //        }
+        
+        //alternate code
+//            if segue.identifier == "Show Game" {
+//                let viewController: GameViewController = segue.destinationViewController as GameViewController
+//                viewController.managedObjectContext = self.managedObjectContext
+//                println(viewController.description)
+//                println(viewController.managedObjectContext?.description)
+//            }
     }
     
     override func performSegueWithIdentifier(identifier: String?, sender: AnyObject?) {
