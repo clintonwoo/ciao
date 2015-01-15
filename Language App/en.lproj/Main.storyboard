@@ -131,7 +131,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="wzQ-2j-FQM" kind="show" id="eRo-uh-9KO"/>
+                                    <segue destination="wzQ-2j-FQM" kind="show" identifier="Show Modes" id="eRo-uh-9KO"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TIi-6p-DBL">
@@ -140,7 +140,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="CXJ-CU-v7v" kind="show" id="9Lb-f8-n2s"/>
+                                    <segue destination="CXJ-CU-v7v" kind="show" identifier="Show Grammar" id="9Lb-f8-n2s"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -185,9 +185,8 @@
                                 <exclude reference="o1c-OV-QZs"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="LcX-ya-1MK"/>
-                                <exclude reference="PHH-Jg-LLe"/>
                                 <exclude reference="uWx-NM-H0u"/>
+                                <exclude reference="PHH-Jg-LLe"/>
                                 <exclude reference="gWm-ZN-8Z0"/>
                                 <exclude reference="CHq-21-qGZ"/>
                                 <exclude reference="PbO-Bp-bXM"/>
@@ -195,6 +194,7 @@
                                 <exclude reference="cZM-06-Bee"/>
                                 <exclude reference="pfq-gd-Uz4"/>
                                 <exclude reference="IlT-YF-p8W"/>
+                                <exclude reference="LcX-ya-1MK"/>
                             </mask>
                         </variation>
                     </view>
