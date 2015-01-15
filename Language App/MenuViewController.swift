@@ -19,6 +19,7 @@ class MenuViewController: UIViewController {
     @IBOutlet var menuButtonCollection: [UIButton]!
     @IBOutlet weak var playGameButton: UIButton!
     @IBOutlet weak var gameModeButton: UIButton!
+    @IBOutlet weak var grammarButton: UIButton!
     @IBOutlet weak var statisticsButton: UIButton!
     @IBOutlet weak var settingsButton: UIButton!
     @IBOutlet weak var aboutButton: UIButton!
@@ -48,7 +49,13 @@ class MenuViewController: UIViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
 //        if self.managedObjectContext != nil {
-//            switch (segue.identifier!) {
+            switch (segue.identifier!) {
+                case "Show Grammar":
+                let destinationViewController = segue.destinationViewController as GrammarViewController
+                let url = NSURL(string: "http://en.wikipedia.org/wiki/Italian_grammar")
+                let urlRequest = NSURLRequest(URL: url!)
+                destinationViewController.urlRequest = urlRequest
+                //destinationViewController.webView?.loadRequest(urlRequest)
 //                case "Show Game":
 //                    let destinationViewController = segue.destinationViewController as GameViewController
 //                    destinationViewController.managedObjectContext = self.managedObjectContext
@@ -58,23 +65,14 @@ class MenuViewController: UIViewController {
 //                    let destinationViewController = navController.topViewController as SettingsViewController
 //                    destinationViewController.managedObjectContext = self.managedObjectContext
 //                    println(destinationViewController.description)
-//            default:
-//                println("prepareForSegue: Unidentified segue on \(segue.identifier)")
-//            }
+            default:
+                println("prepareForSegue: no segue logic on \(segue.identifier)")
+            }
 //        }
-        
-        //alternate code
-//            if segue.identifier == "Show Game" {
-//                let viewController: GameViewController = segue.destinationViewController as GameViewController
-//                viewController.managedObjectContext = self.managedObjectContext
-//                println(viewController.description)
-//                println(viewController.managedObjectContext?.description)
-//            }
     }
     
     override func performSegueWithIdentifier(identifier: String?, sender: AnyObject?) {
         super.performSegueWithIdentifier(identifier, sender: sender)
-        
     }
 
     /*@IBAction func clickSettings(sender: UIButton) {
@@ -84,5 +82,4 @@ class MenuViewController: UIViewController {
     //func pushViewController(viewController: UIViewController, animated: Bool) {
         
     //}
-    
 }

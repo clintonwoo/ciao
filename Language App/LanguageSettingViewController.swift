@@ -9,11 +9,17 @@
 import Foundation
 import UIKit
 
+protocol LanguageSettingDelegate {
+    func returnToSource(vc: UIViewController, language: String )
+}
+
 class LanguageSettingViewController: UITableViewController, UITableViewDelegate, UITableViewDataSource {
     
     //MARK: Properties
+    var delegate: SettingsViewController? = nil
     var userDefaults = NSUserDefaults.standardUserDefaults()
-    var languages: NSMutableArray = ["Italian", "German", "Spanish", "Japanese", "Russian", "Chinese"]
+    lazy var languages: NSArray = {self.userDefaults.stringArrayForKey("languages") as [String]}()
+    lazy var language: String = {self.userDefaults.stringForKey("language")}()!
     
     //MARK: Initialisers
     override init() {
@@ -24,37 +30,40 @@ class LanguageSettingViewController: UITableViewController, UITableViewDelegate,
         super.init(coder: coder)
     }
     
-    // MARK: Data Source Delegate
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath:  NSIndexPath) -> UITableViewCell {
-        var cell: UITableViewCell = tableView.dequeueReusableCellWithIdentifier("tvcLanguage", forIndexPath: indexPath) as UITableViewCell
-        //set the current language with a tick accessory cell.accessoryType = UITableViewCellAccessoryCheckmark
-        let detailTagID: Int = 150
-        var label: UILabel = cell.viewWithTag(detailTagID) as UILabel
-        label.text = languages[indexPath.row] as? String
-        return cell
+    // MARK: Table View Delegate
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let label = tableView.cellForRowAtIndexPath(indexPath)?.viewWithTag(150) as UILabel
+        self.language = label.text!
+        self.navigationController?.popViewControllerAnimated(true)
     }
     
+    // MARK: Table View Data Source Delegate
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
-    
     
     override func tableView(tableView: UITableView, numberOfRowsInSection: Int) -> Int {
         return languages.count
     }
     
-    // MARK: Table View Delegate
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        //Set the game's language
-        self.navigationController?.popViewControllerAnimated(true)
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath:  NSIndexPath) -> UITableViewCell {
+        var cell: UITableViewCell = tableView.dequeueReusableCellWithIdentifier("tvcLanguage", forIndexPath: indexPath) as UITableViewCell
+        //set the current language with a tick accessory cell.accessoryType = UITableViewCellAccessoryCheckmark
+        var detailLabel = cell.viewWithTag(150) as UILabel
+        detailLabel.text = languages[indexPath.row] as? String
+        return cell
     }
-
     
     // MARK: View Controller
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        if ((delegate) != nil){
+            self.delegate?.returnToSource(self, language: self.language)
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -62,4 +71,11 @@ class LanguageSettingViewController: UITableViewController, UITableViewDelegate,
         // Dispose of any resources that can be recreated.
     }
     
+    //MARK: Segue
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+            let destinationViewController = segue.destinationViewController as SettingsViewController
+            destinationViewController.language = self.language
+
+            println("Segue to \(destinationViewController.description)")
+    }
 }

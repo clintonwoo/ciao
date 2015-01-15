@@ -14,11 +14,12 @@
 		18384E4C1A590079006DA713 /* EasyWords.strings in Resources */ = {isa = PBXBuildFile; fileRef = 18384E4B1A590079006DA713 /* EasyWords.strings */; };
 		18384E4E1A59017A006DA713 /* MediumWords.strings in Resources */ = {isa = PBXBuildFile; fileRef = 18384E4D1A59017A006DA713 /* MediumWords.strings */; };
 		18384E501A59018C006DA713 /* HardWords.strings in Resources */ = {isa = PBXBuildFile; fileRef = 18384E4F1A59018C006DA713 /* HardWords.strings */; };
-		184656501A5631400095442D /* Statistics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1846564F1A5631400095442D /* Statistics.swift */; };
 		184656521A5631410095442D /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184656511A5631410095442D /* Settings.swift */; };
 		184656541A56329D0095442D /* Settings+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184656531A56329D0095442D /* Settings+Extension.swift */; };
 		184656561A57822D0095442D /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184656551A57822D0095442D /* AboutViewController.swift */; };
 		185541F21A552B45002C3D15 /* GameButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185541F11A552B45002C3D15 /* GameButton.swift */; };
+		1869787B1A61FC9D00A496D0 /* GrammarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1869787A1A61FC9D00A496D0 /* GrammarViewController.swift */; };
+		1899796B1A62265700A758ED /* SwitchWithTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1899796A1A62265700A758ED /* SwitchWithTitle.swift */; };
 		18BD536E1A33053300742D7F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BD536D1A33053300742D7F /* AppDelegate.swift */; };
 		18BD53701A33053300742D7F /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BD536F1A33053300742D7F /* GameViewController.swift */; };
 		18BD53731A33053300742D7F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18BD53711A33053300742D7F /* Main.storyboard */; };
@@ -51,11 +52,12 @@
 		18384E4B1A590079006DA713 /* EasyWords.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = EasyWords.strings; sourceTree = "<group>"; };
 		18384E4D1A59017A006DA713 /* MediumWords.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = MediumWords.strings; sourceTree = "<group>"; };
 		18384E4F1A59018C006DA713 /* HardWords.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = HardWords.strings; sourceTree = "<group>"; };
-		1846564F1A5631400095442D /* Statistics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Statistics.swift; sourceTree = "<group>"; };
 		184656511A5631410095442D /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		184656531A56329D0095442D /* Settings+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Settings+Extension.swift"; sourceTree = "<group>"; };
 		184656551A57822D0095442D /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		185541F11A552B45002C3D15 /* GameButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameButton.swift; sourceTree = "<group>"; };
+		1869787A1A61FC9D00A496D0 /* GrammarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GrammarViewController.swift; sourceTree = "<group>"; };
+		1899796A1A62265700A758ED /* SwitchWithTitle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchWithTitle.swift; sourceTree = "<group>"; };
 		18BC8D461A593C8500C30986 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/Main.storyboard; sourceTree = "<group>"; };
 		18BC8D471A593CB800C30986 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		18BD53681A33053300742D7F /* Language App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Language App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -101,7 +103,6 @@
 				18C1F9471A4E3CA500531C44 /* Model.xcdatamodeld */,
 				184656511A5631410095442D /* Settings.swift */,
 				184656531A56329D0095442D /* Settings+Extension.swift */,
-				1846564F1A5631400095442D /* Statistics.swift */,
 				1806BD9E1A3CF25700774709 /* LanguageGame.swift */,
 			);
 			name = Model;
@@ -113,6 +114,7 @@
 				18BD53711A33053300742D7F /* Main.storyboard */,
 				18C38EC21A39A8BC00AC5860 /* SecretStoryboard.storyboard */,
 				185541F11A552B45002C3D15 /* GameButton.swift */,
+				1899796A1A62265700A758ED /* SwitchWithTitle.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -125,6 +127,7 @@
 				18BD536F1A33053300742D7F /* GameViewController.swift */,
 				1807C7571A3C713700863BC6 /* ModesNavigationController.swift */,
 				18C330201A35CF460027A312 /* ModesViewController.swift */,
+				1869787A1A61FC9D00A496D0 /* GrammarViewController.swift */,
 				18C0F1F61A456225007BEE49 /* StatisticsViewController.swift */,
 				18BDCE641A3410C500C08890 /* SettingsViewController.swift */,
 				1806BDA41A3D4CFA00774709 /* LanguageSettingViewController.swift */,
@@ -167,10 +170,10 @@
 			children = (
 				18BD53741A33053300742D7F /* Images.xcassets */,
 				18C0F1FA1A456E25007BEE49 /* Info.plist */,
-				18C0F2011A459ED7007BEE49 /* Localizable.strings */,
 				18384E4B1A590079006DA713 /* EasyWords.strings */,
 				18384E4D1A59017A006DA713 /* MediumWords.strings */,
 				18384E4F1A59018C006DA713 /* HardWords.strings */,
+				18C0F2011A459ED7007BEE49 /* Localizable.strings */,
 				18384E491A58F49D006DA713 /* Defaults.plist */,
 			);
 			name = "Supporting Files";
@@ -300,9 +303,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1899796B1A62265700A758ED /* SwitchWithTitle.swift in Sources */,
 				184656541A56329D0095442D /* Settings+Extension.swift in Sources */,
 				18BDCE651A3410C500C08890 /* SettingsViewController.swift in Sources */,
 				1806BD9F1A3CF25700774709 /* LanguageGame.swift in Sources */,
+				1869787B1A61FC9D00A496D0 /* GrammarViewController.swift in Sources */,
 				184656561A57822D0095442D /* AboutViewController.swift in Sources */,
 				184656521A5631410095442D /* Settings.swift in Sources */,
 				1807C7581A3C713700863BC6 /* ModesNavigationController.swift in Sources */,
@@ -313,7 +318,6 @@
 				18BDCE631A33F6B300C08890 /* MenuViewController.swift in Sources */,
 				18C330211A35CF460027A312 /* ModesViewController.swift in Sources */,
 				185541F21A552B45002C3D15 /* GameButton.swift in Sources */,
-				184656501A5631400095442D /* Statistics.swift in Sources */,
 				18C1F9491A4E3CA500531C44 /* Model.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

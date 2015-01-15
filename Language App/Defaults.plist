@@ -2,7 +2,20 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>bestStreak</key>
+	<key>languages</key>
+	<array>
+		<string>Italian</string>
+		<string>German</string>
+		<string>Japanese</string>
+		<string>Russian</string>
+		<string>Chinese</string>
+		<string>Spanish</string>
+		<string>Turkish</string>
+		<string>Croatian</string>
+		<string>Portugese</string>
+		<string>French</string>
+	</array>
+	<key>longestStreak</key>
 	<integer>0</integer>
 	<key>attempts</key>
 	<integer>0</integer>
@@ -10,9 +23,13 @@
 	<integer>0</integer>
 	<key>language</key>
 	<string>Italian</string>
-	<key>hasSound</key>
-	<true/>
+	<key>willCacheGrammarPages</key>
+	<false/>
 	<key>difficulty</key>
 	<string>Easy</string>
+	<key>hasSound</key>
+	<true/>
+	<key>volume</key>
+	<integer>50</integer>
 </dict>
 </plist>
