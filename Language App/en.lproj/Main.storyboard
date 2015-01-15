@@ -113,18 +113,12 @@
                                     <segue destination="MoL-cu-bgX" kind="show" identifier="Show Statistics" id="rSF-GL-AH1"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="249" text="Ciao" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TLh-Ps-Y8G">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="249" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" text="Ciao" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TLh-Ps-Y8G">
                                 <rect key="frame" x="109" y="78" width="100.5" height="60"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o1c-OV-QZs">
-                                <rect key="frame" x="16" y="339" width="288" height="30"/>
-                                <state key="normal" title="About">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v2v-gD-8bo">
                                 <rect key="frame" x="16" y="225" width="288" height="30"/>
                                 <state key="normal" title="Choose Mode">
@@ -146,33 +140,20 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="o1c-OV-QZs" firstAttribute="top" secondItem="Tp9-fi-qih" secondAttribute="bottom" priority="750" constant="8" symbolic="YES" id="81V-pQ-ZDF"/>
-                            <constraint firstItem="TIi-6p-DBL" firstAttribute="trailing" secondItem="NrK-XJ-XEa" secondAttribute="trailing" id="CHq-21-qGZ"/>
                             <constraint firstItem="TLh-Ps-Y8G" firstAttribute="centerX" secondItem="Zrk-EN-0SM" secondAttribute="centerX" id="ExO-EH-UQT"/>
-                            <constraint firstItem="NrK-XJ-XEa" firstAttribute="trailing" secondItem="Tp9-fi-qih" secondAttribute="trailing" id="IlT-YF-p8W"/>
-                            <constraint firstItem="o1c-OV-QZs" firstAttribute="height" secondItem="TIi-6p-DBL" secondAttribute="height" id="LcX-ya-1MK"/>
-                            <constraint firstItem="Zrk-EN-0SM" firstAttribute="trailing" secondItem="TIi-6p-DBL" secondAttribute="trailing" id="PHH-Jg-LLe"/>
-                            <constraint firstItem="TIi-6p-DBL" firstAttribute="leading" secondItem="NrK-XJ-XEa" secondAttribute="leading" id="PbO-Bp-bXM"/>
                             <constraint firstItem="TIi-6p-DBL" firstAttribute="leading" secondItem="XWn-m0-Q7L" secondAttribute="leadingMargin" id="RMv-Ov-Cog"/>
-                            <constraint firstItem="TIi-6p-DBL" firstAttribute="top" secondItem="Zrk-EN-0SM" secondAttribute="bottom" constant="8" symbolic="YES" id="Wde-7Y-JCN"/>
                             <constraint firstAttribute="trailingMargin" secondItem="v2v-gD-8bo" secondAttribute="trailing" id="Wgi-tG-ctV"/>
                             <constraint firstItem="Zrk-EN-0SM" firstAttribute="trailing" secondItem="XWn-m0-Q7L" secondAttribute="trailingMargin" id="Z0K-cE-OwD"/>
                             <constraint firstItem="Zrk-EN-0SM" firstAttribute="leading" secondItem="XWn-m0-Q7L" secondAttribute="leadingMargin" id="b83-TG-UlX"/>
                             <constraint firstAttribute="centerX" secondItem="TLh-Ps-Y8G" secondAttribute="centerX" id="bkj-jR-lgT"/>
-                            <constraint firstItem="TIi-6p-DBL" firstAttribute="centerY" secondItem="XWn-m0-Q7L" secondAttribute="centerY" id="cZM-06-Bee"/>
-                            <constraint firstItem="o1c-OV-QZs" firstAttribute="leading" secondItem="Tp9-fi-qih" secondAttribute="leading" id="eAR-Db-Y0L"/>
                             <constraint firstItem="v2v-gD-8bo" firstAttribute="top" secondItem="Zrk-EN-0SM" secondAttribute="bottom" constant="8" symbolic="YES" id="eLc-9w-8TH"/>
                             <constraint firstItem="NrK-XJ-XEa" firstAttribute="top" secondItem="TIi-6p-DBL" secondAttribute="bottom" constant="8" symbolic="YES" id="faP-7Q-Hed"/>
-                            <constraint firstItem="v2v-gD-8bo" firstAttribute="top" secondItem="TIi-6p-DBL" secondAttribute="bottom" constant="8" symbolic="YES" id="gWm-ZN-8Z0"/>
                             <constraint firstAttribute="centerY" secondItem="v2v-gD-8bo" secondAttribute="centerY" id="liu-9a-IVg"/>
                             <constraint firstItem="TIi-6p-DBL" firstAttribute="top" secondItem="v2v-gD-8bo" secondAttribute="bottom" constant="8" symbolic="YES" id="lwq-Zi-El5"/>
                             <constraint firstItem="NrK-XJ-XEa" firstAttribute="leading" secondItem="XWn-m0-Q7L" secondAttribute="leadingMargin" id="nJh-Gh-Vfc"/>
-                            <constraint firstItem="Tp9-fi-qih" firstAttribute="trailing" secondItem="o1c-OV-QZs" secondAttribute="trailing" id="npN-X2-VDg"/>
-                            <constraint firstItem="TIi-6p-DBL" firstAttribute="leading" secondItem="Zrk-EN-0SM" secondAttribute="leading" id="pfq-gd-Uz4"/>
                             <constraint firstItem="Tp9-fi-qih" firstAttribute="top" secondItem="NrK-XJ-XEa" secondAttribute="bottom" priority="750" constant="8" symbolic="YES" id="qCZ-bT-Xke"/>
                             <constraint firstItem="v2v-gD-8bo" firstAttribute="leading" secondItem="XWn-m0-Q7L" secondAttribute="leadingMargin" id="tHN-2f-Ng7"/>
                             <constraint firstItem="Tp9-fi-qih" firstAttribute="trailing" secondItem="XWn-m0-Q7L" secondAttribute="trailingMargin" id="to4-ZS-vV5"/>
-                            <constraint firstItem="TLh-Ps-Y8G" firstAttribute="leading" secondItem="XWn-m0-Q7L" secondAttribute="leadingMargin" constant="94" id="uWx-NM-H0u"/>
                             <constraint firstItem="TLh-Ps-Y8G" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="Zrk-EN-0SM" secondAttribute="top" id="ukl-R0-bx2"/>
                             <constraint firstItem="NrK-XJ-XEa" firstAttribute="trailing" secondItem="XWn-m0-Q7L" secondAttribute="trailingMargin" id="xzU-mD-woB"/>
                             <constraint firstItem="NrK-XJ-XEa" firstAttribute="leading" secondItem="Tp9-fi-qih" secondAttribute="leading" id="y99-yd-Idl"/>
@@ -180,28 +161,10 @@
                             <constraint firstAttribute="centerX" secondItem="v2v-gD-8bo" secondAttribute="centerX" id="zFN-3J-C5q"/>
                             <constraint firstItem="TLh-Ps-Y8G" firstAttribute="centerY" secondItem="XWn-m0-Q7L" secondAttribute="centerY" multiplier="0.45" id="zST-wY-5xf"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="o1c-OV-QZs"/>
-                            </mask>
-                            <mask key="constraints">
-                                <exclude reference="uWx-NM-H0u"/>
-                                <exclude reference="PHH-Jg-LLe"/>
-                                <exclude reference="gWm-ZN-8Z0"/>
-                                <exclude reference="CHq-21-qGZ"/>
-                                <exclude reference="PbO-Bp-bXM"/>
-                                <exclude reference="Wde-7Y-JCN"/>
-                                <exclude reference="cZM-06-Bee"/>
-                                <exclude reference="pfq-gd-Uz4"/>
-                                <exclude reference="IlT-YF-p8W"/>
-                                <exclude reference="LcX-ya-1MK"/>
-                            </mask>
-                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Ciao Game" id="a0o-R2-IHp"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
-                        <outlet property="aboutButton" destination="o1c-OV-QZs" id="o8W-IY-FMv"/>
                         <outlet property="gameModeButton" destination="TIi-6p-DBL" id="009-bT-8re"/>
                         <outlet property="grammarButton" destination="v2v-gD-8bo" id="Laq-cZ-hXs"/>
                         <outlet property="playGameButton" destination="Zrk-EN-0SM" id="C9u-BQ-ndc"/>
@@ -211,7 +174,6 @@
                         <outletCollection property="menuButtonCollection" destination="TIi-6p-DBL" collectionClass="NSMutableArray" id="mse-29-ZAp"/>
                         <outletCollection property="menuButtonCollection" destination="NrK-XJ-XEa" collectionClass="NSMutableArray" id="Ghy-ri-Lrk"/>
                         <outletCollection property="menuButtonCollection" destination="Tp9-fi-qih" collectionClass="NSMutableArray" id="8OC-Co-MTn"/>
-                        <outletCollection property="menuButtonCollection" destination="o1c-OV-QZs" collectionClass="NSMutableArray" id="I8E-hD-gUB"/>
                         <outletCollection property="menuButtonCollection" destination="v2v-gD-8bo" collectionClass="NSMutableArray" id="KJE-nY-6lY"/>
                     </connections>
                 </viewController>
@@ -496,8 +458,8 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <button opaque="NO" tag="150" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oTI-nk-0kW" customClass="GameButton" customModule="Language_App" customModuleProvider="target">
-                                <rect key="frame" x="16" y="357" width="146" height="60"/>
+                            <button opaque="NO" tag="150" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oTI-nk-0kW" customClass="GameButton" customModule="Language_App" customModuleProvider="target">
+                                <rect key="frame" x="16" y="357" width="141" height="60"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="Good afternoon">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -526,8 +488,8 @@
                                     <action selector="clickGameButton:" destination="3xl-OT-mTO" eventType="touchUpInside" id="AqN-Jc-bae"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="50" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AfY-8d-yRY" customClass="GameButton" customModule="Language_App" customModuleProvider="target">
-                                <rect key="frame" x="16" y="289" width="146" height="60"/>
+                            <button opaque="NO" tag="50" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AfY-8d-yRY" customClass="GameButton" customModule="Language_App" customModuleProvider="target">
+                                <rect key="frame" x="16" y="289" width="141" height="60"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="146" id="Jpl-rp-rqa"/>
