@@ -119,35 +119,6 @@ class GameViewController: UIViewController {
                 index += 1
             }
         } while (index < 4)
-//        var pass: Bool
-//        do {
-//            pass = true //it is considered passed until fail detected
-//            for index in 0...3 {
-//                wordNumbers[index] = (Int(arc4random_uniform(UInt32(self.words.count))))
-//                switch (index) {
-//                    case 0:
-//                        break
-//                    case 1:
-//                        if (wordNumbers[0] == wordNumbers[1]) {
-//                            pass = false
-//                        }
-//                    case 2:
-//                        if (wordNumbers[0] == wordNumbers[1] || wordNumbers[1] == wordNumbers[2] || wordNumbers[0] == wordNumbers[2]) {
-//                            pass = false
-//                        }
-//                    case 3:
-//                        if (wordNumbers[0] == wordNumbers[1] || wordNumbers[0] == wordNumbers[2] || wordNumbers[0] == wordNumbers[3]) {
-//                            pass = false
-//                        } else if (wordNumbers[1] == wordNumbers[2] || wordNumbers[1] == wordNumbers[3]) {
-//                            pass = false
-//                        } else if (wordNumbers[2] == wordNumbers[3]) {
-//                            pass = false
-//                        }
-//                    default:
-//                        break
-//                }
-//            }
-//        } while (pass == false)
         
         let correctButtonIndex = Int(arc4random_uniform(4))
         for gameButton in gameButtonCollection {
