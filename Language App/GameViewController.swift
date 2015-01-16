@@ -109,7 +109,6 @@ class GameViewController: UIViewController {
 
     func refreshGame () {
         var wordNumbers: [Int] = [0,0,0,0]
-        
         var index = 0
         do {
             wordNumbers[index] = Int(arc4random_uniform(UInt32(self.words.count)))
@@ -124,7 +123,6 @@ class GameViewController: UIViewController {
         for gameButton in gameButtonCollection {
             if gameButton.gameButtonIndex == correctButtonIndex {
                 gameButton.correct = true
-                //let correctWordIndex = Int(arc4random_uniform(UInt32(wordNumbers.count)))
                 gameButton.setTitle(words[wordNumbers[gameButton.gameButtonIndex]], forState: UIControlState.Normal)
                 wordLabel.text = answers[wordNumbers[gameButton.gameButtonIndex]]
             } else {
@@ -134,8 +132,6 @@ class GameViewController: UIViewController {
             UIView.animateWithDuration(0.25, animations: {gameButton.alpha = 1})
         }
         self.navigationItem.title = streakText
-        //        let button: UIButton = self.view.viewWithTag(50) as UIButton
-        //        gameButton1.setTitle(randomWord(), forState: UIControlState.Normal)
     }
     
     private func saveUserDefaultLongestStreak () {
