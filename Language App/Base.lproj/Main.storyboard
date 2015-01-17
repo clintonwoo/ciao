@@ -2,8 +2,8 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="elh-17-nbp">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
-        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--About View Controller-->
@@ -71,6 +71,26 @@ Education is what other people do to you. Learning is what you do to yourself.</
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LdK-3J-cUk">
+                                <rect key="frame" x="16" y="64" width="288" height="62"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1" verticalHuggingPriority="1" horizontalCompressionResistancePriority="1" verticalCompressionResistancePriority="1" text="Ciao" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TLh-Ps-Y8G">
+                                        <rect key="frame" x="94" y="9.5" width="100.5" height="43"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="43" id="CRK-3M-1dO"/>
+                                            <constraint firstAttribute="width" constant="100.5" id="JCi-ZK-GO8"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="centerX" secondItem="TLh-Ps-Y8G" secondAttribute="centerX" id="7We-Dj-Wpd"/>
+                                    <constraint firstAttribute="centerY" secondItem="TLh-Ps-Y8G" secondAttribute="centerY" id="Maj-bG-Cjq"/>
+                                </constraints>
+                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zrk-EN-0SM">
                                 <rect key="frame" x="16" y="151" width="288" height="66"/>
                                 <constraints>
@@ -83,7 +103,7 @@ Education is what other people do to you. Learning is what you do to yourself.</
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tp9-fi-qih">
-                                <rect key="frame" x="16" y="301" width="288" height="30"/>
+                                <rect key="frame" x="16" y="339" width="288" height="30"/>
                                 <state key="normal" title="Settings">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -92,7 +112,7 @@ Education is what other people do to you. Learning is what you do to yourself.</
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NrK-XJ-XEa">
-                                <rect key="frame" x="16" y="263" width="288" height="30"/>
+                                <rect key="frame" x="16" y="301" width="288" height="30"/>
                                 <state key="normal" title="Statistics">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -100,23 +120,8 @@ Education is what other people do to you. Learning is what you do to yourself.</
                                     <segue destination="MoL-cu-bgX" kind="show" identifier="Show Statistics" id="rSF-GL-AH1"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ciao" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TLh-Ps-Y8G">
-                                <rect key="frame" x="110" y="87" width="100.5" height="43"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o1c-OV-QZs">
-                                <rect key="frame" x="16" y="339" width="288" height="30"/>
-                                <state key="normal" title="About">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="Pb0-LS-PfQ" kind="show" identifier="Show About" id="29q-1t-p4U"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jwG-tE-eTM">
-                                <rect key="frame" x="106" y="225" width="107" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jwG-tE-eTM">
+                                <rect key="frame" x="16" y="263" width="288" height="30"/>
                                 <state key="normal" title="Grammar Rules">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -124,8 +129,8 @@ Education is what other people do to you. Learning is what you do to yourself.</
                                     <segue destination="OB3-NW-FRO" kind="show" id="uga-W9-knV"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TIi-6p-DBL">
-                                <rect key="frame" x="16" y="196" width="288" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TIi-6p-DBL">
+                                <rect key="frame" x="16" y="225" width="288" height="30"/>
                                 <state key="normal" title="Modes">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -136,48 +141,31 @@ Education is what other people do to you. Learning is what you do to yourself.</
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="o1c-OV-QZs" firstAttribute="top" secondItem="Tp9-fi-qih" secondAttribute="bottom" constant="8" symbolic="YES" id="81V-pQ-ZDF"/>
-                            <constraint firstAttribute="centerX" secondItem="jwG-tE-eTM" secondAttribute="centerX" id="93g-RF-zbu"/>
-                            <constraint firstItem="TIi-6p-DBL" firstAttribute="trailing" secondItem="NrK-XJ-XEa" secondAttribute="trailing" id="CHq-21-qGZ"/>
-                            <constraint firstItem="TLh-Ps-Y8G" firstAttribute="centerX" secondItem="Zrk-EN-0SM" secondAttribute="centerX" id="ExO-EH-UQT"/>
-                            <constraint firstItem="Zrk-EN-0SM" firstAttribute="top" secondItem="TLh-Ps-Y8G" secondAttribute="bottom" constant="21" id="IYj-wg-sqy"/>
-                            <constraint firstItem="NrK-XJ-XEa" firstAttribute="trailing" secondItem="Tp9-fi-qih" secondAttribute="trailing" id="IlT-YF-p8W"/>
-                            <constraint firstAttribute="centerY" secondItem="TLh-Ps-Y8G" secondAttribute="centerY" constant="114" id="JHt-HF-5Id"/>
-                            <constraint firstItem="o1c-OV-QZs" firstAttribute="height" secondItem="TIi-6p-DBL" secondAttribute="height" id="LcX-ya-1MK"/>
-                            <constraint firstItem="Zrk-EN-0SM" firstAttribute="trailing" secondItem="TIi-6p-DBL" secondAttribute="trailing" id="PHH-Jg-LLe"/>
-                            <constraint firstItem="TIi-6p-DBL" firstAttribute="leading" secondItem="NrK-XJ-XEa" secondAttribute="leading" id="PbO-Bp-bXM"/>
-                            <constraint firstItem="NrK-XJ-XEa" firstAttribute="top" secondItem="TIi-6p-DBL" secondAttribute="bottom" constant="8" symbolic="YES" id="Vjy-Zu-Dbp"/>
+                            <constraint firstItem="LdK-3J-cUk" firstAttribute="trailing" secondItem="XWn-m0-Q7L" secondAttribute="trailingMargin" id="6Pm-Lc-GvR"/>
+                            <constraint firstItem="LdK-3J-cUk" firstAttribute="top" secondItem="7nV-ab-hhj" secondAttribute="bottom" id="7hj-1F-5KF"/>
+                            <constraint firstItem="544-8u-49l" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Tp9-fi-qih" secondAttribute="bottom" constant="10" id="GyI-S8-IgO"/>
+                            <constraint firstItem="jwG-tE-eTM" firstAttribute="trailing" secondItem="XWn-m0-Q7L" secondAttribute="trailingMargin" id="ITz-zv-E84"/>
+                            <constraint firstItem="Tp9-fi-qih" firstAttribute="leading" secondItem="XWn-m0-Q7L" secondAttribute="leadingMargin" id="L56-KG-Mr5"/>
+                            <constraint firstItem="Tp9-fi-qih" firstAttribute="trailing" secondItem="XWn-m0-Q7L" secondAttribute="trailingMargin" id="RS6-Ch-a6G"/>
+                            <constraint firstItem="NrK-XJ-XEa" firstAttribute="trailing" secondItem="XWn-m0-Q7L" secondAttribute="trailingMargin" id="UKJ-on-lvA"/>
                             <constraint firstItem="TIi-6p-DBL" firstAttribute="top" secondItem="Zrk-EN-0SM" secondAttribute="bottom" constant="8" symbolic="YES" id="Wde-7Y-JCN"/>
-                            <constraint firstAttribute="centerX" secondItem="TLh-Ps-Y8G" secondAttribute="centerX" constant="-0.5" id="bkj-jR-lgT"/>
+                            <constraint firstItem="TIi-6p-DBL" firstAttribute="leading" secondItem="XWn-m0-Q7L" secondAttribute="leadingMargin" id="Yeh-fz-e2J"/>
                             <constraint firstItem="TIi-6p-DBL" firstAttribute="centerY" secondItem="XWn-m0-Q7L" secondAttribute="centerY" id="cZM-06-Bee"/>
-                            <constraint firstItem="TLh-Ps-Y8G" firstAttribute="centerX" secondItem="XWn-m0-Q7L" secondAttribute="centerXWithinMargins" constant="89" id="cuc-vs-Lg2"/>
-                            <constraint firstItem="o1c-OV-QZs" firstAttribute="leading" secondItem="Tp9-fi-qih" secondAttribute="leading" id="eAR-Db-Y0L"/>
-                            <constraint firstItem="TLh-Ps-Y8G" firstAttribute="top" secondItem="7nV-ab-hhj" secondAttribute="bottom" constant="23" id="luv-g9-UeS"/>
+                            <constraint firstItem="LdK-3J-cUk" firstAttribute="leading" secondItem="XWn-m0-Q7L" secondAttribute="leadingMargin" id="g9d-tK-bS4"/>
+                            <constraint firstItem="Zrk-EN-0SM" firstAttribute="trailing" secondItem="XWn-m0-Q7L" secondAttribute="trailingMargin" id="h8u-4b-Zbd"/>
+                            <constraint firstItem="TIi-6p-DBL" firstAttribute="trailing" secondItem="XWn-m0-Q7L" secondAttribute="trailingMargin" id="iWd-dD-X2o"/>
                             <constraint firstItem="NrK-XJ-XEa" firstAttribute="leading" secondItem="XWn-m0-Q7L" secondAttribute="leadingMargin" id="nJh-Gh-Vfc"/>
-                            <constraint firstItem="Tp9-fi-qih" firstAttribute="trailing" secondItem="o1c-OV-QZs" secondAttribute="trailing" id="npN-X2-VDg"/>
-                            <constraint firstItem="NrK-XJ-XEa" firstAttribute="top" secondItem="jwG-tE-eTM" secondAttribute="bottom" constant="8" id="oRQ-Ck-Z8Q"/>
-                            <constraint firstItem="TIi-6p-DBL" firstAttribute="leading" secondItem="Zrk-EN-0SM" secondAttribute="leading" id="pfq-gd-Uz4"/>
+                            <constraint firstItem="NrK-XJ-XEa" firstAttribute="top" secondItem="jwG-tE-eTM" secondAttribute="bottom" constant="8" symbolic="YES" id="oRQ-Ck-Z8Q"/>
                             <constraint firstItem="Tp9-fi-qih" firstAttribute="top" secondItem="NrK-XJ-XEa" secondAttribute="bottom" constant="8" symbolic="YES" id="qCZ-bT-Xke"/>
-                            <constraint firstItem="jwG-tE-eTM" firstAttribute="top" secondItem="TIi-6p-DBL" secondAttribute="bottom" constant="-1" id="qPU-aC-sKz"/>
-                            <constraint firstItem="TLh-Ps-Y8G" firstAttribute="leading" secondItem="XWn-m0-Q7L" secondAttribute="leadingMargin" constant="94" id="uWx-NM-H0u"/>
-                            <constraint firstItem="Zrk-EN-0SM" firstAttribute="top" secondItem="TLh-Ps-Y8G" secondAttribute="bottom" constant="21" id="ukl-R0-bx2"/>
-                            <constraint firstItem="NrK-XJ-XEa" firstAttribute="leading" secondItem="Tp9-fi-qih" secondAttribute="leading" id="y99-yd-Idl"/>
-                            <constraint firstItem="TIi-6p-DBL" firstAttribute="trailing" secondItem="XWn-m0-Q7L" secondAttribute="trailingMargin" id="yRY-QH-2Hg"/>
+                            <constraint firstItem="jwG-tE-eTM" firstAttribute="top" secondItem="TIi-6p-DBL" secondAttribute="bottom" constant="8" symbolic="YES" id="qPU-aC-sKz"/>
+                            <constraint firstItem="Zrk-EN-0SM" firstAttribute="leading" secondItem="XWn-m0-Q7L" secondAttribute="leadingMargin" id="uec-WC-yX0"/>
+                            <constraint firstItem="jwG-tE-eTM" firstAttribute="leading" secondItem="XWn-m0-Q7L" secondAttribute="leadingMargin" id="wgX-xI-a5I"/>
+                            <constraint firstItem="Zrk-EN-0SM" firstAttribute="top" secondItem="LdK-3J-cUk" secondAttribute="bottom" multiplier="1.2" id="yxe-Vj-Dck"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="JHt-HF-5Id"/>
-                                <exclude reference="cuc-vs-Lg2"/>
-                                <exclude reference="uWx-NM-H0u"/>
-                                <exclude reference="ukl-R0-bx2"/>
-                                <exclude reference="LcX-ya-1MK"/>
-                            </mask>
-                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Ciao Game" id="a0o-R2-IHp"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
-                        <outlet property="aboutButton" destination="o1c-OV-QZs" id="o8W-IY-FMv"/>
                         <outlet property="gameModeButton" destination="TIi-6p-DBL" id="009-bT-8re"/>
                         <outlet property="playGameButton" destination="Zrk-EN-0SM" id="C9u-BQ-ndc"/>
                         <outlet property="settingsButton" destination="Tp9-fi-qih" id="esM-m5-sVO"/>
@@ -186,7 +174,6 @@ Education is what other people do to you. Learning is what you do to yourself.</
                         <outletCollection property="menuButtonCollection" destination="TIi-6p-DBL" collectionClass="NSMutableArray" id="mse-29-ZAp"/>
                         <outletCollection property="menuButtonCollection" destination="NrK-XJ-XEa" collectionClass="NSMutableArray" id="Ghy-ri-Lrk"/>
                         <outletCollection property="menuButtonCollection" destination="Tp9-fi-qih" collectionClass="NSMutableArray" id="8OC-Co-MTn"/>
-                        <outletCollection property="menuButtonCollection" destination="o1c-OV-QZs" collectionClass="NSMutableArray" id="I8E-hD-gUB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rWB-DG-QAt" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -401,8 +388,8 @@ Education is what other people do to you. Learning is what you do to yourself.</
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" tag="200" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u6K-4E-bUI" customClass="GameButton" customModule="Language_App" customModuleProvider="target">
-                                <rect key="frame" x="170" y="357" width="134" height="60"/>
+                            <button opaque="NO" tag="200" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u6K-4E-bUI" customClass="GameButton" customModule="Language_App" customModuleProvider="target">
+                                <rect key="frame" x="164" y="357" width="140" height="60"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="Sorry">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -416,8 +403,8 @@ Education is what other people do to you. Learning is what you do to yourself.</
                                     <action selector="clickGameButton:" destination="3xl-OT-mTO" eventType="touchUpInside" id="HyS-tt-ugu"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="150" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oTI-nk-0kW" customClass="GameButton" customModule="Language_App" customModuleProvider="target">
-                                <rect key="frame" x="16" y="357" width="146" height="60"/>
+                            <button opaque="NO" tag="150" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oTI-nk-0kW" customClass="GameButton" customModule="Language_App" customModuleProvider="target">
+                                <rect key="frame" x="16" y="357" width="140" height="60"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="Good afternoon">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -431,8 +418,8 @@ Education is what other people do to you. Learning is what you do to yourself.</
                                     <action selector="clickGameButton:" destination="3xl-OT-mTO" eventType="touchUpInside" id="skV-kX-tp6"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="100" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S6y-0d-oVe" customClass="GameButton" customModule="Language_App" customModuleProvider="target">
-                                <rect key="frame" x="170" y="289" width="134" height="60"/>
+                            <button opaque="NO" tag="100" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S6y-0d-oVe" customClass="GameButton" customModule="Language_App" customModuleProvider="target">
+                                <rect key="frame" x="164" y="289" width="140" height="60"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="Good evening">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -452,12 +439,9 @@ Education is what other people do to you. Learning is what you do to yourself.</
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" tag="50" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AfY-8d-yRY" customClass="GameButton" customModule="Language_App" customModuleProvider="target">
-                                <rect key="frame" x="16" y="289" width="146" height="60"/>
+                            <button opaque="NO" tag="50" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AfY-8d-yRY" customClass="GameButton" customModule="Language_App" customModuleProvider="target">
+                                <rect key="frame" x="16" y="289" width="140" height="60"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="5hU-jj-HFZ"/>
-                                </constraints>
                                 <state key="normal" title="Hi">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -474,27 +458,25 @@ Education is what other people do to you. Learning is what you do to yourself.</
                         </subviews>
                         <color key="backgroundColor" red="0.41614653138228552" green="0.77106559991374601" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="S6y-0d-oVe" firstAttribute="width" secondItem="u6K-4E-bUI" secondAttribute="width" id="Bdw-zX-DKe"/>
-                            <constraint firstItem="S6y-0d-oVe" firstAttribute="width" secondItem="oTI-nk-0kW" secondAttribute="width" id="Cie-P3-MW1"/>
-                            <constraint firstItem="AfY-8d-yRY" firstAttribute="leading" secondItem="a89-be-emT" secondAttribute="leadingMargin" id="EO7-U6-IqO"/>
+                            <constraint firstItem="AfY-8d-yRY" firstAttribute="height" secondItem="oTI-nk-0kW" secondAttribute="height" id="2TJ-wM-Bve"/>
+                            <constraint firstItem="u6K-4E-bUI" firstAttribute="trailing" secondItem="a89-be-emT" secondAttribute="trailingMargin" id="3N4-mn-VfA"/>
+                            <constraint firstItem="AfY-8d-yRY" firstAttribute="height" secondItem="u6K-4E-bUI" secondAttribute="height" id="7Dd-u8-2WE"/>
+                            <constraint firstItem="u6K-4E-bUI" firstAttribute="leading" secondItem="oTI-nk-0kW" secondAttribute="trailing" constant="8" id="GQp-Mc-tXx"/>
                             <constraint firstAttribute="centerX" secondItem="Grm-zE-sf9" secondAttribute="centerX" constant="-0.25" id="JCw-XQ-lHl"/>
-                            <constraint firstItem="S6y-0d-oVe" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="AfY-8d-yRY" secondAttribute="trailing" constant="8" id="Kmc-EF-MdK"/>
-                            <constraint firstItem="S6y-0d-oVe" firstAttribute="height" secondItem="u6K-4E-bUI" secondAttribute="height" id="M0x-VF-dlE"/>
-                            <constraint firstItem="S6y-0d-oVe" firstAttribute="height" secondItem="AfY-8d-yRY" secondAttribute="height" id="NHY-o9-jSM"/>
-                            <constraint firstItem="S6y-0d-oVe" firstAttribute="width" secondItem="AfY-8d-yRY" secondAttribute="width" id="QRy-7L-SBq"/>
-                            <constraint firstItem="4y2-kc-UfI" firstAttribute="top" secondItem="u6K-4E-bUI" secondAttribute="bottom" constant="19" id="QTq-i0-0BB"/>
-                            <constraint firstItem="oTI-nk-0kW" firstAttribute="top" secondItem="AfY-8d-yRY" secondAttribute="bottom" constant="8" id="Wi5-VD-qIY"/>
-                            <constraint firstItem="S6y-0d-oVe" firstAttribute="width" secondItem="AfY-8d-yRY" secondAttribute="width" id="Xaf-FU-UQj"/>
-                            <constraint firstItem="AfY-8d-yRY" firstAttribute="top" secondItem="Grm-zE-sf9" secondAttribute="bottom" constant="123" id="aif-aC-eKl"/>
-                            <constraint firstItem="u6K-4E-bUI" firstAttribute="trailing" secondItem="a89-be-emT" secondAttribute="trailingMargin" id="dq5-TM-mby"/>
-                            <constraint firstItem="S6y-0d-oVe" firstAttribute="height" secondItem="oTI-nk-0kW" secondAttribute="height" id="eqk-Vy-yn6"/>
-                            <constraint firstItem="4y2-kc-UfI" firstAttribute="top" secondItem="oTI-nk-0kW" secondAttribute="bottom" constant="19" id="lg4-64-3So"/>
-                            <constraint firstItem="oTI-nk-0kW" firstAttribute="leading" secondItem="a89-be-emT" secondAttribute="leadingMargin" id="nDM-k1-6Xh"/>
+                            <constraint firstItem="AfY-8d-yRY" firstAttribute="width" secondItem="S6y-0d-oVe" secondAttribute="width" id="JkC-f1-Ovl"/>
+                            <constraint firstItem="AfY-8d-yRY" firstAttribute="width" secondItem="oTI-nk-0kW" secondAttribute="width" id="LMp-jH-fC4"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="S6y-0d-oVe" secondAttribute="trailing" id="LyR-6I-EuC"/>
+                            <constraint firstItem="AfY-8d-yRY" firstAttribute="top" secondItem="Grm-zE-sf9" secondAttribute="bottom" constant="123" id="awZ-fF-Jcd"/>
+                            <constraint firstItem="4y2-kc-UfI" firstAttribute="top" secondItem="oTI-nk-0kW" secondAttribute="bottom" constant="19" id="nks-HV-z33"/>
+                            <constraint firstItem="AfY-8d-yRY" firstAttribute="height" secondItem="S6y-0d-oVe" secondAttribute="height" id="nuO-wF-X06"/>
                             <constraint firstItem="Grm-zE-sf9" firstAttribute="top" secondItem="YI5-bu-RXK" secondAttribute="bottom" constant="60" id="oN2-We-q81"/>
-                            <constraint firstItem="u6K-4E-bUI" firstAttribute="top" secondItem="S6y-0d-oVe" secondAttribute="bottom" constant="8" id="pwn-hD-05v"/>
-                            <constraint firstItem="u6K-4E-bUI" firstAttribute="leading" secondItem="oTI-nk-0kW" secondAttribute="trailing" constant="8" id="rLa-tE-PEA"/>
-                            <constraint firstItem="S6y-0d-oVe" firstAttribute="trailing" secondItem="a89-be-emT" secondAttribute="trailingMargin" id="sJX-J8-QB6"/>
-                            <constraint firstItem="u6K-4E-bUI" firstAttribute="width" secondItem="oTI-nk-0kW" secondAttribute="width" id="zBw-V3-4nK"/>
+                            <constraint firstItem="4y2-kc-UfI" firstAttribute="top" secondItem="u6K-4E-bUI" secondAttribute="bottom" constant="19" id="qDJ-se-BHA"/>
+                            <constraint firstItem="AfY-8d-yRY" firstAttribute="width" secondItem="u6K-4E-bUI" secondAttribute="width" id="qUU-nf-sUX"/>
+                            <constraint firstItem="oTI-nk-0kW" firstAttribute="top" secondItem="AfY-8d-yRY" secondAttribute="bottom" constant="8" id="qgu-8v-Ztn"/>
+                            <constraint firstItem="u6K-4E-bUI" firstAttribute="top" secondItem="S6y-0d-oVe" secondAttribute="bottom" constant="8" id="vqc-EL-SL6"/>
+                            <constraint firstItem="oTI-nk-0kW" firstAttribute="leading" secondItem="a89-be-emT" secondAttribute="leadingMargin" id="xCM-e8-7nV"/>
+                            <constraint firstItem="AfY-8d-yRY" firstAttribute="leading" secondItem="a89-be-emT" secondAttribute="leadingMargin" id="ybA-Ny-671"/>
+                            <constraint firstItem="S6y-0d-oVe" firstAttribute="leading" secondItem="AfY-8d-yRY" secondAttribute="trailing" constant="8" id="yfv-5R-fxF"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
@@ -522,7 +504,7 @@ Education is what other people do to you. Learning is what you do to yourself.</
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dKl-v8-7Ar" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="716" y="-164"/>
+            <point key="canvasLocation" x="711" y="-17"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Rgy-DI-eVG">
@@ -536,12 +518,18 @@ Education is what other people do to you. Learning is what you do to yourself.</
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="K61-qu-Gii">
-                                <rect key="frame" x="0.0" y="-61" width="600" height="600"/>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K61-qu-Gii">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="K61-qu-Gii" secondAttribute="centerY" id="1fm-Wt-sGN"/>
+                            <constraint firstAttribute="centerX" secondItem="K61-qu-Gii" secondAttribute="centerX" id="9w2-vy-ksp"/>
+                            <constraint firstItem="K61-qu-Gii" firstAttribute="height" secondItem="M3G-62-5C4" secondAttribute="height" id="A0O-0l-e2u"/>
+                            <constraint firstItem="K61-qu-Gii" firstAttribute="width" secondItem="M3G-62-5C4" secondAttribute="width" id="T0q-AH-AzF"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VL5-Fj-pPx" userLabel="First Responder" sceneMemberID="firstResponder"/>

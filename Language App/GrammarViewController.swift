@@ -12,6 +12,8 @@ class GrammarViewController: UIViewController, UIWebViewDelegate {
 
     //MARK: Outlets
     @IBOutlet weak var webView: UIWebView!
+    @IBOutlet weak var titleView: UIView!
+    @IBOutlet weak var titleSwitch: UISwitch!
     
     //MARK: Properties
     var userDefaults = NSUserDefaults.standardUserDefaults()
@@ -22,7 +24,6 @@ class GrammarViewController: UIViewController, UIWebViewDelegate {
     var switchWithTitle: SwitchWithTitle? = nil
     
     //MARK: Initialisers
-    
     override init() {
         super.init()
     }
@@ -33,10 +34,7 @@ class GrammarViewController: UIViewController, UIWebViewDelegate {
     }
     
     //MARK: Webview Delegate
-    
     func webViewDidStartLoad(webView: UIWebView) {
-//        var rect: CGRect = UIScreen.mainScreen().bounds
-//        self.webView.frame = rect
         println("Start load Resized webview to \(webView.frame)")
     }
     
@@ -72,20 +70,35 @@ class GrammarViewController: UIViewController, UIWebViewDelegate {
         self.backButton?.enabled = false
         self.forwardButton?.enabled = false
         
-        var toolbar: UIToolbar = UIToolbar(frame: CGRectMake(0, 0, 90, 50))
-        var v1: UISwitch = UISwitch()
-        var v2: UILabel = UILabel()
-        var vArray: NSMutableArray = NSMutableArray(capacity: 2)
-        vArray.addObject(v1)
-        vArray.addObject(v2)
+//        var toolbar: UIToolbar = UIToolbar(frame: CGRectMake(0, 0, 90, 50))
+//        var v1: UISwitch = UISwitch()
+//        var v2: UILabel = UILabel()
+//        var vArray: NSMutableArray = NSMutableArray(capacity: 2)
+//        vArray.addObject(v1)
+//        vArray.addObject(v2)
+        
 //        toolbar.setItems(vArray, animated: false)
+        
+        var placeholderView: UIView = UIView(frame: CGRectMake(0, 0, 100, 40))
+        placeholderView.backgroundColor = UIColor.whiteColor()
+        var switchView = UISwitch()
+        switchView.on = true
+        var label = UILabel()
+        label.frame = CGRectMake(0, 0, 50, 50)
+        label.text = "Cache"
+        label.textColor = UIColor.blackColor()
+        placeholderView.addSubview(switchView)
+        placeholderView.addSubview(label)
+        self.navigationItem.titleView = placeholderView
+
+//        self.navigationItem.titleView = titleView
+        //self.navigationItem.titleView?.frameForAlignmentRect(CGRectA)
         
         //self.switchWithTitle?.switchView.on = self.willCacheGrammarPages
         //self.navigationItem.titleView = self.switchWithTitle
 //        self.navigationItem.titleView = toolbar
         self.navigationItem.rightBarButtonItems = [self.forwardButton!, self.backButton!]
         println("hello")
-        //self.webView.frame = UIScreen.mainScreen().bounds
         // Do any additional setup after loading the view.
     }
     
@@ -99,7 +112,6 @@ class GrammarViewController: UIViewController, UIWebViewDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
     /*
     // MARK: - Navigation
@@ -110,5 +122,4 @@ class GrammarViewController: UIViewController, UIWebViewDelegate {
         // Pass the selected object to the new view controller.
     }
     */
-
 }
