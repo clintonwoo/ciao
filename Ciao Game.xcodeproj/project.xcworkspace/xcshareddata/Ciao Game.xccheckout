@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>517324E1-61C5-4DB2-8351-B5535E6C45C4</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Ciao Game</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>D86F6EE49C539B21BAE3AC1B9E5B39C2E87C79A6</key>
+		<string>https://hub.jazz.net/git/clinton/language-app</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Ciao Game.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>D86F6EE49C539B21BAE3AC1B9E5B39C2E87C79A6</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://hub.jazz.net/git/clinton/language-app</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>D86F6EE49C539B21BAE3AC1B9E5B39C2E87C79A6</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>D86F6EE49C539B21BAE3AC1B9E5B39C2E87C79A6</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Ciao%20Game</string>
+		</dict>
+	</array>
+</dict>
+</plist>
