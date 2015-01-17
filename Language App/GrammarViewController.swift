@@ -79,17 +79,17 @@ class GrammarViewController: UIViewController, UIWebViewDelegate {
         
 //        toolbar.setItems(vArray, animated: false)
         
-        var placeholderView: UIView = UIView(frame: CGRectMake(0, 0, 100, 40))
-        placeholderView.backgroundColor = UIColor.whiteColor()
-        var switchView = UISwitch()
-        switchView.on = true
-        var label = UILabel()
-        label.frame = CGRectMake(0, 0, 50, 50)
-        label.text = "Cache"
-        label.textColor = UIColor.blackColor()
-        placeholderView.addSubview(switchView)
-        placeholderView.addSubview(label)
-        self.navigationItem.titleView = placeholderView
+//        var placeholderView: UIView = UIView(frame: CGRectMake(0, 0, 100, 40))
+//        placeholderView.backgroundColor = UIColor.whiteColor()
+//        var switchView = UISwitch()
+//        switchView.on = true
+//        var label = UILabel()
+//        label.frame = CGRectMake(0, 0, 50, 50)
+//        label.text = "Cache"
+//        label.textColor = UIColor.blackColor()
+//        placeholderView.addSubview(switchView)
+//        placeholderView.addSubview(label)
+//        self.navigationItem.titleView = placeholderView
 
 //        self.navigationItem.titleView = titleView
         //self.navigationItem.titleView?.frameForAlignmentRect(CGRectA)

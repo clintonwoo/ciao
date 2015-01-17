@@ -619,7 +619,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </webView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QJT-go-v4m">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QJT-go-v4m">
                                 <rect key="frame" x="93" y="77" width="129" height="39"/>
                                 <subviews>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WET-8l-TPG">
@@ -642,6 +642,11 @@
                             <constraint firstItem="aRP-kp-2JG" firstAttribute="width" secondItem="lbl-4W-BqQ" secondAttribute="width" id="dao-TN-fch"/>
                             <constraint firstItem="aRP-kp-2JG" firstAttribute="height" secondItem="lbl-4W-BqQ" secondAttribute="height" id="ySx-jc-qDt"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="QJT-go-v4m"/>
+                            </mask>
+                        </variation>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
