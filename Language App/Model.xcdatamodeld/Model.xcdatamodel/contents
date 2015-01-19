@@ -5,6 +5,7 @@
         <relationship name="word" toMany="YES" deletionRule="Cascade" destinationEntity="Word" inverseName="language" inverseEntity="Word" syncable="YES"/>
     </entity>
     <entity name="UniqueWord" syncable="YES">
+        <attribute name="difficulty" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="word" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="englishWord" maxCount="1" deletionRule="Cascade" destinationEntity="Word" inverseName="foreignWord" inverseEntity="Word" syncable="YES"/>
     </entity>
@@ -20,7 +21,7 @@
     <fetchRequest name="worstWord" entity="Word"/>
     <elements>
         <element name="Language" positionX="-108" positionY="-18" width="135" height="73"/>
-        <element name="Word" positionX="81" positionY="-18" width="128" height="118"/>
-        <element name="UniqueWord" positionX="252" positionY="-18" width="128" height="73"/>
+        <element name="UniqueWord" positionX="252" positionY="-18" width="128" height="88"/>
+        <element name="Word" positionX="81" positionY="-18" width="128" height="120"/>
     </elements>
 </model>
