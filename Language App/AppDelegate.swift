@@ -22,6 +22,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let initialViewController = self.window!.rootViewController as UINavigationController
         let menu = initialViewController.topViewController as MenuViewController
         menu.managedObjectContext = self.managedObjectContext
+        
+        //create NSmanagedobjects from a plist file and store in NSMutableArray
+        //Language, etc.
+        //iterate over NSMutableArray and run insert method on NSMangedObjectContext
+        //stores the path of the plist file present in the bundle
+        var bundlePathofPlist: String = NSBundle.mainBundle().pathForResource("words", ofType:"plist")!
+        var wordsArray: NSArray = NSArray(contentsOfFile: bundlePathofPlist)!
+        for (var i = 0; i < wordsArray.count; i++) {
+            var newRecord: UniqueWord = NSEntityDescription.insertNewObjectForEntityForName("UniqueWord", inManagedObjectContext: context) as UniqueWord
+            newRecord.word = wordsArray[i].valueForKey("word") as String
+            newRecord.difficulty = wordsArray[i].valueForKey("difficulty") as String
+            println(newRecord.word)
+            println(newRecord.difficulty)
+        }
+        //var wordDict: NSDictionary = wordsArray[0] as NSDictionary
+//        for(var i = 0; i < dataFromPlist.count;i++) {
+//            NSLog("Mobile handset no \(i+1) is \(dataFromPlist.objectAtIndex(i))")
+//        }
 
         //initialise user defaults
         var userDefaults = NSUserDefaults.standardUserDefaults()
@@ -50,7 +68,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if let entity = NSEntityDescription.entityForName("Statistics", inManagedObjectContext:context) {
             fetchRequest.entity = entity
             if var fetchedObjects: NSArray = context.executeFetchRequest(fetchRequest, error:error) {
-                //iterate
+                //iterate over obejcts
             } else {
 //                var statistics: Statistics = NSEntityDescription.insertNewObjectForEntityForName("Statistics", inManagedObjectContext:context) as Statistics
 //                statistics.attempts = 123
