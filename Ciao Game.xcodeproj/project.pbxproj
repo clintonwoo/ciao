@@ -13,12 +13,12 @@
 		18384E4C1A590079006DA713 /* EasyWords.strings in Resources */ = {isa = PBXBuildFile; fileRef = 18384E4B1A590079006DA713 /* EasyWords.strings */; };
 		18384E4E1A59017A006DA713 /* MediumWords.strings in Resources */ = {isa = PBXBuildFile; fileRef = 18384E4D1A59017A006DA713 /* MediumWords.strings */; };
 		18384E501A59018C006DA713 /* HardWords.strings in Resources */ = {isa = PBXBuildFile; fileRef = 18384E4F1A59018C006DA713 /* HardWords.strings */; };
+		183F90A21A7115760028769D /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183F90A11A7115760028769D /* Word.swift */; };
 		184656561A57822D0095442D /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184656551A57822D0095442D /* AboutViewController.swift */; };
 		185541F21A552B45002C3D15 /* GameButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185541F11A552B45002C3D15 /* GameButton.swift */; };
 		185771A11A6F1D9C0071B347 /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185771A01A6F1D9C0071B347 /* Language.swift */; };
 		1869787B1A61FC9D00A496D0 /* GrammarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1869787A1A61FC9D00A496D0 /* GrammarViewController.swift */; };
 		1899796B1A62265700A758ED /* SwitchWithTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1899796A1A62265700A758ED /* SwitchWithTitle.swift */; };
-		18AC1C051A6FCFB100987D5F /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AC1C041A6FCFB100987D5F /* Word.swift */; };
 		18AC1C071A6FCFB100987D5F /* UniqueWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AC1C061A6FCFB100987D5F /* UniqueWord.swift */; };
 		18AC1C091A6FD66E00987D5F /* words.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18AC1C081A6FD66E00987D5F /* words.plist */; };
 		18BD536E1A33053300742D7F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BD536D1A33053300742D7F /* AppDelegate.swift */; };
@@ -52,12 +52,12 @@
 		18384E4B1A590079006DA713 /* EasyWords.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = EasyWords.strings; sourceTree = "<group>"; };
 		18384E4D1A59017A006DA713 /* MediumWords.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = MediumWords.strings; sourceTree = "<group>"; };
 		18384E4F1A59018C006DA713 /* HardWords.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = HardWords.strings; sourceTree = "<group>"; };
+		183F90A11A7115760028769D /* Word.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
 		184656551A57822D0095442D /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		185541F11A552B45002C3D15 /* GameButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameButton.swift; sourceTree = "<group>"; };
 		185771A01A6F1D9C0071B347 /* Language.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
 		1869787A1A61FC9D00A496D0 /* GrammarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GrammarViewController.swift; sourceTree = "<group>"; };
 		1899796A1A62265700A758ED /* SwitchWithTitle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchWithTitle.swift; sourceTree = "<group>"; };
-		18AC1C041A6FCFB100987D5F /* Word.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
 		18AC1C061A6FCFB100987D5F /* UniqueWord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniqueWord.swift; sourceTree = "<group>"; };
 		18AC1C081A6FD66E00987D5F /* words.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = words.plist; sourceTree = "<group>"; };
 		18BC8D461A593C8500C30986 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -104,7 +104,7 @@
 			children = (
 				18C1F9471A4E3CA500531C44 /* Model.xcdatamodeld */,
 				18AC1C061A6FCFB100987D5F /* UniqueWord.swift */,
-				18AC1C041A6FCFB100987D5F /* Word.swift */,
+				183F90A11A7115760028769D /* Word.swift */,
 				185771A01A6F1D9C0071B347 /* Language.swift */,
 			);
 			name = Model;
@@ -308,8 +308,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				1899796B1A62265700A758ED /* SwitchWithTitle.swift in Sources */,
+				183F90A21A7115760028769D /* Word.swift in Sources */,
 				18BDCE651A3410C500C08890 /* SettingsViewController.swift in Sources */,
-				18AC1C051A6FCFB100987D5F /* Word.swift in Sources */,
 				1869787B1A61FC9D00A496D0 /* GrammarViewController.swift in Sources */,
 				184656561A57822D0095442D /* AboutViewController.swift in Sources */,
 				1807C7581A3C713700863BC6 /* ModesNavigationController.swift in Sources */,

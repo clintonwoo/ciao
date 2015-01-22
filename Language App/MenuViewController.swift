@@ -51,20 +51,21 @@ class MenuViewController: UIViewController {
 //        if self.managedObjectContext != nil {
             switch (segue.identifier!) {
                 case "Show Grammar":
-                let destinationViewController = segue.destinationViewController as GrammarViewController
-                let url = NSURL(string: "http://en.wikipedia.org/wiki/Italian_grammar")
-                let urlRequest = NSURLRequest(URL: url!)
-                destinationViewController.urlRequest = urlRequest
-                //destinationViewController.webView?.loadRequest(urlRequest)
-//                case "Show Game":
-//                    let destinationViewController = segue.destinationViewController as GameViewController
-//                    destinationViewController.managedObjectContext = self.managedObjectContext
-//                    println(destinationViewController.description)
+                    let destinationViewController = segue.destinationViewController as GrammarViewController
+                    let url = NSURL(string: "http://en.wikipedia.org/wiki/Italian_grammar")
+                    let urlRequest = NSURLRequest(URL: url!)
+                    destinationViewController.urlRequest = urlRequest
+                    //destinationViewController.webView?.loadRequest(urlRequest)
+                case "Show Game":
+                    let destinationViewController = segue.destinationViewController as GameViewController
+                    destinationViewController.managedObjectContext = self.managedObjectContext
+                    println(destinationViewController.description)
 //                case "Show Settings":
 //                    let navController = segue.destinationViewController as UINavigationController
 //                    let destinationViewController = navController.topViewController as SettingsViewController
 //                    destinationViewController.managedObjectContext = self.managedObjectContext
 //                    println(destinationViewController.description)
+                
             default:
                 println("prepareForSegue: no segue logic on \(segue.identifier)")
             }

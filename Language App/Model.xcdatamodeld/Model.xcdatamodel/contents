@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6254" systemVersion="14B25" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
-    <entity name="Language" representedClassName="Language" syncable="YES">
-        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="word" toMany="YES" deletionRule="Cascade" destinationEntity="Word" inverseName="language" inverseEntity="Word" syncable="YES"/>
-    </entity>
     <entity name="UniqueWord" representedClassName="UniqueWord" syncable="YES">
         <attribute name="difficulty" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="word" optional="YES" attributeType="String" syncable="YES"/>
@@ -12,15 +8,13 @@
     <entity name="Word" representedClassName="Word" syncable="YES">
         <attribute name="attempts" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="correctAttempts" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="language" attributeType="String" syncable="YES"/>
         <attribute name="word" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="englishWord" maxCount="1" deletionRule="Nullify" destinationEntity="UniqueWord" inverseName="foreignWord" inverseEntity="UniqueWord" syncable="YES"/>
-        <relationship name="language" maxCount="1" deletionRule="Nullify" destinationEntity="Language" inverseName="word" inverseEntity="Language" syncable="YES"/>
     </entity>
     <fetchRequest name="bestWord" entity="Word" predicateString="attempts == 0"/>
-    <fetchRequest name="FetchLanguages" entity="Language"/>
     <fetchRequest name="worstWord" entity="Word"/>
     <elements>
-        <element name="Language" positionX="-108" positionY="-18" width="135" height="73"/>
         <element name="UniqueWord" positionX="252" positionY="-18" width="128" height="88"/>
         <element name="Word" positionX="81" positionY="-18" width="128" height="118"/>
     </elements>

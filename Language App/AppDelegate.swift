@@ -19,6 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         var context: NSManagedObjectContext = self.managedObjectContext!
+        var fetchRequest: NSFetchRequest = NSFetchRequest()
+        var error: NSErrorPointer = nil
         let initialViewController = self.window!.rootViewController as UINavigationController
         let menu = initialViewController.topViewController as MenuViewController
         menu.managedObjectContext = self.managedObjectContext
@@ -27,14 +29,34 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //Language, etc.
         //iterate over NSMutableArray and run insert method on NSMangedObjectContext
         //stores the path of the plist file present in the bundle
-        var bundlePathofPlist: String = NSBundle.mainBundle().pathForResource("words", ofType:"plist")!
-        var wordsArray: NSArray = NSArray(contentsOfFile: bundlePathofPlist)!
+        var plistPath: String = NSBundle.mainBundle().pathForResource("words", ofType:"plist")!
+        var wordsArray: NSArray = NSArray(contentsOfFile: plistPath)!
         for (var i = 0; i < wordsArray.count; i++) {
-            var newRecord: UniqueWord = NSEntityDescription.insertNewObjectForEntityForName("UniqueWord", inManagedObjectContext: context) as UniqueWord
-            newRecord.word = wordsArray[i].valueForKey("word") as String
-            newRecord.difficulty = wordsArray[i].valueForKey("difficulty") as String
-            println(newRecord.word)
-            println(newRecord.difficulty)
+            var englishWord: UniqueWord = NSEntityDescription.insertNewObjectForEntityForName("UniqueWord", inManagedObjectContext: context) as UniqueWord
+            englishWord.word = wordsArray[i].valueForKey("word") as String
+            englishWord.difficulty = wordsArray[i].valueForKey("difficulty") as String
+            
+            var italian: Word = NSEntityDescription.insertNewObjectForEntityForName("Word", inManagedObjectContext: context) as Word
+            italian.word = wordsArray[i].valueForKey("Italian") as String
+            italian.englishWord = englishWord
+            italian.language = "Italian"
+            
+            var chinese: Word = NSEntityDescription.insertNewObjectForEntityForName("Word", inManagedObjectContext: context) as Word
+            chinese.word = wordsArray[i].valueForKey("Chinese") as String
+            chinese.englishWord = englishWord
+            chinese.language = "Chinese"
+            
+//            var entity = NSEntityDescription.entityForName("Language", inManagedObjectContext: context)
+//            fetchRequest.entity = entity
+//            var predicate = NSPredicate(format: "name == ", argumentArray: nil)
+//            context.executeFetchRequest(fetchRequest, error: error)
+            
+            println(englishWord.word)
+            println(englishWord.difficulty + "\n")
+            println(italian.word)
+            println(italian.language)
+            println(chinese.word)
+            println(chinese.language)
         }
         //var wordDict: NSDictionary = wordsArray[0] as NSDictionary
 //        for(var i = 0; i < dataFromPlist.count;i++) {
@@ -46,8 +68,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         userDefaults.registerDefaults(NSDictionary(contentsOfFile: NSBundle.mainBundle().pathForResource("Defaults", ofType: "plist")!)!)
         
         //let’s add some more code in there to list out all the objects currently in the database:
-        var error: NSErrorPointer = nil
-        var fetchRequest: NSFetchRequest = NSFetchRequest();
+
+        //outdated, always evaluates to false
         if let entity: NSEntityDescription = NSEntityDescription.entityForName("Settings", inManagedObjectContext:context) {
             fetchRequest.entity = entity
             if var fetchedObjects: NSArray = context.executeFetchRequest(fetchRequest, error:error) {
@@ -77,7 +99,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         if (!context.save(error)) {
             println("Save error.\(error.debugDescription)"); //error.localizedDescription
-        return false
+            return false
         }
         return true
     }
