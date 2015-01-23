@@ -1,290 +1,290 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-<array>														
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Hi</string><key>Italian</key><string>Ciao</string><key>Chinese</key><string>Nǐ hǎo</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Bye</string><key>Italian</key><string>Arrivederci</string><key>Chinese</key><string>Zàijiàn</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Sorry</string><key>Italian</key><string>Scusate</string><key>Chinese</key><string>Yíhàn</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Thanks</string><key>Italian</key><string>Grazie</string><key>Chinese</key><string>Xièxiè</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>If</string><key>Italian</key><string>Se</string><key>Chinese</key><string>Rúguǒ</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Then</string><key>Italian</key><string>Poi</string><key>Chinese</key><string>Ránhòu</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Good morning</string><key>Italian</key><string>Buongiorno</string><key>Chinese</key><string>Zǎo ān</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Good afternoon</string><key>Italian</key><string>Buon pomeriggio</string><key>Chinese</key><string>Xiàwǔ hǎo</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Good evening</string><key>Italian</key><string>Buonasera</string><key>Chinese</key><string>Wǎnshàng hǎo</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Good night</string><key>Italian</key><string>Buonanotte</string><key>Chinese</key><string>Wǎn'ān</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Week</string><key>Italian</key><string>Settimana</string><key>Chinese</key><string>Zhōu</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Year</string><key>Italian</key><string>Anno</string><key>Chinese</key><string>Nián</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Apple</string><key>Italian</key><string>Mela</string><key>Chinese</key><string>Píngguǒ</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Orange</string><key>Italian</key><string>Arancione</string><key>Chinese</key><string>Chéng</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Banana</string><key>Italian</key><string>Banana</string><key>Chinese</key><string>Xiāngjiāo</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Dog</string><key>Italian</key><string>Cane</string><key>Chinese</key><string>Gǒu</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Cat</string><key>Italian</key><string>Gatto</string><key>Chinese</key><string>Māo</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Cow</string><key>Italian</key><string>Mucca</string><key>Chinese</key><string>Niú</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Sheep</string><key>Italian</key><string>Pecora</string><key>Chinese</key><string>Yáng</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Make</string><key>Italian</key><string>Fare</string><key>Chinese</key><string>Shǐ</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Computer</string><key>Italian</key><string>Computer</string><key>Chinese</key><string>Jìsuànjī</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Phone</string><key>Italian</key><string>Telefono</string><key>Chinese</key><string>Diànhuà</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>I love you</string><key>Italian</key><string>Ti amo</string><key>Chinese</key><string>Wǒ ài nǐ</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>How are you?</string><key>Italian</key><string>Come stai?</string><key>Chinese</key><string>Nǐ hǎo ma?</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Good</string><key>Italian</key><string>Buono</string><key>Chinese</key><string>Liánghǎo</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Bad</string><key>Italian</key><string>Male</string><key>Chinese</key><string>Huài</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Happy</string><key>Italian</key><string>Felice</string><key>Chinese</key><string>Gāoxìng</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Sad</string><key>Italian</key><string>Triste</string><key>Chinese</key><string>Shāngxīn</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>You</string><key>Italian</key><string>Voi</string><key>Chinese</key><string>Nǐ</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Me</string><key>Italian</key><string>Me</string><key>Chinese</key><string>Wǒ</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Mum</string><key>Italian</key><string>Mamma</string><key>Chinese</key><string>Chénmò</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Head</string><key>Italian</key><string>Testa</string><key>Chinese</key><string>Tóu</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Arm</string><key>Italian</key><string>Braccio</string><key>Chinese</key><string>Gēbó</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Hand</string><key>Italian</key><string>Mano</string><key>Chinese</key><string>Shǒu</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Foot</string><key>Italian</key><string>Piede</string><key>Chinese</key><string>Jiǎo</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Shoulder</string><key>Italian</key><string>Spalla</string><key>Chinese</key><string>Jiān</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Elbow</string><key>Italian</key><string>Gomito</string><key>Chinese</key><string>Wān tóu</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Knee</string><key>Italian</key><string>Ginocchio</string><key>Chinese</key><string>Xīgài</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Need</string><key>Italian</key><string>Bisogno</string><key>Chinese</key><string>Xūyào</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Ankle</string><key>Italian</key><string>Caviglia</string><key>Chinese</key><string>Jiǎohuái</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Leg</string><key>Italian</key><string>Gamba</string><key>Chinese</key><string>Tuǐ</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Dad</string><key>Italian</key><string>Papà</string><key>Chinese</key><string>Bà</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Brother</string><key>Italian</key><string>Fratello</string><key>Chinese</key><string>Gē</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Sister</string><key>Italian</key><string>Sorella</string><key>Chinese</key><string>Mèimei</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Grandfather</string><key>Italian</key><string>Nonno</string><key>Chinese</key><string>Yéyé</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Grandmother</string><key>Italian</key><string>Nonna</string><key>Chinese</key><string>Nǎinai</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Wallet</string><key>Italian</key><string>Portafoglio</string><key>Chinese</key><string>Qiánbāo</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Money</string><key>Italian</key><string>Soldi</string><key>Chinese</key><string>Qián</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Bag</string><key>Italian</key><string>Borsa</string><key>Chinese</key><string>Bāo</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Shirt</string><key>Italian</key><string>Camicia</string><key>Chinese</key><string>Chènshān</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Pants</string><key>Italian</key><string>Pantaloni</string><key>Chinese</key><string>Kùzi</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Socks</string><key>Italian</key><string>Calze</string><key>Chinese</key><string>Wàzi</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Shoes</string><key>Italian</key><string>Scarpe</string><key>Chinese</key><string>Xié</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Hat</string><key>Italian</key><string>Cappello</string><key>Chinese</key><string>Mào zi</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Flower</string><key>Italian</key><string>Fiore</string><key>Chinese</key><string>Huā</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Tree</string><key>Italian</key><string>Albero</string><key>Chinese</key><string>Shù</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Plant</string><key>Italian</key><string>Impianto</string><key>Chinese</key><string>Chǎng</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Animal</string><key>Italian</key><string>Animale</string><key>Chinese</key><string>Dòngwù</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Very</string><key>Italian</key><string>Molto</string><key>Chinese</key><string>Hěn</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Where</string><key>Italian</key><string>Dove</string><key>Chinese</key><string>Nǎlǐ</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>How</string><key>Italian</key><string>Come</string><key>Chinese</key><string>Zěnme yàng</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Why</string><key>Italian</key><string>Perché</string><key>Chinese</key><string>Wèishéme</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>When</string><key>Italian</key><string>Quando</string><key>Chinese</key><string>Shénme shíhòu</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>What</string><key>Italian</key><string>Che Cosa</string><key>Chinese</key><string>Shénme</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Park</string><key>Italian</key><string>Parco</string><key>Chinese</key><string>Gōngyuán</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Water</string><key>Italian</key><string>Acqua</string><key>Chinese</key><string>Shuǐ</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Juice</string><key>Italian</key><string>Succo</string><key>Chinese</key><string>Guǒzhī</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Left</string><key>Italian</key><string>Sinistra</string><key>Chinese</key><string>Zuǒ</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Right</string><key>Italian</key><string>Destra</string><key>Chinese</key><string>Quán</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>North</string><key>Italian</key><string>A nord</string><key>Chinese</key><string>Běi</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>South</string><key>Italian</key><string>Sud</string><key>Chinese</key><string>Nán</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>East</string><key>Italian</key><string>Oriente</string><key>Chinese</key><string>Dōngfāng</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>West</string><key>Italian</key><string>Occidente</string><key>Chinese</key><string>Xīfāng</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Was</string><key>Italian</key><string>Era</string><key>Chinese</key><string>Shì</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Bandage</string><key>Italian</key><string>Benda</string><key>Chinese</key><string>Bēngdài</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Like</string><key>Italian</key><string>Come</string><key>Chinese</key><string>Rú</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Find</string><key>Italian</key><string>Trovare</string><key>Chinese</key><string>Fāxiàn</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Copy</string><key>Italian</key><string>Copia</string><key>Chinese</key><string>Fùzhì</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Paste</string><key>Italian</key><string>Pasta</string><key>Chinese</key><string>Tiē</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Key</string><key>Italian</key><string>Chiave</string><key>Chinese</key><string>Guānjiàn</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Lock</string><key>Italian</key><string>Serratura</string><key>Chinese</key><string>Suǒ</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Table</string><key>Italian</key><string>Tavolo</string><key>Chinese</key><string>Biǎo</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Chair</string><key>Italian</key><string>Sedia</string><key>Chinese</key><string>Yǐzi</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Couch</string><key>Italian</key><string>Divano</string><key>Chinese</key><string>Wòtà</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Television</string><key>Italian</key><string>Televisione</string><key>Chinese</key><string>Diànshì</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Tissue</string><key>Italian</key><string>Tessuto</string><key>Chinese</key><string>Zǔzhī</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Mop</string><key>Italian</key><string>Scopa</string><key>Chinese</key><string>Tuōbǎ</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Bucket</string><key>Italian</key><string>Secchio</string><key>Chinese</key><string>Tǒng</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Glass</string><key>Italian</key><string>Vetro</string><key>Chinese</key><string>Bōlí</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Cup</string><key>Italian</key><string>Coppa</string><key>Chinese</key><string>Bēi</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Drink</string><key>Italian</key><string>Bere</string><key>Chinese</key><string>Hē</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Eat</string><key>Italian</key><string>Mangiare</string><key>Chinese</key><string>Chī</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Go</string><key>Italian</key><string>Andare</string><key>Chinese</key><string>Qù</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Garbage</string><key>Italian</key><string>Spazzatura</string><key>Chinese</key><string>Lèsè</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Bin</string><key>Italian</key><string>Bidone</string><key>Chinese</key><string>Xiāngzi</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Fridge</string><key>Italian</key><string>Frigorifero</string><key>Chinese</key><string>Bīngxiāng</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Freezer</string><key>Italian</key><string>Congelatore</string><key>Chinese</key><string>Bīngxiāng</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Cold</string><key>Italian</key><string>Freddo</string><key>Chinese</key><string>Lěng</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Work</string><key>Italian</key><string>Lavoro</string><key>Chinese</key><string>Gōngzuò</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Hot</string><key>Italian</key><string>Caldo</string><key>Chinese</key><string>Rè</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Toilet</string><key>Italian</key><string>Toilette</string><key>Chinese</key><string>Mǎtǒng</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Shower</string><key>Italian</key><string>Doccia</string><key>Chinese</key><string>Línyù</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Bath</string><key>Italian</key><string>Bagno</string><key>Chinese</key><string>Yù</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Door</string><key>Italian</key><string>Porta</string><key>Chinese</key><string>Mén</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>And</string><key>Italian</key><string>E</string><key>Chinese</key><string>Hé</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Is</string><key>Italian</key><string>È</string><key>Chinese</key><string>Shì</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Are</string><key>Italian</key><string>Sono</string><key>Chinese</key><string>Shì</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>They</string><key>Italian</key><string>Essi</string><key>Chinese</key><string>Tāmen</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>He</string><key>Italian</key><string>Lui</string><key>Chinese</key><string>Tā</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>She</string><key>Italian</key><string>Lei</string><key>Chinese</key><string>Tā</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Him</string><key>Italian</key><string>Lui</string><key>Chinese</key><string>Tā</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Her</string><key>Italian</key><string>Suo</string><key>Chinese</key><string>Tā de</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>His</string><key>Italian</key><string>Suo</string><key>Chinese</key><string>Tā de</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Her's</string><key>Italian</key><string>Le sue di</string><key>Chinese</key><string>Tā de</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Cousin</string><key>Italian</key><string>Cugino</string><key>Chinese</key><string>Biǎomèi</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Aunt</string><key>Italian</key><string>Zia</string><key>Chinese</key><string>Gūmā</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Uncle</string><key>Italian</key><string>Zio</string><key>Chinese</key><string>Shūshu</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>One</string><key>Italian</key><string>Uno</string><key>Chinese</key><string>Yī</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Two</string><key>Italian</key><string>Due</string><key>Chinese</key><string>Liǎng</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Three</string><key>Italian</key><string>Tre</string><key>Chinese</key><string>Sān</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Four</string><key>Italian</key><string>Quattro</string><key>Chinese</key><string>Sì</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Five</string><key>Italian</key><string>Cinque</string><key>Chinese</key><string>Wǔ</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Six</string><key>Italian</key><string>Sei</string><key>Chinese</key><string>Liù</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Seven</string><key>Italian</key><string>Sette</string><key>Chinese</key><string>Qī</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Eight</string><key>Italian</key><string>Otto</string><key>Chinese</key><string>Bā</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Nine</string><key>Italian</key><string>Nove</string><key>Chinese</key><string>Jiǔ</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Ten</string><key>Italian</key><string>Dieci</string><key>Chinese</key><string>Shí</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Twenty</string><key>Italian</key><string>Venti</string><key>Chinese</key><string>Èr shí</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Twenty Five</string><key>Italian</key><string>Venticinque</string><key>Chinese</key><string>Èr shí wǔ</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Fifty</string><key>Italian</key><string>Cinquanta</string><key>Chinese</key><string>Wǔ shí</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>One Hundred</string><key>Italian</key><string>One Hundred</string><key>Chinese</key><string>Bǎi</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>One Thousand</string><key>Italian</key><string>Mille</string><key>Chinese</key><string>Yīqiān</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>One Million</string><key>Italian</key><string>One Million</string><key>Chinese</key><string>Bǎi wàn</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Two Thousand</string><key>Italian</key><string>Duemila</string><key>Chinese</key><string>Liǎng qiān</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Card</string><key>Italian</key><string>Carta</string><key>Chinese</key><string>Kǎ</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Cash</string><key>Italian</key><string>Contanti</string><key>Chinese</key><string>Xiànjīn</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Coin</string><key>Italian</key><string>Moneta</string><key>Chinese</key><string>Yìngbì</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Grass</string><key>Italian</key><string>Erba</string><key>Chinese</key><string>Cǎo</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Floor</string><key>Italian</key><string>Piano</string><key>Chinese</key><string>Dìbǎn</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Carpet</string><key>Italian</key><string>Tappeto</string><key>Chinese</key><string>Dìtǎn</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Power</string><key>Italian</key><string>Potere</string><key>Chinese</key><string>Dònglì</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Strong</string><key>Italian</key><string>Forte</string><key>Chinese</key><string>Qiáng</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Weak</string><key>Italian</key><string>Debole</string><key>Chinese</key><string>Ruò</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Car</string><key>Italian</key><string>Auto</string><key>Chinese</key><string>Qìchē</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Bicycle</string><key>Italian</key><string>Bicicletta</string><key>Chinese</key><string>Zìxíngchē</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Truck</string><key>Italian</key><string>Camion</string><key>Chinese</key><string>Kǎchē</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Plane</string><key>Italian</key><string>Piano</string><key>Chinese</key><string>Píngmiàn</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Seat</string><key>Italian</key><string>Posto</string><key>Chinese</key><string>Zuòwèi</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Sky</string><key>Italian</key><string>Cielo</string><key>Chinese</key><string>Tiānkōng</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Sea</string><key>Italian</key><string>Mare</string><key>Chinese</key><string>Hǎi</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Ocean</string><key>Italian</key><string>Oceano</string><key>Chinese</key><string>Hǎiyáng</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Fish</string><key>Italian</key><string>Pesce</string><key>Chinese</key><string>Yú</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Bottle</string><key>Italian</key><string>Bottiglia</string><key>Chinese</key><string>Píngzi</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Pan</string><key>Italian</key><string>Pan</string><key>Chinese</key><string>Guō</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Knife</string><key>Italian</key><string>Coltello</string><key>Chinese</key><string>Dāo</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Fork</string><key>Italian</key><string>Forchetta</string><key>Chinese</key><string>Chā</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Spoon</string><key>Italian</key><string>Cucchiaio</string><key>Chinese</key><string>Sháozi</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Pot</string><key>Italian</key><string>Pentola</string><key>Chinese</key><string>Guō</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Kettle</string><key>Italian</key><string>Bollitore</string><key>Chinese</key><string>Shuǐhú</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Tea</string><key>Italian</key><string>Tè</string><key>Chinese</key><string>Chá</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Coffee</string><key>Italian</key><string>Caffè</string><key>Chinese</key><string>Kāfēi</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Meat</string><key>Italian</key><string>Carne</string><key>Chinese</key><string>Ròu</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Fruit</string><key>Italian</key><string>Frutta</string><key>Chinese</key><string>Shuǐguǒ</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Vegetable</string><key>Italian</key><string>Ortaggio</string><key>Chinese</key><string>Shūcài</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Case</string><key>Italian</key><string>Caso</string><key>Chinese</key><string>Ànjiàn</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Suit</string><key>Italian</key><string>Tuta</string><key>Chinese</key><string>Sùsòng</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Dress</string><key>Italian</key><string>Vestito</string><key>Chinese</key><string>Fúzhuāng</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Skirt</string><key>Italian</key><string>Gonna</string><key>Chinese</key><string>Qúnzi</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Stockings</string><key>Italian</key><string>Calze</string><key>Chinese</key><string>Sīwà</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Boots</string><key>Italian</key><string>Stivali</string><key>Chinese</key><string>Xuēzi</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Onion</string><key>Italian</key><string>Cipolla</string><key>Chinese</key><string>Yángcōng</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Tomato</string><key>Italian</key><string>Pomodoro</string><key>Chinese</key><string>Fānqié</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Bread</string><key>Italian</key><string>Pane</string><key>Chinese</key><string>Miànbāo</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Toast</string><key>Italian</key><string>Brindisi</string><key>Chinese</key><string>Kǎo miànbāo</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Jam</string><key>Italian</key><string>Marmellata</string><key>Chinese</key><string>Guǒjiàng</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Light</string><key>Italian</key><string>Luce</string><key>Chinese</key><string>Guāng</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Dark</string><key>Italian</key><string>Scuro</string><key>Chinese</key><string>Hēi'àn</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>White</string><key>Italian</key><string>Bianco</string><key>Chinese</key><string>Bái</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Black</string><key>Italian</key><string>Nero</string><key>Chinese</key><string>Hēi</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Blue</string><key>Italian</key><string>Blu</string><key>Chinese</key><string>Lán sè</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Green</string><key>Italian</key><string>Verde</string><key>Chinese</key><string>Lǜ</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Red</string><key>Italian</key><string>Rosso</string><key>Chinese</key><string>Hóng</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Orange</string><key>Italian</key><string>Arancione</string><key>Chinese</key><string>Chéng</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Purple</string><key>Italian</key><string>Porpora</string><key>Chinese</key><string>Zǐ</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Grey</string><key>Italian</key><string>Grigio</string><key>Chinese</key><string>Huī</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Fire</string><key>Italian</key><string>Fuoco</string><key>Chinese</key><string>Huǒ</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Yellow</string><key>Italian</key><string>Giallo</string><key>Chinese</key><string>Huáng</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Beach</string><key>Italian</key><string>Spiaggia</string><key>Chinese</key><string>Hǎitān</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Travel</string><key>Italian</key><string>Viaggi</string><key>Chinese</key><string>Lǚyóu</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Drive</string><key>Italian</key><string>Drive</string><key>Chinese</key><string>Qūdòngqì</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Ride</string><key>Italian</key><string>Corsa</string><key>Chinese</key><string>Qí</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Bus</string><key>Italian</key><string>Autobus</string><key>Chinese</key><string>Gōnggòng qìchē</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Train</string><key>Italian</key><string>Treno</string><key>Chinese</key><string>Huǒchē</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Mobile Phone</string><key>Italian</key><string>Telefono Cellulare</string><key>Chinese</key><string>Shǒujī</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Call</string><key>Italian</key><string>Chiamata</string><key>Chinese</key><string>Tōnghuà</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>City</string><key>Italian</key><string>Città</string><key>Chinese</key><string>Chéngshì</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Country</string><key>Italian</key><string>Paese</string><key>Chinese</key><string>Guójiā</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>State</string><key>Italian</key><string>Stato</string><key>Chinese</key><string>Zhuàngtài</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Man</string><key>Italian</key><string>Uomo</string><key>Chinese</key><string>Nánrén</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Woman</string><key>Italian</key><string>Donna</string><key>Chinese</key><string>Nǚrén</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Boy</string><key>Italian</key><string>Ragazzo</string><key>Chinese</key><string>Nánhái</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Girl</string><key>Italian</key><string>Ragazza</string><key>Chinese</key><string>Nǚhái</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>The</string><key>Italian</key><string>Il</string><key>Chinese</key><string>Gāi</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Towel</string><key>Italian</key><string>Asciugamano</string><key>Chinese</key><string>Máojīn</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Blanket</string><key>Italian</key><string>Coperta</string><key>Chinese</key><string>Tǎn</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Warm</string><key>Italian</key><string>Caldo</string><key>Chinese</key><string>Wēnnuǎn</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Want</string><key>Italian</key><string>Desiderare</string><key>Chinese</key><string>Yào</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Cosy</string><key>Italian</key><string>Cosy</string><key>Chinese</key><string>Wēnxīn</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Comfortable</string><key>Italian</key><string>Confortevole</string><key>Chinese</key><string>Zìzài</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Class</string><key>Italian</key><string>Classe</string><key>Chinese</key><string>Lèi</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Teacher</string><key>Italian</key><string>Insegnante</string><key>Chinese</key><string>Jiàoshī</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Student</string><key>Italian</key><string>Studente</string><key>Chinese</key><string>Xuéshēng</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Coach</string><key>Italian</key><string>Allenatore</string><key>Chinese</key><string>Jiàoliàn</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Learn</string><key>Italian</key><string>Imparare</string><key>Chinese</key><string>Xuéxí</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Smile</string><key>Italian</key><string>Sorriso</string><key>Chinese</key><string>Wéixiào</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Face</string><key>Italian</key><string>Faccia</string><key>Chinese</key><string>Miàn duì</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Hair</string><key>Italian</key><string>Capelli</string><key>Chinese</key><string>Tóufǎ</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Smell</string><key>Italian</key><string>Odore</string><key>Chinese</key><string>Wén</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Taste</string><key>Italian</key><string>Gusto</string><key>Chinese</key><string>Wèidào</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Sweet</string><key>Italian</key><string>Dolce</string><key>Chinese</key><string>Tiánmì</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Sour</string><key>Italian</key><string>Aspro</string><key>Chinese</key><string>Suān</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Spicy</string><key>Italian</key><string>Piccante</string><key>Chinese</key><string>Là</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Salt</string><key>Italian</key><string>Sale</string><key>Chinese</key><string>Yán</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Pepper</string><key>Italian</key><string>Pepe</string><key>Chinese</key><string>Hújiāo</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Oil</string><key>Italian</key><string>Olio</string><key>Chinese</key><string>Yóu</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Spray</string><key>Italian</key><string>Spray</string><key>Chinese</key><string>Pēn</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Jacket</string><key>Italian</key><string>Giacca</string><key>Chinese</key><string>Jiákè</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Plastic</string><key>Italian</key><string>Plastica</string><key>Chinese</key><string>Sùliào</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Wireless</string><key>Italian</key><string>Senza fili</string><key>Chinese</key><string>Wúxiàn</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Help</string><key>Italian</key><string>Aiuto</string><key>Chinese</key><string>Jiùmìng</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Battery</string><key>Italian</key><string>Batteria</string><key>Chinese</key><string>Diànchí</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Medicine</string><key>Italian</key><string>Medicina</string><key>Chinese</key><string>Yào</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Milk</string><key>Italian</key><string>Latte</string><key>Chinese</key><string>Niúnǎi</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Cereal</string><key>Italian</key><string>Cereale</string><key>Chinese</key><string>Gǔlèi</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Breakfast</string><key>Italian</key><string>Colazione</string><key>Chinese</key><string>Zǎocān</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Lunch</string><key>Italian</key><string>Pranzo</string><key>Chinese</key><string>Wǔ cān</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Dinner</string><key>Italian</key><string>Cena</string><key>Chinese</key><string>Wǎncān</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Exercise</string><key>Italian</key><string>Esercizio</string><key>Chinese</key><string>Duànliàn</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Sport</string><key>Italian</key><string>Sport</string><key>Chinese</key><string>Tǐyù</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Cook</string><key>Italian</key><string>Cuoco</string><key>Chinese</key><string>Chúshī</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Chocolate</string><key>Italian</key><string>Cioccolato</string><key>Chinese</key><string>Qiǎokèlì</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Can</string><key>Italian</key><string>Lattina</string><key>Chinese</key><string>Kěyǐ</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Gym</string><key>Italian</key><string>Palestra</string><key>Chinese</key><string>Jiànshēnfáng</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Walk</string><key>Italian</key><string>Passeggiata</string><key>Chinese</key><string>Bùxíng</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Run</string><key>Italian</key><string>Correre</string><key>Chinese</key><string>Yùnxíng</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Switch</string><key>Italian</key><string>Interruttore</string><key>Chinese</key><string>Kāiguān</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Math</string><key>Italian</key><string>Matematica</string><key>Chinese</key><string>Shùxué</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Science</string><key>Italian</key><string>Scienza</string><key>Chinese</key><string>Kēxué</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Club</string><key>Italian</key><string>Club</string><key>Chinese</key><string>Jùlèbù</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Nightclub</string><key>Italian</key><string>Locale notturno</string><key>Chinese</key><string>Yèzǒnghuì</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Friend</string><key>Italian</key><string>Amico</string><key>Chinese</key><string>Péngyǒu</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Food</string><key>Italian</key><string>Cibo</string><key>Chinese</key><string>Shípǐn</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Speaker</string><key>Italian</key><string>Altoparlante</string><key>Chinese</key><string>Yángshēngqì</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Talk</string><key>Italian</key><string>Discorso</string><key>Chinese</key><string>Tánhuà</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Had</string><key>Italian</key><string>Aveva</string><key>Chinese</key><string>Yǒu</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Alcohol</string><key>Italian</key><string>Alcol</string><key>Chinese</key><string>Jiǔjīng</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Soap</string><key>Italian</key><string>Sapone</string><key>Chinese</key><string>Féizào</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Shampoo</string><key>Italian</key><string>Shampoo</string><key>Chinese</key><string>Xǐ fǎ shuǐ</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Conditioner</string><key>Italian</key><string>Condizionatore</string><key>Chinese</key><string>Tiáojié qì</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Soft</string><key>Italian</key><string>Morbido</string><key>Chinese</key><string>Ruǎn</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Hard</string><key>Italian</key><string>Duro</string><key>Chinese</key><string>Yìng</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Sponge</string><key>Italian</key><string>Spugna</string><key>Chinese</key><string>Hǎimián</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Roof</string><key>Italian</key><string>Tetto</string><key>Chinese</key><string>Wūdǐng</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>House</string><key>Italian</key><string>Casa</string><key>Chinese</key><string>Fángzi</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Home</string><key>Italian</key><string>Casa</string><key>Chinese</key><string>Jiā</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Rent</string><key>Italian</key><string>Affitto</string><key>Chinese</key><string>Zūjīn</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Buy</string><key>Italian</key><string>Acquistare</string><key>Chinese</key><string>Gòumǎi</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Sauce</string><key>Italian</key><string>Salsa</string><key>Chinese</key><string>Jiàng</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Ketchup</string><key>Italian</key><string>Ketchup</string><key>Chinese</key><string>Fānqié jiàng</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Pasta</string><key>Italian</key><string>Pasta</string><key>Chinese</key><string>Miànshí</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Small</string><key>Italian</key><string>Piccolo</string><key>Chinese</key><string>Xiǎo</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Big</string><key>Italian</key><string>Grande</string><key>Chinese</key><string>Dà</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Sugar</string><key>Italian</key><string>Zucchero</string><key>Chinese</key><string>Táng</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Bed</string><key>Italian</key><string>Letto</string><key>Chinese</key><string>Chuáng</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Sleep</string><key>Italian</key><string>Sonno</string><key>Chinese</key><string>Shuìjiào</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Night</string><key>Italian</key><string>Notte</string><key>Chinese</key><string>Yèwǎn</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Day</string><key>Italian</key><string>Giorno</string><key>Chinese</key><string>Tiān</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Morning</string><key>Italian</key><string>Mattina</string><key>Chinese</key><string>Shàngwǔ</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Evening</string><key>Italian</key><string>Sera</string><key>Chinese</key><string>Wǎn</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Question</string><key>Italian</key><string>Domanda</string><key>Chinese</key><string>Wèntí</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Answer</string><key>Italian</key><string>Risposta</string><key>Chinese</key><string>Dá'àn</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Top</string><key>Italian</key><string>Top</string><key>Chinese</key><string>Dǐng</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Bottom</string><key>Italian</key><string>Fondo</string><key>Chinese</key><string>Dǐbù</string></dict>
-	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Return</string><key>Italian</key><string>Ritorno</string><key>Chinese</key><string>Huíbào</string></dict>
+<array>
+	<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Hi</string><key>Italian</key><string>Ciao</string><key>Chinese</key><string>Nǐ hǎo</string><key>German</key><string>Hallo</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Good evening</string><key>Italian</key><string>Buonasera</string><key>Chinese</key><string>Wǎnshàng hǎo</string><key>German</key><string>Guten Abend</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Good afternoon</string><key>Italian</key><string>Buon pomeriggio</string><key>Chinese</key><string>Xiàwǔ hǎo</string><key>German</key><string>Guten Tag</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Sorry</string><key>Italian</key><string>Scusate</string><key>Chinese</key><string>Yíhàn</string><key>German</key><string>Entschuldigung</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Bye</string><key>Italian</key><string>Arrivederci</string><key>Chinese</key><string>Zàijiàn</string><key>German</key><string>Tschüs</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Thanks</string><key>Italian</key><string>Grazie</string><key>Chinese</key><string>Xièxiè</string><key>German</key><string>Dank</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>If</string><key>Italian</key><string>Se</string><key>Chinese</key><string>Rúguǒ</string><key>German</key><string>Wenn</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Then</string><key>Italian</key><string>Poi</string><key>Chinese</key><string>Ránhòu</string><key>German</key><string>Dann</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Good morning</string><key>Italian</key><string>Buongiorno</string><key>Chinese</key><string>Zǎo ān</string><key>German</key><string>Guten Morgen</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Good night</string><key>Italian</key><string>Buonanotte</string><key>Chinese</key><string>Wǎn'ān</string><key>German</key><string>Gute Nacht</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Week</string><key>Italian</key><string>Settimana</string><key>Chinese</key><string>Zhōu</string><key>German</key><string>Woche</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Year</string><key>Italian</key><string>Anno</string><key>Chinese</key><string>Nián</string><key>German</key><string>Jahr</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Apple</string><key>Italian</key><string>Mela</string><key>Chinese</key><string>Píngguǒ</string><key>German</key><string>Apfel</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Orange</string><key>Italian</key><string>Arancione</string><key>Chinese</key><string>Chéng</string><key>German</key><string>Orange</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Banana</string><key>Italian</key><string>Banana</string><key>Chinese</key><string>Xiāngjiāo</string><key>German</key><string>Banane</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Dog</string><key>Italian</key><string>Cane</string><key>Chinese</key><string>Gǒu</string><key>German</key><string>Hund</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Cat</string><key>Italian</key><string>Gatto</string><key>Chinese</key><string>Māo</string><key>German</key><string>Katze</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Cow</string><key>Italian</key><string>Mucca</string><key>Chinese</key><string>Niú</string><key>German</key><string>Kuh</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Sheep</string><key>Italian</key><string>Pecora</string><key>Chinese</key><string>Yáng</string><key>German</key><string>Schaf</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Make</string><key>Italian</key><string>Fare</string><key>Chinese</key><string>Shǐ</string><key>German</key><string>Machen</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Computer</string><key>Italian</key><string>Computer</string><key>Chinese</key><string>Jìsuànjī</string><key>German</key><string>Computer</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Phone</string><key>Italian</key><string>Telefono</string><key>Chinese</key><string>Diànhuà</string><key>German</key><string>Telefon</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>I love you</string><key>Italian</key><string>Ti amo</string><key>Chinese</key><string>Wǒ ài nǐ</string><key>German</key><string>Ich liebe dich</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>How are you?</string><key>Italian</key><string>Come stai?</string><key>Chinese</key><string>Nǐ hǎo ma?</string><key>German</key><string>Wie geht es dir?</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Good</string><key>Italian</key><string>Buono</string><key>Chinese</key><string>Liánghǎo</string><key>German</key><string>Gut</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Bad</string><key>Italian</key><string>Male</string><key>Chinese</key><string>Huài</string><key>German</key><string>Schlecht</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Happy</string><key>Italian</key><string>Felice</string><key>Chinese</key><string>Gāoxìng</string><key>German</key><string>Glücklich</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Sad</string><key>Italian</key><string>Triste</string><key>Chinese</key><string>Shāngxīn</string><key>German</key><string>Traurig</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>You</string><key>Italian</key><string>Voi</string><key>Chinese</key><string>Nǐ</string><key>German</key><string>Sie</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Me</string><key>Italian</key><string>Me</string><key>Chinese</key><string>Wǒ</string><key>German</key><string>Mir</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Mum</string><key>Italian</key><string>Mamma</string><key>Chinese</key><string>Chénmò</string><key>German</key><string>Mama</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Head</string><key>Italian</key><string>Testa</string><key>Chinese</key><string>Tóu</string><key>German</key><string>Kopf</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Arm</string><key>Italian</key><string>Braccio</string><key>Chinese</key><string>Gēbó</string><key>German</key><string>Arm</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Hand</string><key>Italian</key><string>Mano</string><key>Chinese</key><string>Shǒu</string><key>German</key><string>Hand</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Foot</string><key>Italian</key><string>Piede</string><key>Chinese</key><string>Jiǎo</string><key>German</key><string>Fuß</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Shoulder</string><key>Italian</key><string>Spalla</string><key>Chinese</key><string>Jiān</string><key>German</key><string>Schulter</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Elbow</string><key>Italian</key><string>Gomito</string><key>Chinese</key><string>Wān tóu</string><key>German</key><string>Ellbogen</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Knee</string><key>Italian</key><string>Ginocchio</string><key>Chinese</key><string>Xīgài</string><key>German</key><string>Knie</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Need</string><key>Italian</key><string>Bisogno</string><key>Chinese</key><string>Xūyào</string><key>German</key><string>Müssen</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Ankle</string><key>Italian</key><string>Caviglia</string><key>Chinese</key><string>Jiǎohuái</string><key>German</key><string>Knöchel</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Leg</string><key>Italian</key><string>Gamba</string><key>Chinese</key><string>Tuǐ</string><key>German</key><string>Bein</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Dad</string><key>Italian</key><string>Papà</string><key>Chinese</key><string>Bà</string><key>German</key><string>Papa</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Brother</string><key>Italian</key><string>Fratello</string><key>Chinese</key><string>Gē</string><key>German</key><string>Bruder</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Sister</string><key>Italian</key><string>Sorella</string><key>Chinese</key><string>Mèimei</string><key>German</key><string>Schwester</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Grandfather</string><key>Italian</key><string>Nonno</string><key>Chinese</key><string>Yéyé</string><key>German</key><string>Großvater</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Grandmother</string><key>Italian</key><string>Nonna</string><key>Chinese</key><string>Nǎinai</string><key>German</key><string>Großmutter</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Wallet</string><key>Italian</key><string>Portafoglio</string><key>Chinese</key><string>Qiánbāo</string><key>German</key><string>Brieftasche</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Money</string><key>Italian</key><string>Soldi</string><key>Chinese</key><string>Qián</string><key>German</key><string>Geld</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Bag</string><key>Italian</key><string>Borsa</string><key>Chinese</key><string>Bāo</string><key>German</key><string>Tasche</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Shirt</string><key>Italian</key><string>Camicia</string><key>Chinese</key><string>Chènshān</string><key>German</key><string>Hemd</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Pants</string><key>Italian</key><string>Pantaloni</string><key>Chinese</key><string>Kùzi</string><key>German</key><string>Hose</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Socks</string><key>Italian</key><string>Calze</string><key>Chinese</key><string>Wàzi</string><key>German</key><string>Socken</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Shoes</string><key>Italian</key><string>Scarpe</string><key>Chinese</key><string>Xié</string><key>German</key><string>Schuhe</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Hat</string><key>Italian</key><string>Cappello</string><key>Chinese</key><string>Mào zi</string><key>German</key><string>Hut</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Flower</string><key>Italian</key><string>Fiore</string><key>Chinese</key><string>Huā</string><key>German</key><string>Blume</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Tree</string><key>Italian</key><string>Albero</string><key>Chinese</key><string>Shù</string><key>German</key><string>Baum</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Plant</string><key>Italian</key><string>Impianto</string><key>Chinese</key><string>Chǎng</string><key>German</key><string>Pflanze</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Animal</string><key>Italian</key><string>Animale</string><key>Chinese</key><string>Dòngwù</string><key>German</key><string>Tier</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Very</string><key>Italian</key><string>Molto</string><key>Chinese</key><string>Hěn</string><key>German</key><string>Sehr</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Where</string><key>Italian</key><string>Dove</string><key>Chinese</key><string>Nǎlǐ</string><key>German</key><string>Wo</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>How</string><key>Italian</key><string>Come</string><key>Chinese</key><string>Zěnme yàng</string><key>German</key><string>Wie</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Why</string><key>Italian</key><string>Perché</string><key>Chinese</key><string>Wèishéme</string><key>German</key><string>Warum</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>When</string><key>Italian</key><string>Quando</string><key>Chinese</key><string>Shénme shíhòu</string><key>German</key><string>Wann</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>What</string><key>Italian</key><string>Che Cosa</string><key>Chinese</key><string>Shénme</string><key>German</key><string>Was</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Park</string><key>Italian</key><string>Parco</string><key>Chinese</key><string>Gōngyuán</string><key>German</key><string>Park</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Water</string><key>Italian</key><string>Acqua</string><key>Chinese</key><string>Shuǐ</string><key>German</key><string>Wasser</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Juice</string><key>Italian</key><string>Succo</string><key>Chinese</key><string>Guǒzhī</string><key>German</key><string>Saft</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Left</string><key>Italian</key><string>Sinistra</string><key>Chinese</key><string>Zuǒ</string><key>German</key><string>Links</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Right</string><key>Italian</key><string>Destra</string><key>Chinese</key><string>Quán</string><key>German</key><string>Recht</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>North</string><key>Italian</key><string>A nord</string><key>Chinese</key><string>Běi</string><key>German</key><string>Norden</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>South</string><key>Italian</key><string>Sud</string><key>Chinese</key><string>Nán</string><key>German</key><string>Süden</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>East</string><key>Italian</key><string>Oriente</string><key>Chinese</key><string>Dōngfāng</string><key>German</key><string>Orient</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>West</string><key>Italian</key><string>Occidente</string><key>Chinese</key><string>Xīfāng</string><key>German</key><string>Westen</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Was</string><key>Italian</key><string>Era</string><key>Chinese</key><string>Shì</string><key>German</key><string>War</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Bandage</string><key>Italian</key><string>Benda</string><key>Chinese</key><string>Bēngdài</string><key>German</key><string>Bandage</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Like</string><key>Italian</key><string>Come</string><key>Chinese</key><string>Rú</string><key>German</key><string>Wie</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Find</string><key>Italian</key><string>Trovare</string><key>Chinese</key><string>Fāxiàn</string><key>German</key><string>Finden</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Copy</string><key>Italian</key><string>Copia</string><key>Chinese</key><string>Fùzhì</string><key>German</key><string>Kopie</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Paste</string><key>Italian</key><string>Pasta</string><key>Chinese</key><string>Tiē</string><key>German</key><string>Paste</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Key</string><key>Italian</key><string>Chiave</string><key>Chinese</key><string>Guānjiàn</string><key>German</key><string>Schlüssel</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Lock</string><key>Italian</key><string>Serratura</string><key>Chinese</key><string>Suǒ</string><key>German</key><string>Schloss</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Table</string><key>Italian</key><string>Tavolo</string><key>Chinese</key><string>Biǎo</string><key>German</key><string>Tabelle</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Chair</string><key>Italian</key><string>Sedia</string><key>Chinese</key><string>Yǐzi</string><key>German</key><string>Stuhl</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Couch</string><key>Italian</key><string>Divano</string><key>Chinese</key><string>Wòtà</string><key>German</key><string>Couch</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Television</string><key>Italian</key><string>Televisione</string><key>Chinese</key><string>Diànshì</string><key>German</key><string>Fernsehen</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Tissue</string><key>Italian</key><string>Tessuto</string><key>Chinese</key><string>Zǔzhī</string><key>German</key><string>Gewebe</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Mop</string><key>Italian</key><string>Scopa</string><key>Chinese</key><string>Tuōbǎ</string><key>German</key><string>Mop</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Bucket</string><key>Italian</key><string>Secchio</string><key>Chinese</key><string>Tǒng</string><key>German</key><string>Eimer</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Glass</string><key>Italian</key><string>Vetro</string><key>Chinese</key><string>Bōlí</string><key>German</key><string>Glas</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Cup</string><key>Italian</key><string>Coppa</string><key>Chinese</key><string>Bēi</string><key>German</key><string>Tasse</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Drink</string><key>Italian</key><string>Bere</string><key>Chinese</key><string>Hē</string><key>German</key><string>Getränk</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Eat</string><key>Italian</key><string>Mangiare</string><key>Chinese</key><string>Chī</string><key>German</key><string>Essen</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Go</string><key>Italian</key><string>Andare</string><key>Chinese</key><string>Qù</string><key>German</key><string>Gehen</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Garbage</string><key>Italian</key><string>Spazzatura</string><key>Chinese</key><string>Lèsè</string><key>German</key><string>Müll</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Bin</string><key>Italian</key><string>Bidone</string><key>Chinese</key><string>Xiāngzi</string><key>German</key><string>Kasten</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Fridge</string><key>Italian</key><string>Frigorifero</string><key>Chinese</key><string>Bīngxiāng</string><key>German</key><string>Kühlschrank</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Freezer</string><key>Italian</key><string>Congelatore</string><key>Chinese</key><string>Bīngxiāng</string><key>German</key><string>Gefrierfach</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Cold</string><key>Italian</key><string>Freddo</string><key>Chinese</key><string>Lěng</string><key>German</key><string>Kälte</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Work</string><key>Italian</key><string>Lavoro</string><key>Chinese</key><string>Gōngzuò</string><key>German</key><string>Arbeit</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Hot</string><key>Italian</key><string>Caldo</string><key>Chinese</key><string>Rè</string><key>German</key><string>Heiß</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Toilet</string><key>Italian</key><string>Toilette</string><key>Chinese</key><string>Mǎtǒng</string><key>German</key><string>Toilette</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Shower</string><key>Italian</key><string>Doccia</string><key>Chinese</key><string>Línyù</string><key>German</key><string>Dusche</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Bath</string><key>Italian</key><string>Bagno</string><key>Chinese</key><string>Yù</string><key>German</key><string>Bad</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Door</string><key>Italian</key><string>Porta</string><key>Chinese</key><string>Mén</string><key>German</key><string>Tür</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>And</string><key>Italian</key><string>E</string><key>Chinese</key><string>Hé</string><key>German</key><string>Und</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Is</string><key>Italian</key><string>È</string><key>Chinese</key><string>Shì</string><key>German</key><string>Ist</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Are</string><key>Italian</key><string>Sono</string><key>Chinese</key><string>Shì</string><key>German</key><string>Sind</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>They</string><key>Italian</key><string>Essi</string><key>Chinese</key><string>Tāmen</string><key>German</key><string>Sie</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>He</string><key>Italian</key><string>Lui</string><key>Chinese</key><string>Tā</string><key>German</key><string>Er</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>She</string><key>Italian</key><string>Lei</string><key>Chinese</key><string>Tā</string><key>German</key><string>Sie</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Him</string><key>Italian</key><string>Lui</string><key>Chinese</key><string>Tā</string><key>German</key><string>Ihm</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Her</string><key>Italian</key><string>Suo</string><key>Chinese</key><string>Tā de</string><key>German</key><string>Sie</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>His</string><key>Italian</key><string>Suo</string><key>Chinese</key><string>Tā de</string><key>German</key><string>Seine</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Her's</string><key>Italian</key><string>Le sue di</string><key>Chinese</key><string>Tā de</string><key>German</key><string>Ihr ist</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Cousin</string><key>Italian</key><string>Cugino</string><key>Chinese</key><string>Biǎomèi</string><key>German</key><string>Cousin</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Aunt</string><key>Italian</key><string>Zia</string><key>Chinese</key><string>Gūmā</string><key>German</key><string>Tante</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Uncle</string><key>Italian</key><string>Zio</string><key>Chinese</key><string>Shūshu</string><key>German</key><string>Onkel</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>One</string><key>Italian</key><string>Uno</string><key>Chinese</key><string>Yī</string><key>German</key><string>Einer</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Two</string><key>Italian</key><string>Due</string><key>Chinese</key><string>Liǎng</string><key>German</key><string>Zwei</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Three</string><key>Italian</key><string>Tre</string><key>Chinese</key><string>Sān</string><key>German</key><string>Drei</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Four</string><key>Italian</key><string>Quattro</string><key>Chinese</key><string>Sì</string><key>German</key><string>Vier</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Five</string><key>Italian</key><string>Cinque</string><key>Chinese</key><string>Wǔ</string><key>German</key><string>Fünf</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Six</string><key>Italian</key><string>Sei</string><key>Chinese</key><string>Liù</string><key>German</key><string>Sechs</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Seven</string><key>Italian</key><string>Sette</string><key>Chinese</key><string>Qī</string><key>German</key><string>Sieben</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Eight</string><key>Italian</key><string>Otto</string><key>Chinese</key><string>Bā</string><key>German</key><string>Acht</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Nine</string><key>Italian</key><string>Nove</string><key>Chinese</key><string>Jiǔ</string><key>German</key><string>Neun</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Ten</string><key>Italian</key><string>Dieci</string><key>Chinese</key><string>Shí</string><key>German</key><string>Zehn</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Twenty</string><key>Italian</key><string>Venti</string><key>Chinese</key><string>Èr shí</string><key>German</key><string>Zwanzig</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Twenty Five</string><key>Italian</key><string>Venticinque</string><key>Chinese</key><string>Èr shí wǔ</string><key>German</key><string>Fünfundzwanzig</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Fifty</string><key>Italian</key><string>Cinquanta</string><key>Chinese</key><string>Wǔ shí</string><key>German</key><string>Fünfzig</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>One Hundred</string><key>Italian</key><string>One Hundred</string><key>Chinese</key><string>Bǎi</string><key>German</key><string>One Hundred</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>One Thousand</string><key>Italian</key><string>Mille</string><key>Chinese</key><string>Yīqiān</string><key>German</key><string>Tausend</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>One Million</string><key>Italian</key><string>One Million</string><key>Chinese</key><string>Bǎi wàn</string><key>German</key><string>Eine Million</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Two Thousand</string><key>Italian</key><string>Duemila</string><key>Chinese</key><string>Liǎng qiān</string><key>German</key><string>Two Thousand</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Card</string><key>Italian</key><string>Carta</string><key>Chinese</key><string>Kǎ</string><key>German</key><string>Karte</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Cash</string><key>Italian</key><string>Contanti</string><key>Chinese</key><string>Xiànjīn</string><key>German</key><string>Bargeld</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Coin</string><key>Italian</key><string>Moneta</string><key>Chinese</key><string>Yìngbì</string><key>German</key><string>Münze</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Grass</string><key>Italian</key><string>Erba</string><key>Chinese</key><string>Cǎo</string><key>German</key><string>Gras</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Floor</string><key>Italian</key><string>Piano</string><key>Chinese</key><string>Dìbǎn</string><key>German</key><string>Fußboden</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Carpet</string><key>Italian</key><string>Tappeto</string><key>Chinese</key><string>Dìtǎn</string><key>German</key><string>Teppich</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Power</string><key>Italian</key><string>Potere</string><key>Chinese</key><string>Dònglì</string><key>German</key><string>Leistung</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Strong</string><key>Italian</key><string>Forte</string><key>Chinese</key><string>Qiáng</string><key>German</key><string>Stark</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Weak</string><key>Italian</key><string>Debole</string><key>Chinese</key><string>Ruò</string><key>German</key><string>Schwach</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Car</string><key>Italian</key><string>Auto</string><key>Chinese</key><string>Qìchē</string><key>German</key><string>Auto</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Bicycle</string><key>Italian</key><string>Bicicletta</string><key>Chinese</key><string>Zìxíngchē</string><key>German</key><string>Fahrrad</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Truck</string><key>Italian</key><string>Camion</string><key>Chinese</key><string>Kǎchē</string><key>German</key><string>LKW</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Plane</string><key>Italian</key><string>Piano</string><key>Chinese</key><string>Píngmiàn</string><key>German</key><string>Flugzeug</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Seat</string><key>Italian</key><string>Posto</string><key>Chinese</key><string>Zuòwèi</string><key>German</key><string>Sitz</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Sky</string><key>Italian</key><string>Cielo</string><key>Chinese</key><string>Tiānkōng</string><key>German</key><string>Himmel</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Sea</string><key>Italian</key><string>Mare</string><key>Chinese</key><string>Hǎi</string><key>German</key><string>Meer</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Ocean</string><key>Italian</key><string>Oceano</string><key>Chinese</key><string>Hǎiyáng</string><key>German</key><string>Ozean</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Fish</string><key>Italian</key><string>Pesce</string><key>Chinese</key><string>Yú</string><key>German</key><string>Fisch</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Bottle</string><key>Italian</key><string>Bottiglia</string><key>Chinese</key><string>Píngzi</string><key>German</key><string>Flasche</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Pan</string><key>Italian</key><string>Pan</string><key>Chinese</key><string>Guō</string><key>German</key><string>Pfanne</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Knife</string><key>Italian</key><string>Coltello</string><key>Chinese</key><string>Dāo</string><key>German</key><string>Messer</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Fork</string><key>Italian</key><string>Forchetta</string><key>Chinese</key><string>Chā</string><key>German</key><string>Gabel</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Spoon</string><key>Italian</key><string>Cucchiaio</string><key>Chinese</key><string>Sháozi</string><key>German</key><string>Löffel</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Pot</string><key>Italian</key><string>Pentola</string><key>Chinese</key><string>Guō</string><key>German</key><string>Topf</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Kettle</string><key>Italian</key><string>Bollitore</string><key>Chinese</key><string>Shuǐhú</string><key>German</key><string>Wasserkessel</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Tea</string><key>Italian</key><string>Tè</string><key>Chinese</key><string>Chá</string><key>German</key><string>Tee</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Coffee</string><key>Italian</key><string>Caffè</string><key>Chinese</key><string>Kāfēi</string><key>German</key><string>Kaffee</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Meat</string><key>Italian</key><string>Carne</string><key>Chinese</key><string>Ròu</string><key>German</key><string>Fleisch</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Fruit</string><key>Italian</key><string>Frutta</string><key>Chinese</key><string>Shuǐguǒ</string><key>German</key><string>Frucht</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Vegetable</string><key>Italian</key><string>Ortaggio</string><key>Chinese</key><string>Shūcài</string><key>German</key><string>Gemüse</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Case</string><key>Italian</key><string>Caso</string><key>Chinese</key><string>Ànjiàn</string><key>German</key><string>Fall</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Suit</string><key>Italian</key><string>Tuta</string><key>Chinese</key><string>Sùsòng</string><key>German</key><string>Anzug</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Dress</string><key>Italian</key><string>Vestito</string><key>Chinese</key><string>Fúzhuāng</string><key>German</key><string>Kleid</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Skirt</string><key>Italian</key><string>Gonna</string><key>Chinese</key><string>Qúnzi</string><key>German</key><string>Rock</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Stockings</string><key>Italian</key><string>Calze</string><key>Chinese</key><string>Sīwà</string><key>German</key><string>Strümpfe</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Boots</string><key>Italian</key><string>Stivali</string><key>Chinese</key><string>Xuēzi</string><key>German</key><string>Stiefel</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Onion</string><key>Italian</key><string>Cipolla</string><key>Chinese</key><string>Yángcōng</string><key>German</key><string>Zwiebel</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Tomato</string><key>Italian</key><string>Pomodoro</string><key>Chinese</key><string>Fānqié</string><key>German</key><string>Tomate</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Bread</string><key>Italian</key><string>Pane</string><key>Chinese</key><string>Miànbāo</string><key>German</key><string>Brot</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Toast</string><key>Italian</key><string>Brindisi</string><key>Chinese</key><string>Kǎo miànbāo</string><key>German</key><string>Toast</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Jam</string><key>Italian</key><string>Marmellata</string><key>Chinese</key><string>Guǒjiàng</string><key>German</key><string>Marmelade</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Light</string><key>Italian</key><string>Luce</string><key>Chinese</key><string>Guāng</string><key>German</key><string>Licht</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Dark</string><key>Italian</key><string>Scuro</string><key>Chinese</key><string>Hēi'àn</string><key>German</key><string>Dunkelheit</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>White</string><key>Italian</key><string>Bianco</string><key>Chinese</key><string>Bái</string><key>German</key><string>Weiß</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Black</string><key>Italian</key><string>Nero</string><key>Chinese</key><string>Hēi</string><key>German</key><string>Schwarz</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Blue</string><key>Italian</key><string>Blu</string><key>Chinese</key><string>Lán sè</string><key>German</key><string>Blau</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Green</string><key>Italian</key><string>Verde</string><key>Chinese</key><string>Lǜ</string><key>German</key><string>Grün</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Red</string><key>Italian</key><string>Rosso</string><key>Chinese</key><string>Hóng</string><key>German</key><string>Rote</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Orange</string><key>Italian</key><string>Arancione</string><key>Chinese</key><string>Chéng</string><key>German</key><string>Orange</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Purple</string><key>Italian</key><string>Porpora</string><key>Chinese</key><string>Zǐ</string><key>German</key><string>Lila</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Grey</string><key>Italian</key><string>Grigio</string><key>Chinese</key><string>Huī</string><key>German</key><string>Grau</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Fire</string><key>Italian</key><string>Fuoco</string><key>Chinese</key><string>Huǒ</string><key>German</key><string>Feuer</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Yellow</string><key>Italian</key><string>Giallo</string><key>Chinese</key><string>Huáng</string><key>German</key><string>Gelb</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Beach</string><key>Italian</key><string>Spiaggia</string><key>Chinese</key><string>Hǎitān</string><key>German</key><string>Strand</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Travel</string><key>Italian</key><string>Viaggi</string><key>Chinese</key><string>Lǚyóu</string><key>German</key><string>Reise</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Drive</string><key>Italian</key><string>Drive</string><key>Chinese</key><string>Qūdòngqì</string><key>German</key><string>Antrieb</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Ride</string><key>Italian</key><string>Corsa</string><key>Chinese</key><string>Qí</string><key>German</key><string>Fahrt</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Bus</string><key>Italian</key><string>Autobus</string><key>Chinese</key><string>Gōnggòng qìchē</string><key>German</key><string>Bus</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Train</string><key>Italian</key><string>Treno</string><key>Chinese</key><string>Huǒchē</string><key>German</key><string>Zug</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Mobile Phone</string><key>Italian</key><string>Telefono Cellulare</string><key>Chinese</key><string>Shǒujī</string><key>German</key><string>Handy</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Call</string><key>Italian</key><string>Chiamata</string><key>Chinese</key><string>Tōnghuà</string><key>German</key><string>Anruf</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>City</string><key>Italian</key><string>Città</string><key>Chinese</key><string>Chéngshì</string><key>German</key><string>City</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Country</string><key>Italian</key><string>Paese</string><key>Chinese</key><string>Guójiā</string><key>German</key><string>Land</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>State</string><key>Italian</key><string>Stato</string><key>Chinese</key><string>Zhuàngtài</string><key>German</key><string>Zustand</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Man</string><key>Italian</key><string>Uomo</string><key>Chinese</key><string>Nánrén</string><key>German</key><string>Mann</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Woman</string><key>Italian</key><string>Donna</string><key>Chinese</key><string>Nǚrén</string><key>German</key><string>Frau</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Boy</string><key>Italian</key><string>Ragazzo</string><key>Chinese</key><string>Nánhái</string><key>German</key><string>Junge</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Girl</string><key>Italian</key><string>Ragazza</string><key>Chinese</key><string>Nǚhái</string><key>German</key><string>Mädchen</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>The</string><key>Italian</key><string>Il</string><key>Chinese</key><string>Gāi</string><key>German</key><string>Die</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Towel</string><key>Italian</key><string>Asciugamano</string><key>Chinese</key><string>Máojīn</string><key>German</key><string>Handtuch</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Blanket</string><key>Italian</key><string>Coperta</string><key>Chinese</key><string>Tǎn</string><key>German</key><string>Decke</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Warm</string><key>Italian</key><string>Caldo</string><key>Chinese</key><string>Wēnnuǎn</string><key>German</key><string>Warm</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Want</string><key>Italian</key><string>Desiderare</string><key>Chinese</key><string>Yào</string><key>German</key><string>Wollen</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Cosy</string><key>Italian</key><string>Cosy</string><key>Chinese</key><string>Wēnxīn</string><key>German</key><string>Cosy</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Comfortable</string><key>Italian</key><string>Confortevole</string><key>Chinese</key><string>Zìzài</string><key>German</key><string>Komfortabel</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Class</string><key>Italian</key><string>Classe</string><key>Chinese</key><string>Lèi</string><key>German</key><string>Klasse</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Teacher</string><key>Italian</key><string>Insegnante</string><key>Chinese</key><string>Jiàoshī</string><key>German</key><string>Lehrer</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Student</string><key>Italian</key><string>Studente</string><key>Chinese</key><string>Xuéshēng</string><key>German</key><string>Schüler</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Coach</string><key>Italian</key><string>Allenatore</string><key>Chinese</key><string>Jiàoliàn</string><key>German</key><string>Trainer</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Learn</string><key>Italian</key><string>Imparare</string><key>Chinese</key><string>Xuéxí</string><key>German</key><string>Lernen</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Smile</string><key>Italian</key><string>Sorriso</string><key>Chinese</key><string>Wéixiào</string><key>German</key><string>Lächeln</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Face</string><key>Italian</key><string>Faccia</string><key>Chinese</key><string>Miàn duì</string><key>German</key><string>Gesicht</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Hair</string><key>Italian</key><string>Capelli</string><key>Chinese</key><string>Tóufǎ</string><key>German</key><string>Haar</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Smell</string><key>Italian</key><string>Odore</string><key>Chinese</key><string>Wén</string><key>German</key><string>Geruch</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Taste</string><key>Italian</key><string>Gusto</string><key>Chinese</key><string>Wèidào</string><key>German</key><string>Geschmack</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Sweet</string><key>Italian</key><string>Dolce</string><key>Chinese</key><string>Tiánmì</string><key>German</key><string>Süß</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Sour</string><key>Italian</key><string>Aspro</string><key>Chinese</key><string>Suān</string><key>German</key><string>Sauer</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Spicy</string><key>Italian</key><string>Piccante</string><key>Chinese</key><string>Là</string><key>German</key><string>Würzig</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Salt</string><key>Italian</key><string>Sale</string><key>Chinese</key><string>Yán</string><key>German</key><string>Salz</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Pepper</string><key>Italian</key><string>Pepe</string><key>Chinese</key><string>Hújiāo</string><key>German</key><string>Pfeffer</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Oil</string><key>Italian</key><string>Olio</string><key>Chinese</key><string>Yóu</string><key>German</key><string>Öl</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Spray</string><key>Italian</key><string>Spray</string><key>Chinese</key><string>Pēn</string><key>German</key><string>Spray</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Jacket</string><key>Italian</key><string>Giacca</string><key>Chinese</key><string>Jiákè</string><key>German</key><string>Jacke</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Plastic</string><key>Italian</key><string>Plastica</string><key>Chinese</key><string>Sùliào</string><key>German</key><string>Kunststoff</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Wireless</string><key>Italian</key><string>Senza fili</string><key>Chinese</key><string>Wúxiàn</string><key>German</key><string>Drahtlos</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Help</string><key>Italian</key><string>Aiuto</string><key>Chinese</key><string>Jiùmìng</string><key>German</key><string>Hilfe</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Battery</string><key>Italian</key><string>Batteria</string><key>Chinese</key><string>Diànchí</string><key>German</key><string>Batterie</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Medicine</string><key>Italian</key><string>Medicina</string><key>Chinese</key><string>Yào</string><key>German</key><string>Medizin</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Milk</string><key>Italian</key><string>Latte</string><key>Chinese</key><string>Niúnǎi</string><key>German</key><string>Milch</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Cereal</string><key>Italian</key><string>Cereale</string><key>Chinese</key><string>Gǔlèi</string><key>German</key><string>Getreide</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Breakfast</string><key>Italian</key><string>Colazione</string><key>Chinese</key><string>Zǎocān</string><key>German</key><string>Frühstück</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Lunch</string><key>Italian</key><string>Pranzo</string><key>Chinese</key><string>Wǔ cān</string><key>German</key><string>Mittagessen</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Dinner</string><key>Italian</key><string>Cena</string><key>Chinese</key><string>Wǎncān</string><key>German</key><string>Abendessen</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Exercise</string><key>Italian</key><string>Esercizio</string><key>Chinese</key><string>Duànliàn</string><key>German</key><string>Übung</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Sport</string><key>Italian</key><string>Sport</string><key>Chinese</key><string>Tǐyù</string><key>German</key><string>Sport</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Cook</string><key>Italian</key><string>Cuoco</string><key>Chinese</key><string>Chúshī</string><key>German</key><string>Koch</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Chocolate</string><key>Italian</key><string>Cioccolato</string><key>Chinese</key><string>Qiǎokèlì</string><key>German</key><string>Schokolade</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Can</string><key>Italian</key><string>Lattina</string><key>Chinese</key><string>Kěyǐ</string><key>German</key><string>Können</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Gym</string><key>Italian</key><string>Palestra</string><key>Chinese</key><string>Jiànshēnfáng</string><key>German</key><string>Fitnessstudio</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Walk</string><key>Italian</key><string>Passeggiata</string><key>Chinese</key><string>Bùxíng</string><key>German</key><string>Fuß</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Run</string><key>Italian</key><string>Correre</string><key>Chinese</key><string>Yùnxíng</string><key>German</key><string>Run</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Switch</string><key>Italian</key><string>Interruttore</string><key>Chinese</key><string>Kāiguān</string><key>German</key><string>Schalter</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Math</string><key>Italian</key><string>Matematica</string><key>Chinese</key><string>Shùxué</string><key>German</key><string>Mathe</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Science</string><key>Italian</key><string>Scienza</string><key>Chinese</key><string>Kēxué</string><key>German</key><string>Wissenschaft</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Club</string><key>Italian</key><string>Club</string><key>Chinese</key><string>Jùlèbù</string><key>German</key><string>Club</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Nightclub</string><key>Italian</key><string>Locale notturno</string><key>Chinese</key><string>Yèzǒnghuì</string><key>German</key><string>Nachtclub</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Friend</string><key>Italian</key><string>Amico</string><key>Chinese</key><string>Péngyǒu</string><key>German</key><string>Freund</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Food</string><key>Italian</key><string>Cibo</string><key>Chinese</key><string>Shípǐn</string><key>German</key><string>Lebensmittel</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Speaker</string><key>Italian</key><string>Altoparlante</string><key>Chinese</key><string>Yángshēngqì</string><key>German</key><string>Sprecher</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Talk</string><key>Italian</key><string>Discorso</string><key>Chinese</key><string>Tánhuà</string><key>German</key><string>Gespräch</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Had</string><key>Italian</key><string>Aveva</string><key>Chinese</key><string>Yǒu</string><key>German</key><string>Hatte</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Alcohol</string><key>Italian</key><string>Alcol</string><key>Chinese</key><string>Jiǔjīng</string><key>German</key><string>Alkohol</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Soap</string><key>Italian</key><string>Sapone</string><key>Chinese</key><string>Féizào</string><key>German</key><string>Seife</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Shampoo</string><key>Italian</key><string>Shampoo</string><key>Chinese</key><string>Xǐ fǎ shuǐ</string><key>German</key><string>Shampoo</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Conditioner</string><key>Italian</key><string>Condizionatore</string><key>Chinese</key><string>Tiáojié qì</string><key>German</key><string>Weichspüler</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Soft</string><key>Italian</key><string>Morbido</string><key>Chinese</key><string>Ruǎn</string><key>German</key><string>Weich</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Hard</string><key>Italian</key><string>Duro</string><key>Chinese</key><string>Yìng</string><key>German</key><string>Schwer</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Sponge</string><key>Italian</key><string>Spugna</string><key>Chinese</key><string>Hǎimián</string><key>German</key><string>Schwamm</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Roof</string><key>Italian</key><string>Tetto</string><key>Chinese</key><string>Wūdǐng</string><key>German</key><string>Dach</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>House</string><key>Italian</key><string>Casa</string><key>Chinese</key><string>Fángzi</string><key>German</key><string>Haus</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Home</string><key>Italian</key><string>Casa</string><key>Chinese</key><string>Jiā</string><key>German</key><string>Zuhause</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Rent</string><key>Italian</key><string>Affitto</string><key>Chinese</key><string>Zūjīn</string><key>German</key><string>Miete</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Buy</string><key>Italian</key><string>Acquistare</string><key>Chinese</key><string>Gòumǎi</string><key>German</key><string>Kaufen</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Sauce</string><key>Italian</key><string>Salsa</string><key>Chinese</key><string>Jiàng</string><key>German</key><string>Sauce</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Ketchup</string><key>Italian</key><string>Ketchup</string><key>Chinese</key><string>Fānqié jiàng</string><key>German</key><string>Ketchup</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Pasta</string><key>Italian</key><string>Pasta</string><key>Chinese</key><string>Miànshí</string><key>German</key><string>Pasta</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Small</string><key>Italian</key><string>Piccolo</string><key>Chinese</key><string>Xiǎo</string><key>German</key><string>Klein</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Big</string><key>Italian</key><string>Grande</string><key>Chinese</key><string>Dà</string><key>German</key><string>Groß</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Sugar</string><key>Italian</key><string>Zucchero</string><key>Chinese</key><string>Táng</string><key>German</key><string>Zucker</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Bed</string><key>Italian</key><string>Letto</string><key>Chinese</key><string>Chuáng</string><key>German</key><string>Bett</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Sleep</string><key>Italian</key><string>Sonno</string><key>Chinese</key><string>Shuìjiào</string><key>German</key><string>Schlaf</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Night</string><key>Italian</key><string>Notte</string><key>Chinese</key><string>Yèwǎn</string><key>German</key><string>Nacht</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Day</string><key>Italian</key><string>Giorno</string><key>Chinese</key><string>Tiān</string><key>German</key><string>Tag</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Morning</string><key>Italian</key><string>Mattina</string><key>Chinese</key><string>Shàngwǔ</string><key>German</key><string>Morgen</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Evening</string><key>Italian</key><string>Sera</string><key>Chinese</key><string>Wǎn</string><key>German</key><string>Abend</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Question</string><key>Italian</key><string>Domanda</string><key>Chinese</key><string>Wèntí</string><key>German</key><string>Frage</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Answer</string><key>Italian</key><string>Risposta</string><key>Chinese</key><string>Dá'àn</string><key>German</key><string>Antwort</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Top</string><key>Italian</key><string>Top</string><key>Chinese</key><string>Dǐng</string><key>German</key><string>Top-</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Bottom</string><key>Italian</key><string>Fondo</string><key>Chinese</key><string>Dǐbù</string><key>German</key><string>Boden</string></dict>
+<dict><key>difficulty</key><string>Easy</string><key>word</key><string>Return</string><key>Italian</key><string>Ritorno</string><key>Chinese</key><string>Huíbào</string><key>German</key><string>Rückkehr</string></dict>
 </array>
 </plist>

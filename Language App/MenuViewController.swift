@@ -60,6 +60,10 @@ class MenuViewController: UIViewController {
                     let destinationViewController = segue.destinationViewController as GameViewController
                     destinationViewController.managedObjectContext = self.managedObjectContext
                     println(destinationViewController.description)
+                case "Show Statistics":
+                    let destinationViewController = segue.destinationViewController as StatisticsViewController
+                    destinationViewController.managedObjectContext = self.managedObjectContext
+                    println(destinationViewController.description)
 //                case "Show Settings":
 //                    let navController = segue.destinationViewController as UINavigationController
 //                    let destinationViewController = navController.topViewController as SettingsViewController

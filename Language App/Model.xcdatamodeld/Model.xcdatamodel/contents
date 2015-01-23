@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6254" systemVersion="14B25" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6746" systemVersion="14B25" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="UniqueWord" representedClassName="UniqueWord" syncable="YES">
-        <attribute name="difficulty" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="word" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="difficulty" attributeType="String" syncable="YES"/>
+        <attribute name="word" attributeType="String" syncable="YES"/>
         <relationship name="foreignWord" toMany="YES" deletionRule="Cascade" destinationEntity="Word" inverseName="englishWord" inverseEntity="Word" syncable="YES"/>
     </entity>
     <entity name="Word" representedClassName="Word" syncable="YES">
-        <attribute name="attempts" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
-        <attribute name="correctAttempts" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="attempts" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="correctAttempts" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="language" attributeType="String" syncable="YES"/>
-        <attribute name="word" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="word" attributeType="String" syncable="YES"/>
         <relationship name="englishWord" maxCount="1" deletionRule="Nullify" destinationEntity="UniqueWord" inverseName="foreignWord" inverseEntity="UniqueWord" syncable="YES"/>
     </entity>
-    <fetchRequest name="bestWord" entity="Word" predicateString="attempts == 0"/>
-    <fetchRequest name="worstWord" entity="Word"/>
+    <fetchRequest name="bestWord" entity="Word" predicateString="correctAttempts == max:(correctAttempts)"/>
+    <fetchRequest name="worstWord" entity="Word" predicateString="TRUEPREDICATE"/>
     <elements>
         <element name="UniqueWord" positionX="252" positionY="-18" width="128" height="88"/>
         <element name="Word" positionX="81" positionY="-18" width="128" height="118"/>

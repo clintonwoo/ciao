@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import CoreData
 
 class StatisticsViewController: UIViewController {
     
@@ -21,6 +22,7 @@ class StatisticsViewController: UIViewController {
     @IBOutlet weak var longestStreakLabel: UILabel!
     
     //MARK: Properties
+    var managedObjectContext: NSManagedObjectContext? = nil
     var userDefaults = NSUserDefaults.standardUserDefaults()
 
     //MARK: Initialisers
@@ -51,6 +53,20 @@ class StatisticsViewController: UIViewController {
         } else {
             percentageCorrect = Double(correctAttempts)/Double(attempts) * 100
         }
+        var fetchRequest = NSFetchRequest()
+        let entity: NSEntityDescription = NSEntityDescription.entityForName("Word", inManagedObjectContext: self.managedObjectContext!)!
+        let maxCorrectAttemptsPredicate = NSPredicate(format: "correctAttempts = max(correctAttempts)")
+        fetchRequest.entity = entity
+        fetchRequest.predicate = maxCorrectAttemptsPredicate
+        var error: NSErrorPointer = NSErrorPointer()
+        var fetchResult = managedObjectContext?.executeFetchRequest(fetchRequest, error: error) as [Word]
+        println(fetchResult.description)
+        println(fetchResult[0].description)
+        self.successfulWordLabel.text = NSLocalizedString("Most Successful Word: \(fetchResult[0].word)", comment: "Statistic label showing the number of words the user has attempted")
+        let maxUnsuccessfulAttemptsPredicate = NSPredicate(format: "attempts = asc(attempts - correctAttempts)")
+        fetchRequest.predicate = maxUnsuccessfulAttemptsPredicate
+        fetchResult = managedObjectContext?.executeFetchRequest(fetchRequest, error: error) as [Word]
+        self.unsuccessfulWordLabel.text = NSLocalizedString("Most Unsuccessful Word: \(fetchResult[0].word)", comment: "Statistic label showing the number of words the user has attempted")
         self.wordsAttemptedLabel.text = NSLocalizedString("Words Attempted: \(attempts)", comment: "Statistic label showing the number of words the user has attempted")
         self.percentageCorrectLabel.text = NSLocalizedString("Correct Ratio: \(ceil(percentageCorrect))%", comment: "Statistic label showing user's ratio of correct word attempts")
         self.favouriteLanguage.text = NSLocalizedString("Favourite Language: Italian mate!", comment: "User's favourite language")
@@ -71,6 +87,7 @@ class StatisticsViewController: UIViewController {
         userDefaults.setInteger(0, forKey: "attempts")
         userDefaults.setInteger(0, forKey: "correctAttempts")
         userDefaults.setInteger(0, forKey: "longestStreak")
+        //go through core data and clear all attempts etc to 0
         refresh()
 //        var storyBoard: UIStoryboard = UIStoryboard(name: "SecretStoryboard", bundle: NSBundle(path: "/Users/clintondannolfo/Desktop/Language App/Language App/SecretStoryboard.storyboard"))
 //        var initialViewController: UIViewController = storyBoard.instantiateInitialViewController() as UIViewController
