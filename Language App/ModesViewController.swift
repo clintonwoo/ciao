@@ -11,15 +11,11 @@ import UIKit
 
 class ModesViewController: UITableViewController, UITableViewDataSource, UITableViewDelegate {
     
-    var data: NSMutableArray
-    
     override init () {
-        self.data = ["Comets", "Asteroids", "Moons"]
         super.init()
     }
     
     required init (coder: NSCoder) {
-        self.data = ["Comets", "Asteroids", "Moons"]
         super.init(coder: coder)
     }
     

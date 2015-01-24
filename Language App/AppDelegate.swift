@@ -27,45 +27,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let initialViewController = self.window!.rootViewController as UINavigationController
         let menu = initialViewController.topViewController as MenuViewController
         menu.managedObjectContext = self.managedObjectContext
-        
         //create NSmanagedobjects from a plist file and store in NSMutableArray
         //Language, etc.
         //iterate over NSMutableArray and run insert method on NSMangedObjectContext
         //stores the path of the plist file present in the bundle
         let plistPath: String = NSBundle.mainBundle().pathForResource("Words", ofType:"plist")!
-        var wordsArray: NSArray = NSArray(contentsOfFile: plistPath)!
-        for (var i = 0; i < wordsArray.count; i++) { //iterate over word records
+        var inputArray: NSArray = NSArray(contentsOfFile: plistPath)!
+        for (var i = 0; i < inputArray.count; i++) { //iterate over word records
             var englishWord: UniqueWord = NSEntityDescription.insertNewObjectForEntityForName("UniqueWord", inManagedObjectContext: context) as UniqueWord
-            englishWord.word = wordsArray[i].valueForKey("word") as String
-            englishWord.difficulty = wordsArray[i].valueForKey("difficulty") as String
-            
+            englishWord.word = inputArray[i].valueForKey("word") as String
+            englishWord.difficulty = inputArray[i].valueForKey("difficulty") as String
             for language in userDefaults.stringArrayForKey("languages") as [String] {
                 var word: Word = NSEntityDescription.insertNewObjectForEntityForName("Word", inManagedObjectContext: context) as Word
-                word.word = wordsArray[i].valueForKey(language) as String
+                word.word = inputArray[i].valueForKey(language) as String
                 word.englishWord = englishWord
                 word.language = language
             }
-//            var chinese: Word = NSEntityDescription.insertNewObjectForEntityForName("Word", inManagedObjectContext: context) as Word
-//            chinese.word = wordsArray[i].valueForKey("Chinese") as String
-//            chinese.englishWord = englishWord
-//            chinese.language = "Chinese"
-            
             //            var entity = NSEntityDescription.entityForName("Language", inManagedObjectContext: context)
             //            fetchRequest.entity = entity
             //            var predicate = NSPredicate(format: "name == ", argumentArray: nil)
             //            context.executeFetchRequest(fetchRequest, error: error)
-            
             println(englishWord.word)
             println(englishWord.difficulty + "\n")
         }
-        
         //var wordDict: NSDictionary = wordsArray[0] as NSDictionary
 //        for(var i = 0; i < dataFromPlist.count;i++) {
 //            NSLog("Mobile handset no \(i+1) is \(dataFromPlist.objectAtIndex(i))")
 //        }
-
-
-        
         //let’s add some more code in there to list out all the objects currently in the database:
         //outdated, always evaluates to false
         if let entity: NSEntityDescription = NSEntityDescription.entityForName("Settings", inManagedObjectContext:context) {
