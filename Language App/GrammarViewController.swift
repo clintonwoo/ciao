@@ -14,6 +14,7 @@ class GrammarViewController: UIViewController, UIWebViewDelegate {
     @IBOutlet weak var webView: UIWebView!
     @IBOutlet weak var titleView: UIView!
     @IBOutlet weak var titleSwitch: UISwitch!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     //MARK: Properties
     var userDefaults = NSUserDefaults.standardUserDefaults()
@@ -35,10 +36,12 @@ class GrammarViewController: UIViewController, UIWebViewDelegate {
     
     //MARK: Webview Delegate
     func webViewDidStartLoad(webView: UIWebView) {
+        activityIndicator.hidden = false
         println("Start load Resized webview to \(webView.frame)")
     }
     
     func webViewDidFinishLoad(webView: UIWebView) {
+        activityIndicator.hidden = true
 //        var frame: CGRect = webView.frame
 //        frame.size.height = 1
 //        webView.frame = frame

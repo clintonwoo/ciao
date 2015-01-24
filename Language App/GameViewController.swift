@@ -33,6 +33,7 @@ class GameViewController: UIViewController {
     var streakText: String {
         return NSLocalizedString("Streak: \(self.streak)", comment: "Navigation bar title showing the user's streak.")
     }
+    var speakingSpeed: Float = NSUserDefaults.standardUserDefaults().floatForKey("speakingSpeed")
     var wordNumbers: [Int] = [0,0,0,0]
     var foreignWords: [Word] = []
     
@@ -223,9 +224,9 @@ class GameViewController: UIViewController {
             var utteranceAnswer: AVSpeechUtterance = AVSpeechUtterance(string: answer)
             var utteranceWord: AVSpeechUtterance = AVSpeechUtterance(string: word)
             //utteranceAnswer.voice = AVSpeechSynthesisVoice(language: "en-AU")
-            utteranceAnswer.rate = 0.3
+            utteranceAnswer.rate = self.speakingSpeed
             utteranceWord.voice = AVSpeechSynthesisVoice(language: languageCode)
-            utteranceWord.rate = 0.3
+            utteranceWord.rate = self.speakingSpeed
             var synthesizer: AVSpeechSynthesizer = AVSpeechSynthesizer()
             synthesizer.speakUtterance(utteranceAnswer)
             synthesizer.speakUtterance(utteranceWord)

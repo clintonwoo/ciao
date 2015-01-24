@@ -21,7 +21,7 @@ class SettingsViewController: UITableViewController, UITableViewDelegate, UITabl
     var language: String = NSUserDefaults.standardUserDefaults().stringForKey("language")!
     var difficulty: String = NSUserDefaults.standardUserDefaults().stringForKey("difficulty")!
     var hasSound: Bool = NSUserDefaults.standardUserDefaults().boolForKey("hasSound")
-    var volume: Float = NSUserDefaults.standardUserDefaults().floatForKey("volume")
+    var speakingSpeed: Float = NSUserDefaults.standardUserDefaults().floatForKey("speakingSpeed")
 
     enum Difficulty: Int {
         //maps the difficulty to the segment in the segmented control
@@ -49,8 +49,8 @@ class SettingsViewController: UITableViewController, UITableViewDelegate, UITabl
         if (self.hasSound != userDefaults.boolForKey("hasSound")) {
             userDefaults.setBool(self.hasSound, forKey: "hasSound")
         }
-        if (self.volume != userDefaults.floatForKey("volume")) {
-            userDefaults.setFloat(self.volume, forKey: "volume")
+        if (self.speakingSpeed != userDefaults.floatForKey("speakingSpeed")) {
+            userDefaults.setFloat(self.speakingSpeed, forKey: "speakingSpeed")
         }
     }
     
@@ -112,7 +112,7 @@ class SettingsViewController: UITableViewController, UITableViewDelegate, UITabl
                     case 1:
                         let cell = tableView.dequeueReusableCellWithIdentifier("tvcSlider", forIndexPath: indexPath) as UITableViewCell
                         var slider = cell.viewWithTag(105) as UISlider
-                        slider.value = self.volume
+                        slider.value = self.speakingSpeed
                         return cell
                     default:
                         let cell = tableView.dequeueReusableCellWithIdentifier("tvcSwitch", forIndexPath: indexPath) as UITableViewCell
@@ -155,7 +155,7 @@ class SettingsViewController: UITableViewController, UITableViewDelegate, UITabl
     }
     
     @IBAction func sliderClicked(sender: UISlider) {
-        self.volume = sender.value
+        self.speakingSpeed = sender.value
     }
     
     //MARK: View Controller Methods
