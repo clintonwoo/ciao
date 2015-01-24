@@ -1,0 +1,44 @@
+/* 
+  wikipediaGrammarURL.strings
+  Ciao Game
+
+  Created by Clinton D'Annolfo on 24/01/2015.
+  Copyright (c) 2015 Clinton D'Annolfo. All rights reserved.
+*/
+"Arabic" = "";
+"Chinese" = "http://en.wikipedia.org/wiki/Chinese_grammar";
+"Chinese (Hong Kong SAR China)" = "";
+"Chinese (Taiwan)" = "";
+"Czech" = "";
+"Danish" = "";
+"Dutch (Belgium)" = "";
+"Dutch (Netherlands)" = "";
+"English (Australia)" = "";
+"English (Ireland)" = "";
+"English (South Africa)" = "";
+"English (United Kingdom)" = "";
+"English (United States)" = "";
+"Finnish" = "";
+"French (Canada)" = "";
+"French (France)" = "";
+"German" = "http://en.wikipedia.org/wiki/German_grammar";
+"Greek" = "";
+"Hebrew" = "";
+"Hindi" = "";
+"Hungarian" = "";
+"Indonesian" = "";
+"Italian" = "http://en.wikipedia.org/wiki/Italian_grammar";
+"Japanese" = "";
+"Korean" = "";
+"Norwegian" = "";
+"Polish" = "";
+"Portuguese (Brazil)" = "";
+"Portuguese (Portugal)" = "";
+"Romanian" = "";
+"Russian" = "";
+"Slovak" = "";
+"Spanish (Mexico)" = "";
+"Spanish (Spain)" = "";
+"Swedish" = "";
+"Thai" = "";
+"Turkish" = "";

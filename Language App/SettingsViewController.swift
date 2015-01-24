@@ -9,15 +9,19 @@
 import UIKit
 import CoreData
 
+protocol SettingsDelegate {
+    func returnToSource(vc: UIViewController, language: String )
+}
+
 class SettingsViewController: UITableViewController, UITableViewDelegate, UITableViewDataSource, LanguageSettingDelegate {
     
     //MARK: Properties
-    var data: NSMutableArray = ["Comets", "Asteroids", "Moons"]
+    var delegate: MenuViewController? = nil
     var userDefaults: NSUserDefaults = NSUserDefaults.standardUserDefaults()
-    lazy var language: String = {self.userDefaults.stringForKey("language")}()!
-    lazy var difficulty: String = {self.userDefaults.stringForKey("difficulty")!}()
-    lazy var hasSound: Bool = {self.userDefaults.boolForKey("hasSound")}()
-    lazy var volume: Float = {self.userDefaults.floatForKey("volume")}()
+    var language: String = NSUserDefaults.standardUserDefaults().stringForKey("language")!
+    var difficulty: String = NSUserDefaults.standardUserDefaults().stringForKey("difficulty")!
+    var hasSound: Bool = NSUserDefaults.standardUserDefaults().boolForKey("hasSound")
+    var volume: Float = NSUserDefaults.standardUserDefaults().floatForKey("volume")
 
     enum Difficulty: Int {
         //maps the difficulty to the segment in the segmented control
@@ -175,6 +179,12 @@ class SettingsViewController: UITableViewController, UITableViewDelegate, UITabl
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewWillDisappear(animated: Bool) {
+        if ((delegate) != nil){
+            self.delegate?.returnToSource(self, language: self.language)
+        }
+    }
+    
     //MARK: Segue
     //Language Setting Delegate
     func returnToSource(vc: UIViewController, language: String) {
@@ -192,6 +202,8 @@ class SettingsViewController: UITableViewController, UITableViewDelegate, UITabl
                     var destinationViewController = segue.destinationViewController as LanguageSettingViewController
                     destinationViewController.delegate = self
                     println("Segue to \(destinationViewController.description)")
+//                case "Show Settings":
+//                    
                 default:
                     println("prepareForSegue: Unidentified segue on \(segue.identifier)")
             }

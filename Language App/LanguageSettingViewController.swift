@@ -18,8 +18,8 @@ class LanguageSettingViewController: UITableViewController, UITableViewDelegate,
     //MARK: Properties
     var delegate: SettingsViewController? = nil
     var userDefaults = NSUserDefaults.standardUserDefaults()
-    lazy var languages: NSArray = {self.userDefaults.stringArrayForKey("languages") as [String]}()
-    lazy var language: String = {self.userDefaults.stringForKey("language")}()!
+    var languages = NSUserDefaults.standardUserDefaults().stringArrayForKey("languages") as [String]
+    var language = NSUserDefaults.standardUserDefaults().stringForKey("language")
     
     //MARK: Initialisers
     override init() {
@@ -50,7 +50,7 @@ class LanguageSettingViewController: UITableViewController, UITableViewDelegate,
         var cell: UITableViewCell = tableView.dequeueReusableCellWithIdentifier("tvcLanguage", forIndexPath: indexPath) as UITableViewCell
         //set the current language with a tick accessory cell.accessoryType = UITableViewCellAccessoryCheckmark
         var detailLabel = cell.viewWithTag(150) as UILabel
-        detailLabel.text = languages[indexPath.row] as? String
+        detailLabel.text = languages[indexPath.row] as String
         return cell
     }
     
@@ -62,7 +62,7 @@ class LanguageSettingViewController: UITableViewController, UITableViewDelegate,
     
     override func viewWillDisappear(animated: Bool) {
         if ((delegate) != nil){
-            self.delegate?.returnToSource(self, language: self.language)
+            self.delegate?.returnToSource(self, language: self.language!)
         }
     }
     
@@ -73,9 +73,8 @@ class LanguageSettingViewController: UITableViewController, UITableViewDelegate,
     
     //MARK: Segue
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-            let destinationViewController = segue.destinationViewController as SettingsViewController
-            destinationViewController.language = self.language
-
-            println("Segue to \(destinationViewController.description)")
+//            let destinationViewController = segue.destinationViewController as SettingsViewController
+//            destinationViewController.language = self.language!
+//            println("Segue to \(destinationViewController.description)")
     }
 }

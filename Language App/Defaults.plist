@@ -6,15 +6,17 @@
 	<array>
 		<string>Italian</string>
 		<string>German</string>
-		<string>Japanese</string>
-		<string>Russian</string>
 		<string>Chinese</string>
-		<string>Spanish</string>
-		<string>Turkish</string>
-		<string>Croatian</string>
-		<string>Portugese</string>
-		<string>French</string>
 	</array>
+	<key>languageAttempts</key>
+	<dict>
+		<key>Italian</key>
+		<integer>0</integer>
+		<key>German</key>
+		<integer>0</integer>
+		<key>Chinese</key>
+		<integer>0</integer>
+	</dict>
 	<key>longestStreak</key>
 	<integer>0</integer>
 	<key>attempts</key>

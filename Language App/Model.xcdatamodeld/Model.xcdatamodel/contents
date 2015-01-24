@@ -8,14 +8,15 @@
     <entity name="Word" representedClassName="Word" syncable="YES">
         <attribute name="attempts" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="correctAttempts" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="incorrectAttempts" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="language" attributeType="String" syncable="YES"/>
         <attribute name="word" attributeType="String" syncable="YES"/>
         <relationship name="englishWord" maxCount="1" deletionRule="Nullify" destinationEntity="UniqueWord" inverseName="foreignWord" inverseEntity="UniqueWord" syncable="YES"/>
     </entity>
     <fetchRequest name="bestWord" entity="Word" predicateString="correctAttempts == max:(correctAttempts)"/>
-    <fetchRequest name="worstWord" entity="Word" predicateString="TRUEPREDICATE"/>
+    <fetchRequest name="worstWord" entity="Word"/>
     <elements>
         <element name="UniqueWord" positionX="252" positionY="-18" width="128" height="88"/>
-        <element name="Word" positionX="81" positionY="-18" width="128" height="118"/>
+        <element name="Word" positionX="81" positionY="-18" width="128" height="133"/>
     </elements>
 </model>

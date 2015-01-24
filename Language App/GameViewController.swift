@@ -25,26 +25,25 @@ class GameViewController: UIViewController {
     //MARK: Properties
     var managedObjectContext: NSManagedObjectContext? = nil
     var userDefaults = NSUserDefaults.standardUserDefaults()
+    var currentLanguageAttempts: Int
+    var languageAttempts = NSMutableDictionary(dictionary: NSUserDefaults.standardUserDefaults().dictionaryForKey("languageAttempts")!)
     var attempts: Int = NSUserDefaults.standardUserDefaults().integerForKey("attempts")
     var correctAttempts: Int = NSUserDefaults.standardUserDefaults().integerForKey("correctAttempts")
     var streak: Int = 0
     var streakText: String {
         return NSLocalizedString("Streak: \(self.streak)", comment: "Navigation bar title showing the user's streak.")
     }
-    
     var wordNumbers: [Int] = [0,0,0,0]
     var foreignWords: [Word] = []
     
-    var words: [String] = ["Hi","Bye","Sorry","Thanks","Good morning","Good afternoon","Good evening","Good night","Apple","Orange","Banana","Dog","Cat","Cow","Sheep","Computer","Phone","I love you","How are you?","Good","Bad","Happy","Sad","You","Me","Mum","Head","Arm","Hand","Foot","Shoulder","Elbow","Knee","Ankle","Leg","Dad","Brother","Sister","Grandfather","Grandmother","Wallet","Money","Bag","Shirt","Pants","Socks","Shoes","Hat","Flower","Tree","Plant","Animal","Where","How","Why","When","What","Park","Water","Juice","Left","Right","North","South","East","West","Bandage","Like","Find","Copy","Paste","Key","Lock","Table","Chair","Couch","Television","Tissue","Mop","Bucket","Glass","Cup","Drink","Eat","Go","Garbage","Bin","Fridge","Freezer","Cold","Hot","Toilet","Shower","Bath","Door","And","Is","Are","They","He","She","Him","Her","His","Her's","Cousin","Aunty","Uncle","Card","Cash","Coin","Grass","Floor","Carpet","Power","Strong","Weak","Car","Bicycle","Truck","Plane","Seat","Sky","Sea","Ocean","Fish","Bottle","Pan","Knife","Fork","Spoon","Pot","Kettle","Tea","Coffee","Meat","Fruit","Vegetable","Case","Suit","Dress","Skirt","Stockings","Boots","Onion","Tomato","Bread","Toast","Jam","Light","Dark","White","Black","Blue","Green","Red","Orange","Purple","Grey","Fire","Yellow","Beach","Travel","Drive","Ride","Bus","Train","Mobile Phone","Call","City","Country","State","Man","Woman","Boy","Girl","The","Towel","Blanket","Warm","Cosy","Comfortable","Class","Teacher","Student","Coach","Learn","Smile","Face","Hair","Smell","Taste","Sweet","Sour","Spicy","Salt","Pepper","Oil","Spray","Jacket","Plastic","Wireless","Help","Battery","Medicine","Milk","Cereal","Breakfast","Lunch","Dinner","Exercise","Sport","Cook","Chocolate","Can","Gym","Walk","Run","Switch","Math","Science","Club","Nightclub","Friend","Food","Speaker","Talk","Had","Alcohol","Soap","Shampoo","Conditioner","Soft","Hard","Sponge","Roof","House","Home","Rent","Buy","Sauce","Ketchup","Pasta","Small","Big","Sugar","Bed","Sleep","Night","Day","Morning","Evening","Question","Answer","Top","Bottom"]
-    var answers: [String] = ["Ciao","Arrivederci","Scusate","Grazie","Buongiorno","Buon pomeriggio","Buonasera","Buonanotte","Mela","Arancione","Banana","Cane","Gatto","Mucca","Pecora","Computer","Telefono","Ti amo","Come stai?","Buono","Male","Felice","Triste","Voi","Me","Mamma","Testa","Braccio","Mano","Piede","Spalla","Gomito","Ginocchio","Caviglia","Gamba","Papà","Fratello","Sorella","Nonno","Nonna","Portafoglio","Soldi","Borsa","Camicia","Pantaloni","Calze","Scarpe","Cappello","Fiore","Albero","Impianto","Animale","Dove","Come","Perché","Quando","Che Cosa","Parco","Acqua","Succo","Sinistra","Destra","A nord","Sud","Oriente","Occidente","Benda","Come","Trovare","Copia","Pasta","Chiave","Serratura","Tavolo","Sedia","Divano","Televisione","Tessuto","Scopa","Secchio","Vetro","Coppa","Bere","Mangiare","Andare","Spazzatura","Bidone","Frigorifero","Congelatore","Freddo","Caldo","Toilette","Doccia","Bagno","Porta","E","È","Sono","Essi","Lui","Lei","Lui","Suo","Suo","Le sue di","Cugino","Aunty","Zio","Carta","Contanti","Moneta","Erba","Piano","Tappeto","Potere","Forte","Debole","Auto","Bicicletta","Camion","Piano","Posto","Cielo","Mare","Oceano","Pesce","Bottiglia","Pan","Coltello","Forchetta","Cucchiaio","Pentola","Bollitore","Tè","Caffè","Carne","Frutta","Ortaggio","Caso","Tuta","Vestito","Gonna","Calze","Stivali","Cipolla","Pomodoro","Pane","Brindisi","Marmellata","Luce","Scuro","Bianco","Nero","Blu","Verde","Rosso","Arancione","Porpora","Grigio","Fuoco","Giallo","Spiaggia","Viaggi","Drive","Corsa","Autobus","Treno","Telefono Cellulare","Chiamata","Città","Paese","Stato","Uomo","Donna","Ragazzo","Ragazza","Il","Asciugamano","Coperta","Caldo","Cosy","Confortevole","Classe","Insegnante","Studente","Allenatore","Imparare","Sorriso","Faccia","Capelli","Odore","Gusto","Dolce","Aspro","Piccante","Sale","Pepe","Olio","Spray","Giacca","Plastica","Senza fili","Aiuto","Batteria","Medicina","Latte","Cereale","Colazione","Pranzo","Cena","Esercizio","Sport","Cuoco","Cioccolato","Lattina","Palestra","Passeggiata","Correre","Interruttore","Matematica","Scienza","Club","Locale notturno","Amico","Cibo","Altoparlante","Discorso","Aveva","Alcol","Sapone","Shampoo","Condizionatore","Morbido","Duro","Spugna","Tetto","Casa","Casa","Affitto","Acquistare","Salsa","Ketchup","Pasta","Piccolo","Grande","Zucchero","Letto","Sonno","Notte","Giorno","Mattina","Sera","Domanda","Risposta","Top","Fondo"]
-    
     //MARK: Initialisers
     override init() {
+        self.currentLanguageAttempts = self.languageAttempts.valueForKey(self.userDefaults.stringForKey("language")!) as Int
         super.init()
     }
     
     required init(coder: NSCoder) {
-
+        self.currentLanguageAttempts = self.languageAttempts.valueForKey(self.userDefaults.stringForKey("language")!) as Int
         super.init(coder: coder)
     }
     
@@ -52,6 +51,8 @@ class GameViewController: UIViewController {
         saveUserDefaultLongestStreak()
         userDefaults.setInteger(self.attempts, forKey: "attempts")
         userDefaults.setInteger(self.correctAttempts, forKey: "correctAttempts")
+        languageAttempts.setValue(self.currentLanguageAttempts, forKey: self.userDefaults.stringForKey("language")!)
+        userDefaults.setObject(self.languageAttempts, forKey: "languageAttempts")
         var error: NSErrorPointer = NSErrorPointer()
         if (managedObjectContext?.save(error) == nil) {
             println("Error: \(error.debugDescription)")
@@ -73,7 +74,7 @@ class GameViewController: UIViewController {
         }
         var fetchRequest = NSFetchRequest()
         var entity: NSEntityDescription = NSEntityDescription.entityForName("Word", inManagedObjectContext: self.managedObjectContext!)!
-        var predicate = NSPredicate(format: "language = %@", "Italian")
+        var predicate = NSPredicate(format: "language = %@", userDefaults.stringForKey("language")!)
         fetchRequest.entity = entity
         fetchRequest.predicate = predicate
         var error: NSErrorPointer = NSErrorPointer()
@@ -114,6 +115,7 @@ class GameViewController: UIViewController {
     
     @IBAction func clickGameButton(sender: GameButton) {
         self.attempts += 1
+        self.currentLanguageAttempts += 1
         //create a new NSNumber to increment itself
         var number: NSNumber
         if wordNumbers != [0,0,0,0] {
@@ -126,18 +128,18 @@ class GameViewController: UIViewController {
                 number = NSNumber(int: foreignWords[wordNumbers[sender.gameButtonIndex]].correctAttempts.intValue + 1)
                 foreignWords[wordNumbers[sender.gameButtonIndex]].correctAttempts = number
             }
-            
             self.streak += 1
             self.correctAttempts += 1
             refreshGame()
         } else {
             UIView.animateWithDuration(0.25, animations: {sender.alpha = 0.25})
+            number = NSNumber(int: foreignWords[wordNumbers[sender.gameButtonIndex]].incorrectAttempts.intValue + 1)
+            foreignWords[wordNumbers[sender.gameButtonIndex]].incorrectAttempts = number
             endStreak()
         }
     }
 
     func refreshGame () {
-        
         var index = 0
         do {
             wordNumbers[index] = Int(arc4random_uniform(UInt32(self.foreignWords.count)))
@@ -147,7 +149,6 @@ class GameViewController: UIViewController {
                 index += 1
             }
         } while (index < 4)
-        
         let correctButtonIndex = Int(arc4random_uniform(4))
         for gameButton in gameButtonCollection {
             if gameButton.gameButtonIndex == correctButtonIndex {
@@ -178,19 +179,57 @@ class GameViewController: UIViewController {
     
     func sayWord (word: String, answer: String) {
         if self.userDefaults.boolForKey("hasSound") {
+            var languageCode: String
+            switch (userDefaults.stringForKey("language")!) {
+                case "Arabic": languageCode = "ar-SA"
+                case "Chinese": languageCode = "zh-CN"
+                case "Chinese (Hong Kong SAR China)": languageCode = "zh-HK"
+                case "Chinese (Taiwan)": languageCode = "zh-TW"
+                case "Czech": languageCode = "cs-CZ"
+                case "Danish": languageCode = "da-DK"
+                case "Dutch (Belgium)": languageCode = "nl-BE"
+                case "Dutch (Netherlands)": languageCode = "nl-NL"
+                case "English (Australia)": languageCode = "en-AU"
+                case "English (Ireland)": languageCode = "en-IE"
+                case "English (South Africa)": languageCode = "en-ZA"
+                case "English (United Kingdom)": languageCode = "en-GB"
+                case "English (United States)": languageCode = "en-US"
+                case "Finnish": languageCode = "fi-FI"
+                case "French (Canada)": languageCode = "fr-CA"
+                case "French (France)": languageCode = "fr-FR"
+                case "German": languageCode = "de-DE"
+                case "Greek": languageCode = "el-GR"
+                case "Hebrew": languageCode = "he-IL"
+                case "Hindi": languageCode = "hi-IN"
+                case "Hungarian": languageCode = "hu-HU"
+                case "Indonesian": languageCode = "id-ID"
+                case "Italian": languageCode = "it-IT"
+                case "Japanese": languageCode = "ja-JP"
+                case "Korean": languageCode = "ko-KR"
+                case "Norwegian": languageCode = "no-NO"
+                case "Polish": languageCode = "pl-PL"
+                case "Portuguese (Brazil)": languageCode = "pt-BR"
+                case "Portuguese (Portugal)": languageCode = "pt-PT"
+                case "Romanian": languageCode = "ro-RO"
+                case "Russian": languageCode = "ru-RU"
+                case "Slovak": languageCode = "sk-SK"
+                case "Spanish (Mexico)": languageCode = "es-MX"
+                case "Spanish (Spain)": languageCode = "es-ES"
+                case "Swedish": languageCode = "sv-SE"
+                case "Thai": languageCode = "th-TH"
+                case "Turkish": languageCode = "tr-TR"
+                default: languageCode = "en-US"
+            }
             var utteranceAnswer: AVSpeechUtterance = AVSpeechUtterance(string: answer)
             var utteranceWord: AVSpeechUtterance = AVSpeechUtterance(string: word)
             //utteranceAnswer.voice = AVSpeechSynthesisVoice(language: "en-AU")
             utteranceAnswer.rate = 0.3
-            utteranceWord.voice = AVSpeechSynthesisVoice(language: "it-IT")
+            utteranceWord.voice = AVSpeechSynthesisVoice(language: languageCode)
             utteranceWord.rate = 0.3
             var synthesizer: AVSpeechSynthesizer = AVSpeechSynthesizer()
             synthesizer.speakUtterance(utteranceAnswer)
             synthesizer.speakUtterance(utteranceWord)
         }
-    }
-    
-    func flashScore () {
     }
 }
 

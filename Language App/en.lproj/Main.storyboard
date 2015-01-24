@@ -142,7 +142,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TIi-6p-DBL">
                                 <rect key="frame" x="16" y="263" width="288" height="30"/>
-                                <state key="normal" title="Italian Grammar">
+                                <state key="normal" title="Grammar">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -177,8 +177,8 @@
                     <navigationItem key="navigationItem" id="a0o-R2-IHp"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
-                        <outlet property="gameModeButton" destination="TIi-6p-DBL" id="009-bT-8re"/>
-                        <outlet property="grammarButton" destination="v2v-gD-8bo" id="Laq-cZ-hXs"/>
+                        <outlet property="gameModeButton" destination="v2v-gD-8bo" id="eKL-4o-00w"/>
+                        <outlet property="grammarButton" destination="TIi-6p-DBL" id="ElP-mB-33V"/>
                         <outlet property="playGameButton" destination="Zrk-EN-0SM" id="C9u-BQ-ndc"/>
                         <outlet property="settingsButton" destination="Tp9-fi-qih" id="esM-m5-sVO"/>
                         <outlet property="statisticsButton" destination="NrK-XJ-XEa" id="5lt-KO-tIg"/>
@@ -628,7 +628,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cached" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PCN-RO-BPD">
                                         <rect key="frame" x="63" y="8" width="60" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
