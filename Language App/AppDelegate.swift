@@ -21,7 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //initialise user defaults
         var userDefaults = NSUserDefaults.standardUserDefaults()
         userDefaults.registerDefaults(NSDictionary(contentsOfFile: NSBundle.mainBundle().pathForResource("Defaults", ofType: "plist")!)!)
-        var context: NSManagedObjectContext = self.managedObjectContext!
+        userDefaults.registerDefaults(NSDictionary(contentsOfFile: NSBundle.mainBundle().pathForResource("Languages", ofType: "plist")!)!)
+//        var managedObjectContext: NSManagedObjectContext = self.managedObjectContext!
         var fetchRequest: NSFetchRequest = NSFetchRequest()
         var error: NSErrorPointer = nil
         let initialViewController = self.window!.rootViewController as UINavigationController
@@ -31,17 +32,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //Language, etc.
         //iterate over NSMutableArray and run insert method on NSMangedObjectContext
         //stores the path of the plist file present in the bundle
+        let languagePlistPath: String = NSBundle.mainBundle().pathForResource("Languages", ofType: "plist")!
+        var languageArray = NSMutableArray()
+        let languageInputArray = NSArray(contentsOfFile: languagePlistPath)
+        for (var i = 0; i < languageInputArray?.count; i++) {
+            var language = NSEntityDescription.insertNewObjectForEntityForName("Language", inManagedObjectContext: managedObjectContext!) as Language
+            language.name = languageInputArray?[i].valueForKey("name") as String
+            languageArray.addObject(language)
+        }
+
         let plistPath: String = NSBundle.mainBundle().pathForResource("Words", ofType:"plist")!
-        var inputArray: NSArray = NSArray(contentsOfFile: plistPath)!
-        for (var i = 0; i < inputArray.count; i++) { //iterate over word records
-            var englishWord: UniqueWord = NSEntityDescription.insertNewObjectForEntityForName("UniqueWord", inManagedObjectContext: context) as UniqueWord
-            englishWord.word = inputArray[i].valueForKey("word") as String
-            englishWord.difficulty = inputArray[i].valueForKey("difficulty") as String
+        var wordInputArray: NSArray = NSArray(contentsOfFile: plistPath)!
+        
+        for (var i = 0; i < wordInputArray.count; i++) { //iterate over word records
+            var englishWord = NSEntityDescription.insertNewObjectForEntityForName("UniqueWord", inManagedObjectContext: managedObjectContext!) as UniqueWord
+            englishWord.word = wordInputArray[i].valueForKey("word") as String
+            englishWord.difficulty = wordInputArray[i].valueForKey("difficulty") as String
             for language in userDefaults.stringArrayForKey("languages") as [String] {
-                var word: Word = NSEntityDescription.insertNewObjectForEntityForName("Word", inManagedObjectContext: context) as Word
-                word.word = inputArray[i].valueForKey(language) as String
+                var word: Word = NSEntityDescription.insertNewObjectForEntityForName("Word", inManagedObjectContext: managedObjectContext!) as Word
+                word.word = wordInputArray[i].valueForKey(language) as String
                 word.englishWord = englishWord
-                word.language = language
+                word.language = languageArray.valueForKey(language) as Language
             }
             //            var entity = NSEntityDescription.entityForName("Language", inManagedObjectContext: context)
             //            fetchRequest.entity = entity
@@ -56,34 +67,34 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        }
         //let’s add some more code in there to list out all the objects currently in the database:
         //outdated, always evaluates to false
-        if let entity: NSEntityDescription = NSEntityDescription.entityForName("Settings", inManagedObjectContext:context) {
-            fetchRequest.entity = entity
-            if var fetchedObjects: NSArray = context.executeFetchRequest(fetchRequest, error:error) {
-                for object in fetchedObjects {
-                    println("Difficulty:" , object.valueForKey("difficulty"))
-                    var string: String = "details"
-                    //var details: NSManagedObject = object.valueForKey(string)
-                    println("Has Sound? %@", object.valueForKey("hasSound"))
-                }
-            } else { //start creating them if they don't exist
-//                var settings: Settings = NSEntityDescription.insertNewObjectForEntityForName("Settings", inManagedObjectContext:context) as Settings
-//                settings.difficulty = "Hard"
-//                settings.hasSound = true
-//                settings.language = "English"
-            }
-        }
-        //Create Statistics table if not exists
-        if let entity = NSEntityDescription.entityForName("Statistics", inManagedObjectContext:context) {
-            fetchRequest.entity = entity
-            if var fetchedObjects: NSArray = context.executeFetchRequest(fetchRequest, error:error) {
-                //iterate over obejcts
-            } else {
-//                var statistics: Statistics = NSEntityDescription.insertNewObjectForEntityForName("Statistics", inManagedObjectContext:context) as Statistics
-//                statistics.attempts = 123
-//                statistics.correctAttempts = 112
-            }
-        }
-        if (!context.save(error)) {
+//        if let entity: NSEntityDescription = NSEntityDescription.entityForName("Settings", inManagedObjectContext:managedObjectContext!) {
+//            fetchRequest.entity = entity
+//            if var fetchedObjects: NSArray = managedObjectContext?.executeFetchRequest(fetchRequest, error:error) {
+//                for object in fetchedObjects {
+//                    println("Difficulty:" , object.valueForKey("difficulty"))
+//                    var string: String = "details"
+//                    //var details: NSManagedObject = object.valueForKey(string)
+//                    println("Has Sound? %@", object.valueForKey("hasSound"))
+//                }
+//            } else { //start creating them if they don't exist
+////                var settings: Settings = NSEntityDescription.insertNewObjectForEntityForName("Settings", inManagedObjectContext:context) as Settings
+////                settings.difficulty = "Hard"
+////                settings.hasSound = true
+////                settings.language = "English"
+//            }
+//        }
+//        //Create Statistics table if not exists
+//        if let entity = NSEntityDescription.entityForName("Statistics", inManagedObjectContext:managedObjectContext!) {
+//            fetchRequest.entity = entity
+//            if var fetchedObjects: NSArray = managedObjectContext?.executeFetchRequest(fetchRequest, error:error) {
+//                //iterate over obejcts
+//            } else {
+////                var statistics: Statistics = NSEntityDescription.insertNewObjectForEntityForName("Statistics", inManagedObjectContext:context) as Statistics
+////                statistics.attempts = 123
+////                statistics.correctAttempts = 112
+//            }
+//        }
+        if ((managedObjectContext?.save(error)) == nil) {
             println("Save error.\(error.debugDescription)"); //error.localizedDescription
             return false
         }
@@ -131,8 +142,35 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         var coordinator: NSPersistentStoreCoordinator? = NSPersistentStoreCoordinator(managedObjectModel: self.managedObjectModel)
         let url = self.applicationDocumentsDirectory.URLByAppendingPathComponent("Model.sqlite")
         var error: NSError? = nil
+        
+//        let sourceStoreType: String = "SQLite"/* type for the source store, or nil if not known */ ;
+//        //let sourceStoreURL: String = /* URL for the source store */ ;
+//        let sourceMetadata: NSDictionary =
+//            NSPersistentStoreCoordinator.metadataForPersistentStoreOfType(sourceStoreType,
+//                URL:url,
+//                error:&error)!
+////        if (sourceMetadata == nil) {
+////            // deal with error
+////        }
+//        var configuration: String = String()/* name of configuration, or nil */ ;
+//        var destinationModel  = coordinator?.managedObjectModel
+//        let pscCompatibile: Bool? = destinationModel?.isConfiguration(configuration, compatibleWithStoreMetadata: sourceMetadata)
+////            isConfiguration(configuration: configuration,
+////        compatibleWithStoreMetadata:sourceMetadata)
+//        if ((pscCompatibile) != nil) {
+//            // no need to migrate
+//        } else {
+//            
+//        }
+        
         var failureReason = "There was an error creating or loading the application's saved data."
-        if coordinator!.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: url, options: nil, error: &error) == nil {
+        var options = NSDictionary(objectsAndKeys:
+            NSNumber(bool: true), NSInferMappingModelAutomaticallyOption,
+            NSNumber(bool: true), NSMigratePersistentStoresAutomaticallyOption
+        )
+        //do lightweight model migration here.
+        if coordinator!.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: url, options: options, error: &error) == nil {
+//            if coordinator!.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: url, options: nil, error: &error) == nil {
             coordinator = nil
             // Report any error we got.
             var dict = [String: AnyObject]()
@@ -144,6 +182,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
             NSLog("Unresolved error \(error), \(error!.userInfo)")
             abort()
+//            }
         }
         return coordinator
         }()

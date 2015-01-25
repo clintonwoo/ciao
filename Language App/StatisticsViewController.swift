@@ -51,12 +51,19 @@ class StatisticsViewController: UIViewController {
     }
     
     func refresh() {
-        var numberFormatter = NSNumberFormatter()
+//        var numberFormatter = NSNumberFormatter()
         //numberFormatter
-        var languageAttempts: NSDictionary = NSUserDefaults.standardUserDefaults().dictionaryForKey("languageAttempts")!
+        var languageAttempts: NSDictionary = userDefaults.dictionaryForKey("languageAttempts")!
+        var languages = NSMutableArray()
+        for language in userDefaults.stringArrayForKey("languages") as [String] {
+            languages.addObject(userDefaults.dictionaryForKey(language)!)
+        }
+        let sortDescriptor = NSSortDescriptor(key: "attempts", ascending: false, selector: "compare:")
+        languages.sortUsingDescriptors([sortDescriptor])
+        println(languages.description)
         println(languageAttempts.description)
         let sortedLanguageAttempts = languageAttempts.keysSortedByValueUsingSelector("compare:") as [String]
-        let reverseArray = sortedLanguageAttempts.reverse()
+//        let reverseArray = sortedLanguageAttempts.reverse()
         println(sortedLanguageAttempts.description)
         
         let streak = String(userDefaults.integerForKey("longestStreak"))
@@ -96,8 +103,11 @@ class StatisticsViewController: UIViewController {
         }
         self.wordsAttemptedLabel.text = NSLocalizedString("Words Attempted: \(attempts)", comment: "Statistic label showing the number of words the user has attempted")
         self.percentageCorrectLabel.text = NSLocalizedString("Correct Ratio: \(ceil(percentageCorrect))%", comment: "Statistic label showing user's ratio of correct word attempts")
-        if languageAttempts.valueForKey(reverseArray[0]) as NSNumber != 0 {
-            self.favouriteLanguage.text = NSLocalizedString("Favourite Language: \(reverseArray[0])", comment: "User's favourite language")
+//        if languageAttempts.valueForKey(sortedLanguageAttempts.last!) as NSNumber != 0 {
+        if languages[0].valueForKey("attempts") as NSNumber != 0 {
+            let key = "name"
+            self.favouriteLanguage.text = NSLocalizedString("Favourite Language:\(languages[0].valueForKey(key))", comment: "User's favourite language")
+//            self.favouriteLanguage.text = NSLocalizedString("Favourite Language: \(sortedLanguageAttempts.last!)", comment: "User's favourite language")
         } else {
             self.favouriteLanguage.text = NSLocalizedString("Favourite Language:", comment: "User's favourite language")
         }

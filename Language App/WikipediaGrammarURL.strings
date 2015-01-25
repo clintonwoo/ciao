@@ -1,5 +1,5 @@
 /* 
-  wikipediaGrammarURL.strings
+  WikipediaGrammarURL.strings
   Ciao Game
 
   Created by Clinton D'Annolfo on 24/01/2015.
@@ -20,7 +20,7 @@
 "English (United States)" = "";
 "Finnish" = "";
 "French (Canada)" = "";
-"French (France)" = "";
+"French" = "";
 "German" = "http://en.wikipedia.org/wiki/German_grammar";
 "Greek" = "";
 "Hebrew" = "";
@@ -33,12 +33,12 @@
 "Norwegian" = "";
 "Polish" = "";
 "Portuguese (Brazil)" = "";
-"Portuguese (Portugal)" = "";
+"Portuguese" = "";
 "Romanian" = "";
 "Russian" = "";
 "Slovak" = "";
 "Spanish (Mexico)" = "";
-"Spanish (Spain)" = "";
+"Spanish" = "";
 "Swedish" = "";
 "Thai" = "";
 "Turkish" = "";

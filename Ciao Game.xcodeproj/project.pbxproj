@@ -14,12 +14,14 @@
 		18384E4E1A59017A006DA713 /* MediumWords.strings in Resources */ = {isa = PBXBuildFile; fileRef = 18384E4D1A59017A006DA713 /* MediumWords.strings */; };
 		18384E501A59018C006DA713 /* HardWords.strings in Resources */ = {isa = PBXBuildFile; fileRef = 18384E4F1A59018C006DA713 /* HardWords.strings */; };
 		184656561A57822D0095442D /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184656551A57822D0095442D /* AboutViewController.swift */; };
-		185182A81A7358B000DA20FC /* Data.plist in Resources */ = {isa = PBXBuildFile; fileRef = 185182A71A7358B000DA20FC /* Data.plist */; };
-		185182AA1A735A9500DA20FC /* wikipediaGrammarURL.strings in Resources */ = {isa = PBXBuildFile; fileRef = 185182A91A735A9500DA20FC /* wikipediaGrammarURL.strings */; };
+		185182A81A7358B000DA20FC /* Languages.plist in Resources */ = {isa = PBXBuildFile; fileRef = 185182A71A7358B000DA20FC /* Languages.plist */; };
+		185182AA1A735A9500DA20FC /* WikipediaGrammarURL.strings in Resources */ = {isa = PBXBuildFile; fileRef = 185182A91A735A9500DA20FC /* WikipediaGrammarURL.strings */; };
 		185541F21A552B45002C3D15 /* GameButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185541F11A552B45002C3D15 /* GameButton.swift */; };
-		185771A11A6F1D9C0071B347 /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185771A01A6F1D9C0071B347 /* Language.swift */; };
+		185A16F31A74B4DD00FF35B7 /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185A16F21A74B4DD00FF35B7 /* Word.swift */; };
+		1865587C1A73AEE2005461D7 /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1865587B1A73AEE2005461D7 /* Language.swift */; };
 		1869787B1A61FC9D00A496D0 /* GrammarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1869787A1A61FC9D00A496D0 /* GrammarViewController.swift */; };
 		186DFC861A7377810014619F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 186DFC851A7377810014619F /* Main.storyboard */; };
+		188B2C391A73888A00758929 /* IETFLanguageCode.strings in Resources */ = {isa = PBXBuildFile; fileRef = 188B2C381A73888A00758929 /* IETFLanguageCode.strings */; };
 		1899796B1A62265700A758ED /* SwitchWithTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1899796A1A62265700A758ED /* SwitchWithTitle.swift */; };
 		18AC1C071A6FCFB100987D5F /* UniqueWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AC1C061A6FCFB100987D5F /* UniqueWord.swift */; };
 		18AC1C091A6FD66E00987D5F /* Words.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18AC1C081A6FD66E00987D5F /* Words.plist */; };
@@ -34,7 +36,6 @@
 		18C1F9491A4E3CA500531C44 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 18C1F9471A4E3CA500531C44 /* Model.xcdatamodeld */; };
 		18C330211A35CF460027A312 /* ModesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C330201A35CF460027A312 /* ModesViewController.swift */; };
 		18C38EC31A39A8BC00AC5860 /* SecretStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18C38EC21A39A8BC00AC5860 /* SecretStoryboard.storyboard */; };
-		18FB73281A71FD870090BE3F /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FB73271A71FD870090BE3F /* Word.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,12 +56,15 @@
 		18384E4D1A59017A006DA713 /* MediumWords.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = MediumWords.strings; sourceTree = "<group>"; };
 		18384E4F1A59018C006DA713 /* HardWords.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = HardWords.strings; sourceTree = "<group>"; };
 		184656551A57822D0095442D /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
-		185182A71A7358B000DA20FC /* Data.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Data.plist; sourceTree = "<group>"; };
-		185182A91A735A9500DA20FC /* wikipediaGrammarURL.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = wikipediaGrammarURL.strings; sourceTree = "<group>"; };
+		185182A71A7358B000DA20FC /* Languages.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Languages.plist; sourceTree = "<group>"; };
+		185182A91A735A9500DA20FC /* WikipediaGrammarURL.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = WikipediaGrammarURL.strings; sourceTree = "<group>"; };
 		185541F11A552B45002C3D15 /* GameButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameButton.swift; sourceTree = "<group>"; };
-		185771A01A6F1D9C0071B347 /* Language.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
+		185A16F21A74B4DD00FF35B7 /* Word.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
+		1865587B1A73AEE2005461D7 /* Language.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
 		1869787A1A61FC9D00A496D0 /* GrammarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GrammarViewController.swift; sourceTree = "<group>"; };
 		186DFC851A7377810014619F /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		188B2C371A7383CC00758929 /* Model 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Model 2.xcdatamodel"; sourceTree = "<group>"; };
+		188B2C381A73888A00758929 /* IETFLanguageCode.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = IETFLanguageCode.strings; sourceTree = "<group>"; };
 		1899796A1A62265700A758ED /* SwitchWithTitle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchWithTitle.swift; sourceTree = "<group>"; };
 		18AC1C061A6FCFB100987D5F /* UniqueWord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniqueWord.swift; sourceTree = "<group>"; };
 		18AC1C081A6FD66E00987D5F /* Words.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Words.plist; sourceTree = "<group>"; };
@@ -81,7 +85,6 @@
 		18C1F9481A4E3CA500531C44 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		18C330201A35CF460027A312 /* ModesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModesViewController.swift; sourceTree = "<group>"; };
 		18C38EC21A39A8BC00AC5860 /* SecretStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SecretStoryboard.storyboard; sourceTree = "<group>"; };
-		18FB73271A71FD870090BE3F /* Word.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,9 +109,9 @@
 			isa = PBXGroup;
 			children = (
 				18C1F9471A4E3CA500531C44 /* Model.xcdatamodeld */,
+				185A16F21A74B4DD00FF35B7 /* Word.swift */,
+				1865587B1A73AEE2005461D7 /* Language.swift */,
 				18AC1C061A6FCFB100987D5F /* UniqueWord.swift */,
-				18FB73271A71FD870090BE3F /* Word.swift */,
-				185771A01A6F1D9C0071B347 /* Language.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -176,8 +179,9 @@
 				18BD53741A33053300742D7F /* Images.xcassets */,
 				18C0F1FA1A456E25007BEE49 /* Info.plist */,
 				18AC1C081A6FD66E00987D5F /* Words.plist */,
-				185182A91A735A9500DA20FC /* wikipediaGrammarURL.strings */,
-				185182A71A7358B000DA20FC /* Data.plist */,
+				185182A91A735A9500DA20FC /* WikipediaGrammarURL.strings */,
+				188B2C381A73888A00758929 /* IETFLanguageCode.strings */,
+				185182A71A7358B000DA20FC /* Languages.plist */,
 				18384E491A58F49D006DA713 /* Defaults.plist */,
 				18384E4B1A590079006DA713 /* EasyWords.strings */,
 				18384E4D1A59017A006DA713 /* MediumWords.strings */,
@@ -287,13 +291,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				18384E4C1A590079006DA713 /* EasyWords.strings in Resources */,
-				185182AA1A735A9500DA20FC /* wikipediaGrammarURL.strings in Resources */,
+				185182AA1A735A9500DA20FC /* WikipediaGrammarURL.strings in Resources */,
 				18C0F1FF1A459ED7007BEE49 /* Localizable.strings in Resources */,
+				188B2C391A73888A00758929 /* IETFLanguageCode.strings in Resources */,
 				18384E4A1A58F49D006DA713 /* Defaults.plist in Resources */,
 				18AC1C091A6FD66E00987D5F /* Words.plist in Resources */,
 				186DFC861A7377810014619F /* Main.storyboard in Resources */,
 				18C38EC31A39A8BC00AC5860 /* SecretStoryboard.storyboard in Resources */,
-				185182A81A7358B000DA20FC /* Data.plist in Resources */,
+				185182A81A7358B000DA20FC /* Languages.plist in Resources */,
 				18BD53751A33053300742D7F /* Images.xcassets in Resources */,
 				18384E4E1A59017A006DA713 /* MediumWords.strings in Resources */,
 				18384E501A59018C006DA713 /* HardWords.strings in Resources */,
@@ -315,7 +320,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1899796B1A62265700A758ED /* SwitchWithTitle.swift in Sources */,
-				18FB73281A71FD870090BE3F /* Word.swift in Sources */,
+				185A16F31A74B4DD00FF35B7 /* Word.swift in Sources */,
 				18BDCE651A3410C500C08890 /* SettingsViewController.swift in Sources */,
 				1869787B1A61FC9D00A496D0 /* GrammarViewController.swift in Sources */,
 				184656561A57822D0095442D /* AboutViewController.swift in Sources */,
@@ -326,8 +331,8 @@
 				1806BDA51A3D4CFA00774709 /* LanguageSettingViewController.swift in Sources */,
 				18BDCE631A33F6B300C08890 /* MenuViewController.swift in Sources */,
 				18C330211A35CF460027A312 /* ModesViewController.swift in Sources */,
-				185771A11A6F1D9C0071B347 /* Language.swift in Sources */,
 				185541F21A552B45002C3D15 /* GameButton.swift in Sources */,
+				1865587C1A73AEE2005461D7 /* Language.swift in Sources */,
 				18AC1C071A6FCFB100987D5F /* UniqueWord.swift in Sources */,
 				18C1F9491A4E3CA500531C44 /* Model.xcdatamodeld in Sources */,
 			);
@@ -555,9 +560,10 @@
 		18C1F9471A4E3CA500531C44 /* Model.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				188B2C371A7383CC00758929 /* Model 2.xcdatamodel */,
 				18C1F9481A4E3CA500531C44 /* Model.xcdatamodel */,
 			);
-			currentVersion = 18C1F9481A4E3CA500531C44 /* Model.xcdatamodel */;
+			currentVersion = 188B2C371A7383CC00758929 /* Model 2.xcdatamodel */;
 			path = Model.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

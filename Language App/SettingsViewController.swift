@@ -40,18 +40,9 @@ class SettingsViewController: UITableViewController, UITableViewDelegate, UITabl
     }
     
     deinit {
-        if (self.language != userDefaults.stringForKey("language")) {
-            userDefaults.setValue(self.language, forKey: "language")
-        }
-        if (self.difficulty != userDefaults.stringForKey("difficulty")) {
-            userDefaults.setValue(self.difficulty, forKey: "difficulty")
-        }
-        if (self.hasSound != userDefaults.boolForKey("hasSound")) {
-            userDefaults.setBool(self.hasSound, forKey: "hasSound")
-        }
-        if (self.speakingSpeed != userDefaults.floatForKey("speakingSpeed")) {
-            userDefaults.setFloat(self.speakingSpeed, forKey: "speakingSpeed")
-        }
+        userDefaults.setValue(self.difficulty, forKey: "difficulty")
+        userDefaults.setBool(self.hasSound, forKey: "hasSound")
+        userDefaults.setFloat(self.speakingSpeed, forKey: "speakingSpeed")
     }
     
     //MARK: Data Source Delegate

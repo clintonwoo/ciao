@@ -26,6 +26,7 @@ class GameViewController: UIViewController {
     var managedObjectContext: NSManagedObjectContext? = nil
     var userDefaults = NSUserDefaults.standardUserDefaults()
     var currentLanguageAttempts: Int
+    var language = NSMutableDictionary(dictionary: NSUserDefaults.standardUserDefaults().dictionaryForKey(NSUserDefaults.standardUserDefaults().stringForKey("language")!)!)
     var languageAttempts = NSMutableDictionary(dictionary: NSUserDefaults.standardUserDefaults().dictionaryForKey("languageAttempts")!)
     var attempts: Int = NSUserDefaults.standardUserDefaults().integerForKey("attempts")
     var correctAttempts: Int = NSUserDefaults.standardUserDefaults().integerForKey("correctAttempts")
@@ -39,20 +40,24 @@ class GameViewController: UIViewController {
     
     //MARK: Initialisers
     override init() {
-        self.currentLanguageAttempts = self.languageAttempts.valueForKey(self.userDefaults.stringForKey("language")!) as Int
+        self.currentLanguageAttempts = self.language.valueForKey("attempts") as Int
+//        self.currentLanguageAttempts = self.languageAttempts.valueForKey(self.userDefaults.stringForKey("language")!) as Int
         super.init()
     }
     
     required init(coder: NSCoder) {
-        self.currentLanguageAttempts = self.languageAttempts.valueForKey(self.userDefaults.stringForKey("language")!) as Int
+        self.currentLanguageAttempts = self.language.valueForKey("attempts") as Int
+//        self.currentLanguageAttempts = self.languageAttempts.valueForKey(self.userDefaults.stringForKey("language")!) as Int
         super.init(coder: coder)
     }
     
     deinit {
         saveUserDefaultLongestStreak()
+        language.setValue(currentLanguageAttempts, forKey: "attempts")
         userDefaults.setInteger(self.attempts, forKey: "attempts")
         userDefaults.setInteger(self.correctAttempts, forKey: "correctAttempts")
-        languageAttempts.setValue(self.currentLanguageAttempts, forKey: self.userDefaults.stringForKey("language")!)
+        userDefaults.setObject(language, forKey: userDefaults.stringForKey("language")!)
+        //(self.currentLanguageAttempts, forKey: self.userDefaults.stringForKey("language")!)
         userDefaults.setObject(self.languageAttempts, forKey: "languageAttempts")
         var error: NSErrorPointer = NSErrorPointer()
         if (managedObjectContext?.save(error) == nil) {
@@ -180,54 +185,19 @@ class GameViewController: UIViewController {
     
     func sayWord (word: String, answer: String) {
         if self.userDefaults.boolForKey("hasSound") {
-            var languageCode: String
-            switch (userDefaults.stringForKey("language")!) {
-                case "Arabic": languageCode = "ar-SA"
-                case "Chinese": languageCode = "zh-CN"
-                case "Chinese (Hong Kong SAR China)": languageCode = "zh-HK"
-                case "Chinese (Taiwan)": languageCode = "zh-TW"
-                case "Czech": languageCode = "cs-CZ"
-                case "Danish": languageCode = "da-DK"
-                case "Dutch (Belgium)": languageCode = "nl-BE"
-                case "Dutch (Netherlands)": languageCode = "nl-NL"
-                case "English (Australia)": languageCode = "en-AU"
-                case "English (Ireland)": languageCode = "en-IE"
-                case "English (South Africa)": languageCode = "en-ZA"
-                case "English (United Kingdom)": languageCode = "en-GB"
-                case "English (United States)": languageCode = "en-US"
-                case "Finnish": languageCode = "fi-FI"
-                case "French (Canada)": languageCode = "fr-CA"
-                case "French (France)": languageCode = "fr-FR"
-                case "German": languageCode = "de-DE"
-                case "Greek": languageCode = "el-GR"
-                case "Hebrew": languageCode = "he-IL"
-                case "Hindi": languageCode = "hi-IN"
-                case "Hungarian": languageCode = "hu-HU"
-                case "Indonesian": languageCode = "id-ID"
-                case "Italian": languageCode = "it-IT"
-                case "Japanese": languageCode = "ja-JP"
-                case "Korean": languageCode = "ko-KR"
-                case "Norwegian": languageCode = "no-NO"
-                case "Polish": languageCode = "pl-PL"
-                case "Portuguese (Brazil)": languageCode = "pt-BR"
-                case "Portuguese (Portugal)": languageCode = "pt-PT"
-                case "Romanian": languageCode = "ro-RO"
-                case "Russian": languageCode = "ru-RU"
-                case "Slovak": languageCode = "sk-SK"
-                case "Spanish (Mexico)": languageCode = "es-MX"
-                case "Spanish (Spain)": languageCode = "es-ES"
-                case "Swedish": languageCode = "sv-SE"
-                case "Thai": languageCode = "th-TH"
-                case "Turkish": languageCode = "tr-TR"
-                default: languageCode = "en-US"
-            }
-            var utteranceAnswer: AVSpeechUtterance = AVSpeechUtterance(string: answer)
-            var utteranceWord: AVSpeechUtterance = AVSpeechUtterance(string: word)
+            let dataPlistPath: String = NSBundle.mainBundle().pathForResource("IETFLanguageCode", ofType:"strings")!
+            let dataPlistDictionary = NSDictionary(contentsOfFile: dataPlistPath)!
+
+            var utteranceAnswer = AVSpeechUtterance(string: answer)
+            var utteranceWord = AVSpeechUtterance(string: word)
             //utteranceAnswer.voice = AVSpeechSynthesisVoice(language: "en-AU")
             utteranceAnswer.rate = self.speakingSpeed
-            utteranceWord.voice = AVSpeechSynthesisVoice(language: languageCode)
+
+            if let languageCode = dataPlistDictionary.valueForKey(userDefaults.stringForKey("language")!) as? String {
+                utteranceWord.voice = AVSpeechSynthesisVoice(language: languageCode)
+            }
             utteranceWord.rate = self.speakingSpeed
-            var synthesizer: AVSpeechSynthesizer = AVSpeechSynthesizer()
+            var synthesizer = AVSpeechSynthesizer()
             synthesizer.speakUtterance(utteranceAnswer)
             synthesizer.speakUtterance(utteranceWord)
         }

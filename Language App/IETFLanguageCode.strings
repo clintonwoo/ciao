@@ -1,0 +1,44 @@
+/* 
+  IETFLanguageCode.strings
+  Ciao Game
+
+  Created by Clinton D'Annolfo on 24/01/2015.
+  Copyright (c) 2015 Clinton D'Annolfo. All rights reserved.
+*/
+"Arabic" = "ar-SA";
+"Chinese" = "zh-CN";
+"Chinese (Hong Kong SAR China)" = "zh-HK";
+"Chinese (Taiwan)" = "zh-TW";
+"Czech" = "cs-CZ";
+"Danish" = "da-DK";
+"Dutch (Belgium)" = "nl-BE";
+"Dutch (Netherlands)" = "nl-NL";
+"English (Australia)" = "en-AU";
+"English (Ireland)" = "en-IE";
+"English (South Africa)" = "en-ZA";
+"English (United Kingdom)" = "en-GB";
+"English (United States)" = "en-US";
+"Finnish" = "fi-FI";
+"French (Canada)" = "fr-CA";
+"French" = "fr-FR";
+"German" = "de-DE";
+"Greek" = "el-GR";
+"Hebrew" = "he-IL";
+"Hindi" = "hi-IN";
+"Hungarian" = "hu-HU";
+"Indonesian" = "id-ID";
+"Italian" = "it-IT";
+"Japanese" = "ja-JP";
+"Korean" = "ko-KR";
+"Norwegian" = "no-NO";
+"Polish" = "pl-PL";
+"Portuguese (Brazil)" = "pt-BR";
+"Portuguese" = "pt-PT";
+"Romanian" = "ro-RO";
+"Russian" = "ru-RU";
+"Slovak" = "sk-SK";
+"Spanish (Mexico)" = "es-MX";
+"Spanish" = "es-ES";
+"Swedish" = "sv-SE";
+"Thai" = "th-TH";
+"Turkish" = "tr-TR";

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Italian</key>
+	<dict>
+		<key>attempts</key>
+		<integer>0</integer>
+		<key>name</key>
+		<string>Italian</string>
+	</dict>
+	<key>Portuguese</key>
+	<dict>
+		<key>attempts</key>
+		<integer>0</integer>
+		<key>name</key>
+		<string>Portuguese</string>
+	</dict>
+	<key>Polish</key>
+	<dict>
+		<key>attempts</key>
+		<integer>0</integer>
+		<key>name</key>
+		<string>Polish</string>
+	</dict>
+	<key>French</key>
+	<dict>
+		<key>attempts</key>
+		<integer>0</integer>
+		<key>name</key>
+		<string>French</string>
+	</dict>
+	<key>Spanish</key>
+	<dict>
+		<key>attempts</key>
+		<integer>0</integer>
+		<key>name</key>
+		<string>Spanish</string>
+	</dict>
+	<key>German</key>
+	<dict>
+		<key>attempts</key>
+		<integer>0</integer>
+		<key>name</key>
+		<string>German</string>
+	</dict>
+	<key>Chinese</key>
+	<dict>
+		<key>attempts</key>
+		<integer>0</integer>
+		<key>name</key>
+		<string>Chinese</string>
+	</dict>
+	<key>Russian</key>
+	<dict>
+		<key>attempts</key>
+		<integer>0</integer>
+		<key>name</key>
+		<string>Russian</string>
+	</dict>
+</dict>
+</plist>

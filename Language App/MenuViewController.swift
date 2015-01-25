@@ -62,7 +62,7 @@ class MenuViewController: UIViewController, SettingsDelegate {
             switch (segue.identifier!) {
                 case "Show Grammar":
                     let destinationViewController = segue.destinationViewController as GrammarViewController
-                    let dataPlistPath: String = NSBundle.mainBundle().pathForResource("wikipediaGrammarURL", ofType:"strings")!
+                    let dataPlistPath: String = NSBundle.mainBundle().pathForResource("WikipediaGrammarURL", ofType:"strings")!
                     let dataPlistDictionary = NSDictionary(contentsOfFile: dataPlistPath)!
                     if let url = NSURL(string: dataPlistDictionary.valueForKey(userDefaults.stringForKey("language")!) as String) {
                         let urlRequest = NSURLRequest(URL: url)
