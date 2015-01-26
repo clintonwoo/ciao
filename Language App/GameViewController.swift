@@ -25,9 +25,16 @@ class GameViewController: UIViewController {
     //MARK: Properties
     var managedObjectContext: NSManagedObjectContext? = nil
     var userDefaults = NSUserDefaults.standardUserDefaults()
-    var currentLanguageAttempts: Int
-    var language = NSMutableDictionary(dictionary: NSUserDefaults.standardUserDefaults().dictionaryForKey(NSUserDefaults.standardUserDefaults().stringForKey("language")!)!)
-    var languageAttempts = NSMutableDictionary(dictionary: NSUserDefaults.standardUserDefaults().dictionaryForKey("languageAttempts")!)
+    lazy var language: Language = {
+        var languageFetchRequest = NSFetchRequest()
+        let languageEntity: NSEntityDescription = NSEntityDescription.entityForName("Language", inManagedObjectContext: self.managedObjectContext!)!
+        let languagePredicate = NSPredicate(format: "name = %@", self.userDefaults.stringForKey("language")!)
+        languageFetchRequest.entity = languageEntity
+        languageFetchRequest.predicate = languagePredicate
+        var error = NSErrorPointer()
+        let languageRecords = self.managedObjectContext?.executeFetchRequest(languageFetchRequest, error: error) as [Language]
+        return languageRecords[0]
+    }()
     var attempts: Int = NSUserDefaults.standardUserDefaults().integerForKey("attempts")
     var correctAttempts: Int = NSUserDefaults.standardUserDefaults().integerForKey("correctAttempts")
     var streak: Int = 0
@@ -40,25 +47,17 @@ class GameViewController: UIViewController {
     
     //MARK: Initialisers
     override init() {
-        self.currentLanguageAttempts = self.language.valueForKey("attempts") as Int
-//        self.currentLanguageAttempts = self.languageAttempts.valueForKey(self.userDefaults.stringForKey("language")!) as Int
         super.init()
     }
     
     required init(coder: NSCoder) {
-        self.currentLanguageAttempts = self.language.valueForKey("attempts") as Int
-//        self.currentLanguageAttempts = self.languageAttempts.valueForKey(self.userDefaults.stringForKey("language")!) as Int
         super.init(coder: coder)
     }
     
     deinit {
         saveUserDefaultLongestStreak()
-        language.setValue(currentLanguageAttempts, forKey: "attempts")
         userDefaults.setInteger(self.attempts, forKey: "attempts")
         userDefaults.setInteger(self.correctAttempts, forKey: "correctAttempts")
-        userDefaults.setObject(language, forKey: userDefaults.stringForKey("language")!)
-        //(self.currentLanguageAttempts, forKey: self.userDefaults.stringForKey("language")!)
-        userDefaults.setObject(self.languageAttempts, forKey: "languageAttempts")
         var error: NSErrorPointer = NSErrorPointer()
         if (managedObjectContext?.save(error) == nil) {
             println("Error: \(error.debugDescription)")
@@ -78,13 +77,24 @@ class GameViewController: UIViewController {
         } else {
             soundButton.title = "Sound Off"
         }
-        var fetchRequest = NSFetchRequest()
-        var entity: NSEntityDescription = NSEntityDescription.entityForName("Word", inManagedObjectContext: self.managedObjectContext!)!
-        var predicate = NSPredicate(format: "language = %@", userDefaults.stringForKey("language")!)
-        fetchRequest.entity = entity
-        fetchRequest.predicate = predicate
-        var error: NSErrorPointer = NSErrorPointer()
-        self.foreignWords = managedObjectContext?.executeFetchRequest(fetchRequest, error: error) as [Word]
+        var error = NSErrorPointer()
+        switch (userDefaults.stringForKey("gameMode")!) {
+            case "Intro Mode":
+                var fetchRequest = NSFetchRequest(entityName: "Word")
+                fetchRequest.predicate = NSPredicate(format: "language = %@ AND englishWord.inPhraseMode = false", self.language)
+                self.foreignWords = managedObjectContext?.executeFetchRequest(fetchRequest, error: error) as [Word]
+            case "Phrase Mode":
+                var fetchRequest = NSFetchRequest(entityName: "Word")
+                fetchRequest.predicate = NSPredicate(format: "language = %@ AND englishWord.inPhraseMode = true", self.language)
+                self.foreignWords = managedObjectContext?.executeFetchRequest(fetchRequest, error: error) as [Word]
+        default:
+            break
+        }
+        //set label to language's hi
+        var hiFetchRequest = NSFetchRequest(entityName: "Word")
+        hiFetchRequest.predicate = NSPredicate(format: "language.name = %@ AND englishWord.word = %@", userDefaults.stringForKey("language")!, "Hi")
+        let temp = managedObjectContext?.executeFetchRequest(hiFetchRequest, error: error) as [Word]
+        wordLabel.text = temp[0].word
 //        var adView: ADBannerView = ADBannerView(adType: ADAdType.Banner)
 //        //adView.currentContentSizeIdentifier = ADBannerContentSizeIdentifierPortrait
 //        self.view.addSubview(adView)
@@ -121,26 +131,27 @@ class GameViewController: UIViewController {
     
     @IBAction func clickGameButton(sender: GameButton) {
         self.attempts += 1
-        self.currentLanguageAttempts += 1
-        //create a new NSNumber to increment itself
-        var number: NSNumber
+        //create a new NSNumber to increment managed objects
+        var convertingNumber: NSNumber
+        convertingNumber = NSNumber(int: language.attempts.intValue + 1)
+        language.attempts = convertingNumber
         if wordNumbers != [0,0,0,0] {
-            number = NSNumber(int: foreignWords[wordNumbers[sender.gameButtonIndex]].attempts.intValue + 1)
-            foreignWords[wordNumbers[sender.gameButtonIndex]].attempts = number
+            convertingNumber = NSNumber(int: foreignWords[wordNumbers[sender.gameButtonIndex]].attempts.intValue + 1)
+            foreignWords[wordNumbers[sender.gameButtonIndex]].attempts = convertingNumber
         }
         if (sender.correct) {
             sayWord(wordLabel.text!, answer: sender.currentTitle!)
             if wordNumbers != [0,0,0,0] {
-                number = NSNumber(int: foreignWords[wordNumbers[sender.gameButtonIndex]].correctAttempts.intValue + 1)
-                foreignWords[wordNumbers[sender.gameButtonIndex]].correctAttempts = number
+                convertingNumber = NSNumber(int: foreignWords[wordNumbers[sender.gameButtonIndex]].correctAttempts.intValue + 1)
+                foreignWords[wordNumbers[sender.gameButtonIndex]].correctAttempts = convertingNumber
             }
             self.streak += 1
             self.correctAttempts += 1
             refreshGame()
         } else {
             UIView.animateWithDuration(0.25, animations: {sender.alpha = 0.25})
-            number = NSNumber(int: foreignWords[wordNumbers[sender.gameButtonIndex]].incorrectAttempts.intValue + 1)
-            foreignWords[wordNumbers[sender.gameButtonIndex]].incorrectAttempts = number
+            convertingNumber = NSNumber(int: foreignWords[wordNumbers[sender.gameButtonIndex]].incorrectAttempts.intValue + 1)
+            foreignWords[wordNumbers[sender.gameButtonIndex]].incorrectAttempts = convertingNumber
             endStreak()
         }
     }
@@ -161,7 +172,6 @@ class GameViewController: UIViewController {
                 gameButton.correct = true
                 gameButton.setTitle(foreignWords[wordNumbers[gameButton.gameButtonIndex]].englishWord.word, forState: UIControlState.Normal)
                 wordLabel.text = foreignWords[wordNumbers[gameButton.gameButtonIndex]].word
-                //wordLabel.text = answers[wordNumbers[gameButton.gameButtonIndex]]
             } else {
                 gameButton.correct = false
                 gameButton.setTitle(foreignWords[wordNumbers[gameButton.gameButtonIndex]].englishWord.word, forState: UIControlState.Normal)
@@ -183,22 +193,28 @@ class GameViewController: UIViewController {
         self.navigationItem.title = streakText
     }
     
-    func sayWord (word: String, answer: String) {
+    //MARK: Text to speech
+    @IBAction func tapWordLabel(sender: UITapGestureRecognizer) {
+        let label = sender.view as UILabel
+        sayWord(label.text!, answer: nil)
+    }
+    
+    func sayWord (word: String, answer: String?) {
         if self.userDefaults.boolForKey("hasSound") {
             let dataPlistPath: String = NSBundle.mainBundle().pathForResource("IETFLanguageCode", ofType:"strings")!
-            let dataPlistDictionary = NSDictionary(contentsOfFile: dataPlistPath)!
-
-            var utteranceAnswer = AVSpeechUtterance(string: answer)
-            var utteranceWord = AVSpeechUtterance(string: word)
+            let IETFCodeDictionary = NSDictionary(contentsOfFile: dataPlistPath)!
+            var synthesizer = AVSpeechSynthesizer()
+            if ((answer) != nil) {
+                var utteranceAnswer = AVSpeechUtterance(string: answer)
+                utteranceAnswer.rate = self.speakingSpeed
+                synthesizer.speakUtterance(utteranceAnswer)
+            }
             //utteranceAnswer.voice = AVSpeechSynthesisVoice(language: "en-AU")
-            utteranceAnswer.rate = self.speakingSpeed
-
-            if let languageCode = dataPlistDictionary.valueForKey(userDefaults.stringForKey("language")!) as? String {
+            var utteranceWord = AVSpeechUtterance(string: word)
+            if let languageCode = IETFCodeDictionary.valueForKey(userDefaults.stringForKey("language")!) as? String {
                 utteranceWord.voice = AVSpeechSynthesisVoice(language: languageCode)
             }
             utteranceWord.rate = self.speakingSpeed
-            var synthesizer = AVSpeechSynthesizer()
-            synthesizer.speakUtterance(utteranceAnswer)
             synthesizer.speakUtterance(utteranceWord)
         }
     }

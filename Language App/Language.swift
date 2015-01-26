@@ -2,7 +2,7 @@
 //  Language.swift
 //  Ciao Game
 //
-//  Created by Clinton D'Annolfo on 24/01/2015.
+//  Created by Clinton D'Annolfo on 26/01/2015.
 //  Copyright (c) 2015 Clinton D'Annolfo. All rights reserved.
 //
 
@@ -14,8 +14,8 @@ import CoreData
 
 class Language: NSManagedObject {
 
-    @NSManaged var name: String
     @NSManaged var attempts: NSNumber
+    @NSManaged var name: String
     @NSManaged var words: NSSet
 
 }

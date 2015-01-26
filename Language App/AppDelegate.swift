@@ -21,79 +21,41 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //initialise user defaults
         var userDefaults = NSUserDefaults.standardUserDefaults()
         userDefaults.registerDefaults(NSDictionary(contentsOfFile: NSBundle.mainBundle().pathForResource("Defaults", ofType: "plist")!)!)
-        userDefaults.registerDefaults(NSDictionary(contentsOfFile: NSBundle.mainBundle().pathForResource("Languages", ofType: "plist")!)!)
-//        var managedObjectContext: NSManagedObjectContext = self.managedObjectContext!
-        var fetchRequest: NSFetchRequest = NSFetchRequest()
         var error: NSErrorPointer = nil
         let initialViewController = self.window!.rootViewController as UINavigationController
         let menu = initialViewController.topViewController as MenuViewController
         menu.managedObjectContext = self.managedObjectContext
-        //create NSmanagedobjects from a plist file and store in NSMutableArray
-        //Language, etc.
-        //iterate over NSMutableArray and run insert method on NSMangedObjectContext
-        //stores the path of the plist file present in the bundle
-        let languagePlistPath: String = NSBundle.mainBundle().pathForResource("Languages", ofType: "plist")!
-        var languageArray = NSMutableArray()
-        let languageInputArray = NSArray(contentsOfFile: languagePlistPath)
-        for (var i = 0; i < languageInputArray?.count; i++) {
-            var language = NSEntityDescription.insertNewObjectForEntityForName("Language", inManagedObjectContext: managedObjectContext!) as Language
-            language.name = languageInputArray?[i].valueForKey("name") as String
-            languageArray.addObject(language)
-        }
-
-        let plistPath: String = NSBundle.mainBundle().pathForResource("Words", ofType:"plist")!
-        var wordInputArray: NSArray = NSArray(contentsOfFile: plistPath)!
-        
-        for (var i = 0; i < wordInputArray.count; i++) { //iterate over word records
-            var englishWord = NSEntityDescription.insertNewObjectForEntityForName("UniqueWord", inManagedObjectContext: managedObjectContext!) as UniqueWord
-            englishWord.word = wordInputArray[i].valueForKey("word") as String
-            englishWord.difficulty = wordInputArray[i].valueForKey("difficulty") as String
-            for language in userDefaults.stringArrayForKey("languages") as [String] {
-                var word: Word = NSEntityDescription.insertNewObjectForEntityForName("Word", inManagedObjectContext: managedObjectContext!) as Word
-                word.word = wordInputArray[i].valueForKey(language) as String
-                word.englishWord = englishWord
-                word.language = languageArray.valueForKey(language) as Language
+        //create NSmanagedobjects from a plist file and store in persistent store
+        var languageDictionary = NSMutableDictionary(contentsOfFile: NSBundle.mainBundle().pathForResource("Languages", ofType: "plist")!)!
+        var languageFetchRequest = NSFetchRequest(entityName: "Language")
+        var fetchedLanguageObjects: NSArray = managedObjectContext?.executeFetchRequest(languageFetchRequest, error:error) as [Language]
+            if fetchedLanguageObjects.count == 0 { //No language records found
+                for language in languageDictionary {
+                    var newLanguage = NSEntityDescription.insertNewObjectForEntityForName("Language", inManagedObjectContext: managedObjectContext!) as Language
+                    newLanguage.name = language.value.valueForKey("name") as String
+                    languageDictionary.setObject(newLanguage, forKey:newLanguage.name)
+                    println("Created Language record: \(newLanguage.name)")
+                }
             }
-            //            var entity = NSEntityDescription.entityForName("Language", inManagedObjectContext: context)
-            //            fetchRequest.entity = entity
-            //            var predicate = NSPredicate(format: "name == ", argumentArray: nil)
-            //            context.executeFetchRequest(fetchRequest, error: error)
-            println(englishWord.word)
-            println(englishWord.difficulty + "\n")
+        var fetchRequest = NSFetchRequest(entityName: "Word")
+        var fetchedObjects: NSArray = managedObjectContext?.executeFetchRequest(fetchRequest, error:error) as [Word]
+        if fetchedObjects.count == 0 { //No word records found
+            var wordInputArray = NSArray(contentsOfFile: NSBundle.mainBundle().pathForResource("Words", ofType:"plist")!)!
+            for (var i = 0; i < wordInputArray.count; i++) { //iterate over word records
+                var englishWord = NSEntityDescription.insertNewObjectForEntityForName("EnglishWord", inManagedObjectContext: managedObjectContext!) as EnglishWord
+                englishWord.word = wordInputArray[i].valueForKey("word") as String
+                englishWord.difficulty = wordInputArray[i].valueForKey("difficulty") as String
+                englishWord.inPhraseMode = wordInputArray[i].valueForKey("inPhraseMode") as Bool
+                println("Created English word record: \(englishWord.word), \(englishWord.difficulty)")
+                for language in userDefaults.stringArrayForKey("languages") as [String] {
+                    var word: Word = NSEntityDescription.insertNewObjectForEntityForName("Word", inManagedObjectContext: managedObjectContext!) as Word
+                    word.word = wordInputArray[i].valueForKey(language) as String
+                    word.englishWord = englishWord
+                    word.language = languageDictionary.valueForKey(language) as Language
+                    println("Created Word record: \(word.word)")
+                }
+            }
         }
-        //var wordDict: NSDictionary = wordsArray[0] as NSDictionary
-//        for(var i = 0; i < dataFromPlist.count;i++) {
-//            NSLog("Mobile handset no \(i+1) is \(dataFromPlist.objectAtIndex(i))")
-//        }
-        //let’s add some more code in there to list out all the objects currently in the database:
-        //outdated, always evaluates to false
-//        if let entity: NSEntityDescription = NSEntityDescription.entityForName("Settings", inManagedObjectContext:managedObjectContext!) {
-//            fetchRequest.entity = entity
-//            if var fetchedObjects: NSArray = managedObjectContext?.executeFetchRequest(fetchRequest, error:error) {
-//                for object in fetchedObjects {
-//                    println("Difficulty:" , object.valueForKey("difficulty"))
-//                    var string: String = "details"
-//                    //var details: NSManagedObject = object.valueForKey(string)
-//                    println("Has Sound? %@", object.valueForKey("hasSound"))
-//                }
-//            } else { //start creating them if they don't exist
-////                var settings: Settings = NSEntityDescription.insertNewObjectForEntityForName("Settings", inManagedObjectContext:context) as Settings
-////                settings.difficulty = "Hard"
-////                settings.hasSound = true
-////                settings.language = "English"
-//            }
-//        }
-//        //Create Statistics table if not exists
-//        if let entity = NSEntityDescription.entityForName("Statistics", inManagedObjectContext:managedObjectContext!) {
-//            fetchRequest.entity = entity
-//            if var fetchedObjects: NSArray = managedObjectContext?.executeFetchRequest(fetchRequest, error:error) {
-//                //iterate over obejcts
-//            } else {
-////                var statistics: Statistics = NSEntityDescription.insertNewObjectForEntityForName("Statistics", inManagedObjectContext:context) as Statistics
-////                statistics.attempts = 123
-////                statistics.correctAttempts = 112
-//            }
-//        }
         if ((managedObjectContext?.save(error)) == nil) {
             println("Save error.\(error.debugDescription)"); //error.localizedDescription
             return false

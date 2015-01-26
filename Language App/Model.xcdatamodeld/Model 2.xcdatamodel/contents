@@ -1,29 +1,33 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6746" systemVersion="14B25" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="EnglishWord" representedClassName="EnglishWord" syncable="YES">
+        <attribute name="difficulty" attributeType="String" syncable="YES"/>
+        <attribute name="inAlphabetMode" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="inDictactionMode" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="inGrammarMode" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="inPhraseMode" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="inVerbMode" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="word" attributeType="String" syncable="YES"/>
+        <relationship name="foreignWord" toMany="YES" deletionRule="Cascade" destinationEntity="Word" inverseName="englishWord" inverseEntity="Word" syncable="YES"/>
+    </entity>
     <entity name="Language" representedClassName="Language" syncable="YES">
         <attribute name="attempts" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
         <relationship name="words" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Word" inverseName="language" inverseEntity="Word" syncable="YES"/>
     </entity>
-    <entity name="UniqueWord" representedClassName="UniqueWord" syncable="YES">
-        <attribute name="difficulty" attributeType="String" syncable="YES"/>
-        <attribute name="word" attributeType="String" syncable="YES"/>
-        <relationship name="foreignWord" toMany="YES" deletionRule="Cascade" destinationEntity="Word" inverseName="englishWord" inverseEntity="Word" syncable="YES"/>
-    </entity>
     <entity name="Word" representedClassName="Word" syncable="YES">
         <attribute name="attempts" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="correctAttempts" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="incorrectAttempts" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
-        <attribute name="inPhraseMode" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="word" attributeType="String" syncable="YES"/>
-        <relationship name="englishWord" maxCount="1" deletionRule="Nullify" destinationEntity="UniqueWord" inverseName="foreignWord" inverseEntity="UniqueWord" syncable="YES"/>
+        <relationship name="englishWord" maxCount="1" deletionRule="Nullify" destinationEntity="EnglishWord" inverseName="foreignWord" inverseEntity="EnglishWord" syncable="YES"/>
         <relationship name="language" maxCount="1" deletionRule="Nullify" destinationEntity="Language" inverseName="words" inverseEntity="Language" syncable="YES"/>
     </entity>
     <fetchRequest name="bestWord" entity="Word" predicateString="correctAttempts == max:(correctAttempts)"/>
     <fetchRequest name="worstWord" entity="Word"/>
     <elements>
         <element name="Language" positionX="-90" positionY="-18" width="128" height="88"/>
-        <element name="UniqueWord" positionX="252" positionY="-18" width="128" height="88"/>
-        <element name="Word" positionX="81" positionY="-18" width="128" height="150"/>
+        <element name="EnglishWord" positionX="252" positionY="-18" width="128" height="163"/>
+        <element name="Word" positionX="81" positionY="-18" width="128" height="133"/>
     </elements>
 </model>

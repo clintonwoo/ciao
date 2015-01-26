@@ -12,23 +12,6 @@
 		<string>Spanish</string>
 		<string>Russian</string>
 	</array>
-	<key>languageAttempts</key>
-	<dict>
-		<key>Italian</key>
-		<integer>0</integer>
-		<key>Russian</key>
-		<integer>0</integer>
-		<key>German</key>
-		<integer>0</integer>
-		<key>Polish</key>
-		<integer>0</integer>
-		<key>Spanish</key>
-		<integer>0</integer>
-		<key>Portuguese</key>
-		<integer>0</integer>
-		<key>Chinese</key>
-		<integer>0</integer>
-	</dict>
 	<key>longestStreak</key>
 	<integer>0</integer>
 	<key>attempts</key>
@@ -37,6 +20,8 @@
 	<integer>0</integer>
 	<key>language</key>
 	<string>Italian</string>
+	<key>gameMode</key>
+	<string>Intro Mode</string>
 	<key>willCacheGrammarPages</key>
 	<false/>
 	<key>difficulty</key>
