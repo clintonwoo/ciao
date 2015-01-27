@@ -108,6 +108,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <state key="normal" title="Play Game"/>
+                                <variation key="heightClass=regular-widthClass=regular" ambiguous="YES">
+                                    <rect key="frame" x="16" y="94" width="448" height="66"/>
+                                </variation>
                                 <connections>
                                     <segue destination="3xl-OT-mTO" kind="show" identifier="Show Game" id="mlh-Ye-XLz"/>
                                 </connections>
@@ -443,10 +446,10 @@
             </objects>
             <point key="canvasLocation" x="-136" y="-164"/>
         </scene>
-        <!--Streak: 0-->
+        <!--Game-->
         <scene sceneID="XyD-OF-awD">
             <objects>
-                <viewController storyboardIdentifier="Game" useStoryboardIdentifierAsRestorationIdentifier="YES" id="3xl-OT-mTO" customClass="GameViewController" customModule="Language_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Game" title="Game" useStoryboardIdentifierAsRestorationIdentifier="YES" id="3xl-OT-mTO" customClass="GameViewController" customModule="Language_App" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="YI5-bu-RXK"/>
                         <viewControllerLayoutGuide type="bottom" id="4y2-kc-UfI"/>
@@ -458,6 +461,7 @@
                             <button opaque="NO" tag="150" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="oTI-nk-0kW" customClass="GameButton" customModule="Language_App" customModuleProvider="target">
                                 <rect key="frame" x="16" y="357" width="141" height="60"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <inset key="contentEdgeInsets" minX="6" minY="6" maxX="6" maxY="6"/>
                                 <state key="normal" title="Good afternoon">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -473,6 +477,7 @@
                             <button opaque="NO" tag="100" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="S6y-0d-oVe" customClass="GameButton" customModule="Language_App" customModuleProvider="target">
                                 <rect key="frame" x="163" y="289" width="141" height="60"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <inset key="contentEdgeInsets" minX="6" minY="6" maxX="6" maxY="6"/>
                                 <state key="normal" title="Good evening">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -492,9 +497,9 @@
                                     <constraint firstAttribute="width" constant="146" id="Jpl-rp-rqa"/>
                                     <constraint firstAttribute="height" constant="60" id="zdL-Tj-08Q"/>
                                 </constraints>
-                                <state key="normal" title="Hi">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <inset key="contentEdgeInsets" minX="6" minY="6" maxX="6" maxY="6"/>
+                                <state key="normal" title="Hi"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="gameButtonIndex">
                                         <integer key="value" value="0"/>
@@ -513,6 +518,7 @@
                             <button opaque="NO" tag="200" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="u6K-4E-bUI" customClass="GameButton" customModule="Language_App" customModuleProvider="target">
                                 <rect key="frame" x="163" y="357" width="141" height="60"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <inset key="contentEdgeInsets" minX="6" minY="6" maxX="6" maxY="6"/>
                                 <state key="normal" title="Sorry">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -535,6 +541,30 @@
                                     <outletCollection property="gestureRecognizers" destination="opi-Vo-jl6" appends="YES" id="kAR-Nt-dse"/>
                                 </connections>
                             </label>
+                            <button opaque="NO" tag="50" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="7Pj-am-cE5" customClass="GameButton" customModule="Language_App" customModuleProvider="target">
+                                <rect key="frame" x="16" y="357" width="288" height="60"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="146" id="Irm-Pr-tor"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <inset key="contentEdgeInsets" minX="6" minY="6" maxX="6" maxY="6"/>
+                                <state key="normal" title="Alphabet"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="alphabetGameButton" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Irm-Pr-tor"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                    <rect key="frame" x="16" y="183" width="448" height="74"/>
+                                </variation>
+                                <connections>
+                                    <action selector="tapAlphabetButton:" destination="3xl-OT-mTO" eventType="touchUpInside" id="tXK-bD-rTy"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.41614653138228552" green="0.77106559991374601" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -542,24 +572,35 @@
                             <constraint firstItem="oTI-nk-0kW" firstAttribute="leading" secondItem="a89-be-emT" secondAttribute="leadingMargin" id="37G-ZV-bIt"/>
                             <constraint firstItem="oTI-nk-0kW" firstAttribute="top" secondItem="AfY-8d-yRY" secondAttribute="bottom" constant="8" id="4FN-e2-1yS"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Grm-zE-sf9" secondAttribute="trailing" id="7CC-2R-VKQ"/>
+                            <constraint firstItem="7Pj-am-cE5" firstAttribute="centerY" secondItem="a89-be-emT" secondAttribute="centerY" multiplier="1.5" id="9qV-W6-5OJ"/>
                             <constraint firstItem="u6K-4E-bUI" firstAttribute="trailing" secondItem="a89-be-emT" secondAttribute="trailingMargin" id="BnC-vm-LBn"/>
+                            <constraint firstItem="7Pj-am-cE5" firstAttribute="height" secondItem="a89-be-emT" secondAttribute="height" multiplier="0.12" id="F3f-tF-xaY"/>
                             <constraint firstItem="S6y-0d-oVe" firstAttribute="leading" secondItem="AfY-8d-yRY" secondAttribute="trailing" constant="8" id="Fkd-gh-uba"/>
+                            <constraint firstItem="7Pj-am-cE5" firstAttribute="leading" secondItem="a89-be-emT" secondAttribute="leadingMargin" id="GZy-q6-BpP">
+                                <variation key="heightClass=regular-widthClass=regular" constant="0.0"/>
+                            </constraint>
                             <constraint firstAttribute="centerY" secondItem="Grm-zE-sf9" secondAttribute="centerY" constant="95" id="QxT-rn-3GL"/>
                             <constraint firstItem="S6y-0d-oVe" firstAttribute="height" secondItem="AfY-8d-yRY" secondAttribute="height" id="VKp-jZ-YDG"/>
                             <constraint firstItem="Grm-zE-sf9" firstAttribute="leading" secondItem="a89-be-emT" secondAttribute="leadingMargin" id="XLs-7c-rt9"/>
+                            <constraint firstItem="7Pj-am-cE5" firstAttribute="height" secondItem="a89-be-emT" secondAttribute="height" multiplier="0.2" id="XvD-gR-w2x"/>
                             <constraint firstItem="4y2-kc-UfI" firstAttribute="top" secondItem="oTI-nk-0kW" secondAttribute="bottom" constant="19" id="YKC-Fs-yac"/>
+                            <constraint firstItem="4y2-kc-UfI" firstAttribute="top" secondItem="7Pj-am-cE5" secondAttribute="bottom" constant="19" id="Zv9-7r-ahc"/>
+                            <constraint firstAttribute="centerX" secondItem="7Pj-am-cE5" secondAttribute="centerX" id="b3U-K7-eNW"/>
                             <constraint firstItem="S6y-0d-oVe" firstAttribute="trailing" secondItem="a89-be-emT" secondAttribute="trailingMargin" id="beC-aS-dzK"/>
                             <constraint firstItem="AfY-8d-yRY" firstAttribute="leading" secondItem="a89-be-emT" secondAttribute="leadingMargin" id="bpF-uY-IgL"/>
                             <constraint firstItem="oTI-nk-0kW" firstAttribute="top" secondItem="AfY-8d-yRY" secondAttribute="bottom" constant="8" id="cQa-Pg-GE5"/>
-                            <constraint firstItem="S6y-0d-oVe" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="AfY-8d-yRY" secondAttribute="trailing" priority="750" constant="1" id="daP-Zz-sKN"/>
+                            <constraint firstItem="S6y-0d-oVe" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="AfY-8d-yRY" secondAttribute="trailing" priority="750" constant="13" id="daP-Zz-sKN"/>
                             <constraint firstItem="Grm-zE-sf9" firstAttribute="top" secondItem="YI5-bu-RXK" secondAttribute="bottom" priority="750" constant="60" id="dcp-0H-OPM"/>
                             <constraint firstItem="4y2-kc-UfI" firstAttribute="top" secondItem="u6K-4E-bUI" secondAttribute="bottom" constant="19" id="exi-uu-f7j"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="7Pj-am-cE5" secondAttribute="trailing" id="fqq-RK-Phj">
+                                <variation key="heightClass=regular-widthClass=regular" constant="0.0"/>
+                            </constraint>
                             <constraint firstItem="S6y-0d-oVe" firstAttribute="width" secondItem="AfY-8d-yRY" secondAttribute="width" id="gHf-Oz-3jD"/>
                             <constraint firstItem="AfY-8d-yRY" firstAttribute="width" relation="greaterThanOrEqual" secondItem="a89-be-emT" secondAttribute="width" multiplier="0.44" id="gxF-ov-Sux"/>
                             <constraint firstItem="oTI-nk-0kW" firstAttribute="top" secondItem="AfY-8d-yRY" secondAttribute="bottom" constant="8" id="h4R-jD-Ksb"/>
                             <constraint firstItem="AfY-8d-yRY" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Grm-zE-sf9" secondAttribute="bottom" priority="750" constant="123" id="hX5-V1-iA7"/>
                             <constraint firstItem="u6K-4E-bUI" firstAttribute="width" secondItem="AfY-8d-yRY" secondAttribute="width" id="mRh-gc-Faj"/>
-                            <constraint firstItem="u6K-4E-bUI" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="oTI-nk-0kW" secondAttribute="trailing" priority="750" constant="1" id="mV0-zc-86p"/>
+                            <constraint firstItem="u6K-4E-bUI" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="oTI-nk-0kW" secondAttribute="trailing" priority="750" constant="13" id="mV0-zc-86p"/>
                             <constraint firstAttribute="centerX" secondItem="Grm-zE-sf9" secondAttribute="centerX" id="nH2-bS-gQ9"/>
                             <constraint firstItem="u6K-4E-bUI" firstAttribute="height" secondItem="AfY-8d-yRY" secondAttribute="height" id="ne9-ea-8Z6"/>
                             <constraint firstItem="oTI-nk-0kW" firstAttribute="width" secondItem="AfY-8d-yRY" secondAttribute="width" id="pKT-dQ-bdV"/>
@@ -568,13 +609,21 @@
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="Fkd-gh-uba"/>
+                                <exclude reference="9qV-W6-5OJ"/>
+                                <exclude reference="XvD-gR-w2x"/>
                                 <exclude reference="cQa-Pg-GE5"/>
                                 <exclude reference="h4R-jD-Ksb"/>
                             </mask>
                         </variation>
+                        <variation key="heightClass=regular-widthClass=regular">
+                            <mask key="constraints">
+                                <include reference="9qV-W6-5OJ"/>
+                                <include reference="XvD-gR-w2x"/>
+                            </mask>
+                        </variation>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Streak: 0" id="lkb-Fq-szk">
+                    <navigationItem key="navigationItem" id="lkb-Fq-szk">
                         <barButtonItem key="rightBarButtonItem" title="Sound On" id="Ggz-Ac-EQh">
                             <connections>
                                 <action selector="clickSoundButton:" destination="3xl-OT-mTO" id="9QQ-6t-vGf"/>
@@ -584,6 +633,7 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
+                        <outlet property="alphabetGameButton" destination="7Pj-am-cE5" id="6hQ-Em-YYg"/>
                         <outlet property="gameButton1" destination="AfY-8d-yRY" id="HFg-M3-VfO"/>
                         <outlet property="gameButton2" destination="S6y-0d-oVe" id="57D-39-jIe"/>
                         <outlet property="gameButton3" destination="oTI-nk-0kW" id="oPU-vt-Idh"/>
@@ -594,6 +644,7 @@
                         <outletCollection property="gameButtonCollection" destination="S6y-0d-oVe" collectionClass="NSMutableArray" id="c9q-zB-R3B"/>
                         <outletCollection property="gameButtonCollection" destination="u6K-4E-bUI" collectionClass="NSMutableArray" id="tm7-3L-D8H"/>
                         <outletCollection property="gameButtonCollection" destination="oTI-nk-0kW" collectionClass="NSMutableArray" id="dn7-z6-d7y"/>
+                        <outletCollection property="gameButtonCollection" destination="7Pj-am-cE5" collectionClass="NSMutableArray" id="67l-3e-rmt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dKl-v8-7Ar" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -603,7 +654,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="715" y="-164"/>
+            <point key="canvasLocation" x="714" y="-165"/>
         </scene>
         <!--Grammar View Controller-->
         <scene sceneID="b0j-ML-4Id">

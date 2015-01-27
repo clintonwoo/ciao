@@ -19,6 +19,7 @@ class GameViewController: UIViewController {
     @IBOutlet weak var gameButton2: UIButton!
     @IBOutlet weak var gameButton3: UIButton!
     @IBOutlet weak var gameButton4: UIButton!
+    @IBOutlet weak var alphabetGameButton: GameButton!
     @IBOutlet var gameButtonCollection: [GameButton]!
     @IBOutlet weak var soundButton: UIBarButtonItem!
     
@@ -44,6 +45,7 @@ class GameViewController: UIViewController {
     var speakingSpeed: Float = NSUserDefaults.standardUserDefaults().floatForKey("speakingSpeed")
     var wordNumbers: [Int] = [0,0,0,0]
     var foreignWords: [Word] = []
+    var alphabet: [Alphabet]? = nil
     
     //MARK: Initialisers
     override init() {
@@ -69,15 +71,35 @@ class GameViewController: UIViewController {
     //MARK: View controller methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        var error = NSErrorPointer()
+        if userDefaults.stringForKey("gameMode") == "Alphabet Mode" {
+            for gameButton in gameButtonCollection {
+                if gameButton.alphabetGameButton == true {
+                    gameButton.hidden = false
+                } else {
+                gameButton.hidden = true
+                }
+            }
+        } else {
+            self.navigationItem.title = streakText
+            for gameButton in gameButtonCollection {
+                if gameButton.alphabetGameButton == true {
+                    gameButton.hidden = true
+                } else {
+                    gameButton.hidden = false
+                }
+            }
+            //set label to language's hi
+            var hiFetchRequest = NSFetchRequest(entityName: "Word")
+            hiFetchRequest.predicate = NSPredicate(format: "language.name = %@ AND englishWord.word = %@", userDefaults.stringForKey("language")!, "Hi")
+            let temp = managedObjectContext?.executeFetchRequest(hiFetchRequest, error: error) as [Word]
+            wordLabel.text = temp[0].word
+        }
         for gameButton in gameButtonCollection {
             gameButton.layer.cornerRadius = CGFloat(2)
+            gameButton.titleLabel?.textAlignment = NSTextAlignment.Center
         }
-        if (self.userDefaults.boolForKey("hasSound") == true) {
-            soundButton.title = "Sound On"
-        } else {
-            soundButton.title = "Sound Off"
-        }
-        var error = NSErrorPointer()
+        setSoundButton()
         switch (userDefaults.stringForKey("gameMode")!) {
             case "Intro Mode":
                 var fetchRequest = NSFetchRequest(entityName: "Word")
@@ -87,19 +109,35 @@ class GameViewController: UIViewController {
                 var fetchRequest = NSFetchRequest(entityName: "Word")
                 fetchRequest.predicate = NSPredicate(format: "language = %@ AND englishWord.inPhraseMode = true", self.language)
                 self.foreignWords = managedObjectContext?.executeFetchRequest(fetchRequest, error: error) as [Word]
+            case "Grammar Mode":
+                var fetchRequest = NSFetchRequest(entityName: "Word")
+                fetchRequest.predicate = NSPredicate(format: "language = %@ AND englishWord.inPhraseMode = true", self.language)
+                self.foreignWords = managedObjectContext?.executeFetchRequest(fetchRequest, error: error) as [Word]
+            case "Verb Mode":
+                var fetchRequest = NSFetchRequest(entityName: "Word")
+                fetchRequest.predicate = NSPredicate(format: "language = %@ AND englishWord.inPhraseMode = true", self.language)
+                self.foreignWords = managedObjectContext?.executeFetchRequest(fetchRequest, error: error) as [Word]
+            case "Alphabet Mode":
+                var fetchRequest = NSFetchRequest(entityName: "Alphabet")
+                fetchRequest.predicate = NSPredicate(format: "language = %@", self.language)
+                self.alphabet = managedObjectContext?.executeFetchRequest(fetchRequest, error: error) as? [Alphabet]
+                self.alphabet?.sort({Int($0.index) < Int($1.index)})
+                wordLabel.text = self.alphabet?[0].uppercase
+                alphabetGameButton.setTitle(self.alphabet?[0].lowercase, forState: .Normal)
+            case "Dictation Mode":
+                var fetchRequest = NSFetchRequest(entityName: "Word")
+                fetchRequest.predicate = NSPredicate(format: "language = %@ AND englishWord.inPhraseMode = true", self.language)
+                self.foreignWords = managedObjectContext?.executeFetchRequest(fetchRequest, error: error) as [Word]
+            
         default:
             break
         }
-        //set label to language's hi
-        var hiFetchRequest = NSFetchRequest(entityName: "Word")
-        hiFetchRequest.predicate = NSPredicate(format: "language.name = %@ AND englishWord.word = %@", userDefaults.stringForKey("language")!, "Hi")
-        let temp = managedObjectContext?.executeFetchRequest(hiFetchRequest, error: error) as [Word]
-        wordLabel.text = temp[0].word
+        func sort (n1: Int, n2: Int) -> Bool {
+            return n1 > n2
+        }
 //        var adView: ADBannerView = ADBannerView(adType: ADAdType.Banner)
 //        //adView.currentContentSizeIdentifier = ADBannerContentSizeIdentifierPortrait
 //        self.view.addSubview(adView)
-        //adView
-
         //let layoutConstraints = NSLayoutConstraint.constraintsWithVisualFormat("[button]-30-[button2]", options: NSLayoutFormatOptions, metrics: <#[NSObject : AnyObject]?#>, views: <#[NSObject : AnyObject]#>)
         //button.addConstraint(<#constraint: NSLayoutConstraint#>)
         // Do any additional setup after loading the view, typically from a nib.
@@ -120,15 +158,18 @@ class GameViewController: UIViewController {
     
     //MARK: Game methods
     @IBAction func clickSoundButton(sender: UIBarButtonItem) {
-        if (self.userDefaults.boolForKey("hasSound") == true) {
-            self.userDefaults.setBool(false, forKey: "hasSound")
-            sender.title = "Sound Off"
-        } else {
-            self.userDefaults.setBool(true, forKey: "hasSound")
-            sender.title = "Sound On"
-        }
+        self.userDefaults.setBool(!userDefaults.boolForKey("hasSound"), forKey: "hasSound")
+        setSoundButton()
     }
     
+    private func setSoundButton () {
+        if (self.userDefaults.boolForKey("hasSound") == true) {
+            soundButton.title = "Sound On"
+        } else {
+            soundButton.title = "Sound Off"
+        }
+    }
+
     @IBAction func clickGameButton(sender: GameButton) {
         self.attempts += 1
         //create a new NSNumber to increment managed objects
@@ -140,7 +181,11 @@ class GameViewController: UIViewController {
             foreignWords[wordNumbers[sender.gameButtonIndex]].attempts = convertingNumber
         }
         if (sender.correct) {
-            sayWord(wordLabel.text!, answer: sender.currentTitle!)
+            if sender.currentTitle == nil {
+                sayWord(wordLabel.text!, localWord: sender.currentAttributedTitle?.string)
+            } else {
+            sayWord(wordLabel.text!, localWord: sender.currentTitle!)
+            }
             if wordNumbers != [0,0,0,0] {
                 convertingNumber = NSNumber(int: foreignWords[wordNumbers[sender.gameButtonIndex]].correctAttempts.intValue + 1)
                 foreignWords[wordNumbers[sender.gameButtonIndex]].correctAttempts = convertingNumber
@@ -156,6 +201,18 @@ class GameViewController: UIViewController {
         }
     }
 
+    @IBAction func tapAlphabetButton(sender: GameButton) {
+        sender.gameButtonIndex += 1
+        if sender.gameButtonIndex >= self.alphabet?.count {
+            sender.gameButtonIndex = 0
+        }
+        let word = alphabet?[sender.gameButtonIndex].uppercase
+        let lower = alphabet?[sender.gameButtonIndex].lowercase
+        sayWord(sender.currentTitle!, localWord: nil)//(word!, localWord: self.alphabet?[sender.gameButtonIndex].lowercase)
+        sender.setTitle(self.alphabet?[sender.gameButtonIndex].lowercase, forState: UIControlState.Normal)
+        wordLabel.text = self.alphabet?[sender.gameButtonIndex].lowercase
+    }
+    
     func refreshGame () {
         var index = 0
         do {
@@ -196,25 +253,29 @@ class GameViewController: UIViewController {
     //MARK: Text to speech
     @IBAction func tapWordLabel(sender: UITapGestureRecognizer) {
         let label = sender.view as UILabel
-        sayWord(label.text!, answer: nil)
+        sayWord(label.text!, localWord: nil)
     }
     
-    func sayWord (word: String, answer: String?) {
+    func sayWord (foreignWord: String, localWord: String?) {
         if self.userDefaults.boolForKey("hasSound") {
             let dataPlistPath: String = NSBundle.mainBundle().pathForResource("IETFLanguageCode", ofType:"strings")!
             let IETFCodeDictionary = NSDictionary(contentsOfFile: dataPlistPath)!
             var synthesizer = AVSpeechSynthesizer()
-            if ((answer) != nil) {
-                var utteranceAnswer = AVSpeechUtterance(string: answer)
+            if ((localWord) != nil) {
+                var utteranceAnswer = AVSpeechUtterance(string: localWord!)
+//                var utteranceAnswer = AVSpeechUtterance(string: foreignWord)
                 utteranceAnswer.rate = self.speakingSpeed
+                println("Speaking local \(localWord!)")
                 synthesizer.speakUtterance(utteranceAnswer)
             }
             //utteranceAnswer.voice = AVSpeechSynthesisVoice(language: "en-AU")
-            var utteranceWord = AVSpeechUtterance(string: word)
+//            var utteranceWord = AVSpeechUtterance(string: localWord!)
+            var utteranceWord = AVSpeechUtterance(string: foreignWord)
             if let languageCode = IETFCodeDictionary.valueForKey(userDefaults.stringForKey("language")!) as? String {
                 utteranceWord.voice = AVSpeechSynthesisVoice(language: languageCode)
             }
             utteranceWord.rate = self.speakingSpeed
+            println("Speaking foreign \(foreignWord)")
             synthesizer.speakUtterance(utteranceWord)
         }
     }

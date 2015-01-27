@@ -93,53 +93,6 @@ class MenuViewController: UIViewController, SettingsDelegate {
     override func performSegueWithIdentifier(identifier: String?, sender: AnyObject?) {
         super.performSegueWithIdentifier(identifier, sender: sender)
     }
-    
-    func getCurrentLanguageWikipediaGrammarURL () /* -> NSURL */ {
-//        switch(userDefaults.stringForKey("language")!) {
-//            case "Italian": url = NSURL(string: "http://en.wikipedia.org/wiki/Italian_grammar")!
-//            case "Arabic": url = NSURL("")
-//            case "Chinese": url = NSURL("")
-//            case "Chinese (Hong Kong SAR China)": url = NSURL("")
-//            case "Chinese (Taiwan)": url = NSURL("")
-//            case "Czech": url = NSURL("")
-//            case "Danish": url = NSURL("")
-//            case "Dutch (Belgium)": url = NSURL("")
-//            case "Dutch (Netherlands)": url = NSURL("")
-//            case "English (Australia)": url = NSURL("")
-//            case "English (Ireland)": url = NSURL("")
-//            case "English (South Africa)": url = NSURL("")
-//            case "English (United Kingdom)": url = NSURL("")
-//            case "English (United States)": url = NSURL("")
-//            case "Finnish": url = NSURL("")
-//            case "French (Canada)": url = NSURL("")
-//            case "French (France)": url = NSURL("")
-//            case "German": url = NSURL("")
-//            case "Greek": url = NSURL("")
-//            case "Hebrew": url = NSURL("")
-//            case "Hindi": url = NSURL("")
-//            case "Hungarian": url = NSURL("")
-//            case "Indonesian": url = NSURL("")
-//            case "Italian": url = NSURL("")
-//            case "Japanese": url = NSURL("")
-//            case "Korean": url = NSURL("")
-//            case "Norwegian": url = NSURL("")
-//            case "Polish": url = NSURL("")
-//            case "Portuguese (Brazil)": url = NSURL("")
-//            case "Portuguese (Portugal)": url = NSURL("")
-//            case "Romanian": url = NSURL("")
-//            case "Russian": url = NSURL("")
-//            case "Slovak": url = NSURL("")
-//            case "Spanish (Mexico)": url = NSURL("")
-//            case "Spanish (Spain)": url = NSURL("")
-//            case "Swedish": url = NSURL("")
-//            case "Thai": url = NSURL("")
-//            case "Turkish": url = NSURL("")
-//        default:
-//            println("error, URL for wikipedia language grammar page not known")
-//            url = NSURL()
-//        }
-//        return url
-    }
 
     /*@IBAction func clickSettings(sender: UIButton) {
         self.presentViewController(SettingsController(), animated: true, completion: nil)

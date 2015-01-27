@@ -27,13 +27,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         menu.managedObjectContext = self.managedObjectContext
         //create NSmanagedobjects from a plist file and store in persistent store
         var languageDictionary = NSMutableDictionary(contentsOfFile: NSBundle.mainBundle().pathForResource("Languages", ofType: "plist")!)!
+        var alphabetDictionary = NSMutableDictionary(contentsOfFile: NSBundle.mainBundle().pathForResource("Alphabet", ofType: "plist")!)!
         var languageFetchRequest = NSFetchRequest(entityName: "Language")
-        var fetchedLanguageObjects: NSArray = managedObjectContext?.executeFetchRequest(languageFetchRequest, error:error) as [Language]
+        var fetchedLanguageObjects = managedObjectContext?.executeFetchRequest(languageFetchRequest, error:error) as [Language]
             if fetchedLanguageObjects.count == 0 { //No language records found
-                for language in languageDictionary {
+                for language in languageDictionary { //iterate languages
                     var newLanguage = NSEntityDescription.insertNewObjectForEntityForName("Language", inManagedObjectContext: managedObjectContext!) as Language
-                    newLanguage.name = language.value.valueForKey("name") as String
+                    newLanguage.name = language.key as String//value.valueForKey("name") as String
                     languageDictionary.setObject(newLanguage, forKey:newLanguage.name)
+                    let languageUpperCharacterArray = alphabetDictionary.valueForKeyPath("\(language.key as String).uppercase") as [String] //returns the array of strings
+                    let languageLowerCharacterArray = alphabetDictionary.valueForKeyPath("\(language.key as String).lowercase") as [String]
+                    for (var i = 0 ; i < languageUpperCharacterArray.count; i++) {
+                        var newCharacter = NSEntityDescription.insertNewObjectForEntityForName("Alphabet", inManagedObjectContext: managedObjectContext!) as Alphabet
+                        newCharacter.uppercase = languageUpperCharacterArray[i]//value.valueForKey("character") as String
+                        newCharacter.lowercase = languageLowerCharacterArray[i]
+                        newCharacter.index = i
+                            newCharacter.language = newLanguage
+                        println("Created alphabet character record: \(newCharacter.index) \(newCharacter.uppercase), \(newCharacter.lowercase)")
+                    }
                     println("Created Language record: \(newLanguage.name)")
                 }
             }
@@ -42,12 +53,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if fetchedObjects.count == 0 { //No word records found
             var wordInputArray = NSArray(contentsOfFile: NSBundle.mainBundle().pathForResource("Words", ofType:"plist")!)!
             for (var i = 0; i < wordInputArray.count; i++) { //iterate over word records
+                //create english words
                 var englishWord = NSEntityDescription.insertNewObjectForEntityForName("EnglishWord", inManagedObjectContext: managedObjectContext!) as EnglishWord
                 englishWord.word = wordInputArray[i].valueForKey("word") as String
                 englishWord.difficulty = wordInputArray[i].valueForKey("difficulty") as String
                 englishWord.inPhraseMode = wordInputArray[i].valueForKey("inPhraseMode") as Bool
                 println("Created English word record: \(englishWord.word), \(englishWord.difficulty)")
                 for language in userDefaults.stringArrayForKey("languages") as [String] {
+                    //create foreign words and relate to languages
                     var word: Word = NSEntityDescription.insertNewObjectForEntityForName("Word", inManagedObjectContext: managedObjectContext!) as Word
                     word.word = wordInputArray[i].valueForKey(language) as String
                     word.englishWord = englishWord

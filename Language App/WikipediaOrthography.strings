@@ -1,0 +1,45 @@
+/* 
+  WikipediaOrthography.strings
+  Ciao Game
+
+  Created by Clinton D'Annolfo on 26/01/2015.
+  Copyright (c) 2015 Clinton D'Annolfo. All rights reserved.
+*/
+
+"Arabic" = "http://en.wikipedia.org/wiki/Arabic_grammar";
+"Chinese" = "http://en.wikipedia.org/wiki/Chinese_grammar";
+"Chinese (Hong Kong SAR China)" = "";
+"Chinese (Taiwan)" = "";
+"Czech" = "http://en.wikipedia.org/wiki/Czech_language#Grammar";
+"Danish" = "http://en.wikipedia.org/wiki/Danish_grammar";
+"Dutch (Belgium)" = "";
+"Dutch (Netherlands)" = "";
+"English (Australia)" = "";
+"English (Ireland)" = "";
+"English (South Africa)" = "";
+"English (United Kingdom)" = "";
+"English (United States)" = "";
+"Finnish" = "http://en.wikipedia.org/wiki/Finnish_grammar";
+"French (Canada)" = "";
+"French" = "http://en.wikipedia.org/wiki/French_orthography";
+"German" = "http://en.wikipedia.org/wiki/German_orthography";
+"Greek" = "http://en.wikipedia.org/wiki/Modern_Greek_grammar";
+"Hebrew" = "http://en.wikipedia.org/wiki/Hebrew_grammar";
+"Hindi" = "http://en.wikipedia.org/wiki/Hindustani_grammar";
+"Hungarian" = "http://en.wikipedia.org/wiki/Hungarian_grammar";
+"Indonesian" = "http://en.wikipedia.org/wiki/Malay_grammar";
+"Italian" = "http://en.wikipedia.org/wiki/Italian_orthography";
+"Japanese" = "http://en.wikipedia.org/wiki/Japanese_grammar";
+"Korean" = "http://en.wikipedia.org/wiki/Korean_grammar";
+"Norwegian" = "http://en.wikipedia.org/wiki/Norwegian_language";
+"Polish" = "http://en.wikipedia.org/wiki/Polish_orthography";
+"Portuguese (Brazil)" = "";
+"Portuguese" = "http://en.wikipedia.org/wiki/Portuguese_orthography";
+"Romanian" = "http://en.wikipedia.org/wiki/Romanian_grammar";
+"Russian" = "http://en.wikipedia.org/wiki/Russian_alphabet";
+"Slovak" = "";
+"Spanish (Mexico)" = "";
+"Spanish" = "http://en.wikipedia.org/wiki/Spanish_orthography";
+"Swedish" = "http://en.wikipedia.org/wiki/Swedish_grammar";
+"Thai" = "http://en.wikipedia.org/wiki/Thai_grammar";
+"Turkish" = "http://en.wikipedia.org/wiki/Spanish_grammar";

@@ -22,6 +22,9 @@
 		1869787B1A61FC9D00A496D0 /* GrammarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1869787A1A61FC9D00A496D0 /* GrammarViewController.swift */; };
 		186D02BE1A75B77500A960D8 /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186D02BD1A75B77500A960D8 /* Language.swift */; };
 		186DFC861A7377810014619F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 186DFC851A7377810014619F /* Main.storyboard */; };
+		18867F011A7610C6005F8AD7 /* Alphabet.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18867F001A7610C6005F8AD7 /* Alphabet.plist */; };
+		18867F031A761F31005F8AD7 /* WikipediaOrthography.strings in Resources */ = {isa = PBXBuildFile; fileRef = 18867F021A761F31005F8AD7 /* WikipediaOrthography.strings */; };
+		18867F051A762031005F8AD7 /* Alphabet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18867F041A762031005F8AD7 /* Alphabet.swift */; };
 		188B2C391A73888A00758929 /* IETFLanguageCode.strings in Resources */ = {isa = PBXBuildFile; fileRef = 188B2C381A73888A00758929 /* IETFLanguageCode.strings */; };
 		1899796B1A62265700A758ED /* SwitchWithTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1899796A1A62265700A758ED /* SwitchWithTitle.swift */; };
 		18AC1C091A6FD66E00987D5F /* Words.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18AC1C081A6FD66E00987D5F /* Words.plist */; };
@@ -64,8 +67,12 @@
 		1869787A1A61FC9D00A496D0 /* GrammarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GrammarViewController.swift; sourceTree = "<group>"; };
 		186D02BD1A75B77500A960D8 /* Language.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
 		186DFC851A7377810014619F /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		18867F001A7610C6005F8AD7 /* Alphabet.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Alphabet.plist; sourceTree = "<group>"; };
+		18867F021A761F31005F8AD7 /* WikipediaOrthography.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = WikipediaOrthography.strings; sourceTree = "<group>"; };
+		18867F041A762031005F8AD7 /* Alphabet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alphabet.swift; sourceTree = "<group>"; };
 		188B2C371A7383CC00758929 /* Model 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Model 2.xcdatamodel"; sourceTree = "<group>"; };
 		188B2C381A73888A00758929 /* IETFLanguageCode.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = IETFLanguageCode.strings; sourceTree = "<group>"; };
+		188CA6061A77C21F009EB2D8 /* Model 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Model 3.xcdatamodel"; sourceTree = "<group>"; };
 		1899796A1A62265700A758ED /* SwitchWithTitle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchWithTitle.swift; sourceTree = "<group>"; };
 		18AC1C081A6FD66E00987D5F /* Words.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Words.plist; sourceTree = "<group>"; };
 		18BD53681A33053300742D7F /* Language App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Language App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -109,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				18C1F9471A4E3CA500531C44 /* Model.xcdatamodeld */,
+				18867F041A762031005F8AD7 /* Alphabet.swift */,
 				18032B321A75EB000021E6AD /* Word.swift */,
 				18032B301A75EB000021E6AD /* EnglishWord.swift */,
 				186D02BD1A75B77500A960D8 /* Language.swift */,
@@ -179,7 +187,9 @@
 				18BD53741A33053300742D7F /* Images.xcassets */,
 				18C0F1FA1A456E25007BEE49 /* Info.plist */,
 				18AC1C081A6FD66E00987D5F /* Words.plist */,
+				18867F001A7610C6005F8AD7 /* Alphabet.plist */,
 				185182A91A735A9500DA20FC /* WikipediaGrammarURL.strings */,
+				18867F021A761F31005F8AD7 /* WikipediaOrthography.strings */,
 				188B2C381A73888A00758929 /* IETFLanguageCode.strings */,
 				185182A71A7358B000DA20FC /* Languages.plist */,
 				18384E491A58F49D006DA713 /* Defaults.plist */,
@@ -295,10 +305,12 @@
 				18C0F1FF1A459ED7007BEE49 /* Localizable.strings in Resources */,
 				188B2C391A73888A00758929 /* IETFLanguageCode.strings in Resources */,
 				18384E4A1A58F49D006DA713 /* Defaults.plist in Resources */,
+				18867F011A7610C6005F8AD7 /* Alphabet.plist in Resources */,
 				18AC1C091A6FD66E00987D5F /* Words.plist in Resources */,
 				186DFC861A7377810014619F /* Main.storyboard in Resources */,
 				18C38EC31A39A8BC00AC5860 /* SecretStoryboard.storyboard in Resources */,
 				185182A81A7358B000DA20FC /* Languages.plist in Resources */,
+				18867F031A761F31005F8AD7 /* WikipediaOrthography.strings in Resources */,
 				18BD53751A33053300742D7F /* Images.xcassets in Resources */,
 				18384E4E1A59017A006DA713 /* MediumWords.strings in Resources */,
 				18384E501A59018C006DA713 /* HardWords.strings in Resources */,
@@ -326,6 +338,7 @@
 				184656561A57822D0095442D /* AboutViewController.swift in Sources */,
 				18032B251A75BBDC0021E6AD /* ModeTableViewCell.swift in Sources */,
 				18BD53701A33053300742D7F /* GameViewController.swift in Sources */,
+				18867F051A762031005F8AD7 /* Alphabet.swift in Sources */,
 				18C0F1F71A456225007BEE49 /* StatisticsViewController.swift in Sources */,
 				18BD536E1A33053300742D7F /* AppDelegate.swift in Sources */,
 				1806BDA51A3D4CFA00774709 /* LanguageSettingViewController.swift in Sources */,
@@ -561,6 +574,7 @@
 			isa = XCVersionGroup;
 			children = (
 				188B2C371A7383CC00758929 /* Model 2.xcdatamodel */,
+				188CA6061A77C21F009EB2D8 /* Model 3.xcdatamodel */,
 				18C1F9481A4E3CA500531C44 /* Model.xcdatamodel */,
 			);
 			currentVersion = 188B2C371A7383CC00758929 /* Model 2.xcdatamodel */;
