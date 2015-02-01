@@ -15,13 +15,13 @@ protocol LanguageSettingDelegate {
 
 class LanguageSettingViewController: UITableViewController, UITableViewDelegate, UITableViewDataSource {
     
-    //MARK: Properties
+    //MARK: - Properties
     var delegate: SettingsViewController? = nil
     var userDefaults = NSUserDefaults.standardUserDefaults()
     var languages = NSUserDefaults.standardUserDefaults().stringArrayForKey("languages") as [String]
     var language = NSUserDefaults.standardUserDefaults().stringForKey("language")
     
-    //MARK: Initialisers
+    //MARK: - Initialisers
     override init() {
         super.init()
     }
@@ -30,7 +30,24 @@ class LanguageSettingViewController: UITableViewController, UITableViewDelegate,
         super.init(coder: coder)
     }
     
-    // MARK: Table View Delegate
+    // MARK: - View Controller
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        if ((delegate) != nil){
+            self.delegate?.returnToSource(self, language: self.language!)
+        }
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    // MARK: - Table View Delegate
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let label = tableView.cellForRowAtIndexPath(indexPath)?.viewWithTag(150) as UILabel
         self.language = label.text!
@@ -38,7 +55,7 @@ class LanguageSettingViewController: UITableViewController, UITableViewDelegate,
         self.navigationController?.popViewControllerAnimated(true)
     }
     
-    // MARK: Table View Data Source Delegate
+    // MARK: Table View Data Source
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
@@ -58,27 +75,7 @@ class LanguageSettingViewController: UITableViewController, UITableViewDelegate,
         return cell
     }
     
-    // MARK: View Controller
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
-    
-    override func viewWillDisappear(animated: Bool) {
-        if ((delegate) != nil){
-            self.delegate?.returnToSource(self, language: self.language!)
-        }
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    //MARK: Segue
+    //MARK: - Segue
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-//            let destinationViewController = segue.destinationViewController as SettingsViewController
-//            destinationViewController.language = self.language!
-//            println("Segue to \(destinationViewController.description)")
     }
 }

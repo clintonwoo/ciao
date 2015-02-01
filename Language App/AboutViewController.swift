@@ -10,6 +10,7 @@ import UIKit
 
 class AboutViewController: UIViewController {
 
+    //MARK: - View controller methods
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,7 +22,18 @@ class AboutViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    //MARK: - About methods
+    //MARK: Target action
+    
+    @IBAction func followOnTwitter(sender: UIButton) {
+        UIApplication.sharedApplication().openURL(NSURL(string: "https://twitter.com/ClintonDAnnolfo")!)
+    }
+    
+    @IBAction func connectOnLinkedIn(sender: UIButton) {
+        UIApplication.sharedApplication().openURL(NSURL(string: "https://au.linkedin.com/in/clintondannolfo")!)
+    }
+    
+    
     /*
     // MARK: - Navigation
 

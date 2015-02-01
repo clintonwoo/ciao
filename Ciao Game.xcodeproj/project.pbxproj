@@ -22,6 +22,7 @@
 		1869787B1A61FC9D00A496D0 /* GrammarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1869787A1A61FC9D00A496D0 /* GrammarViewController.swift */; };
 		186D02BE1A75B77500A960D8 /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186D02BD1A75B77500A960D8 /* Language.swift */; };
 		186DFC861A7377810014619F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 186DFC851A7377810014619F /* Main.storyboard */; };
+		188562BE1A7DBA5A008884B2 /* switchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188562BD1A7DBA5A008884B2 /* switchTableViewCell.swift */; };
 		18867F011A7610C6005F8AD7 /* Alphabet.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18867F001A7610C6005F8AD7 /* Alphabet.plist */; };
 		18867F031A761F31005F8AD7 /* WikipediaOrthography.strings in Resources */ = {isa = PBXBuildFile; fileRef = 18867F021A761F31005F8AD7 /* WikipediaOrthography.strings */; };
 		18867F051A762031005F8AD7 /* Alphabet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18867F041A762031005F8AD7 /* Alphabet.swift */; };
@@ -67,6 +68,7 @@
 		1869787A1A61FC9D00A496D0 /* GrammarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GrammarViewController.swift; sourceTree = "<group>"; };
 		186D02BD1A75B77500A960D8 /* Language.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
 		186DFC851A7377810014619F /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		188562BD1A7DBA5A008884B2 /* switchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = switchTableViewCell.swift; sourceTree = "<group>"; };
 		18867F001A7610C6005F8AD7 /* Alphabet.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Alphabet.plist; sourceTree = "<group>"; };
 		18867F021A761F31005F8AD7 /* WikipediaOrthography.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = WikipediaOrthography.strings; sourceTree = "<group>"; };
 		18867F041A762031005F8AD7 /* Alphabet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alphabet.swift; sourceTree = "<group>"; };
@@ -92,6 +94,8 @@
 		18C1F9481A4E3CA500531C44 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		18C330201A35CF460027A312 /* ModesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModesViewController.swift; sourceTree = "<group>"; };
 		18C38EC21A39A8BC00AC5860 /* SecretStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SecretStoryboard.storyboard; sourceTree = "<group>"; };
+		18FB1F051A77CB8B00180515 /* v0.4 (5) Clinton.Language-App 2015-01-27 21.10.54.483.xcappdata */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "v0.4 (5) Clinton.Language-App 2015-01-27 21.10.54.483.xcappdata"; path = "v0.4 (5)/v0.4 (5) Clinton.Language-App 2015-01-27 21.10.54.483.xcappdata"; sourceTree = "<group>"; };
+		18FB1F071A77D03300180515 /* v0.4 (5) Clean Data Clinton.Language-App 2015-01-27 21.10.54.483.xcappdata */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "v0.4 (5) Clean Data Clinton.Language-App 2015-01-27 21.10.54.483.xcappdata"; path = "v0.4 (5)/Clean Launch/v0.4 (5) Clean Data Clinton.Language-App 2015-01-27 21.10.54.483.xcappdata"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +119,7 @@
 		1806BD9D1A3CF23E00774709 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				18FB1F041A77CAE300180515 /* Test Data */,
 				18C1F9471A4E3CA500531C44 /* Model.xcdatamodeld */,
 				18867F041A762031005F8AD7 /* Alphabet.swift */,
 				18032B321A75EB000021E6AD /* Word.swift */,
@@ -131,6 +136,7 @@
 				18C38EC21A39A8BC00AC5860 /* SecretStoryboard.storyboard */,
 				185541F11A552B45002C3D15 /* GameButton.swift */,
 				1899796A1A62265700A758ED /* SwitchWithTitle.swift */,
+				188562BC1A7DBA36008884B2 /* Settings */,
 				18032B241A75BBDC0021E6AD /* ModeTableViewCell.swift */,
 			);
 			name = View;
@@ -150,6 +156,14 @@
 				184656551A57822D0095442D /* AboutViewController.swift */,
 			);
 			name = Controller;
+			sourceTree = "<group>";
+		};
+		188562BC1A7DBA36008884B2 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				188562BD1A7DBA5A008884B2 /* switchTableViewCell.swift */,
+			);
+			name = Settings;
 			sourceTree = "<group>";
 		};
 		18BD535F1A33053300742D7F = {
@@ -216,6 +230,15 @@
 				18BD53821A33053400742D7F /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		18FB1F041A77CAE300180515 /* Test Data */ = {
+			isa = PBXGroup;
+			children = (
+				18FB1F071A77D03300180515 /* v0.4 (5) Clean Data Clinton.Language-App 2015-01-27 21.10.54.483.xcappdata */,
+				18FB1F051A77CB8B00180515 /* v0.4 (5) Clinton.Language-App 2015-01-27 21.10.54.483.xcappdata */,
+			);
+			name = "Test Data";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -344,6 +367,7 @@
 				1806BDA51A3D4CFA00774709 /* LanguageSettingViewController.swift in Sources */,
 				18BDCE631A33F6B300C08890 /* MenuViewController.swift in Sources */,
 				18032B311A75EB000021E6AD /* EnglishWord.swift in Sources */,
+				188562BE1A7DBA5A008884B2 /* switchTableViewCell.swift in Sources */,
 				18C330211A35CF460027A312 /* ModesViewController.swift in Sources */,
 				186D02BE1A75B77500A960D8 /* Language.swift in Sources */,
 				185541F21A552B45002C3D15 /* GameButton.swift in Sources */,

@@ -12,11 +12,7 @@ import CoreData
 
 class MenuViewController: UIViewController, SettingsDelegate {
     
-    //MARK: Properties
-    var managedObjectContext: NSManagedObjectContext? = nil
-    let userDefaults = NSUserDefaults.standardUserDefaults()
-    
-    //MARK: Outlets
+    //MARK: - Outlets
     @IBOutlet var menuButtonCollection: [UIButton]!
     @IBOutlet weak var playGameButton: UIButton!
     @IBOutlet weak var gameModeButton: UIButton!
@@ -24,17 +20,15 @@ class MenuViewController: UIViewController, SettingsDelegate {
     @IBOutlet weak var statisticsButton: UIButton!
     @IBOutlet weak var settingsButton: UIButton!
 
-    //MARK: Delegate methods
+    //MARK: - Properties
+    var managedObjectContext: NSManagedObjectContext? = nil
+    let userDefaults = NSUserDefaults.standardUserDefaults()
+
+    //MARK: - View controller methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        for button in menuButtonCollection {
-            //CALayer class properties
-            button.layer.cornerRadius = CGFloat(6)
-            button.layer.borderWidth = CGFloat(1)
-            button.layer.borderColor = button.tintColor?.CGColor
-            //UIColor.blueColor().CGColor
-        }
-        grammarButton.setTitle(userDefaults.stringForKey("language")! + " " + NSLocalizedString("Grammar",comment: "Show wikipedia grammar page button on menu"), forState: UIControlState.Normal)
+        setButtonCollectionStyle()
+        setGrammarButton(userDefaults.stringForKey("language")!)
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -47,11 +41,27 @@ class MenuViewController: UIViewController, SettingsDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    //MARK: Segue
-    //Language Setting Delegate
-    func returnToSource(vc: UIViewController, language: String) {
+    //MARK: - Menu methods
+    internal func setGrammarButton (language: String) {
         grammarButton.setTitle(language + " " + NSLocalizedString("Grammar",comment: "Show wikipedia grammar page button on menu"), forState: UIControlState.Normal)
     }
+    
+    internal func setButtonCollectionStyle () {
+        for button in menuButtonCollection {
+            //CALayer class properties
+            button.layer.cornerRadius = CGFloat(6)
+            button.layer.borderWidth = CGFloat(1)
+            button.layer.borderColor = button.tintColor?.CGColor
+            //UIColor.blueColor().CGColor
+        }
+    }
+    
+    //MARK: Language Setting Delegate
+    func returnToSource(vc: UIViewController, language: String) {
+        setGrammarButton(language)
+    }
+    
+    //MARK: - Segue
     
     override func shouldPerformSegueWithIdentifier(identifier: String?, sender: AnyObject?) -> Bool {
         return true

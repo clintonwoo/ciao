@@ -12,7 +12,7 @@ import CoreData
 
 class StatisticsViewController: UIViewController {
     
-    //MARK: Outlets
+    //MARK: - Outlets
     @IBOutlet weak var favouriteLanguage: UILabel!
     @IBOutlet weak var wordsAttemptedLabel: UILabel!
     @IBOutlet weak var percentageCorrectLabel: UILabel!
@@ -21,11 +21,11 @@ class StatisticsViewController: UIViewController {
     @IBOutlet weak var unsuccessfulWordLabel: UILabel!
     @IBOutlet weak var longestStreakLabel: UILabel!
     
-    //MARK: Properties
+    //MARK: - Properties
     var managedObjectContext: NSManagedObjectContext? = nil
     var userDefaults = NSUserDefaults.standardUserDefaults()
 
-    //MARK: Initialisers
+    //MARK: - Initialisers
     override init() {
         super.init()
     }
@@ -43,20 +43,30 @@ class StatisticsViewController: UIViewController {
         }
     }
     
-    //MARK: View Controller Methods
+    //MARK: - View Controller Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         refresh()
         // Do any additional setup after loading the view, typically from a nib.
     }
     
+    override func viewWillAppear(animated: Bool) {
+        //
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    //MARK: - Statistics methods
     func refresh() {
-//        var numberFormatter = NSNumberFormatter()
+        //var numberFormatter = NSNumberFormatter()
         var error: NSErrorPointer = NSErrorPointer()
         var languageFetchRequest = NSFetchRequest(entityName: "Language")
         languageFetchRequest.predicate = NSPredicate(format: "attempts = max(attempts)")
         var languages = managedObjectContext?.executeFetchRequest(languageFetchRequest, error: error) as [Language]
-//        let sortedLanguageAttempts = languageAttempts.keysSortedByValueUsingSelector("compare:") as [String]
+        //let sortedLanguageAttempts = languageAttempts.keysSortedByValueUsingSelector("compare:") as [String]
         let streak = String(userDefaults.integerForKey("longestStreak"))
         let attempts = userDefaults.integerForKey("attempts")
         let correctAttempts = userDefaults.integerForKey("correctAttempts")
@@ -100,23 +110,13 @@ class StatisticsViewController: UIViewController {
         self.longestStreakLabel.text = NSLocalizedString("Longest Streak: \(streak)", comment: "Statistic label showing the user's longest streak")
     }
     
-    override func viewWillAppear(animated: Bool) {
-        //
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    //MARK: Statistics methods
-    @IBAction func ResetStats(sender: UIButton) {
+    private func resetStats() {
         let defaultsDictionary: NSDictionary = NSDictionary(contentsOfFile: NSBundle.mainBundle().pathForResource("Defaults", ofType:"plist")!)!
         userDefaults.setInteger(0, forKey: "attempts")
         userDefaults.setInteger(0, forKey: "correctAttempts")
         userDefaults.setInteger(0, forKey: "longestStreak")
-        //go through core data and clear all attempts etc to 0
         var error: NSErrorPointer = NSErrorPointer()
+        //go through core data and clear all attempts on Word and Language entity to 0
         var wordBatchRequest = NSBatchUpdateRequest(entityName: "Word")
         let zero = NSNumber(int: 0)
         wordBatchRequest.propertiesToUpdate = [ "incorrectAttempts": zero, "correctAttempts": zero, "attempts": zero]
@@ -134,6 +134,11 @@ class StatisticsViewController: UIViewController {
         } else {
             println(error.debugDescription)
         }
+    }
+    
+    //MARK: Target action methods
+    @IBAction func ResetStats(sender: UIButton) {
+        resetStats()
         refresh()
 //        var storyBoard: UIStoryboard = UIStoryboard(name: "SecretStoryboard", bundle: NSBundle(path: "/Users/clintondannolfo/Desktop/Language App/Language App/SecretStoryboard.storyboard"))
 //        var initialViewController: UIViewController = storyBoard.instantiateInitialViewController() as UIViewController

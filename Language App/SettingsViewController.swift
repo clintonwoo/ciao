@@ -15,7 +15,7 @@ protocol SettingsDelegate {
 
 class SettingsViewController: UITableViewController, UITableViewDelegate, UITableViewDataSource, LanguageSettingDelegate {
     
-    //MARK: Properties
+    //MARK: - Properties
     var delegate: MenuViewController? = nil
     var userDefaults: NSUserDefaults = NSUserDefaults.standardUserDefaults()
     var language: String = NSUserDefaults.standardUserDefaults().stringForKey("language")!
@@ -30,7 +30,7 @@ class SettingsViewController: UITableViewController, UITableViewDelegate, UITabl
             case Hard = 2
     }
     
-    //MARK: Initialisers
+    //MARK: - Initialisers
     override init () {
         super.init()
     }
@@ -45,7 +45,29 @@ class SettingsViewController: UITableViewController, UITableViewDelegate, UITabl
         userDefaults.setFloat(self.speakingSpeed, forKey: "speakingSpeed")
     }
     
-    //MARK: Data Source Delegate
+    //MARK: - View Controller Methods
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        setLanguageLabel(self.language)
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        if ((delegate) != nil){
+            self.delegate?.returnToSource(self, language: self.language)
+        }
+    }
+    
+    //MARK: - Data Source Delegate
     //Functions only required for dynamically loaded tables
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 3
@@ -71,12 +93,12 @@ class SettingsViewController: UITableViewController, UITableViewDelegate, UITabl
                 switch (indexPath.row) {
                     case 0:
                         let cell = tableView.dequeueReusableCellWithIdentifier("tvcLanguage", forIndexPath: indexPath) as UITableViewCell
-                        var label = cell.viewWithTag(102) as UILabel
+                        let label = cell.viewWithTag(102) as UILabel
                         label.text = self.language
                         return cell
                     case 1:
                         let cell = tableView.dequeueReusableCellWithIdentifier("tvcSegmented", forIndexPath: indexPath) as UITableViewCell
-                        var segmentedControl = cell.viewWithTag(103) as UISegmentedControl
+                        let segmentedControl = cell.viewWithTag(103) as UISegmentedControl
                         switch (self.difficulty) {
                             case "Easy":
                                 segmentedControl.selectedSegmentIndex = Difficulty.Easy.rawValue
@@ -84,10 +106,17 @@ class SettingsViewController: UITableViewController, UITableViewDelegate, UITabl
                                 segmentedControl.selectedSegmentIndex = Difficulty.Medium.rawValue
                             case "Hard":
                                 segmentedControl.selectedSegmentIndex = Difficulty.Hard.rawValue
-                        default:
-                            break
+                            default:
+                                break
                         }
                         return cell
+//                    case 2:
+//                        let cell = tableView.dequeueReusableCellWithIdentifier("tvcSwitch", forIndexPath: indexPath) as UITableViewCell
+//                        let switchControl = cell.viewWithTag(104) as UISwitch
+//                        switchControl.on = userDefaults.boolForKey("useLatinCharacters")
+//                        let label = cell.viewWithTag(202) as UILabel
+//                        label.text = NSLocalizedString("Use Latin-Based Alphabet", comment: "The label for the setting to always use Latin characters instead of language native alphabet")
+//                        return cell
                     default:
                         let cell = tableView.dequeueReusableCellWithIdentifier("tvcSegmented", forIndexPath: indexPath) as UITableViewCell
                         println("tableView:cellForRowAtIndexPath: row switch case defaulted")
@@ -127,21 +156,29 @@ class SettingsViewController: UITableViewController, UITableViewDelegate, UITabl
         }
     }
     
-    //MARK: Action Handlers
+    //MARK: - Settings methods
+    private func setLanguageLabel (language: String) {
+        let languageCellIndexPath: NSIndexPath = NSIndexPath(forRow: 0, inSection: 0)
+        let languageCell = self.tableView.cellForRowAtIndexPath(languageCellIndexPath)! as UITableViewCell
+        var languageLabel = languageCell.viewWithTag(102) as UILabel
+        languageLabel.text = language
+    }
+    
+    //MARK: Target action methods
     @IBAction func switchClicked(sender: UISwitch) {
         self.hasSound = sender.on
     }
     
     @IBAction func segmentedClicked(sender: UISegmentedControl) {
         switch (sender.selectedSegmentIndex) {
-            case Difficulty.Easy.rawValue:
-                self.difficulty = "Easy"
-            case Difficulty.Medium.rawValue:
-                self.difficulty = "Medium"
-            case Difficulty.Hard.rawValue:
-                self.difficulty = "Hard"
-            default:
-                println("'Difficulty' Segmented Control clicked but no action taken")
+        case Difficulty.Easy.rawValue:
+            self.difficulty = "Easy"
+        case Difficulty.Medium.rawValue:
+            self.difficulty = "Medium"
+        case Difficulty.Hard.rawValue:
+            self.difficulty = "Hard"
+        default:
+            println("Difficulty segmented control clicked but no action taken")
         }
     }
     
@@ -149,39 +186,12 @@ class SettingsViewController: UITableViewController, UITableViewDelegate, UITabl
         self.speakingSpeed = sender.value
     }
     
-    //MARK: View Controller Methods
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        let languageCellIndexPath: NSIndexPath = NSIndexPath(forRow: 0, inSection: 0)
-        let languageCell = self.tableView.cellForRowAtIndexPath(languageCellIndexPath)! as UITableViewCell
-        var languageLabel = languageCell.viewWithTag(102) as UILabel
-        languageLabel.text = self.language //userDefaults.stringForKey("language")
-        //var languageLabel = self.view.viewWithTag(102) as UILabel
-        //languageLabel.text = userDefaults.stringForKey("language")
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    override func viewWillDisappear(animated: Bool) {
-        if ((delegate) != nil){
-            self.delegate?.returnToSource(self, language: self.language)
-        }
-    }
-    
-    //MARK: Segue
-    //Language Setting Delegate
+    //MARK: Language Setting Delegate
     func returnToSource(vc: UIViewController, language: String) {
         self.language = language
     }
     
+    //MARK: - Segue
     override func shouldPerformSegueWithIdentifier(identifier: String?, sender: AnyObject?) -> Bool {
         return true
     }

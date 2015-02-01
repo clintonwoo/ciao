@@ -4,13 +4,14 @@
 <dict>
 	<key>languages</key>
 	<array>
-		<string>Italian</string>
-		<string>German</string>
 		<string>Chinese</string>
+		<string>French</string>
+		<string>German</string>
+		<string>Italian</string>
 		<string>Polish</string>
 		<string>Portuguese</string>
-		<string>Spanish</string>
 		<string>Russian</string>
+		<string>Spanish</string>
 	</array>
 	<key>longestStreak</key>
 	<integer>0</integer>
@@ -28,6 +29,8 @@
 	<string>Easy</string>
 	<key>hasSound</key>
 	<true/>
+	<key>useLatinCharacters</key>
+	<false/>
 	<key>speakingSpeed</key>
 	<real>0.25</real>
 </dict>
