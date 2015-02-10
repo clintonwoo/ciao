@@ -61,6 +61,16 @@ class MenuViewController: UIViewController, SettingsDelegate {
         setGrammarButton(language)
     }
     
+    //MARK: - Target action
+    @IBAction func tapPlayGame(sender: UIButton) {
+        if userDefaults.stringForKey("gameMode") == "Alphabet Mode" {
+            performSegueWithIdentifier("Show Alphabet Game", sender: sender)
+        } else {
+            performSegueWithIdentifier("Show Game", sender: sender)
+        }
+        println("hi")
+    }
+    
     //MARK: - Segue
     
     override func shouldPerformSegueWithIdentifier(identifier: String?, sender: AnyObject?) -> Bool {
@@ -82,6 +92,7 @@ class MenuViewController: UIViewController, SettingsDelegate {
                 case "Show Game":
                     let destinationViewController = segue.destinationViewController as GameViewController
                     destinationViewController.managedObjectContext = self.managedObjectContext
+                    destinationViewController.game.managedObjectContext = self.managedObjectContext
                     println(destinationViewController.description)
                 case "Show Statistics":
                     let destinationViewController = segue.destinationViewController as StatisticsViewController

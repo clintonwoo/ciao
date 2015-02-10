@@ -23,7 +23,7 @@ class StatisticsViewController: UIViewController {
     
     //MARK: - Properties
     var managedObjectContext: NSManagedObjectContext? = nil
-    var userDefaults = NSUserDefaults.standardUserDefaults()
+    let userDefaults = NSUserDefaults.standardUserDefaults()
 
     //MARK: - Initialisers
     override init() {
@@ -111,7 +111,7 @@ class StatisticsViewController: UIViewController {
     }
     
     private func resetStats() {
-        let defaultsDictionary: NSDictionary = NSDictionary(contentsOfFile: NSBundle.mainBundle().pathForResource("Defaults", ofType:"plist")!)!
+        let defaultsDictionary: Dictionary = NSDictionary(contentsOfFile: NSBundle.mainBundle().pathForResource("Defaults", ofType:"plist")!)!
         userDefaults.setInteger(0, forKey: "attempts")
         userDefaults.setInteger(0, forKey: "correctAttempts")
         userDefaults.setInteger(0, forKey: "longestStreak")

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6724" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="elh-17-nbp">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="elh-17-nbp">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6711"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -99,12 +99,48 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Vt-Is-Yn4">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Zf-7M-pTI">
+                                        <rect key="frame" x="16" y="385" width="288" height="66"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="66" id="nh4-3K-aSo"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <state key="normal" title="Play Game"/>
+                                        <variation key="heightClass=regular-widthClass=regular" ambiguous="YES">
+                                            <rect key="frame" x="16" y="94" width="448" height="66"/>
+                                        </variation>
+                                        <connections>
+                                            <action selector="tapPlayGame:" destination="65W-RS-L75" eventType="touchUpInside" id="g1z-X7-0N3"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zrk-EN-0SM">
+                                        <rect key="frame" x="16" y="151" width="288" height="66"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="66" id="ohf-7n-cNF"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <state key="normal" title="Play Game"/>
+                                        <variation key="heightClass=regular-widthClass=regular" ambiguous="YES">
+                                            <rect key="frame" x="16" y="94" width="448" height="66"/>
+                                        </variation>
+                                        <connections>
+                                            <action selector="tapPlayGame:" destination="65W-RS-L75" eventType="touchUpInside" id="lph-Ts-12I"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="Zrk-EN-0SM" firstAttribute="leading" secondItem="7Vt-Is-Yn4" secondAttribute="leading" constant="16" id="RPi-Ii-CMa"/>
+                                    <constraint firstAttribute="trailing" secondItem="Zrk-EN-0SM" secondAttribute="trailing" constant="16" id="fYr-kZ-5GB"/>
+                                </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="asN-VC-fTF">
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="asN-VC-fTF">
                                 <rect key="frame" x="16" y="64" width="288" height="87"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="Ciao" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TLh-Ps-Y8G">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" ambiguous="YES" misplaced="YES" text="Ciao" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TLh-Ps-Y8G">
                                         <rect key="frame" x="94" y="13" width="100.5" height="60"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -119,21 +155,6 @@
                                     <constraint firstItem="TLh-Ps-Y8G" firstAttribute="top" relation="greaterThanOrEqual" secondItem="asN-VC-fTF" secondAttribute="topMargin" constant="1" id="ucD-me-cEz"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zrk-EN-0SM">
-                                <rect key="frame" x="16" y="151" width="288" height="66"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="66" id="ohf-7n-cNF"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <state key="normal" title="Play Game"/>
-                                <variation key="heightClass=regular-widthClass=regular" ambiguous="YES">
-                                    <rect key="frame" x="16" y="94" width="448" height="66"/>
-                                </variation>
-                                <connections>
-                                    <segue destination="3xl-OT-mTO" kind="show" identifier="Show Game" id="mlh-Ye-XLz"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tp9-fi-qih">
                                 <rect key="frame" x="16" y="339" width="288" height="30"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -185,13 +206,10 @@
                             <constraint firstItem="asN-VC-fTF" firstAttribute="leading" secondItem="XWn-m0-Q7L" secondAttribute="leadingMargin" id="ERq-gS-H3s"/>
                             <constraint firstItem="TIi-6p-DBL" firstAttribute="leading" secondItem="XWn-m0-Q7L" secondAttribute="leadingMargin" id="RMv-Ov-Cog"/>
                             <constraint firstAttribute="trailingMargin" secondItem="v2v-gD-8bo" secondAttribute="trailing" id="Wgi-tG-ctV"/>
-                            <constraint firstItem="Zrk-EN-0SM" firstAttribute="trailing" secondItem="XWn-m0-Q7L" secondAttribute="trailingMargin" id="Z0K-cE-OwD"/>
                             <constraint firstItem="544-8u-49l" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Tp9-fi-qih" secondAttribute="bottom" constant="8" id="aZW-ZL-Qbx"/>
-                            <constraint firstItem="Zrk-EN-0SM" firstAttribute="leading" secondItem="XWn-m0-Q7L" secondAttribute="leadingMargin" id="b83-TG-UlX"/>
-                            <constraint firstItem="v2v-gD-8bo" firstAttribute="top" secondItem="Zrk-EN-0SM" secondAttribute="bottom" priority="750" constant="8" symbolic="YES" id="eLc-9w-8TH"/>
+                            <constraint firstItem="v2v-gD-8bo" firstAttribute="top" secondItem="Zrk-EN-0SM" secondAttribute="bottom" constant="8" id="f2Z-xS-WE4"/>
                             <constraint firstItem="7Vt-Is-Yn4" firstAttribute="width" secondItem="XWn-m0-Q7L" secondAttribute="width" id="fYR-tE-asL"/>
                             <constraint firstItem="NrK-XJ-XEa" firstAttribute="top" secondItem="TIi-6p-DBL" secondAttribute="bottom" priority="750" constant="8" symbolic="YES" id="faP-7Q-Hed"/>
-                            <constraint firstItem="Zrk-EN-0SM" firstAttribute="top" secondItem="asN-VC-fTF" secondAttribute="bottom" priority="750" id="kFL-Qq-FBt"/>
                             <constraint firstAttribute="centerY" secondItem="v2v-gD-8bo" secondAttribute="centerY" priority="250" id="liu-9a-IVg"/>
                             <constraint firstItem="TIi-6p-DBL" firstAttribute="top" secondItem="v2v-gD-8bo" secondAttribute="bottom" priority="750" constant="8" symbolic="YES" id="lwq-Zi-El5"/>
                             <constraint firstItem="NrK-XJ-XEa" firstAttribute="leading" secondItem="XWn-m0-Q7L" secondAttribute="leadingMargin" id="nJh-Gh-Vfc"/>
@@ -211,11 +229,13 @@
                         <outlet property="playGameButton" destination="Zrk-EN-0SM" id="C9u-BQ-ndc"/>
                         <outlet property="settingsButton" destination="Tp9-fi-qih" id="esM-m5-sVO"/>
                         <outlet property="statisticsButton" destination="NrK-XJ-XEa" id="5lt-KO-tIg"/>
-                        <outletCollection property="menuButtonCollection" destination="Zrk-EN-0SM" collectionClass="NSMutableArray" id="ze2-HQ-Qr8"/>
                         <outletCollection property="menuButtonCollection" destination="TIi-6p-DBL" collectionClass="NSMutableArray" id="mse-29-ZAp"/>
                         <outletCollection property="menuButtonCollection" destination="NrK-XJ-XEa" collectionClass="NSMutableArray" id="Ghy-ri-Lrk"/>
                         <outletCollection property="menuButtonCollection" destination="Tp9-fi-qih" collectionClass="NSMutableArray" id="8OC-Co-MTn"/>
                         <outletCollection property="menuButtonCollection" destination="v2v-gD-8bo" collectionClass="NSMutableArray" id="KJE-nY-6lY"/>
+                        <outletCollection property="menuButtonCollection" destination="Zrk-EN-0SM" collectionClass="NSMutableArray" id="ze2-HQ-Qr8"/>
+                        <segue destination="3xl-OT-mTO" kind="show" identifier="Show Game" id="gQO-gc-mQi"/>
+                        <segue destination="aWE-ya-7Up" kind="show" identifier="Show Alphabet Game" id="NTz-vq-o5S"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rWB-DG-QAt" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -564,22 +584,6 @@
                                     <outletCollection property="gestureRecognizers" destination="opi-Vo-jl6" appends="YES" id="kAR-Nt-dse"/>
                                 </connections>
                             </label>
-                            <button opaque="NO" tag="50" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="7Pj-am-cE5" customClass="GameButton" customModule="Language_App" customModuleProvider="target">
-                                <rect key="frame" x="16" y="359.5" width="288" height="57.5"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <inset key="contentEdgeInsets" minX="6" minY="6" maxX="6" maxY="6"/>
-                                <state key="normal" title="Alphabet"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="alphabetGameButton" value="YES"/>
-                                </userDefinedRuntimeAttributes>
-                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                                    <rect key="frame" x="16" y="183" width="448" height="74"/>
-                                </variation>
-                                <connections>
-                                    <action selector="tapAlphabetButton:" destination="3xl-OT-mTO" eventType="touchUpInside" id="tXK-bD-rTy"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -588,26 +592,17 @@
                             <constraint firstItem="oTI-nk-0kW" firstAttribute="top" secondItem="AfY-8d-yRY" secondAttribute="bottom" constant="8" id="4FN-e2-1yS"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Grm-zE-sf9" secondAttribute="trailing" id="7CC-2R-VKQ"/>
                             <constraint firstItem="u6K-4E-bUI" firstAttribute="trailing" secondItem="a89-be-emT" secondAttribute="trailingMargin" id="BnC-vm-LBn"/>
-                            <constraint firstItem="7Pj-am-cE5" firstAttribute="height" secondItem="a89-be-emT" secondAttribute="height" multiplier="0.12" id="F3f-tF-xaY"/>
-                            <constraint firstItem="7Pj-am-cE5" firstAttribute="leading" secondItem="a89-be-emT" secondAttribute="leadingMargin" id="GZy-q6-BpP">
-                                <variation key="heightClass=regular-widthClass=regular" constant="0.0"/>
-                            </constraint>
                             <constraint firstItem="szj-t2-DcC" firstAttribute="height" secondItem="a89-be-emT" secondAttribute="height" id="PRj-S2-gOm"/>
                             <constraint firstAttribute="centerY" secondItem="Grm-zE-sf9" secondAttribute="centerY" constant="95" id="QxT-rn-3GL"/>
                             <constraint firstItem="S6y-0d-oVe" firstAttribute="height" secondItem="AfY-8d-yRY" secondAttribute="height" id="VKp-jZ-YDG"/>
                             <constraint firstItem="Grm-zE-sf9" firstAttribute="leading" secondItem="a89-be-emT" secondAttribute="leadingMargin" id="XLs-7c-rt9"/>
                             <constraint firstItem="4y2-kc-UfI" firstAttribute="top" secondItem="oTI-nk-0kW" secondAttribute="bottom" constant="19" id="YKC-Fs-yac"/>
                             <constraint firstAttribute="centerY" secondItem="szj-t2-DcC" secondAttribute="centerY" id="Zi5-9e-T2u"/>
-                            <constraint firstItem="4y2-kc-UfI" firstAttribute="top" secondItem="7Pj-am-cE5" secondAttribute="bottom" constant="19" id="Zv9-7r-ahc"/>
-                            <constraint firstAttribute="centerX" secondItem="7Pj-am-cE5" secondAttribute="centerX" id="b3U-K7-eNW"/>
                             <constraint firstItem="S6y-0d-oVe" firstAttribute="trailing" secondItem="a89-be-emT" secondAttribute="trailingMargin" id="beC-aS-dzK"/>
                             <constraint firstItem="AfY-8d-yRY" firstAttribute="leading" secondItem="a89-be-emT" secondAttribute="leadingMargin" id="bpF-uY-IgL"/>
                             <constraint firstItem="S6y-0d-oVe" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="AfY-8d-yRY" secondAttribute="trailing" priority="750" constant="13" id="daP-Zz-sKN"/>
                             <constraint firstItem="Grm-zE-sf9" firstAttribute="top" secondItem="YI5-bu-RXK" secondAttribute="bottom" priority="750" constant="60" id="dcp-0H-OPM"/>
                             <constraint firstItem="4y2-kc-UfI" firstAttribute="top" secondItem="u6K-4E-bUI" secondAttribute="bottom" constant="19" id="exi-uu-f7j"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="7Pj-am-cE5" secondAttribute="trailing" id="fqq-RK-Phj">
-                                <variation key="heightClass=regular-widthClass=regular" constant="0.0"/>
-                            </constraint>
                             <constraint firstItem="S6y-0d-oVe" firstAttribute="width" secondItem="AfY-8d-yRY" secondAttribute="width" id="gHf-Oz-3jD"/>
                             <constraint firstItem="AfY-8d-yRY" firstAttribute="width" relation="greaterThanOrEqual" secondItem="a89-be-emT" secondAttribute="width" multiplier="0.44" id="gxF-ov-Sux"/>
                             <constraint firstItem="AfY-8d-yRY" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Grm-zE-sf9" secondAttribute="bottom" priority="750" constant="123" id="hX5-V1-iA7"/>
@@ -632,7 +627,6 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
-                        <outlet property="alphabetGameButton" destination="7Pj-am-cE5" id="6hQ-Em-YYg"/>
                         <outlet property="gameButton1" destination="AfY-8d-yRY" id="HFg-M3-VfO"/>
                         <outlet property="gameButton2" destination="S6y-0d-oVe" id="57D-39-jIe"/>
                         <outlet property="gameButton3" destination="oTI-nk-0kW" id="oPU-vt-Idh"/>
@@ -643,7 +637,6 @@
                         <outletCollection property="gameButtonCollection" destination="S6y-0d-oVe" collectionClass="NSMutableArray" id="c9q-zB-R3B"/>
                         <outletCollection property="gameButtonCollection" destination="u6K-4E-bUI" collectionClass="NSMutableArray" id="tm7-3L-D8H"/>
                         <outletCollection property="gameButtonCollection" destination="oTI-nk-0kW" collectionClass="NSMutableArray" id="dn7-z6-d7y"/>
-                        <outletCollection property="gameButtonCollection" destination="7Pj-am-cE5" collectionClass="NSMutableArray" id="67l-3e-rmt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dKl-v8-7Ar" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -653,7 +646,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="714" y="-165"/>
+            <point key="canvasLocation" x="715" y="-159"/>
         </scene>
         <!--Grammar View Controller-->
         <scene sceneID="b0j-ML-4Id">
@@ -980,6 +973,97 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YdB-Vq-8Kc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="715" y="409"/>
+        </scene>
+        <!--Game-->
+        <scene sceneID="Pj7-CF-G5H">
+            <objects>
+                <viewController storyboardIdentifier="AlphabetGame" title="Game" useStoryboardIdentifierAsRestorationIdentifier="YES" id="aWE-ya-7Up" customClass="GameViewController" customModule="Language_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Fic-GP-vWo"/>
+                        <viewControllerLayoutGuide type="bottom" id="y5c-87-VXm"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Eur-6S-8o2">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BSG-aA-gKA">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                <color key="backgroundColor" red="0.41614653140000002" green="0.77106559990000001" blue="1" alpha="0.90000000000000002" colorSpace="calibratedRGB"/>
+                            </view>
+                            <label opaque="NO" tag="25" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="Ciao" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="133-l3-RCn">
+                                <rect key="frame" x="16" y="124" width="288" height="42"/>
+                                <gestureRecognizers/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="OJH-Ht-Rqv" appends="YES" id="WYw-Aw-I7a"/>
+                                </connections>
+                            </label>
+                            <button opaque="NO" tag="50" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="oO4-vy-XeN" customClass="GameButton" customModule="Language_App" customModuleProvider="target">
+                                <rect key="frame" x="16" y="359.5" width="288" height="57.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <inset key="contentEdgeInsets" minX="6" minY="6" maxX="6" maxY="6"/>
+                                <state key="normal" title="Alphabet"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="alphabetGameButton" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                    <rect key="frame" x="16" y="183" width="448" height="74"/>
+                                </variation>
+                                <connections>
+                                    <action selector="tapAlphabetButton:" destination="aWE-ya-7Up" eventType="touchUpInside" id="ikh-qR-59r"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="BSG-aA-gKA" secondAttribute="centerY" id="17j-Bb-Pkc"/>
+                            <constraint firstAttribute="centerX" secondItem="oO4-vy-XeN" secondAttribute="centerX" id="2rP-D0-QDb"/>
+                            <constraint firstItem="y5c-87-VXm" firstAttribute="top" secondItem="oO4-vy-XeN" secondAttribute="bottom" constant="19" id="Ah4-EG-4ZM"/>
+                            <constraint firstItem="BSG-aA-gKA" firstAttribute="height" secondItem="Eur-6S-8o2" secondAttribute="height" id="EVw-Uu-dXl"/>
+                            <constraint firstAttribute="centerY" secondItem="133-l3-RCn" secondAttribute="centerY" constant="95" id="I3L-aN-xBr"/>
+                            <constraint firstItem="oO4-vy-XeN" firstAttribute="height" secondItem="Eur-6S-8o2" secondAttribute="height" multiplier="0.12" id="K7Y-Gi-7uB"/>
+                            <constraint firstItem="oO4-vy-XeN" firstAttribute="leading" secondItem="Eur-6S-8o2" secondAttribute="leadingMargin" id="MR5-rU-an9">
+                                <variation key="heightClass=regular-widthClass=regular" constant="0.0"/>
+                            </constraint>
+                            <constraint firstItem="133-l3-RCn" firstAttribute="leading" secondItem="Eur-6S-8o2" secondAttribute="leadingMargin" id="Ss8-pZ-Dt0"/>
+                            <constraint firstAttribute="centerX" secondItem="BSG-aA-gKA" secondAttribute="centerX" id="gzX-zU-k9Y"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="133-l3-RCn" secondAttribute="trailing" id="i8S-bX-9cr"/>
+                            <constraint firstAttribute="centerX" secondItem="133-l3-RCn" secondAttribute="centerX" id="pnc-Fz-1q7"/>
+                            <constraint firstItem="BSG-aA-gKA" firstAttribute="width" secondItem="Eur-6S-8o2" secondAttribute="width" id="vFO-Cl-uW9"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="oO4-vy-XeN" secondAttribute="trailing" id="xww-FM-yRO">
+                                <variation key="heightClass=regular-widthClass=regular" constant="0.0"/>
+                            </constraint>
+                            <constraint firstItem="133-l3-RCn" firstAttribute="top" secondItem="Fic-GP-vWo" secondAttribute="bottom" priority="750" constant="60" id="zaG-KM-C7P"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="SSb-Sm-MVn">
+                        <barButtonItem key="rightBarButtonItem" title="Sound On" id="HJn-5j-Gn7">
+                            <connections>
+                                <action selector="clickSoundButton:" destination="aWE-ya-7Up" id="vud-kU-6za"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="alphabetGameButton" destination="oO4-vy-XeN" id="Juo-PK-8b4"/>
+                        <outlet property="soundButton" destination="HJn-5j-Gn7" id="D0O-5T-PSA"/>
+                        <outlet property="wordLabel" destination="133-l3-RCn" id="OJU-0B-keH"/>
+                        <outletCollection property="gameButtonCollection" destination="oO4-vy-XeN" collectionClass="NSMutableArray" id="SkG-JG-Z5X"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mYq-oF-1Ou" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="OJH-Ht-Rqv">
+                    <connections>
+                        <action selector="tapWordLabel:" destination="aWE-ya-7Up" id="Ht7-rf-50i"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="715" y="-706"/>
         </scene>
     </scenes>
     <resources>

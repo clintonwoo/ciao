@@ -17,7 +17,7 @@ class GrammarViewController: UIViewController, UIWebViewDelegate {
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     //MARK: - Properties
-    var userDefaults = NSUserDefaults.standardUserDefaults()
+    let userDefaults = NSUserDefaults.standardUserDefaults()
     lazy var willCacheGrammarPages: Bool = {self.userDefaults.boolForKey("willCacheGrammarPages")}()
     var urlRequest: NSURLRequest? = nil
     var backButton: UIBarButtonItem? = nil

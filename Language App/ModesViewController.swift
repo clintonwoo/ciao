@@ -14,7 +14,7 @@ class ModesViewController: UITableViewController, UITableViewDataSource, UITable
     @IBOutlet var modeTableViewCells: [ModeTableViewCell]!
     
     //MARK: - Properties
-    var userDefaults = NSUserDefaults.standardUserDefaults()
+    let userDefaults = NSUserDefaults.standardUserDefaults()
     
     //MARK: - Initialisers
     override init () {
