@@ -16,6 +16,7 @@ protocol SettingsDelegate {
 class SettingsViewController: UITableViewController, UITableViewDelegate, UITableViewDataSource, LanguageSettingDelegate {
     
     //MARK: - Properties
+    var game: LanguageGame!
     var delegate: MenuViewController? = nil
     var userDefaults: NSUserDefaults = NSUserDefaults.standardUserDefaults()
     var language: String = NSUserDefaults.standardUserDefaults().stringForKey("language")!

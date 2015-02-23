@@ -15,6 +15,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     //MARK: - Properties
     var window: UIWindow?
     var userDefaults = NSUserDefaults.standardUserDefaults()
+    var game: LanguageGame!
+
     
     //MARK: - App Delegate
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
@@ -25,6 +27,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let initialViewController = self.window!.rootViewController as UINavigationController
         let menu = initialViewController.topViewController as MenuViewController
         menu.managedObjectContext = self.managedObjectContext
+        game = LanguageGame(context: managedObjectContext!)
+        menu.game = self.game
         setupCoreData(error)
         
         if ((managedObjectContext?.save(error)) == nil) {

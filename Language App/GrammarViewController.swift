@@ -23,6 +23,7 @@ class GrammarViewController: UIViewController, UIWebViewDelegate {
     var backButton: UIBarButtonItem? = nil
     var forwardButton: UIBarButtonItem? = nil
     var switchWithTitle: SwitchWithTitle? = nil
+    var webCacheViewController: WebCacheViewController = WebCacheViewController()
     
     //MARK: - Initialisers
     override init() {
@@ -39,13 +40,15 @@ class GrammarViewController: UIViewController, UIWebViewDelegate {
     }
     
     //MARK: - View Controller
+    //MARK: Protocol
     override func viewDidLoad() {
         super.viewDidLoad()
         self.webView.delegate = self
+//        webView.st
         self.backButton = UIBarButtonItem(title:"Back", style: UIBarButtonItemStyle.Bordered, target: self.webView, action: "goBack")
         self.forwardButton = UIBarButtonItem(title:"Forward", style: UIBarButtonItemStyle.Bordered, target: self.webView, action: "goForward")
         setForwardBackwardButton(false, canGoBack: false)
-        
+//        addContainerViewController(webCacheViewController)
         //        var toolbar: UIToolbar = UIToolbar(frame: CGRectMake(0, 0, 90, 50))
         //        var v1: UISwitch = UISwitch()
         //        var v2: UILabel = UILabel()
@@ -74,7 +77,6 @@ class GrammarViewController: UIViewController, UIWebViewDelegate {
         //self.navigationItem.titleView = self.switchWithTitle
         //        self.navigationItem.titleView = toolbar
         self.navigationItem.rightBarButtonItems = [self.forwardButton!, self.backButton!]
-        println("hello")
         // Do any additional setup after loading the view.
     }
     
@@ -89,7 +91,34 @@ class GrammarViewController: UIViewController, UIWebViewDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    //MARK: - Web view Delegate
+    //MARK: Container
+    func addContainerViewController (viewController: UIViewController) {
+//        self.addChildViewController(viewController)
+        println("Running method to add Container view controller")
+        self.addChildViewController(viewController)
+        viewController.view.frame = CGRect(x: 100, y: 70, width: 600, height: 200)
+        self.view.addSubview(viewController.view)
+
+        let label = UILabel(frame: CGRect(x: 0, y: 0, width: 150, height: 100))
+        label.text = "Cache"
+        let cacheSwitch = UISwitch(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
+//        label.addConstraint(NSLayoutConstraint(item: label, attribute: .Trailing, relatedBy: .Equal, toItem: cacheSwitch, attribute: NSLayoutAttribute.Leading, multiplier: 0, constant: 8))
+        label.setTranslatesAutoresizingMaskIntoConstraints(false)
+        cacheSwitch.setTranslatesAutoresizingMaskIntoConstraints(false)
+        let views = ["label":label, "switch":cacheSwitch]
+        let metrics = ["padding":8]
+        viewController.view.addSubview(cacheSwitch)
+        viewController.view.addSubview(label)
+        viewController.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("|-padding-[label]-padding-[switch]->=padding-|", options: nil, metrics: metrics, views: views))
+        viewController.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|-padding-[label]", options: nil, metrics: metrics, views: views))
+        viewController.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|-padding-[switch]", options: nil, metrics: metrics, views: views))
+//        self.navigationItem.titleView = viewController.view
+        viewController.didMoveToParentViewController(self)
+        //        self.webCacheViewController = viewController as? WebCacheViewController
+    }
+    
+    //MARK: - Web View
+    //MARK: Delegate
     func webViewDidStartLoad(webView: UIWebView) {
         activityIndicator.hidden = false
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
@@ -112,7 +141,7 @@ class GrammarViewController: UIViewController, UIWebViewDelegate {
         println("Finished webpage load.")
     }
     
-    //MARK: Web view methods
+    //MARK: Methods
     private func setForwardBackwardButton(canGoForward:Bool, canGoBack:Bool){
         if (canGoBack) {
             self.backButton?.enabled = true

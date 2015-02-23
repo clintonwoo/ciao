@@ -16,6 +16,7 @@
 		18384E4E1A59017A006DA713 /* MediumWords.strings in Resources */ = {isa = PBXBuildFile; fileRef = 18384E4D1A59017A006DA713 /* MediumWords.strings */; };
 		18384E501A59018C006DA713 /* HardWords.strings in Resources */ = {isa = PBXBuildFile; fileRef = 18384E4F1A59018C006DA713 /* HardWords.strings */; };
 		183A41031A8A12E700619D1D /* LanguageGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183A41021A8A12E700619D1D /* LanguageGame.swift */; };
+		183A41071A8A274E00619D1D /* AlphabetGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183A41061A8A274E00619D1D /* AlphabetGameViewController.swift */; };
 		184656561A57822D0095442D /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184656551A57822D0095442D /* AboutViewController.swift */; };
 		185182A81A7358B000DA20FC /* Languages.plist in Resources */ = {isa = PBXBuildFile; fileRef = 185182A71A7358B000DA20FC /* Languages.plist */; };
 		185182AA1A735A9500DA20FC /* WikipediaGrammarURL.strings in Resources */ = {isa = PBXBuildFile; fileRef = 185182A91A735A9500DA20FC /* WikipediaGrammarURL.strings */; };
@@ -29,6 +30,7 @@
 		18867F051A762031005F8AD7 /* Alphabet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18867F041A762031005F8AD7 /* Alphabet.swift */; };
 		188B2C391A73888A00758929 /* IETFLanguageCode.strings in Resources */ = {isa = PBXBuildFile; fileRef = 188B2C381A73888A00758929 /* IETFLanguageCode.strings */; };
 		1899796B1A62265700A758ED /* SwitchWithTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1899796A1A62265700A758ED /* SwitchWithTitle.swift */; };
+		189C324F1A95E92C006A0295 /* WebCacheViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189C324E1A95E92C006A0295 /* WebCacheViewController.swift */; };
 		18AC1C091A6FD66E00987D5F /* Words.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18AC1C081A6FD66E00987D5F /* Words.plist */; };
 		18BD536E1A33053300742D7F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BD536D1A33053300742D7F /* AppDelegate.swift */; };
 		18BD53701A33053300742D7F /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BD536F1A33053300742D7F /* GameViewController.swift */; };
@@ -41,6 +43,7 @@
 		18C1F9491A4E3CA500531C44 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 18C1F9471A4E3CA500531C44 /* Model.xcdatamodeld */; };
 		18C330211A35CF460027A312 /* ModesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C330201A35CF460027A312 /* ModesViewController.swift */; };
 		18C38EC31A39A8BC00AC5860 /* SecretStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18C38EC21A39A8BC00AC5860 /* SecretStoryboard.storyboard */; };
+		18E54CDD1A9830EC007E7287 /* GameMasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E54CDC1A9830EC007E7287 /* GameMasterViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +66,7 @@
 		18384E4D1A59017A006DA713 /* MediumWords.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = MediumWords.strings; sourceTree = "<group>"; };
 		18384E4F1A59018C006DA713 /* HardWords.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = HardWords.strings; sourceTree = "<group>"; };
 		183A41021A8A12E700619D1D /* LanguageGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanguageGame.swift; sourceTree = "<group>"; };
+		183A41061A8A274E00619D1D /* AlphabetGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlphabetGameViewController.swift; sourceTree = "<group>"; };
 		184656551A57822D0095442D /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		185182A71A7358B000DA20FC /* Languages.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Languages.plist; sourceTree = "<group>"; };
 		185182A91A735A9500DA20FC /* WikipediaGrammarURL.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = WikipediaGrammarURL.strings; sourceTree = "<group>"; };
@@ -78,6 +82,7 @@
 		188B2C381A73888A00758929 /* IETFLanguageCode.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = IETFLanguageCode.strings; sourceTree = "<group>"; };
 		188CA6061A77C21F009EB2D8 /* Model 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Model 3.xcdatamodel"; sourceTree = "<group>"; };
 		1899796A1A62265700A758ED /* SwitchWithTitle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchWithTitle.swift; sourceTree = "<group>"; };
+		189C324E1A95E92C006A0295 /* WebCacheViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebCacheViewController.swift; sourceTree = "<group>"; };
 		18AC1C081A6FD66E00987D5F /* Words.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Words.plist; sourceTree = "<group>"; };
 		18BD53681A33053300742D7F /* Language App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Language App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		18BD536D1A33053300742D7F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -96,6 +101,7 @@
 		18C1F9481A4E3CA500531C44 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		18C330201A35CF460027A312 /* ModesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModesViewController.swift; sourceTree = "<group>"; };
 		18C38EC21A39A8BC00AC5860 /* SecretStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SecretStoryboard.storyboard; sourceTree = "<group>"; };
+		18E54CDC1A9830EC007E7287 /* GameMasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameMasterViewController.swift; sourceTree = "<group>"; };
 		18FB1F051A77CB8B00180515 /* v0.4 (5) Clinton.Language-App 2015-01-27 21.10.54.483.xcappdata */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "v0.4 (5) Clinton.Language-App 2015-01-27 21.10.54.483.xcappdata"; path = "v0.4 (5)/v0.4 (5) Clinton.Language-App 2015-01-27 21.10.54.483.xcappdata"; sourceTree = "<group>"; };
 		18FB1F071A77D03300180515 /* v0.4 (5) Clean Data Clinton.Language-App 2015-01-27 21.10.54.483.xcappdata */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "v0.4 (5) Clean Data Clinton.Language-App 2015-01-27 21.10.54.483.xcappdata"; path = "v0.4 (5)/Clean Launch/v0.4 (5) Clean Data Clinton.Language-App 2015-01-27 21.10.54.483.xcappdata"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -158,13 +164,16 @@
 			children = (
 				18BD536D1A33053300742D7F /* AppDelegate.swift */,
 				18BDCE621A33F6B300C08890 /* MenuViewController.swift */,
+				18E54CDC1A9830EC007E7287 /* GameMasterViewController.swift */,
 				18BD536F1A33053300742D7F /* GameViewController.swift */,
+				183A41061A8A274E00619D1D /* AlphabetGameViewController.swift */,
 				18C330201A35CF460027A312 /* ModesViewController.swift */,
 				1869787A1A61FC9D00A496D0 /* GrammarViewController.swift */,
 				18C0F1F61A456225007BEE49 /* StatisticsViewController.swift */,
 				18BDCE641A3410C500C08890 /* SettingsViewController.swift */,
 				1806BDA41A3D4CFA00774709 /* LanguageSettingViewController.swift */,
 				184656551A57822D0095442D /* AboutViewController.swift */,
+				189C324E1A95E92C006A0295 /* WebCacheViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -371,7 +380,9 @@
 				18BDCE651A3410C500C08890 /* SettingsViewController.swift in Sources */,
 				1869787B1A61FC9D00A496D0 /* GrammarViewController.swift in Sources */,
 				184656561A57822D0095442D /* AboutViewController.swift in Sources */,
+				183A41071A8A274E00619D1D /* AlphabetGameViewController.swift in Sources */,
 				18032B251A75BBDC0021E6AD /* ModeTableViewCell.swift in Sources */,
+				18E54CDD1A9830EC007E7287 /* GameMasterViewController.swift in Sources */,
 				18BD53701A33053300742D7F /* GameViewController.swift in Sources */,
 				18867F051A762031005F8AD7 /* Alphabet.swift in Sources */,
 				18C0F1F71A456225007BEE49 /* StatisticsViewController.swift in Sources */,
@@ -384,6 +395,7 @@
 				186D02BE1A75B77500A960D8 /* Language.swift in Sources */,
 				185541F21A552B45002C3D15 /* GameButton.swift in Sources */,
 				18C1F9491A4E3CA500531C44 /* Model.xcdatamodeld in Sources */,
+				189C324F1A95E92C006A0295 /* WebCacheViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

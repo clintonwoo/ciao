@@ -22,6 +22,7 @@ class StatisticsViewController: UIViewController {
     @IBOutlet weak var longestStreakLabel: UILabel!
     
     //MARK: - Properties
+    var game: LanguageGame!
     var managedObjectContext: NSManagedObjectContext? = nil
     let userDefaults = NSUserDefaults.standardUserDefaults()
 

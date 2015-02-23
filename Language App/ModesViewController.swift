@@ -14,6 +14,7 @@ class ModesViewController: UITableViewController, UITableViewDataSource, UITable
     @IBOutlet var modeTableViewCells: [ModeTableViewCell]!
     
     //MARK: - Properties
+    var game: LanguageGame!
     let userDefaults = NSUserDefaults.standardUserDefaults()
     
     //MARK: - Initialisers
@@ -53,7 +54,7 @@ class ModesViewController: UITableViewController, UITableViewDataSource, UITable
     
     //MARK: - Mode methods
     func setGameMode(mode: String) {
-        userDefaults.setValue(mode, forKey: "gameMode")
+        userDefaults.setValue(mode, forKey: Defaults.GameMode)
         println("Set game mode to \(mode)")
     }
     

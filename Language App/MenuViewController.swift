@@ -21,6 +21,7 @@ class MenuViewController: UIViewController, SettingsDelegate {
     @IBOutlet weak var settingsButton: UIButton!
 
     //MARK: - Properties
+    var game: LanguageGame!
     var managedObjectContext: NSManagedObjectContext? = nil
     let userDefaults = NSUserDefaults.standardUserDefaults()
 
@@ -33,7 +34,6 @@ class MenuViewController: UIViewController, SettingsDelegate {
     }
     
     override func viewWillAppear(animated: Bool) {
-        
     }
     
     override func didReceiveMemoryWarning() {
@@ -80,6 +80,23 @@ class MenuViewController: UIViewController, SettingsDelegate {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
 //        if self.managedObjectContext != nil {
             switch (segue.identifier!) {
+                case "Show Game":
+                    let destinationViewController = segue.destinationViewController as GameViewController
+                    destinationViewController.managedObjectContext = self.managedObjectContext
+                    destinationViewController.game = self.game
+//                    destinationViewController.game.managedObjectContext = self.managedObjectContext
+                    println("prepareForSegue: \(destinationViewController.description)")
+                case "Show Modes":
+                    let destinationViewController = segue.destinationViewController as ModesViewController
+                    destinationViewController.game = self.game
+                    //                    destinationViewController.game.managedObjectContext = self.managedObjectContext
+                    println("prepareForSegue: \(destinationViewController.description)")
+                case "Show Alphabet Game":
+                    let destinationViewController = segue.destinationViewController as AlphabetGameViewController
+                    destinationViewController.managedObjectContext = self.managedObjectContext
+                    destinationViewController.game = self.game
+//                    destinationViewController.game.managedObjectContext = self.managedObjectContext
+                    println("Segue to \(destinationViewController.description)")
                 case "Show Grammar":
                     let destinationViewController = segue.destinationViewController as GrammarViewController
                     let dataPlistPath: String = NSBundle.mainBundle().pathForResource("WikipediaGrammarURL", ofType:"strings")!
@@ -88,25 +105,22 @@ class MenuViewController: UIViewController, SettingsDelegate {
                         let urlRequest = NSURLRequest(URL: url)
                         destinationViewController.urlRequest = urlRequest
                     }
+                    println("prepareForSegue: \(destinationViewController.description)")
                     //destinationViewController.webView?.loadRequest(urlRequest)
-                case "Show Game":
-                    let destinationViewController = segue.destinationViewController as GameViewController
-                    destinationViewController.managedObjectContext = self.managedObjectContext
-                    destinationViewController.game.managedObjectContext = self.managedObjectContext
-                    println(destinationViewController.description)
                 case "Show Statistics":
                     let destinationViewController = segue.destinationViewController as StatisticsViewController
                     destinationViewController.managedObjectContext = self.managedObjectContext
-                    println(destinationViewController.description)
+                    destinationViewController.game = self.game
+                    println("prepareForSegue: \(destinationViewController.description)")
                 case "Show Settings":
                     let navController = segue.destinationViewController as UINavigationController
                     let destinationViewController = navController.topViewController as SettingsViewController
+                    destinationViewController.game = self.game
                     destinationViewController.delegate = self
 //                    destinationViewController.managedObjectContext = self.managedObjectContext
-                    println(destinationViewController.description)
-                
+                    println("prepareForSegue: \(destinationViewController.description)")
             default:
-                println("prepareForSegue: no segue logic on \(segue.identifier)")
+                println("prepareForSegue: \(segue.identifier!) not found.")
             }
 //        }
     }
