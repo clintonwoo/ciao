@@ -38,19 +38,12 @@ class GameViewController: GameMasterViewController, GameButtonDataSource {
     //MARK: - View controller methods
     override func viewDidLoad() {
         super.viewDidLoad()
-//        var error = NSErrorPointer()
         setStreakText()
-        setSoundButton()
         //set label to language's hi
-//        let hiFetchRequest = NSFetchRequest(entityName: "Word")
-//        hiFetchRequest.predicate = NSPredicate(format: "language.name = %@ AND englishWord.word = %@", userDefaults.stringForKey("language")!, "Hi")
-//        let temp = managedObjectContext?.executeFetchRequest(hiFetchRequest, error: error) as [Word]
         wordLabel.text = game.foreignHi
 //        var adView: ADBannerView = ADBannerView(adType: ADAdType.Banner)
 //        //adView.currentContentSizeIdentifier = ADBannerContentSizeIdentifierPortrait
 //        self.view.addSubview(adView)
-        //let layoutConstraints = NSLayoutConstraint.constraintsWithVisualFormat("[button]-30-[button2]", options: NSLayoutFormatOptions, metrics: <#[NSObject : AnyObject]?#>, views: <#[NSObject : AnyObject]#>)
-        //button.addConstraint(<#constraint: NSLayoutConstraint#>)
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -82,7 +75,7 @@ class GameViewController: GameMasterViewController, GameButtonDataSource {
     
     internal func endStreak () {
         game.saveLongestStreak()
-        game.streak = 0
+        game.currentStreak = 0
         setStreakText()
     }
     
@@ -111,7 +104,7 @@ class GameViewController: GameMasterViewController, GameButtonDataSource {
                 convertingNumber = NSNumber(int: game.foreignWords[wordNumbers[sender.gameButtonIndex]].correctAttempts.intValue + 1)
                 game.foreignWords[wordNumbers[sender.gameButtonIndex]].correctAttempts = convertingNumber
             }
-            game.streak += 1
+            game.currentStreak += 1
             game.correctAttempts += 1
             refreshGame()
         } else {

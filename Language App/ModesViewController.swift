@@ -60,7 +60,7 @@ class ModesViewController: UITableViewController, UITableViewDataSource, UITable
     
     func setCheckedCell () {
         for cell in modeTableViewCells {
-            if NSUserDefaults.standardUserDefaults().stringForKey("gameMode") == cell.textLabel?.text {
+            if game.gameMode == cell.textLabel?.text {
                 cell.accessoryType = UITableViewCellAccessoryType.Checkmark
             } else {
                 cell.accessoryType = UITableViewCellAccessoryType.None

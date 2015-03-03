@@ -63,20 +63,14 @@ class MenuViewController: UIViewController, SettingsDelegate {
     
     //MARK: - Target action
     @IBAction func tapPlayGame(sender: UIButton) {
-        if userDefaults.stringForKey("gameMode") == "Alphabet Mode" {
+        if game.gameMode == "Alphabet Mode" {
             performSegueWithIdentifier("Show Alphabet Game", sender: sender)
         } else {
             performSegueWithIdentifier("Show Game", sender: sender)
         }
-        println("hi")
     }
     
     //MARK: - Segue
-    
-    override func shouldPerformSegueWithIdentifier(identifier: String?, sender: AnyObject?) -> Bool {
-        return true
-    }
-    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
 //        if self.managedObjectContext != nil {
             switch (segue.identifier!) {
@@ -84,6 +78,7 @@ class MenuViewController: UIViewController, SettingsDelegate {
                     let destinationViewController = segue.destinationViewController as GameViewController
                     destinationViewController.managedObjectContext = self.managedObjectContext
                     destinationViewController.game = self.game
+                    destinationViewController.game.controller = destinationViewController
 //                    destinationViewController.game.managedObjectContext = self.managedObjectContext
                     println("prepareForSegue: \(destinationViewController.description)")
                 case "Show Modes":
@@ -95,6 +90,7 @@ class MenuViewController: UIViewController, SettingsDelegate {
                     let destinationViewController = segue.destinationViewController as AlphabetGameViewController
                     destinationViewController.managedObjectContext = self.managedObjectContext
                     destinationViewController.game = self.game
+                    destinationViewController.game.controller = destinationViewController
 //                    destinationViewController.game.managedObjectContext = self.managedObjectContext
                     println("Segue to \(destinationViewController.description)")
                 case "Show Grammar":

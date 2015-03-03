@@ -16,19 +16,12 @@ protocol LanguageSettingDelegate {
 class LanguageSettingViewController: UITableViewController, UITableViewDelegate, UITableViewDataSource {
     
     //MARK: - Properties
+    var game: LanguageGame!
     var delegate: SettingsViewController? = nil
     var userDefaults = NSUserDefaults.standardUserDefaults()
-    var languages = NSUserDefaults.standardUserDefaults().stringArrayForKey("languages") as [String]
-    var language = NSUserDefaults.standardUserDefaults().stringForKey("language")
+    var languages = NSUserDefaults.standardUserDefaults().stringArrayForKey(Defaults.Languages) as [String]
     
     //MARK: - Initialisers
-    override init() {
-        super.init()
-    }
-    
-    required init(coder: NSCoder) {
-        super.init(coder: coder)
-    }
     
     // MARK: - View Controller
     override func viewDidLoad() {
@@ -38,20 +31,14 @@ class LanguageSettingViewController: UITableViewController, UITableViewDelegate,
     
     override func viewWillDisappear(animated: Bool) {
         if ((delegate) != nil){
-            self.delegate?.returnToSource(self, language: self.language!)
+            delegate?.returnToSource(self, language: game.language)
         }
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     // MARK: - Table View Delegate
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let label = tableView.cellForRowAtIndexPath(indexPath)?.viewWithTag(150) as UILabel
-        self.language = label.text!
-        userDefaults.setValue(self.language, forKey: "language")
+        game.language = label.text!
         self.navigationController?.popViewControllerAnimated(true)
     }
     
@@ -67,7 +54,7 @@ class LanguageSettingViewController: UITableViewController, UITableViewDelegate,
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath:  NSIndexPath) -> UITableViewCell {
         var cell: UITableViewCell = tableView.dequeueReusableCellWithIdentifier("tvcLanguage", forIndexPath: indexPath) as UITableViewCell
         //set the current language with a tick accessory
-        if (languages[indexPath.row] == userDefaults.stringForKey("language")) {
+        if (languages[indexPath.row] == game.language) {
             cell.accessoryType = UITableViewCellAccessoryType.Checkmark
         }
         var detailLabel = cell.viewWithTag(150) as UILabel
@@ -76,6 +63,4 @@ class LanguageSettingViewController: UITableViewController, UITableViewDelegate,
     }
     
     //MARK: - Segue
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    }
 }

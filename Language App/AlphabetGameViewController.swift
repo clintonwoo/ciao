@@ -33,7 +33,6 @@ class AlphabetGameViewController: GameMasterViewController {
         super.viewDidLoad()
         var error = NSErrorPointer()
         setButtonCollectionStyle()
-        setSoundButton()
         fetchData(error)
 //        var adView: ADBannerView = ADBannerView(adType: ADAdType.Banner)
 //        //adView.currentContentSizeIdentifier = ADBannerContentSizeIdentifierPortrait

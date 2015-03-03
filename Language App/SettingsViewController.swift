@@ -19,10 +19,6 @@ class SettingsViewController: UITableViewController, UITableViewDelegate, UITabl
     var game: LanguageGame!
     var delegate: MenuViewController? = nil
     var userDefaults: NSUserDefaults = NSUserDefaults.standardUserDefaults()
-    var language: String = NSUserDefaults.standardUserDefaults().stringForKey("language")!
-    var difficulty: String = NSUserDefaults.standardUserDefaults().stringForKey("difficulty")!
-    var hasSound: Bool = NSUserDefaults.standardUserDefaults().boolForKey("hasSound")
-    var speakingSpeed: Float = NSUserDefaults.standardUserDefaults().floatForKey("speakingSpeed")
 
     enum Difficulty: Int {
         //maps the difficulty to the segment in the segmented control
@@ -32,20 +28,7 @@ class SettingsViewController: UITableViewController, UITableViewDelegate, UITabl
     }
     
     //MARK: - Initialisers
-    override init () {
-        super.init()
-    }
-    
-    required init (coder: NSCoder) {
-        super.init(coder: coder)
-    }
-    
-    deinit {
-        userDefaults.setValue(self.difficulty, forKey: "difficulty")
-        userDefaults.setBool(self.hasSound, forKey: "hasSound")
-        userDefaults.setFloat(self.speakingSpeed, forKey: "speakingSpeed")
-    }
-    
+
     //MARK: - View Controller Methods
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,7 +37,7 @@ class SettingsViewController: UITableViewController, UITableViewDelegate, UITabl
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        setLanguageLabel(self.language)
+        setLanguageLabel(game.language)
     }
     
     override func didReceiveMemoryWarning() {
@@ -64,7 +47,7 @@ class SettingsViewController: UITableViewController, UITableViewDelegate, UITabl
     
     override func viewWillDisappear(animated: Bool) {
         if ((delegate) != nil){
-            self.delegate?.returnToSource(self, language: self.language)
+            self.delegate?.returnToSource(self, language: game.language)
         }
     }
     
@@ -95,12 +78,12 @@ class SettingsViewController: UITableViewController, UITableViewDelegate, UITabl
                     case 0:
                         let cell = tableView.dequeueReusableCellWithIdentifier("tvcLanguage", forIndexPath: indexPath) as UITableViewCell
                         let label = cell.viewWithTag(102) as UILabel
-                        label.text = self.language
+                        label.text = game.language
                         return cell
                     case 1:
                         let cell = tableView.dequeueReusableCellWithIdentifier("tvcSegmented", forIndexPath: indexPath) as UITableViewCell
                         let segmentedControl = cell.viewWithTag(103) as UISegmentedControl
-                        switch (self.difficulty) {
+                        switch (game.difficulty) {
                             case "Easy":
                                 segmentedControl.selectedSegmentIndex = Difficulty.Easy.rawValue
                             case "Medium":
@@ -128,12 +111,12 @@ class SettingsViewController: UITableViewController, UITableViewDelegate, UITabl
                     case 0:
                         let cell = tableView.dequeueReusableCellWithIdentifier("tvcSwitch", forIndexPath: indexPath) as UITableViewCell
                         var switchControl = cell.viewWithTag(104) as UISwitch
-                        switchControl.on = self.hasSound
+                        switchControl.on = game.hasSound
                         return cell
                     case 1:
                         let cell = tableView.dequeueReusableCellWithIdentifier("tvcSlider", forIndexPath: indexPath) as UITableViewCell
                         var slider = cell.viewWithTag(105) as UISlider
-                        slider.value = self.speakingSpeed
+                        slider.value = game.speakingSpeed
                         return cell
                     default:
                         let cell = tableView.dequeueReusableCellWithIdentifier("tvcSwitch", forIndexPath: indexPath) as UITableViewCell
@@ -167,52 +150,43 @@ class SettingsViewController: UITableViewController, UITableViewDelegate, UITabl
     
     //MARK: Target action methods
     @IBAction func switchClicked(sender: UISwitch) {
-        self.hasSound = sender.on
+        game.hasSound = sender.on
     }
     
     @IBAction func segmentedClicked(sender: UISegmentedControl) {
         switch (sender.selectedSegmentIndex) {
         case Difficulty.Easy.rawValue:
-            self.difficulty = "Easy"
+            game.difficulty = "Easy"
         case Difficulty.Medium.rawValue:
-            self.difficulty = "Medium"
+            game.difficulty = "Medium"
         case Difficulty.Hard.rawValue:
-            self.difficulty = "Hard"
+            game.difficulty = "Hard"
         default:
             println("Difficulty segmented control clicked but no action taken")
         }
     }
     
     @IBAction func sliderClicked(sender: UISlider) {
-        self.speakingSpeed = sender.value
+        game.speakingSpeed = sender.value
     }
     
     //MARK: Language Setting Delegate
     func returnToSource(vc: UIViewController, language: String) {
-        self.language = language
+        game.language = language
     }
     
     //MARK: - Segue
-    override func shouldPerformSegueWithIdentifier(identifier: String?, sender: AnyObject?) -> Bool {
-        return true
-    }
-    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
 //        if self.managedObjectContext != nil {
             switch (segue.identifier!) {
                 case "Show Language":
                     var destinationViewController = segue.destinationViewController as LanguageSettingViewController
                     destinationViewController.delegate = self
+                    destinationViewController.game = game
                     println("Segue to \(destinationViewController.description)")
-//                case "Show Settings":
-//                    
                 default:
                     println("prepareForSegue: Unidentified segue on \(segue.identifier)")
             }
 //        }
-    }
-    
-    override func performSegueWithIdentifier(identifier: String?, sender: AnyObject?) {
-        super.performSegueWithIdentifier(identifier, sender: sender)
     }
 }

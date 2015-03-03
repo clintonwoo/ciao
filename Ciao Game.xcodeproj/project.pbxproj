@@ -11,6 +11,8 @@
 		18032B311A75EB000021E6AD /* EnglishWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18032B301A75EB000021E6AD /* EnglishWord.swift */; };
 		18032B331A75EB000021E6AD /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18032B321A75EB000021E6AD /* Word.swift */; };
 		1806BDA51A3D4CFA00774709 /* LanguageSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1806BDA41A3D4CFA00774709 /* LanguageSettingViewController.swift */; };
+		183799F41AA0A8FD00514FA1 /* Statistics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183799F31AA0A8FD00514FA1 /* Statistics.swift */; };
+		183799F61AA0A95900514FA1 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183799F51AA0A95900514FA1 /* Model.swift */; };
 		18384E4A1A58F49D006DA713 /* Defaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18384E491A58F49D006DA713 /* Defaults.plist */; };
 		18384E4C1A590079006DA713 /* EasyWords.strings in Resources */ = {isa = PBXBuildFile; fileRef = 18384E4B1A590079006DA713 /* EasyWords.strings */; };
 		18384E4E1A59017A006DA713 /* MediumWords.strings in Resources */ = {isa = PBXBuildFile; fileRef = 18384E4D1A59017A006DA713 /* MediumWords.strings */; };
@@ -61,6 +63,8 @@
 		18032B301A75EB000021E6AD /* EnglishWord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnglishWord.swift; sourceTree = "<group>"; };
 		18032B321A75EB000021E6AD /* Word.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
 		1806BDA41A3D4CFA00774709 /* LanguageSettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanguageSettingViewController.swift; sourceTree = "<group>"; };
+		183799F31AA0A8FD00514FA1 /* Statistics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Statistics.swift; sourceTree = "<group>"; };
+		183799F51AA0A95900514FA1 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		18384E491A58F49D006DA713 /* Defaults.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Defaults.plist; sourceTree = "<group>"; };
 		18384E4B1A590079006DA713 /* EasyWords.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = EasyWords.strings; sourceTree = "<group>"; };
 		18384E4D1A59017A006DA713 /* MediumWords.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = MediumWords.strings; sourceTree = "<group>"; };
@@ -131,6 +135,8 @@
 				183A41011A8A12A800619D1D /* Core Data */,
 				18FB1F041A77CAE300180515 /* Test Data */,
 				183A41021A8A12E700619D1D /* LanguageGame.swift */,
+				183799F51AA0A95900514FA1 /* Model.swift */,
+				183799F31AA0A8FD00514FA1 /* Statistics.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -383,6 +389,8 @@
 				183A41071A8A274E00619D1D /* AlphabetGameViewController.swift in Sources */,
 				18032B251A75BBDC0021E6AD /* ModeTableViewCell.swift in Sources */,
 				18E54CDD1A9830EC007E7287 /* GameMasterViewController.swift in Sources */,
+				183799F61AA0A95900514FA1 /* Model.swift in Sources */,
+				183799F41AA0A8FD00514FA1 /* Statistics.swift in Sources */,
 				18BD53701A33053300742D7F /* GameViewController.swift in Sources */,
 				18867F051A762031005F8AD7 /* Alphabet.swift in Sources */,
 				18C0F1F71A456225007BEE49 /* StatisticsViewController.swift in Sources */,

@@ -10,143 +10,76 @@ import Foundation
 import CoreData
 
 protocol LanguageGameModelDelegate {
-    func setStreakText (text: String)
+    func setHasSound (hasSound: Bool)
 }
 
 struct Defaults {
     static let Attempts = "attempts"
     static let CorrectAttempts = "corectAttempts"
     static let Language = "language"
+    static let Languages = "languages"
     static let Difficulty = "difficulty"
     static let GameMode = "gameMode"
     static let LongestStreak = "longestStreak"
-//    static var LongestStreak: String {
-//        get {
-//            return NSUserDefaults.standardUserDefaults().stringForKey(Defaults.Difficulty)!
-//        }
-//        set {
-//            NSUserDefaults.standardUserDefaults().setValue(newValue, forKey: "longestStreak")
-//        }
-//    }
+    static let HasSound = "hasSound"
+    static let SpeakingSpeed = "speakingSpeed"
 }
 
 struct Entity {
     static let Language = "language"
 }
 
-class LanguageGame {
+class LanguageGame: Model {
     
     //MARK: - Data Model Protocol
     var controller: LanguageGameModelDelegate? = nil
     
     //MARK: - Properties
-    let userDefaults = NSUserDefaults.standardUserDefaults()
     var managedObjectContext: NSManagedObjectContext
-    var attempts: Int {
+    
+    override var hasSound: Bool {
         get {
-            return userDefaults.integerForKey(Defaults.Attempts) ?? 0
+            return userDefaults.boolForKey(Defaults.HasSound)
         }
         set {
-            userDefaults.setInteger(newValue, forKey: Defaults.Attempts)
+            userDefaults.setBool(newValue, forKey: Defaults.HasSound)
+            controller?.setHasSound(newValue)
         }
     }
-    var correctAttempts: Int {
-        get {
-            return userDefaults.integerForKey(Defaults.CorrectAttempts) ?? 0
-        }
-        set {
-            userDefaults.setInteger(newValue, forKey: Defaults.CorrectAttempts)
-        }
-//        didSet {
-//            //update() update the UI
-//            if (controller != nil) {
-//                controller?.setStreakText("")
-//            }
-    }
-    var longestStreak: Int {
-        get {
-            return userDefaults.integerForKey(Defaults.LongestStreak)
-        }
-        set {
-            userDefaults.setInteger(newValue, forKey: Defaults.LongestStreak)
-        }
-    }
-    var difficulty: String {
-        get {
-            return userDefaults.stringForKey(Defaults.Difficulty)!
-        }
-        set {
-            userDefaults.setValue(newValue, forKey: Defaults.Difficulty)
-        }
-    }
-    var gameMode: String {
-        get {
-            return userDefaults.stringForKey(Defaults.GameMode)!
-        }
-        set {
-            userDefaults.setValue(newValue, forKey: Defaults.GameMode)
-        }
-    }
+    
     var foreignWords: [Word] = []
-    lazy var currentLanguageRecord: Language = {
+    var currentLanguageRecord: Language {
         let languageFetchRequest = NSFetchRequest()
         let languageEntity: NSEntityDescription = NSEntityDescription.entityForName("Language", inManagedObjectContext: self.managedObjectContext)!
-        let languagePredicate = NSPredicate(format: "name = %@", self.userDefaults.stringForKey(Defaults.Language)!)
+        let languagePredicate = NSPredicate(format: "name = %@", self.language)
         languageFetchRequest.entity = languageEntity
         languageFetchRequest.predicate = languagePredicate
         var error = NSErrorPointer()
         let languageRecords = self.managedObjectContext.executeFetchRequest(languageFetchRequest, error: error) as [Language]
         return languageRecords[0]
-        }()
-    var streak: Int = 0
+    }
+    var currentStreak: Int = 0
     
     //MARK: - Computed properties
     var streakText: String {
-        return NSLocalizedString("Streak: \(streak)", comment: "Navigation bar title showing the user's streak.")
+        return NSLocalizedString("Streak: \(currentStreak)", comment: "Navigation bar title showing the user's streak.")
     }
     var foreignHi: String {
         get {
             let hiFetchRequest = NSFetchRequest(entityName: "Word")
-            hiFetchRequest.predicate = NSPredicate(format: "language.name = %@ AND englishWord.word = %@", userDefaults.stringForKey(Defaults.Language)!, "Hi")
+            hiFetchRequest.predicate = NSPredicate(format: "language.name = %@ AND englishWord.word = %@", language, "Hi")
             var error = NSErrorPointer()
             let temp = managedObjectContext.executeFetchRequest(hiFetchRequest, error: error) as [Word]
             return temp[0].word
         }
     }
-    //    enum streak: Printable {
-    //        case streak(Int)
-    //
-    //        var description: String {
-    //            get {
-    //                return NSLocalizedString("Streak: \(self)", comment: "Navigation bar title showing the user's streak.")
-    //            }
-    //            set {
-    //
-    //            }
-    //        }
-    //    }
-//    var test: String = "" {
-////        get {
-//                //HTTP GET
-////            return ""
-////        }
-////        set {
-//        //HTTP POST
-////            
-////        }
-//        didSet{
-//            //
-//        }
-//        willSet{
-//            
-//        }
-//    }
     
     //MARK: - Initialisers
     init (context: NSManagedObjectContext) {
         managedObjectContext = context
-        var error = NSErrorPointer()
-        fetchData(error)
+        super.init()
+//        var error = NSErrorPointer()
+//        fetchData(error)
     }
     
     deinit {
@@ -200,8 +133,8 @@ class LanguageGame {
     
     //MARK: - Functions
     func saveLongestStreak () {
-        if longestStreak < streak {
-            longestStreak = streak
+        if longestStreak < currentStreak {
+            longestStreak = currentStreak
         }
     }
 }

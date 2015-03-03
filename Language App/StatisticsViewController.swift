@@ -23,18 +23,11 @@ class StatisticsViewController: UIViewController {
     
     //MARK: - Properties
     var game: LanguageGame!
+    var model = Model()
     var managedObjectContext: NSManagedObjectContext? = nil
     let userDefaults = NSUserDefaults.standardUserDefaults()
 
-    //MARK: - Initialisers
-    override init() {
-        super.init()
-    }
-    
-    required init (coder: NSCoder) {
-        super.init(coder: coder)
-    }
-    
+    //MARK: - Initialisers    
     deinit {
         var error: NSErrorPointer = NSErrorPointer()
         if (managedObjectContext?.save(error) == nil) {
@@ -51,15 +44,6 @@ class StatisticsViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
     }
     
-    override func viewWillAppear(animated: Bool) {
-        //
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     //MARK: - Statistics methods
     func refresh() {
         //var numberFormatter = NSNumberFormatter()
@@ -68,14 +52,11 @@ class StatisticsViewController: UIViewController {
         languageFetchRequest.predicate = NSPredicate(format: "attempts = max(attempts)")
         var languages = managedObjectContext?.executeFetchRequest(languageFetchRequest, error: error) as [Language]
         //let sortedLanguageAttempts = languageAttempts.keysSortedByValueUsingSelector("compare:") as [String]
-        let streak = String(userDefaults.integerForKey("longestStreak"))
-        let attempts = userDefaults.integerForKey("attempts")
-        let correctAttempts = userDefaults.integerForKey("correctAttempts")
         var percentageCorrect: Double
-        if attempts == 0 {
+        if model.attempts == 0 {
             percentageCorrect = 0
         } else {
-            percentageCorrect = Double(correctAttempts)/Double(attempts) * 100
+            percentageCorrect = Double(model.correctAttempts)/Double(model.attempts) * 100
         }
         var fetchRequest = NSFetchRequest(entityName: "Word")
         let maxCorrectAttemptsPredicate = NSPredicate(format: "correctAttempts = max(correctAttempts)")
@@ -99,7 +80,7 @@ class StatisticsViewController: UIViewController {
         } else {
             println("fetch request failed")
         }
-        self.wordsAttemptedLabel.text = NSLocalizedString("Words Attempted: \(attempts)", comment: "Statistic label showing the number of words the user has attempted")
+        self.wordsAttemptedLabel.text = NSLocalizedString("Words Attempted: \(model.attempts)", comment: "Statistic label showing the number of words the user has attempted")
         self.percentageCorrectLabel.text = NSLocalizedString("Correct Ratio: \(ceil(percentageCorrect))%", comment: "Statistic label showing user's ratio of correct word attempts")
         if (languages[0].attempts != 0) {
             let key = "name"
@@ -108,14 +89,14 @@ class StatisticsViewController: UIViewController {
         } else {
             self.favouriteLanguage.text = NSLocalizedString("Favourite Language:", comment: "User's favourite language")
         }
-        self.longestStreakLabel.text = NSLocalizedString("Longest Streak: \(streak)", comment: "Statistic label showing the user's longest streak")
+        self.longestStreakLabel.text = NSLocalizedString("Longest Streak: \(model.longestStreak)", comment: "Statistic label showing the user's longest streak")
     }
     
     private func resetStats() {
         let defaultsDictionary: Dictionary = NSDictionary(contentsOfFile: NSBundle.mainBundle().pathForResource("Defaults", ofType:"plist")!)!
-        userDefaults.setInteger(0, forKey: "attempts")
-        userDefaults.setInteger(0, forKey: "correctAttempts")
-        userDefaults.setInteger(0, forKey: "longestStreak")
+        userDefaults.setInteger(0, forKey: Defaults.Attempts)
+        userDefaults.setInteger(0, forKey: Defaults.CorrectAttempts)
+        userDefaults.setInteger(0, forKey: Defaults.LongestStreak)
         var error: NSErrorPointer = NSErrorPointer()
         //go through core data and clear all attempts on Word and Language entity to 0
         var wordBatchRequest = NSBatchUpdateRequest(entityName: "Word")
