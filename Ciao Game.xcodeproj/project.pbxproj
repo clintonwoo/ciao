@@ -14,9 +14,6 @@
 		183799F41AA0A8FD00514FA1 /* Statistics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183799F31AA0A8FD00514FA1 /* Statistics.swift */; };
 		183799F61AA0A95900514FA1 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183799F51AA0A95900514FA1 /* Model.swift */; };
 		18384E4A1A58F49D006DA713 /* Defaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18384E491A58F49D006DA713 /* Defaults.plist */; };
-		18384E4C1A590079006DA713 /* EasyWords.strings in Resources */ = {isa = PBXBuildFile; fileRef = 18384E4B1A590079006DA713 /* EasyWords.strings */; };
-		18384E4E1A59017A006DA713 /* MediumWords.strings in Resources */ = {isa = PBXBuildFile; fileRef = 18384E4D1A59017A006DA713 /* MediumWords.strings */; };
-		18384E501A59018C006DA713 /* HardWords.strings in Resources */ = {isa = PBXBuildFile; fileRef = 18384E4F1A59018C006DA713 /* HardWords.strings */; };
 		183A41031A8A12E700619D1D /* LanguageGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183A41021A8A12E700619D1D /* LanguageGame.swift */; };
 		183A41071A8A274E00619D1D /* AlphabetGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183A41061A8A274E00619D1D /* AlphabetGameViewController.swift */; };
 		184656561A57822D0095442D /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184656551A57822D0095442D /* AboutViewController.swift */; };
@@ -66,9 +63,6 @@
 		183799F31AA0A8FD00514FA1 /* Statistics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Statistics.swift; sourceTree = "<group>"; };
 		183799F51AA0A95900514FA1 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		18384E491A58F49D006DA713 /* Defaults.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Defaults.plist; sourceTree = "<group>"; };
-		18384E4B1A590079006DA713 /* EasyWords.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = EasyWords.strings; sourceTree = "<group>"; };
-		18384E4D1A59017A006DA713 /* MediumWords.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = MediumWords.strings; sourceTree = "<group>"; };
-		18384E4F1A59018C006DA713 /* HardWords.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = HardWords.strings; sourceTree = "<group>"; };
 		183A41021A8A12E700619D1D /* LanguageGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanguageGame.swift; sourceTree = "<group>"; };
 		183A41061A8A274E00619D1D /* AlphabetGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlphabetGameViewController.swift; sourceTree = "<group>"; };
 		184656551A57822D0095442D /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
@@ -233,9 +227,6 @@
 				188B2C381A73888A00758929 /* IETFLanguageCode.strings */,
 				185182A71A7358B000DA20FC /* Languages.plist */,
 				18384E491A58F49D006DA713 /* Defaults.plist */,
-				18384E4B1A590079006DA713 /* EasyWords.strings */,
-				18384E4D1A59017A006DA713 /* MediumWords.strings */,
-				18384E4F1A59018C006DA713 /* HardWords.strings */,
 				18C0F2011A459ED7007BEE49 /* Localizable.strings */,
 			);
 			name = "Supporting Files";
@@ -349,7 +340,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18384E4C1A590079006DA713 /* EasyWords.strings in Resources */,
 				185182AA1A735A9500DA20FC /* WikipediaGrammarURL.strings in Resources */,
 				18C0F1FF1A459ED7007BEE49 /* Localizable.strings in Resources */,
 				188B2C391A73888A00758929 /* IETFLanguageCode.strings in Resources */,
@@ -361,8 +351,6 @@
 				185182A81A7358B000DA20FC /* Languages.plist in Resources */,
 				18867F031A761F31005F8AD7 /* WikipediaOrthography.strings in Resources */,
 				18BD53751A33053300742D7F /* Images.xcassets in Resources */,
-				18384E4E1A59017A006DA713 /* MediumWords.strings in Resources */,
-				18384E501A59018C006DA713 /* HardWords.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
