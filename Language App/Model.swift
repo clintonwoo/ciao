@@ -10,11 +10,8 @@ import Foundation
 
 class Model {
     
-    init () {
-        
-    }
-    
     //MARK: - Properties
+    
     let userDefaults = NSUserDefaults.standardUserDefaults()
     var speakingSpeed: Float {
         get {
@@ -24,14 +21,7 @@ class Model {
             userDefaults.setFloat(newValue, forKey: Defaults.SpeakingSpeed)
         }
     }
-    var hasSound: Bool {
-        get {
-            return userDefaults.boolForKey(Defaults.HasSound)
-        }
-        set {
-            userDefaults.setBool(newValue, forKey: Defaults.HasSound)
-        }
-    }
+
     var attempts: Int {
         get {
             return userDefaults.integerForKey(Defaults.Attempts) ?? 0
@@ -84,5 +74,11 @@ class Model {
         set {
             userDefaults.setValue(newValue, forKey: Defaults.GameMode)
         }
+    }
+    
+    // MARK: - Initialisers
+    
+    init () {
+        
     }
 }

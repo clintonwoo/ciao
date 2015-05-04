@@ -10,7 +10,7 @@ import UIKit
 import AVFoundation
 import CoreData
 
-class GameMasterViewController: UIViewController, LanguageGameModelDelegate {
+class GameMasterViewController: UIViewController {
 
     //MARK: - Outlets
     @IBOutlet weak var wordLabel: UILabel! /*{
@@ -35,10 +35,15 @@ class GameMasterViewController: UIViewController, LanguageGameModelDelegate {
     //MARK: - View Controller
     override func viewDidLoad() {
         super.viewDidLoad()
-        var error = NSErrorPointer()
-        game.fetchData(error)
+        game.fetchData()
         game.currentStreak = 0
-        setHasSound(game.hasSound)
+        
+        // Set sound button text
+        if (NSUserDefaults.standardUserDefaults().boolForKey(Defaults.HasSound)) {
+            soundButton.title = NSLocalizedString("Sound On", comment: "Button to turn the game sound on")
+        } else {
+            soundButton.title = NSLocalizedString("Sound Off", comment: "Button to turn the game sound off")
+        }
         setButtonCollectionStyle()
         // Do any additional setup after loading the view.
     }
@@ -51,7 +56,8 @@ class GameMasterViewController: UIViewController, LanguageGameModelDelegate {
         //
     }
     
-    //MARK: - Game methods
+    // MARK: - Methods
+    
     internal func setButtonCollectionStyle () {
         for gameButton in gameButtonCollection {
             gameButton.layer.cornerRadius = CGFloat(2)
@@ -59,28 +65,26 @@ class GameMasterViewController: UIViewController, LanguageGameModelDelegate {
         }
     }
     
-    //MARK: - Model Delegate
-    func setHasSound(hasSound: Bool) {
-        if (hasSound == true) {
-            soundButton.title = NSLocalizedString("Sound On", comment: "Button to turn the game sound on")
-        } else {
-            soundButton.title = NSLocalizedString("Sound Off", comment: "Button to turn the game sound off")
-        }
-    }
+    // MARK: - Target Action
     
-    //MARK: - Target Action
     @IBAction func tapWordLabel(sender: UITapGestureRecognizer) {
         let label = sender.view as! UILabel
         sayWord(label.text!, localWord: nil)
     }
     
-    @IBAction func clickSoundButton(sender: UIBarButtonItem) {
-        game.hasSound = !game.hasSound
+    @IBAction func clickSoundButton(sender: UIBarButtonItem?) {
+        if (NSUserDefaults.standardUserDefaults().boolForKey(Defaults.HasSound)) {
+            NSUserDefaults.standardUserDefaults().setBool(false, forKey: Defaults.HasSound)
+            soundButton.title = NSLocalizedString("Sound Off", comment: "Button to turn the game sound off")
+        } else {
+            NSUserDefaults.standardUserDefaults().setBool(true, forKey: Defaults.HasSound)
+            soundButton.title = NSLocalizedString("Sound On", comment: "Button to turn the game sound on")
+        }
     }
     
     //MARK: - Text to speech
     internal func sayWord (foreignWord: String, localWord: String?) {
-        if game.hasSound {
+        if NSUserDefaults.standardUserDefaults().boolForKey(Defaults.HasSound) {
             let dataPlistPath: String = NSBundle.mainBundle().pathForResource("IETFLanguageCode", ofType:"strings")!
             let IETFCodeDictionary = NSDictionary(contentsOfFile: dataPlistPath)!
             let synthesizer = AVSpeechSynthesizer()

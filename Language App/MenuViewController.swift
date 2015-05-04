@@ -79,7 +79,6 @@ class MenuViewController: UIViewController, SettingsDelegate {
                     let destinationViewController = segue.destinationViewController as! GameViewController
                     destinationViewController.coreDataDelegate = coreDataDelegate
                     destinationViewController.game = self.game
-                    destinationViewController.game.controller = destinationViewController
 //                    destinationViewController.game.managedObjectContext = self.managedObjectContext
                     println("prepareForSegue: \(destinationViewController.description)")
                 case "Show Modes":
@@ -90,7 +89,6 @@ class MenuViewController: UIViewController, SettingsDelegate {
                     let destinationViewController = segue.destinationViewController as! AlphabetGameViewController
                     destinationViewController.coreDataDelegate = coreDataDelegate
                     destinationViewController.game = self.game
-                    destinationViewController.game.controller = destinationViewController
                     println("Segue to \(destinationViewController.description)")
                 case "Show Grammar":
                     let destinationViewController = segue.destinationViewController as! GrammarViewController
@@ -104,7 +102,6 @@ class MenuViewController: UIViewController, SettingsDelegate {
                     //destinationViewController.webView?.loadRequest(urlRequest)
                 case "Show Statistics":
                     let destinationViewController = segue.destinationViewController as! StatisticsViewController
-                    destinationViewController.managedObjectContext = self.managedObjectContext
                     destinationViewController.coreDataDelegate = coreDataDelegate
                     destinationViewController.game = self.game
                     println("prepareForSegue: \(destinationViewController.description)")
@@ -113,7 +110,6 @@ class MenuViewController: UIViewController, SettingsDelegate {
                     let destinationViewController = navController.topViewController as! SettingsViewController
                     destinationViewController.game = self.game
                     destinationViewController.delegate = self
-//                    destinationViewController.managedObjectContext = self.managedObjectContext
                     println("prepareForSegue: \(destinationViewController.description)")
             default:
                 println("prepareForSegue: \(segue.identifier!) not found.")

@@ -1,5 +1,5 @@
 //
-//  Enums.swift
+//  Static.swift
 //  Ciao Game
 //
 //  Created by Clinton D'Annolfo on 4/05/2015.
