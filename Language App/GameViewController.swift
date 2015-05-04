@@ -103,6 +103,7 @@ class GameViewController: GameMasterViewController, GameButtonDataSource {
             }
             game.currentStreak += 1
             game.correctAttempts += 1
+            game.saveLongestStreak()
             refreshGame()
         } else {
             UIView.animateWithDuration(0.25, animations: {sender.alpha = 0.25})

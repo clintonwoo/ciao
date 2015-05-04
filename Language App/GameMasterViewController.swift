@@ -39,9 +39,9 @@ class GameMasterViewController: UIViewController {
         game.fetchData()
         // Set sound button text
         if (NSUserDefaults.standardUserDefaults().boolForKey(UserDefaults.HasSound)) {
-            soundButton.title = NSLocalizedString("Sound On", comment: "Button to turn the game sound on")
+            soundButton.title = Localization.Game.SoundOn
         } else {
-            soundButton.title = NSLocalizedString("Sound Off", comment: "Button to turn the game sound off")
+            soundButton.title = Localization.Game.SoundOff
         }
         setButtonCollectionStyle()
         // Do any additional setup after loading the view.
@@ -74,10 +74,10 @@ class GameMasterViewController: UIViewController {
     @IBAction func tapSoundButton(sender: UIBarButtonItem?) {
         if (NSUserDefaults.standardUserDefaults().boolForKey(UserDefaults.HasSound)) {
             NSUserDefaults.standardUserDefaults().setBool(false, forKey: UserDefaults.HasSound)
-            soundButton.title = NSLocalizedString("Sound Off", comment: "Button to turn the game sound off")
+            soundButton.title = Localization.Game.SoundOff
         } else {
             NSUserDefaults.standardUserDefaults().setBool(true, forKey: UserDefaults.HasSound)
-            soundButton.title = NSLocalizedString("Sound On", comment: "Button to turn the game sound on")
+            soundButton.title = Localization.Game.SoundOn
         }
     }
     
@@ -96,7 +96,7 @@ class GameMasterViewController: UIViewController {
             }
             //utteranceAnswer.voice = AVSpeechSynthesisVoice(language: "en-AU")
             var utteranceWord = AVSpeechUtterance(string: foreignWord)
-            if let languageCode = IETFCodeDictionary.valueForKey(NSUserDefaults.standardUserDefaults().stringForKey("language")!) as? String {
+            if let languageCode = IETFCodeDictionary.valueForKey(NSUserDefaults.standardUserDefaults().stringForKey(UserDefaults.Language)!) as? String {
                 utteranceWord.voice = AVSpeechSynthesisVoice(language: languageCode)
             }
             utteranceWord.rate = self.game.speakingSpeed
@@ -114,5 +114,4 @@ class GameMasterViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
 }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6746" systemVersion="14C109" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7549" systemVersion="14D136" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Alphabet" representedClassName="Alphabet" syncable="YES">
         <attribute name="index" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="lowercase" optional="YES" attributeType="String" syncable="YES"/>
@@ -31,10 +31,11 @@
         <relationship name="language" maxCount="1" deletionRule="Nullify" destinationEntity="Language" inverseName="words" inverseEntity="Language" syncable="YES"/>
     </entity>
     <fetchRequest name="bestWord" entity="Word" predicateString="correctAttempts == max:(correctAttempts)"/>
+    <fetchRequest name="favouriteLanguage" entity="Language" predicateString="attempts == max:(attempts)"/>
     <fetchRequest name="hiWordForCurrentLanguage" entity="Word" predicateString="language.name == $LANGUAGE AND englishWord.word == &quot;Hi&quot;"/>
     <fetchRequest name="languageWithMaxAttempts" entity="Language" predicateString="attempts == max:(attempts)"/>
-    <fetchRequest name="wordWithMaxCorrectAttempts" entity="Word" predicateString="correctAttempts == max:(correctAttempts)"/>
-    <fetchRequest name="wordWithMaxIncorrectAttempts" entity="Word" predicateString="incorrectAttempts == max:(incorrectAttempts)"/>
+    <fetchRequest name="mostSuccessfulWord" entity="Word" predicateString="correctAttempts == max:(correctAttempts)"/>
+    <fetchRequest name="mostUnsuccessfulWord" entity="Word" predicateString="incorrectAttempts == max:(incorrectAttempts)"/>
     <fetchRequest name="worstWord" entity="Word" predicateString="incorrectAttempts == 0"/>
     <elements>
         <element name="Alphabet" positionX="-90" positionY="90" width="128" height="103"/>

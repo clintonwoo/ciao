@@ -7,7 +7,9 @@
 //
 
 import UIKit
+import Alamofire
 import CoreData
+import SugarRecord
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, CoreDataDelegate {
@@ -28,6 +30,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CoreDataDelegate {
         let menu = initialViewController.topViewController as! MenuViewController
         menu.coreDataDelegate = self
         
+//        let stack: DefaultCDStack = DefaultCDStack(databasePath: "Model.sqlite", model: managedObjectModel!, automigrating: true)
+//        SugarRecord.addStack(stack)
+//        SugarRecordLogger.currentLevel = SugarRecordLogger.logLevelVerbose
+        
+        Manager.sharedInstance
         setupCoreData()
         
         if saveContext() {
@@ -39,6 +46,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CoreDataDelegate {
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
+        SugarRecord.applicationWillResignActive()
     }
     
     func applicationDidEnterBackground(application: UIApplication) {
@@ -48,6 +56,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CoreDataDelegate {
     
     func applicationWillEnterForeground(application: UIApplication) {
         // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+        SugarRecord.applicationWillEnterForeground()
     }
     
     func applicationDidBecomeActive(application: UIApplication) {
@@ -56,6 +65,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CoreDataDelegate {
     
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+        SugarRecord.applicationWillTerminate()
     }
     
     //MARK: - Core Data Stack
@@ -167,6 +177,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CoreDataDelegate {
         }
         var managedObjectContext = NSManagedObjectContext()
         managedObjectContext.persistentStoreCoordinator = coordinator
+        managedObjectContext.mergePolicy = NSMergePolicy(mergeType: NSMergePolicyType.MergeByPropertyObjectTrumpMergePolicyType)
         return managedObjectContext
         }()
     
@@ -208,7 +219,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CoreDataDelegate {
                 englishWord.difficulty = wordInputArray[i].valueForKey("difficulty") as! String
                 englishWord.inPhraseMode = wordInputArray[i].valueForKey("inPhraseMode") as! Bool
                 println("Created English word record: \(englishWord.word), \(englishWord.difficulty)")
-                for language in NSUserDefaults.standardUserDefaults().stringArrayForKey("languages") as! [String] {
+                for language in NSUserDefaults.standardUserDefaults().stringArrayForKey(UserDefaults.Languages) as! [String] {
                     //create foreign words and relate to languages
                     var word: Word = NSEntityDescription.insertNewObjectForEntityForName(Entity.Word, inManagedObjectContext: managedObjectContext!) as! Word
                     word.word = wordInputArray[i].valueForKey(language) as! String

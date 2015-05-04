@@ -18,7 +18,7 @@ class GrammarViewController: UIViewController, UIWebViewDelegate {
     
     //MARK: - Properties
     let userDefaults = NSUserDefaults.standardUserDefaults()
-    lazy var willCacheGrammarPages: Bool = {self.userDefaults.boolForKey("willCacheGrammarPages")}()
+    lazy var willCacheGrammarPages: Bool = {self.userDefaults.boolForKey(UserDefaults.WillCacheGrammarPages)}()
     var urlRequest: NSURLRequest? = nil
     var backButton: UIBarButtonItem? = nil
     var forwardButton: UIBarButtonItem? = nil
@@ -39,8 +39,8 @@ class GrammarViewController: UIViewController, UIWebViewDelegate {
         super.viewDidLoad()
         self.webView.delegate = self
 //        webView.st
-        self.backButton = UIBarButtonItem(title:"Back", style: UIBarButtonItemStyle.Plain, target: self.webView, action: "goBack")
-        self.forwardButton = UIBarButtonItem(title:"Forward", style: UIBarButtonItemStyle.Plain, target: self.webView, action: "goForward")
+        self.backButton = UIBarButtonItem(title: Localization.Grammar.Back, style: UIBarButtonItemStyle.Plain, target: self.webView, action: "goBack")
+        self.forwardButton = UIBarButtonItem(title: Localization.Grammar.Forward, style: UIBarButtonItemStyle.Plain, target: self.webView, action: "goForward")
         setForwardBackwardButton(false, canGoBack: false)
 //        addContainerViewController(webCacheViewController)
         //        var toolbar: UIToolbar = UIToolbar(frame: CGRectMake(0, 0, 90, 50))
@@ -94,7 +94,7 @@ class GrammarViewController: UIViewController, UIWebViewDelegate {
         self.view.addSubview(viewController.view)
 
         let label = UILabel(frame: CGRect(x: 0, y: 0, width: 150, height: 100))
-        label.text = "Cache"
+//        label.text = "Cache"
         let cacheSwitch = UISwitch(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
 //        label.addConstraint(NSLayoutConstraint(item: label, attribute: .Trailing, relatedBy: .Equal, toItem: cacheSwitch, attribute: NSLayoutAttribute.Leading, multiplier: 0, constant: 8))
         label.setTranslatesAutoresizingMaskIntoConstraints(false)

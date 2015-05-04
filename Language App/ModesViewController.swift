@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import Alamofire
 
 class ModesViewController: UITableViewController, UITableViewDataSource, UITableViewDelegate {
     //MARK: - Outlets
@@ -17,18 +18,15 @@ class ModesViewController: UITableViewController, UITableViewDataSource, UITable
     var game: LanguageGame!
     var coreDataDelegate: CoreDataDelegate!
     
-    //MARK: - Initialisers
-    required init (coder: NSCoder) {
-        super.init(coder: coder)
-    }
-    
     //MARK: - View Controller methods
     override func viewDidLoad() {
         super.viewDidLoad()
         setCheckedCell()
+        
         //tableView.insertRowsAtIndexPaths(path, withRowAnimation: UITableViewRowAnimation.Right)
         // Do any additional setup after loading the view, typically from a nib.
     }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

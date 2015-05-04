@@ -18,6 +18,11 @@ enum UserDefaults {
     static let LongestStreak = "longestStreak"
     static let HasSound = "hasSound"
     static let SpeakingSpeed = "speakingSpeed"
+    static let WillCacheGrammarPages = "willCacheGrammarPages"
+}
+
+enum NotificationCenter {
+    static let LongestStreakChanged = "LongestStreakChanged"
 }
 
 enum Entity {
@@ -55,8 +60,3 @@ enum ResourceName: String {
         }
     }
 }
-
-//enum SegueID {
-//    
-//}
-

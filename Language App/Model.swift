@@ -8,11 +8,10 @@
 
 import Foundation
 
-class Model {
+class Model: Statistics {
     
-    //MARK: - Properties
+    //MARK: - Model
     
-    let userDefaults = NSUserDefaults.standardUserDefaults()
     var speakingSpeed: Float {
         get {
             return userDefaults.floatForKey(UserDefaults.SpeakingSpeed)
@@ -22,35 +21,6 @@ class Model {
         }
     }
 
-    var attempts: Int {
-        get {
-            return userDefaults.integerForKey(UserDefaults.Attempts) ?? 0
-        }
-        set {
-            userDefaults.setInteger(newValue, forKey: UserDefaults.Attempts)
-        }
-    }
-    var correctAttempts: Int {
-        get {
-            return userDefaults.integerForKey(UserDefaults.CorrectAttempts) ?? 0
-        }
-        set {
-            userDefaults.setInteger(newValue, forKey: UserDefaults.CorrectAttempts)
-        }
-        //        didSet {
-        //            //update() update the UI
-        //            if (controller != nil) {
-        //                controller?.setStreakText("")
-        //            }
-    }
-    var longestStreak: Int {
-        get {
-            return userDefaults.integerForKey(UserDefaults.LongestStreak)
-        }
-        set {
-            userDefaults.setInteger(newValue, forKey: UserDefaults.LongestStreak)
-        }
-    }
     var language: String {
         get {
             return userDefaults.stringForKey(UserDefaults.Language)!
@@ -59,6 +29,7 @@ class Model {
             userDefaults.setValue(newValue, forKey: UserDefaults.Language)
         }
     }
+    
     var difficulty: Difficulty = Difficulty() {
         didSet {
             userDefaults.setValue(difficulty.toString(), forKey: UserDefaults.Difficulty)
@@ -73,7 +44,7 @@ class Model {
     
     // MARK: - Initialisers
     
-    init () {
+    override init () {
         
     }
 }

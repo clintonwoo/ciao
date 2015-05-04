@@ -65,7 +65,9 @@ class SettingsViewController: UITableViewController, UITableViewDelegate, UITabl
     }
     
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        let headerTitles = ["Game Settings","Sound","About"]
+        let headerTitles = [Localization.Settings.GameSettings,
+            Localization.Settings.Sound,
+            Localization.Settings.About]
         return headerTitles[section]
     }
     

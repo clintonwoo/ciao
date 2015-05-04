@@ -38,7 +38,7 @@ class MenuViewController: UIViewController, SettingsDelegate {
         super.viewDidLoad()
         game = LanguageGame(delegate: coreDataDelegate)
         setButtonCollectionStyle()
-        setGrammarButtonTitle(NSUserDefaults.standardUserDefaults().stringForKey("language")!)
+        setGrammarButtonTitle(NSUserDefaults.standardUserDefaults().stringForKey(UserDefaults.Language)!)
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -59,7 +59,7 @@ class MenuViewController: UIViewController, SettingsDelegate {
     // MARK: - Methods
     
     func setGrammarButtonTitle (language: String) {
-        grammarButton.setTitle(language + " " + NSLocalizedString("Grammar",comment: "Show wikipedia grammar page button on menu"), forState: UIControlState.Normal)
+        grammarButton.setTitle(language + " " + Localization.Menu.Grammar, forState: UIControlState.Normal)
     }
     
     internal func setButtonCollectionStyle () {
@@ -100,7 +100,7 @@ class MenuViewController: UIViewController, SettingsDelegate {
                 let destinationViewController = segue.destinationViewController as! GrammarViewController
                 let dataPlistPath: String = NSBundle.mainBundle().pathForResource(ResourceName.WikipediaGrammarURL.rawValue, ofType:ResourceName.WikipediaGrammarURL.Type)!
                 let dataPlistDictionary = NSDictionary(contentsOfFile: dataPlistPath)!
-                if let url = NSURL(string: dataPlistDictionary.valueForKey(NSUserDefaults.standardUserDefaults().stringForKey("language")!) as! String) {
+                if let url = NSURL(string: dataPlistDictionary.valueForKey(NSUserDefaults.standardUserDefaults().stringForKey(UserDefaults.Language)!) as! String) {
                     let urlRequest = NSURLRequest(URL: url)
                     destinationViewController.urlRequest = urlRequest
                 }
