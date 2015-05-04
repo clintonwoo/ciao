@@ -1,2 +1,11 @@
-*.DS_Store
+.DS_Store
 Pods/
+Podfile.lock
+**.xcodeproj/project.xcworkspace/
+**.xcodeproj/xcuserdata/
+UserInterfaceState.xcuserstate 
+.DS_Store
+xcuserdata
+.xcuserstate
+.xccheckout
+.swp
