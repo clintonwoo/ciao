@@ -10,10 +10,16 @@ import Foundation
 import CoreData
 
 protocol CoreDataDelegate {
+    
+    // MARK: - Core Data Stack
+    
     var applicationDocumentsDirectory: NSURL { mutating get }
     var managedObjectModel: NSManagedObjectModel? { mutating get }
     var persistentStoreCoordinator: NSPersistentStoreCoordinator? { mutating get }
     var managedObjectContext: NSManagedObjectContext? { mutating get }
-    // MARK: Core Data Saving support
+    
+    // MARK: - Core Data Saving support
+    
     func saveContext () -> Bool
+    
 }

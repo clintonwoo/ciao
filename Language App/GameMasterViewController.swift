@@ -23,16 +23,11 @@ class GameMasterViewController: UIViewController, LanguageGameModelDelegate {
     
     //MARK: - Properties
     var game: LanguageGame!
-    var managedObjectContext: NSManagedObjectContext? = nil
     var coreDataDelegate: CoreDataDelegate!
-    let userDefaults = NSUserDefaults.standardUserDefaults()
     
     //MARK: - Initialisers    
     deinit {
-        var error: NSErrorPointer = NSErrorPointer()
-        if (managedObjectContext?.save(error) == nil) {
-            println("Error: \(error.debugDescription)")
-        } else {
+        if coreDataDelegate.saveContext() {
             println("Managed Object Context save successful on \(self) deinit")
         }
     }
@@ -98,7 +93,7 @@ class GameMasterViewController: UIViewController, LanguageGameModelDelegate {
             }
             //utteranceAnswer.voice = AVSpeechSynthesisVoice(language: "en-AU")
             var utteranceWord = AVSpeechUtterance(string: foreignWord)
-            if let languageCode = IETFCodeDictionary.valueForKey(userDefaults.stringForKey("language")!) as? String {
+            if let languageCode = IETFCodeDictionary.valueForKey(NSUserDefaults.standardUserDefaults().stringForKey("language")!) as? String {
                 utteranceWord.voice = AVSpeechSynthesisVoice(language: languageCode)
             }
             utteranceWord.rate = self.game.speakingSpeed

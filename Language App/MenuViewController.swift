@@ -23,14 +23,13 @@ class MenuViewController: UIViewController, SettingsDelegate {
     //MARK: - Properties
     var game: LanguageGame!
     var managedObjectContext: NSManagedObjectContext!
-    let userDefaults = NSUserDefaults.standardUserDefaults()
     var coreDataDelegate: CoreDataDelegate!
 
     //MARK: - View controller methods
     override func viewDidLoad() {
         super.viewDidLoad()
         setButtonCollectionStyle()
-        setGrammarButtonTitle(userDefaults.stringForKey("language")!)
+        setGrammarButtonTitle(NSUserDefaults.standardUserDefaults().stringForKey("language")!)
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -78,7 +77,6 @@ class MenuViewController: UIViewController, SettingsDelegate {
             switch (segue.identifier!) {
                 case "Show Game":
                     let destinationViewController = segue.destinationViewController as! GameViewController
-                    destinationViewController.managedObjectContext = self.managedObjectContext
                     destinationViewController.coreDataDelegate = coreDataDelegate
                     destinationViewController.game = self.game
                     destinationViewController.game.controller = destinationViewController
@@ -90,7 +88,6 @@ class MenuViewController: UIViewController, SettingsDelegate {
                     println("prepareForSegue: \(destinationViewController.description)")
                 case "Show Alphabet Game":
                     let destinationViewController = segue.destinationViewController as! AlphabetGameViewController
-                    destinationViewController.managedObjectContext = self.managedObjectContext
                     destinationViewController.coreDataDelegate = coreDataDelegate
                     destinationViewController.game = self.game
                     destinationViewController.game.controller = destinationViewController
@@ -99,7 +96,7 @@ class MenuViewController: UIViewController, SettingsDelegate {
                     let destinationViewController = segue.destinationViewController as! GrammarViewController
                     let dataPlistPath: String = NSBundle.mainBundle().pathForResource("WikipediaGrammarURL", ofType:"strings")!
                     let dataPlistDictionary = NSDictionary(contentsOfFile: dataPlistPath)!
-                    if let url = NSURL(string: dataPlistDictionary.valueForKey(userDefaults.stringForKey("language")!) as! String) {
+                    if let url = NSURL(string: dataPlistDictionary.valueForKey(NSUserDefaults.standardUserDefaults().stringForKey("language")!) as! String) {
                         let urlRequest = NSURLRequest(URL: url)
                         destinationViewController.urlRequest = urlRequest
                     }

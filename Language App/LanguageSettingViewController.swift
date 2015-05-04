@@ -9,16 +9,11 @@
 import Foundation
 import UIKit
 
-protocol LanguageSettingDelegate {
-    func returnToSource(vc: UIViewController, language: String )
-}
-
-class LanguageSettingViewController: UITableViewController, UITableViewDelegate, UITableViewDataSource {
+class LanguageSettingViewController: UITableViewController, UITableViewDelegate {
     
     //MARK: - Properties
     var game: LanguageGame!
-    var delegate: SettingsViewController? = nil
-    var userDefaults = NSUserDefaults.standardUserDefaults()
+    var delegate: SettingsDelegate!
     var languages = NSUserDefaults.standardUserDefaults().stringArrayForKey(Defaults.Languages) as! [String]
     
     //MARK: - Initialisers

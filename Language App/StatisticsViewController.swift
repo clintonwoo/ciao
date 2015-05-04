@@ -26,14 +26,10 @@ class StatisticsViewController: UIViewController {
     var model = Model()
     var managedObjectContext: NSManagedObjectContext? = nil
     var coreDataDelegate: CoreDataDelegate!
-    let userDefaults = NSUserDefaults.standardUserDefaults()
 
     //MARK: - Initialisers    
     deinit {
-        var error: NSErrorPointer = NSErrorPointer()
-        if (managedObjectContext?.save(error) == nil) {
-            println("Error: \(error.debugDescription)")
-        } else {
+        if coreDataDelegate.saveContext() {
             println("Managed Object Context save successful on StatisticsViewController deinit")
         }
     }
@@ -95,9 +91,9 @@ class StatisticsViewController: UIViewController {
     
     private func resetStats() {
         let defaultsDictionary: Dictionary = NSDictionary(contentsOfFile: NSBundle.mainBundle().pathForResource("Defaults", ofType: "plist")!)! as Dictionary
-        userDefaults.setInteger(0, forKey: Defaults.Attempts)
-        userDefaults.setInteger(0, forKey: Defaults.CorrectAttempts)
-        userDefaults.setInteger(0, forKey: Defaults.LongestStreak)
+        NSUserDefaults.standardUserDefaults().setInteger(0, forKey: Defaults.Attempts)
+        NSUserDefaults.standardUserDefaults().setInteger(0, forKey: Defaults.CorrectAttempts)
+        NSUserDefaults.standardUserDefaults().setInteger(0, forKey: Defaults.LongestStreak)
         var error: NSErrorPointer = NSErrorPointer()
         //go through core data and clear all attempts on Word and Language entity to 0
         var wordBatchRequest = NSBatchUpdateRequest(entityName: "Word")

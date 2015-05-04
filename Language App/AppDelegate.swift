@@ -15,24 +15,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CoreDataDelegate {
     // MARK: - Properties
     
     var window: UIWindow?
-    var userDefaults = NSUserDefaults.standardUserDefaults()
     var game: LanguageGame!
 
-    
     //MARK: - App Delegate
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-        userDefaults.registerDefaults(NSDictionary(contentsOfFile: NSBundle.mainBundle().pathForResource("Defaults", ofType: "plist")!)! as [NSObject : AnyObject])
+        NSUserDefaults.standardUserDefaults().registerDefaults(NSDictionary(contentsOfFile: NSBundle.mainBundle().pathForResource("Defaults", ofType: "plist")!)! as [NSObject : AnyObject])
+
+        // Core Data Delegate protocol implementation
         let initialViewController = self.window!.rootViewController as! UINavigationController
         let menu = initialViewController.topViewController as! MenuViewController
-        menu.managedObjectContext = self.managedObjectContext
-        
-        // Core Data Delegate protocol implementation
         menu.coreDataDelegate = self
         
-        game = LanguageGame(context: managedObjectContext!)
-        menu.game = self.game
+        menu.managedObjectContext = self.managedObjectContext
+        
+        // Initialise Language Game
+        game = LanguageGame(delegate: self)
+        menu.game = game
+        
         setupCoreData()
         
         if saveContext() {
@@ -63,7 +64,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CoreDataDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
     
-    //MARK: - Core Data
+    //MARK: - Core Data Stack
 
     lazy var applicationDocumentsDirectory: NSURL = {
         // The directory the application uses to store the Core Data store file. This code uses a directory named "Clinton.Master_Detail" in the application's documents Application Support directory.
@@ -176,9 +177,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CoreDataDelegate {
         }()
     
     //MARK: - Core Data setup
-//    internal func registerUserDefaults () {
-//        userDefaults.registerDefaults(NSDictionary(contentsOfFile: NSBundle.mainBundle().pathForResource("Defaults", ofType: "plist")!)!)
-//    }
     
     private func setupCoreData() {
         //create NSmanagedobjects from a plist file and store in persistent store
@@ -216,7 +214,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CoreDataDelegate {
                 englishWord.difficulty = wordInputArray[i].valueForKey("difficulty") as! String
                 englishWord.inPhraseMode = wordInputArray[i].valueForKey("inPhraseMode") as! Bool
                 println("Created English word record: \(englishWord.word), \(englishWord.difficulty)")
-                for language in userDefaults.stringArrayForKey("languages") as! [String] {
+                for language in NSUserDefaults.standardUserDefaults().stringArrayForKey("languages") as! [String] {
                     //create foreign words and relate to languages
                     var word: Word = NSEntityDescription.insertNewObjectForEntityForName("Word", inManagedObjectContext: managedObjectContext!) as! Word
                     word.word = wordInputArray[i].valueForKey(language) as! String

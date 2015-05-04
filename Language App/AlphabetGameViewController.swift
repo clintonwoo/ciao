@@ -54,7 +54,7 @@ class AlphabetGameViewController: GameMasterViewController {
         case "Alphabet Mode":
             let fetchRequest = NSFetchRequest(entityName: "Alphabet")
             fetchRequest.predicate = NSPredicate(format: "language = %@", game.currentLanguageRecord)
-            self.alphabet = managedObjectContext?.executeFetchRequest(fetchRequest, error: error) as? [Alphabet]
+            self.alphabet = coreDataDelegate.managedObjectContext?.executeFetchRequest(fetchRequest, error: error) as? [Alphabet]
             self.alphabet?.sort({Int($0.index) < Int($1.index)})
             wordLabel.text = self.alphabet?[0].uppercase
             alphabetGameButton.setTitle(self.alphabet?[0].lowercase, forState: .Normal)

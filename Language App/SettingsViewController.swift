@@ -9,14 +9,13 @@
 import UIKit
 import CoreData
 
-class SettingsViewController: UITableViewController, UITableViewDelegate, UITableViewDataSource, LanguageSettingDelegate {
+class SettingsViewController: UITableViewController, UITableViewDelegate, UITableViewDataSource, SettingsDelegate {
     
     //MARK: - Properties
     var game: LanguageGame!
-    var delegate: MenuViewController? = nil
-    var userDefaults: NSUserDefaults = NSUserDefaults.standardUserDefaults()
+    var delegate: MenuViewController!
 
-    enum Difficulty: Int {
+    private enum Difficulty: Int {
         //maps the difficulty to the segment in the segmented control
             case Easy = 0
             case Medium = 1
