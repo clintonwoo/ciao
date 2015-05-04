@@ -89,10 +89,10 @@ class StatisticsViewController: UIViewController {
     }
     
     private func resetStats() {
-        let defaultsDictionary: Dictionary = NSDictionary(contentsOfFile: NSBundle.mainBundle().pathForResource("Defaults", ofType: "plist")!)! as Dictionary
-        NSUserDefaults.standardUserDefaults().setInteger(0, forKey: Defaults.Attempts)
-        NSUserDefaults.standardUserDefaults().setInteger(0, forKey: Defaults.CorrectAttempts)
-        NSUserDefaults.standardUserDefaults().setInteger(0, forKey: Defaults.LongestStreak)
+        let defaultsDictionary: Dictionary = NSDictionary(contentsOfFile: NSBundle.mainBundle().pathForResource("UserDefaults", ofType: "plist")!)! as Dictionary
+        NSUserDefaults.standardUserDefaults().setInteger(0, forKey: UserDefaults.Attempts)
+        NSUserDefaults.standardUserDefaults().setInteger(0, forKey: UserDefaults.CorrectAttempts)
+        NSUserDefaults.standardUserDefaults().setInteger(0, forKey: UserDefaults.LongestStreak)
         var error: NSErrorPointer = NSErrorPointer()
         //go through core data and clear all attempts on Word and Language entity to 0
         var wordBatchRequest = NSBatchUpdateRequest(entityName: "Word")

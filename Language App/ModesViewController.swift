@@ -51,7 +51,7 @@ class ModesViewController: UITableViewController, UITableViewDataSource, UITable
     
     //MARK: - Mode methods
     func setGameMode(mode: String) {
-        userDefaults.setValue(mode, forKey: Defaults.GameMode)
+        userDefaults.setValue(mode, forKey: UserDefaults.GameMode)
         println("Set game mode to \(mode)")
     }
     

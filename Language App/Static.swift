@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum Defaults {
+enum UserDefaults {
     static let Attempts = "attempts"
     static let CorrectAttempts = "corectAttempts"
     static let Language = "language"

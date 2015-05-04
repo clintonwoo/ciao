@@ -22,7 +22,6 @@ class MenuViewController: UIViewController, SettingsDelegate {
 
     //MARK: - Properties
     var game: LanguageGame!
-    var managedObjectContext: NSManagedObjectContext!
     var coreDataDelegate: CoreDataDelegate!
 
     //MARK: - View controller methods
@@ -55,11 +54,6 @@ class MenuViewController: UIViewController, SettingsDelegate {
             button.layer.borderColor = button.tintColor?.CGColor
             //UIColor.blueColor().CGColor
         }
-    }
-    
-    //MARK: - Language Setting Delegate
-    func returnToSource(vc: UIViewController, language: String) {
-        setGrammarButtonTitle(language)
     }
     
     //MARK: - Target action
@@ -128,4 +122,10 @@ class MenuViewController: UIViewController, SettingsDelegate {
     //func pushViewController(viewController: UIViewController, animated: Bool) {
         
     //}
+    
+    //MARK: - Language Setting Delegate
+    
+    func returnToSource(vc: UIViewController, language: String) {
+        setGrammarButtonTitle(language)
+    }
 }

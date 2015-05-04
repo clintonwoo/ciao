@@ -14,7 +14,7 @@ class LanguageSettingViewController: UITableViewController, UITableViewDelegate 
     //MARK: - Properties
     var game: LanguageGame!
     var delegate: SettingsDelegate!
-    var languages = NSUserDefaults.standardUserDefaults().stringArrayForKey(Defaults.Languages) as! [String]
+    var languages = NSUserDefaults.standardUserDefaults().stringArrayForKey(UserDefaults.Languages) as! [String]
     
     //MARK: - Initialisers
     

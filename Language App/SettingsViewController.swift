@@ -106,7 +106,7 @@ class SettingsViewController: UITableViewController, UITableViewDelegate, UITabl
                     case 0:
                         let cell = tableView.dequeueReusableCellWithIdentifier("tvcSwitch", forIndexPath: indexPath) as! UITableViewCell
                         var switchControl = cell.viewWithTag(104) as! UISwitch
-                        switchControl.on = NSUserDefaults.standardUserDefaults().boolForKey(Defaults.HasSound)
+                        switchControl.on = NSUserDefaults.standardUserDefaults().boolForKey(UserDefaults.HasSound)
                         return cell
                     case 1:
                         let cell = tableView.dequeueReusableCellWithIdentifier("tvcSlider", forIndexPath: indexPath) as! UITableViewCell
@@ -145,7 +145,7 @@ class SettingsViewController: UITableViewController, UITableViewDelegate, UITabl
     
     //MARK: Target action methods
     @IBAction func switchClicked(sender: UISwitch) {
-        NSUserDefaults.standardUserDefaults().setBool(sender.on, forKey: Defaults.HasSound)
+        NSUserDefaults.standardUserDefaults().setBool(sender.on, forKey: UserDefaults.HasSound)
     }
     
     @IBAction func segmentedClicked(sender: UISegmentedControl) {

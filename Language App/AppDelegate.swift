@@ -21,14 +21,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CoreDataDelegate {
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-        NSUserDefaults.standardUserDefaults().registerDefaults(NSDictionary(contentsOfFile: NSBundle.mainBundle().pathForResource("Defaults", ofType: "plist")!)! as [NSObject : AnyObject])
+        NSUserDefaults.standardUserDefaults().registerDefaults(NSDictionary(contentsOfFile: NSBundle.mainBundle().pathForResource("UserDefaults", ofType: "plist")!)! as [NSObject : AnyObject])
 
         // Core Data Delegate protocol implementation
         let initialViewController = self.window!.rootViewController as! UINavigationController
         let menu = initialViewController.topViewController as! MenuViewController
         menu.coreDataDelegate = self
-        
-        menu.managedObjectContext = self.managedObjectContext
         
         // Initialise Language Game
         game = LanguageGame(delegate: self)

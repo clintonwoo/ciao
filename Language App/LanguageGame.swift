@@ -12,9 +12,11 @@ import CoreData
 class LanguageGame: Model {
     
     //MARK: - Properties
+    
     var coreDataDelegate: CoreDataDelegate!
     
     //MARK: - Initialisers
+    
     init (delegate: CoreDataDelegate) {
         super.init()
         coreDataDelegate = delegate
@@ -23,12 +25,9 @@ class LanguageGame: Model {
     }
     
     deinit {
-        //        userDefaults.setInteger(correctAttempts, forKey: Defaults.CorrectAttempts)
+        //        userDefaults.setInteger(correctAttempts, forKey: UserDefaults.CorrectAttempts)
         saveLongestStreak()
-        var error: NSErrorPointer = NSErrorPointer()
-        if (coreDataDelegate.managedObjectContext?.save(error) == false) {
-            println("Error: \(error.debugDescription)")
-        } else {
+        if coreDataDelegate.saveContext() {
             println("Managed Object Context save successful on \(self) deinit")
         }
     }

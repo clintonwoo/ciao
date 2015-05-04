@@ -39,7 +39,7 @@ class GameMasterViewController: UIViewController {
         game.currentStreak = 0
         
         // Set sound button text
-        if (NSUserDefaults.standardUserDefaults().boolForKey(Defaults.HasSound)) {
+        if (NSUserDefaults.standardUserDefaults().boolForKey(UserDefaults.HasSound)) {
             soundButton.title = NSLocalizedString("Sound On", comment: "Button to turn the game sound on")
         } else {
             soundButton.title = NSLocalizedString("Sound Off", comment: "Button to turn the game sound off")
@@ -72,19 +72,19 @@ class GameMasterViewController: UIViewController {
         sayWord(label.text!, localWord: nil)
     }
     
-    @IBAction func clickSoundButton(sender: UIBarButtonItem?) {
-        if (NSUserDefaults.standardUserDefaults().boolForKey(Defaults.HasSound)) {
-            NSUserDefaults.standardUserDefaults().setBool(false, forKey: Defaults.HasSound)
+    @IBAction func tapSoundButton(sender: UIBarButtonItem?) {
+        if (NSUserDefaults.standardUserDefaults().boolForKey(UserDefaults.HasSound)) {
+            NSUserDefaults.standardUserDefaults().setBool(false, forKey: UserDefaults.HasSound)
             soundButton.title = NSLocalizedString("Sound Off", comment: "Button to turn the game sound off")
         } else {
-            NSUserDefaults.standardUserDefaults().setBool(true, forKey: Defaults.HasSound)
+            NSUserDefaults.standardUserDefaults().setBool(true, forKey: UserDefaults.HasSound)
             soundButton.title = NSLocalizedString("Sound On", comment: "Button to turn the game sound on")
         }
     }
     
     //MARK: - Text to speech
     internal func sayWord (foreignWord: String, localWord: String?) {
-        if NSUserDefaults.standardUserDefaults().boolForKey(Defaults.HasSound) {
+        if NSUserDefaults.standardUserDefaults().boolForKey(UserDefaults.HasSound) {
             let dataPlistPath: String = NSBundle.mainBundle().pathForResource("IETFLanguageCode", ofType:"strings")!
             let IETFCodeDictionary = NSDictionary(contentsOfFile: dataPlistPath)!
             let synthesizer = AVSpeechSynthesizer()

@@ -604,7 +604,7 @@
                     <navigationItem key="navigationItem" id="lkb-Fq-szk">
                         <barButtonItem key="rightBarButtonItem" title="Sound On" id="Ggz-Ac-EQh">
                             <connections>
-                                <action selector="clickSoundButton:" destination="3xl-OT-mTO" id="9QQ-6t-vGf"/>
+                                <action selector="tapSoundButton:" destination="3xl-OT-mTO" id="7o4-bH-JX8"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
