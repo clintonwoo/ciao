@@ -15,7 +15,6 @@ class ModesViewController: UITableViewController, UITableViewDataSource, UITable
     
     //MARK: - Properties
     var game: LanguageGame!
-    let userDefaults = NSUserDefaults.standardUserDefaults()
     var coreDataDelegate: CoreDataDelegate!
     
     //MARK: - Initialisers
@@ -51,13 +50,30 @@ class ModesViewController: UITableViewController, UITableViewDataSource, UITable
     
     //MARK: - Mode methods
     func setGameMode(mode: String) {
-        userDefaults.setValue(mode, forKey: UserDefaults.GameMode)
-        println("Set game mode to \(mode)")
+        switch (mode) {
+        case GameMode.IntroMode.toString():
+            game.gameMode = .IntroMode
+        case GameMode.GrammarMode.toString():
+            game.gameMode = .GrammarMode
+        case GameMode.AlphabetMode.toString():
+            game.gameMode = .AlphabetMode
+        case GameMode.PhraseMode.toString():
+            game.gameMode = .PhraseMode
+        case GameMode.VerbMode.toString():
+            game.gameMode = .VerbMode
+        case GameMode.DictationMode.toString():
+            game.gameMode = .DictationMode
+        default:
+            println("Error: game mode not found")
+            game.gameMode = .IntroMode
+        }
+//        userDefaults.setValue(mode, forKey: UserDefaults.GameMode)
+//        println("Set game mode to \(mode)")
     }
     
     func setCheckedCell () {
         for cell in modeTableViewCells {
-            if game.gameMode == cell.textLabel?.text {
+            if game.gameMode.toString() == cell.textLabel?.text {
                 cell.accessoryType = UITableViewCellAccessoryType.Checkmark
             } else {
                 cell.accessoryType = UITableViewCellAccessoryType.None

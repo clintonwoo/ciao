@@ -13,15 +13,27 @@ class SettingsViewController: UITableViewController, UITableViewDelegate, UITabl
     
     //MARK: - Properties
     var game: LanguageGame!
-    var delegate: MenuViewController!
+    var delegate: SettingsDelegate!
 
-    private enum Difficulty: Int {
+    private enum DifficultyIndex: Int {
         //maps the difficulty to the segment in the segmented control
             case Easy = 0
             case Medium = 1
             case Hard = 2
     }
     
+    private enum Cell {
+        static let tvcLanguage = "tvcLanguage"
+        static let tvcSegmented = "tvcSegmented"
+        static let tvcSwitch = "tvcSwitch"
+        static let tvcSlider = "tvcSlider"
+        static let tvcAbout = "tvcAbout"
+    }
+    
+    private enum SegueID: String {
+        case ShowLanguage = "Show Language"
+    }
+
     //MARK: - Initialisers
 
     //MARK: - View Controller Methods
@@ -29,23 +41,23 @@ class SettingsViewController: UITableViewController, UITableViewDelegate, UITabl
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
-    
+
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         setLanguageLabel(game.language)
     }
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+
     override func viewWillDisappear(animated: Bool) {
         if ((delegate) != nil){
             self.delegate?.returnToSource(self, language: game.language)
         }
     }
-    
+
     //MARK: - Data Source Delegate
     //Functions only required for dynamically loaded tables
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -71,20 +83,20 @@ class SettingsViewController: UITableViewController, UITableViewDelegate, UITabl
             case 0:
                 switch (indexPath.row) {
                     case 0:
-                        let cell = tableView.dequeueReusableCellWithIdentifier("tvcLanguage", forIndexPath: indexPath) as! UITableViewCell
+                        let cell = tableView.dequeueReusableCellWithIdentifier(Cell.tvcLanguage, forIndexPath: indexPath) as! UITableViewCell
                         let label = cell.viewWithTag(102) as! UILabel
                         label.text = game.language
                         return cell
                     case 1:
-                        let cell = tableView.dequeueReusableCellWithIdentifier("tvcSegmented", forIndexPath: indexPath) as! UITableViewCell
+                        let cell = tableView.dequeueReusableCellWithIdentifier(Cell.tvcSegmented, forIndexPath: indexPath) as! UITableViewCell
                         let segmentedControl = cell.viewWithTag(103) as! UISegmentedControl
                         switch (game.difficulty) {
-                            case "Easy":
-                                segmentedControl.selectedSegmentIndex = Difficulty.Easy.rawValue
-                            case "Medium":
-                                segmentedControl.selectedSegmentIndex = Difficulty.Medium.rawValue
-                            case "Hard":
-                                segmentedControl.selectedSegmentIndex = Difficulty.Hard.rawValue
+                            case .Easy:
+                                segmentedControl.selectedSegmentIndex = DifficultyIndex.Easy.rawValue
+                            case .Medium:
+                                segmentedControl.selectedSegmentIndex = DifficultyIndex.Medium.rawValue
+                            case .Hard:
+                                segmentedControl.selectedSegmentIndex = DifficultyIndex.Hard.rawValue
                             default:
                                 break
                         }
@@ -97,39 +109,39 @@ class SettingsViewController: UITableViewController, UITableViewDelegate, UITabl
 //                        label.text = NSLocalizedString("Use Latin-Based Alphabet", comment: "The label for the setting to always use Latin characters instead of language native alphabet")
 //                        return cell
                     default:
-                        let cell = tableView.dequeueReusableCellWithIdentifier("tvcSegmented", forIndexPath: indexPath) as! UITableViewCell
+                        let cell = tableView.dequeueReusableCellWithIdentifier(Cell.tvcSegmented, forIndexPath: indexPath) as! UITableViewCell
                         println("tableView:cellForRowAtIndexPath: row switch case defaulted")
                     return cell
                 }
             case 1:
                 switch (indexPath.row) {
                     case 0:
-                        let cell = tableView.dequeueReusableCellWithIdentifier("tvcSwitch", forIndexPath: indexPath) as! UITableViewCell
+                        let cell = tableView.dequeueReusableCellWithIdentifier(Cell.tvcSwitch, forIndexPath: indexPath) as! UITableViewCell
                         var switchControl = cell.viewWithTag(104) as! UISwitch
                         switchControl.on = NSUserDefaults.standardUserDefaults().boolForKey(UserDefaults.HasSound)
                         return cell
                     case 1:
-                        let cell = tableView.dequeueReusableCellWithIdentifier("tvcSlider", forIndexPath: indexPath) as! UITableViewCell
+                        let cell = tableView.dequeueReusableCellWithIdentifier(Cell.tvcSlider, forIndexPath: indexPath) as! UITableViewCell
                         var slider = cell.viewWithTag(105) as! UISlider
                         slider.value = game.speakingSpeed
                         return cell
                     default:
-                        let cell = tableView.dequeueReusableCellWithIdentifier("tvcSwitch", forIndexPath: indexPath) as! UITableViewCell
+                        let cell = tableView.dequeueReusableCellWithIdentifier(Cell.tvcSwitch, forIndexPath: indexPath) as! UITableViewCell
                         println("tableView:cellForRowAtIndexPath: row switch case defaulted")
                         return cell
                 }
             case 2:
                 switch (indexPath.row) {
                     case 0:
-                        let cell = tableView.dequeueReusableCellWithIdentifier("tvcAbout", forIndexPath: indexPath) as! UITableViewCell
+                        let cell = tableView.dequeueReusableCellWithIdentifier(Cell.tvcAbout, forIndexPath: indexPath) as! UITableViewCell
                         return cell
                     default:
-                        let cell = tableView.dequeueReusableCellWithIdentifier("tvcSwitch", forIndexPath: indexPath) as! UITableViewCell
+                        let cell = tableView.dequeueReusableCellWithIdentifier(Cell.tvcSwitch, forIndexPath: indexPath) as! UITableViewCell
                         println("tableView:cellForRowAtIndexPath: section 3 row switch case defaulted")
                         return cell
                 }
             default:
-                let cell = tableView.dequeueReusableCellWithIdentifier("tvcLanguage", forIndexPath: indexPath) as! UITableViewCell
+                let cell = tableView.dequeueReusableCellWithIdentifier(Cell.tvcLanguage, forIndexPath: indexPath) as! UITableViewCell
                 println("tableView:cellForRowAtIndexPath: section switch case defaulted")
                 return cell
         }
@@ -150,12 +162,12 @@ class SettingsViewController: UITableViewController, UITableViewDelegate, UITabl
     
     @IBAction func segmentedClicked(sender: UISegmentedControl) {
         switch (sender.selectedSegmentIndex) {
-        case Difficulty.Easy.rawValue:
-            game.difficulty = "Easy"
-        case Difficulty.Medium.rawValue:
-            game.difficulty = "Medium"
-        case Difficulty.Hard.rawValue:
-            game.difficulty = "Hard"
+        case DifficultyIndex.Easy.rawValue:
+            game.difficulty = .Easy
+        case DifficultyIndex.Medium.rawValue:
+            game.difficulty = .Medium
+        case DifficultyIndex.Hard.rawValue:
+            game.difficulty = .Hard
         default:
             println("Difficulty segmented control clicked but no action taken")
         }
@@ -174,7 +186,7 @@ class SettingsViewController: UITableViewController, UITableViewDelegate, UITabl
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
 //        if self.managedObjectContext != nil {
             switch (segue.identifier!) {
-                case "Show Language":
+                case SegueID.ShowLanguage.rawValue:
                     var destinationViewController = segue.destinationViewController as! LanguageSettingViewController
                     destinationViewController.delegate = self
                     destinationViewController.game = game

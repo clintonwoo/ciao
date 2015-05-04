@@ -21,12 +21,22 @@ class MenuViewController: UIViewController, SettingsDelegate {
     @IBOutlet weak var settingsButton: UIButton!
 
     //MARK: - Properties
-    var game: LanguageGame!
     var coreDataDelegate: CoreDataDelegate!
+    var game: LanguageGame!
+    
+    private enum SegueID: String {
+        case ShowGame = "Show Game"
+        case ShowAlphabetGame = "Show Alphabet Game"
+        case ShowModes = "Show Modes"
+        case ShowGrammar = "Show Grammar"
+        case ShowStatistics = "Show Statistics"
+        case ShowSettings = "Show Settings"
+    }
 
     //MARK: - View controller methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        game = LanguageGame(delegate: coreDataDelegate)
         setButtonCollectionStyle()
         setGrammarButtonTitle(NSUserDefaults.standardUserDefaults().stringForKey("language")!)
         // Do any additional setup after loading the view, typically from a nib.
@@ -38,6 +48,12 @@ class MenuViewController: UIViewController, SettingsDelegate {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    // MARK: - Initialisers
+    
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
     }
     
     // MARK: - Methods
@@ -58,57 +74,49 @@ class MenuViewController: UIViewController, SettingsDelegate {
     
     //MARK: - Target action
     @IBAction func tapPlayGame(sender: UIButton) {
-        if game.gameMode == "Alphabet Mode" {
-            performSegueWithIdentifier("Show Alphabet Game", sender: sender)
+        if game.gameMode == .AlphabetMode {
+            performSegueWithIdentifier(SegueID.ShowAlphabetGame.rawValue, sender: sender)
         } else {
-            performSegueWithIdentifier("Show Game", sender: sender)
+            performSegueWithIdentifier(SegueID.ShowGame.rawValue, sender: sender)
         }
     }
     
     //MARK: - Segue
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-//        if self.managedObjectContext != nil {
-            switch (segue.identifier!) {
-                case "Show Game":
-                    let destinationViewController = segue.destinationViewController as! GameViewController
-                    destinationViewController.coreDataDelegate = coreDataDelegate
-                    destinationViewController.game = self.game
-//                    destinationViewController.game.managedObjectContext = self.managedObjectContext
-                    println("prepareForSegue: \(destinationViewController.description)")
-                case "Show Modes":
-                    let destinationViewController = segue.destinationViewController as! ModesViewController
-                    destinationViewController.game = self.game
-                    println("prepareForSegue: \(destinationViewController.description)")
-                case "Show Alphabet Game":
-                    let destinationViewController = segue.destinationViewController as! AlphabetGameViewController
-                    destinationViewController.coreDataDelegate = coreDataDelegate
-                    destinationViewController.game = self.game
-                    println("Segue to \(destinationViewController.description)")
-                case "Show Grammar":
-                    let destinationViewController = segue.destinationViewController as! GrammarViewController
-                    let dataPlistPath: String = NSBundle.mainBundle().pathForResource("WikipediaGrammarURL", ofType:"strings")!
-                    let dataPlistDictionary = NSDictionary(contentsOfFile: dataPlistPath)!
-                    if let url = NSURL(string: dataPlistDictionary.valueForKey(NSUserDefaults.standardUserDefaults().stringForKey("language")!) as! String) {
-                        let urlRequest = NSURLRequest(URL: url)
-                        destinationViewController.urlRequest = urlRequest
-                    }
-                    println("prepareForSegue: \(destinationViewController.description)")
-                    //destinationViewController.webView?.loadRequest(urlRequest)
-                case "Show Statistics":
-                    let destinationViewController = segue.destinationViewController as! StatisticsViewController
-                    destinationViewController.coreDataDelegate = coreDataDelegate
-                    destinationViewController.game = self.game
-                    println("prepareForSegue: \(destinationViewController.description)")
-                case "Show Settings":
-                    let navController = segue.destinationViewController as! UINavigationController
-                    let destinationViewController = navController.topViewController as! SettingsViewController
-                    destinationViewController.game = self.game
-                    destinationViewController.delegate = self
-                    println("prepareForSegue: \(destinationViewController.description)")
-            default:
-                println("prepareForSegue: \(segue.identifier!) not found.")
-            }
-//        }
+        println(segue.identifier!)
+        switch (segue.identifier!) {
+            case SegueID.ShowGame.rawValue:
+                let destinationViewController = segue.destinationViewController as! GameViewController
+                destinationViewController.coreDataDelegate = coreDataDelegate
+                destinationViewController.game = game
+            case SegueID.ShowModes.rawValue:
+                let destinationViewController = segue.destinationViewController as! ModesViewController
+                destinationViewController.game = game
+            case SegueID.ShowAlphabetGame.rawValue:
+                let destinationViewController = segue.destinationViewController as! AlphabetGameViewController
+                destinationViewController.game = game
+                destinationViewController.coreDataDelegate = coreDataDelegate
+            case SegueID.ShowGrammar.rawValue:
+                let destinationViewController = segue.destinationViewController as! GrammarViewController
+                let dataPlistPath: String = NSBundle.mainBundle().pathForResource(ResourceName.WikipediaGrammarURL.rawValue, ofType:ResourceName.WikipediaGrammarURL.Type)!
+                let dataPlistDictionary = NSDictionary(contentsOfFile: dataPlistPath)!
+                if let url = NSURL(string: dataPlistDictionary.valueForKey(NSUserDefaults.standardUserDefaults().stringForKey("language")!) as! String) {
+                    let urlRequest = NSURLRequest(URL: url)
+                    destinationViewController.urlRequest = urlRequest
+                }
+                //destinationViewController.webView?.loadRequest(urlRequest)
+            case SegueID.ShowStatistics.rawValue:
+                let destinationViewController = segue.destinationViewController as! StatisticsViewController
+                destinationViewController.coreDataDelegate = coreDataDelegate
+                destinationViewController.game = game
+            case SegueID.ShowSettings.rawValue:
+                let navController = segue.destinationViewController as! UINavigationController
+                let destinationViewController = navController.topViewController as! SettingsViewController
+                destinationViewController.delegate = self
+                destinationViewController.game = game
+        default:
+            println("prepareForSegue: \(segue.identifier!) not found.")
+        }
     }
     
     override func performSegueWithIdentifier(identifier: String?, sender: AnyObject?) {

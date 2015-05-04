@@ -35,6 +35,7 @@ class GameViewController: GameMasterViewController, GameButtonDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         setStreakText()
+        
         //set label to language's hi
         wordLabel.text = game.foreignHi
 //        var adView: ADBannerView = ADBannerView(adType: ADAdType.Banner)

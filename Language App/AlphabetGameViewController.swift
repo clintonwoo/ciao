@@ -17,7 +17,7 @@ class AlphabetGameViewController: GameMasterViewController {
     @IBOutlet weak var alphabetGameButton: GameButton!
     
     //MARK: - Properties
-    var alphabet: [Alphabet]? = nil
+    var alphabet: [Alphabet]!
     
     //MARK: - Initialisers    
     required init(coder: NSCoder) {
@@ -39,20 +39,20 @@ class AlphabetGameViewController: GameMasterViewController {
     }
     
     //MARK: - Game methods
-    internal func fetchData(error: NSErrorPointer) {
+    func fetchData(error: NSErrorPointer) {
         var difficultyPredicateString: String = ""
         switch (game.difficulty) {
-            case "Easy":
+            case .Easy:
                 difficultyPredicateString = "englishWord.difficulty = 'Easy'"
-            case "Medium":
+            case .Medium:
                 difficultyPredicateString = "englishWord.difficulty in {'Easy', 'Medium'}"
-            case "Hard":
+            case .Hard:
                 difficultyPredicateString = "englishWord.difficulty in {'Easy', 'Medium', 'Hard'}"
             default: abort()
         }
         switch (game.gameMode) {
-        case "Alphabet Mode":
-            let fetchRequest = NSFetchRequest(entityName: "Alphabet")
+        case .AlphabetMode:
+            let fetchRequest = NSFetchRequest(entityName: Entity.Alphabet)
             fetchRequest.predicate = NSPredicate(format: "language = %@", game.currentLanguageRecord)
             self.alphabet = coreDataDelegate.managedObjectContext?.executeFetchRequest(fetchRequest, error: error) as? [Alphabet]
             self.alphabet?.sort({Int($0.index) < Int($1.index)})

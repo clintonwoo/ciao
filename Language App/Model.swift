@@ -15,7 +15,7 @@ class Model {
     let userDefaults = NSUserDefaults.standardUserDefaults()
     var speakingSpeed: Float {
         get {
-            return userDefaults.floatForKey("speakingSpeed")
+            return userDefaults.floatForKey(UserDefaults.SpeakingSpeed)
         }
         set {
             userDefaults.setFloat(newValue, forKey: UserDefaults.SpeakingSpeed)
@@ -59,20 +59,15 @@ class Model {
             userDefaults.setValue(newValue, forKey: UserDefaults.Language)
         }
     }
-    var difficulty: String {
-        get {
-            return userDefaults.stringForKey(UserDefaults.Difficulty)!
-        }
-        set {
-            userDefaults.setValue(newValue, forKey: UserDefaults.Difficulty)
+    var difficulty: Difficulty = Difficulty() {
+        didSet {
+            userDefaults.setValue(difficulty.toString(), forKey: UserDefaults.Difficulty)
         }
     }
-    var gameMode: String {
-        get {
-            return userDefaults.stringForKey(UserDefaults.GameMode)!
-        }
-        set {
-            userDefaults.setValue(newValue, forKey: UserDefaults.GameMode)
+
+    var gameMode: GameMode = GameMode() {
+        didSet {
+            userDefaults.setValue(gameMode.toString(), forKey: UserDefaults.GameMode)
         }
     }
     

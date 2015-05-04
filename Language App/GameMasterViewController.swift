@@ -24,7 +24,7 @@ class GameMasterViewController: UIViewController {
     //MARK: - Properties
     var game: LanguageGame!
     var coreDataDelegate: CoreDataDelegate!
-    
+        
     //MARK: - Initialisers    
     deinit {
         if coreDataDelegate.saveContext() {
@@ -35,9 +35,8 @@ class GameMasterViewController: UIViewController {
     //MARK: - View Controller
     override func viewDidLoad() {
         super.viewDidLoad()
-        game.fetchData()
         game.currentStreak = 0
-        
+        game.fetchData()
         // Set sound button text
         if (NSUserDefaults.standardUserDefaults().boolForKey(UserDefaults.HasSound)) {
             soundButton.title = NSLocalizedString("Sound On", comment: "Button to turn the game sound on")
@@ -85,7 +84,7 @@ class GameMasterViewController: UIViewController {
     //MARK: - Text to speech
     internal func sayWord (foreignWord: String, localWord: String?) {
         if NSUserDefaults.standardUserDefaults().boolForKey(UserDefaults.HasSound) {
-            let dataPlistPath: String = NSBundle.mainBundle().pathForResource("IETFLanguageCode", ofType:"strings")!
+            let dataPlistPath: String = NSBundle.mainBundle().pathForResource(ResourceName.IETFLanguageCode.rawValue, ofType:ResourceName.IETFLanguageCode.Type)!
             let IETFCodeDictionary = NSDictionary(contentsOfFile: dataPlistPath)!
             let synthesizer = AVSpeechSynthesizer()
             if ((localWord) != nil) {
