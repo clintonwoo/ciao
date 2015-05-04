@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6724" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="elh-17-nbp">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="elh-17-nbp">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6711"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -102,7 +102,7 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tp9-fi-qih">
                                         <rect key="frame" x="16" y="339" width="288" height="30"/>
-                                        <color key="backgroundColor" red="0.94509803921568625" green="0.94509803921568625" blue="0.94509803921568625" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <state key="normal" title="Settings">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -111,7 +111,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.95686274509803926" green="0.95686274509803926" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="Tp9-fi-qih" firstAttribute="leading" secondItem="7Vt-Is-Yn4" secondAttribute="leading" constant="16" id="Ajd-7A-SfH"/>
                                     <constraint firstAttribute="trailing" secondItem="Tp9-fi-qih" secondAttribute="trailing" constant="16" id="Cgo-7Z-NbD"/>
@@ -137,7 +137,7 @@
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zrk-EN-0SM">
                                 <rect key="frame" x="16" y="151" width="288" height="66"/>
-                                <color key="backgroundColor" red="0.94509803921568625" green="0.94509803921568625" blue="0.94509803921568625" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="66" id="ohf-7n-cNF"/>
                                 </constraints>
@@ -152,7 +152,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NrK-XJ-XEa">
                                 <rect key="frame" x="16" y="301" width="288" height="30"/>
-                                <color key="backgroundColor" red="0.94509803921568625" green="0.94509803921568625" blue="0.94509803921568625" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="Statistics">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -162,7 +162,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v2v-gD-8bo">
                                 <rect key="frame" x="16" y="225" width="288" height="30"/>
-                                <color key="backgroundColor" red="0.94509803921568625" green="0.94509803921568625" blue="0.94509803921568625" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="Choose Mode">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -172,7 +172,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TIi-6p-DBL">
                                 <rect key="frame" x="16" y="263" width="288" height="30"/>
-                                <color key="backgroundColor" red="0.94509803921568625" green="0.94509803921568625" blue="0.94509803921568625" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="Grammar">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -647,12 +647,6 @@
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="y6J-Po-kBR">
                                 <rect key="frame" x="150" y="230" width="20" height="20"/>
                             </activityIndicatorView>
-                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bb3-F5-5At">
-                                <rect key="frame" x="159" y="77" width="114" height="54"/>
-                                <connections>
-                                    <segue destination="hwj-oB-fJU" kind="embed" id="fXa-SI-Lhl"/>
-                                </connections>
-                            </containerView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QJT-go-v4m">
                                 <rect key="frame" x="93" y="77" width="129" height="39"/>
                                 <subviews>
@@ -669,18 +663,18 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <webView contentMode="TopLeft" translatesAutoresizingMaskIntoConstraints="NO" id="aRP-kp-2JG">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerY" secondItem="aRP-kp-2JG" secondAttribute="centerY" id="2ab-nc-gy6"/>
                             <constraint firstAttribute="centerY" secondItem="y6J-Po-kBR" secondAttribute="centerY" id="5uI-aG-o6a"/>
                             <constraint firstAttribute="centerX" secondItem="y6J-Po-kBR" secondAttribute="centerX" id="G4n-pc-XJS"/>
+                            <constraint firstItem="DQj-bQ-gMd" firstAttribute="top" secondItem="aRP-kp-2JG" secondAttribute="bottom" id="NVP-FA-k3Q"/>
+                            <constraint firstItem="aRP-kp-2JG" firstAttribute="top" secondItem="scB-3y-1j7" secondAttribute="bottom" id="UtQ-eA-u6m"/>
                             <constraint firstAttribute="centerX" secondItem="aRP-kp-2JG" secondAttribute="centerX" id="ct8-Ny-xk8"/>
                             <constraint firstItem="aRP-kp-2JG" firstAttribute="width" secondItem="lbl-4W-BqQ" secondAttribute="width" id="dao-TN-fch"/>
-                            <constraint firstItem="aRP-kp-2JG" firstAttribute="height" secondItem="lbl-4W-BqQ" secondAttribute="height" id="ySx-jc-qDt"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
@@ -1045,24 +1039,6 @@
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="715" y="-706"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="Q8E-zJ-RvN">
-            <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="hwj-oB-fJU" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="zHD-kx-tQb"/>
-                        <viewControllerLayoutGuide type="bottom" id="qbG-h0-N0W"/>
-                    </layoutGuides>
-                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="nca-H3-WAs">
-                        <rect key="frame" x="0.0" y="0.0" width="114" height="54"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <toolbarItems/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cXV-bo-WcH" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
         </scene>
     </scenes>
     <resources>

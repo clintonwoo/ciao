@@ -10,32 +10,35 @@ import UIKit
 import CoreData
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, CoreDataDelegate {
 
-    //MARK: - Properties
+    // MARK: - Properties
+    
     var window: UIWindow?
     var userDefaults = NSUserDefaults.standardUserDefaults()
     var game: LanguageGame!
 
     
     //MARK: - App Delegate
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-        var error: NSErrorPointer = nil
-//        registerUserDefaults()
-        userDefaults.registerDefaults(NSDictionary(contentsOfFile: NSBundle.mainBundle().pathForResource("Defaults", ofType: "plist")!)!)
-        let initialViewController = self.window!.rootViewController as UINavigationController
-        let menu = initialViewController.topViewController as MenuViewController
+        userDefaults.registerDefaults(NSDictionary(contentsOfFile: NSBundle.mainBundle().pathForResource("Defaults", ofType: "plist")!)! as [NSObject : AnyObject])
+        let initialViewController = self.window!.rootViewController as! UINavigationController
+        let menu = initialViewController.topViewController as! MenuViewController
         menu.managedObjectContext = self.managedObjectContext
+        
+        // Core Data Delegate protocol implementation
+        menu.coreDataDelegate = self
+        
         game = LanguageGame(context: managedObjectContext!)
         menu.game = self.game
-        setupCoreData(error)
+        setupCoreData()
         
-        if ((managedObjectContext?.save(error)) == nil) {
-            println("Save error.\(error.debugDescription)"); //error.localizedDescription
-            return false
+        if saveContext() {
+            return true
         }
-        return true
+        return false
     }
     
     func applicationWillResignActive(application: UIApplication) {
@@ -61,14 +64,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     //MARK: - Core Data
-    //MARK: Lazy Properties
+
     lazy var applicationDocumentsDirectory: NSURL = {
         // The directory the application uses to store the Core Data store file. This code uses a directory named "Clinton.Master_Detail" in the application's documents Application Support directory.
         let urls = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)
-        return urls[urls.count-1] as NSURL
+        return urls[urls.count-1] as! NSURL
         }()
     
-    lazy var managedObjectModel: NSManagedObjectModel = {
+    lazy var managedObjectModel: NSManagedObjectModel? = {
         // The managed object model for the application. This property is not optional. It is a fatal error for the application not to be able to find and load its model.
         let modelURL = NSBundle.mainBundle().URLForResource("Model", withExtension: "momd")!
         return NSManagedObjectModel(contentsOfURL: modelURL)!
@@ -77,7 +80,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     lazy var persistentStoreCoordinator: NSPersistentStoreCoordinator? = {
         // The persistent store coordinator for the application. This implementation creates and return a coordinator, having added the store for the application to it. This property is optional since there are legitimate error conditions that could cause the creation of the store to fail.
         // Create the coordinator and store
-        var coordinator: NSPersistentStoreCoordinator? = NSPersistentStoreCoordinator(managedObjectModel: self.managedObjectModel)
+        var coordinator: NSPersistentStoreCoordinator? = NSPersistentStoreCoordinator(managedObjectModel: self.managedObjectModel!)
         let url: NSURL = self.applicationDocumentsDirectory.URLByAppendingPathComponent("Model.sqlite")
         var error: NSError? = nil
         
@@ -86,7 +89,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 URL:url,
                 error:&error) {
             var destinationModel  = coordinator?.managedObjectModel
-            if (destinationModel?.isConfiguration("Default", compatibleWithStoreMetadata: sourceMetadata) == nil) {
+            if (destinationModel?.isConfiguration("Default", compatibleWithStoreMetadata: sourceMetadata as [NSObject : AnyObject]) == nil) {
                 //this also returns true if the versions are different but automatic migration can be run
                 
                 // retrieve the store URL
@@ -144,7 +147,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             NSNumber(bool: true), NSMigratePersistentStoresAutomaticallyOption
         )
         //do lightweight model migration here.
-        if coordinator!.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: url, options: options, error: &error) == nil {
+        if coordinator!.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: url, options: options as [NSObject : AnyObject], error: &error) == nil {
             coordinator = nil
             // Report any error we got.
             var dict = [String: AnyObject]()
@@ -158,7 +161,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             abort()
         }
         //Nothing happens if automatic migration runs successfully
-        return coordinator
+        return coordinator!
         }()
     
     lazy var managedObjectContext: NSManagedObjectContext? = {
@@ -172,26 +175,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return managedObjectContext
         }()
     
-    //MARK: Core Data setup
+    //MARK: - Core Data setup
 //    internal func registerUserDefaults () {
 //        userDefaults.registerDefaults(NSDictionary(contentsOfFile: NSBundle.mainBundle().pathForResource("Defaults", ofType: "plist")!)!)
 //    }
     
-    internal func setupCoreData(error: NSErrorPointer) {
+    private func setupCoreData() {
         //create NSmanagedobjects from a plist file and store in persistent store
+        var error: NSErrorPointer = nil
         var languageDictionary = NSMutableDictionary(contentsOfFile: NSBundle.mainBundle().pathForResource("Languages", ofType: "plist")!)!
         var alphabetDictionary = NSMutableDictionary(contentsOfFile: NSBundle.mainBundle().pathForResource("Alphabet", ofType: "plist")!)!
         var languageFetchRequest = NSFetchRequest(entityName: "Language")
-        var fetchedLanguageObjects = managedObjectContext?.executeFetchRequest(languageFetchRequest, error:error) as [Language]
+        var fetchedLanguageObjects = managedObjectContext?.executeFetchRequest(languageFetchRequest, error:error) as! [Language]
         if fetchedLanguageObjects.count == 0 { //No language records found
             for language in languageDictionary { //iterate languages
-                var newLanguage = NSEntityDescription.insertNewObjectForEntityForName("Language", inManagedObjectContext: managedObjectContext!) as Language
-                newLanguage.name = language.key as String//value.valueForKey("name") as String
+                var newLanguage = NSEntityDescription.insertNewObjectForEntityForName("Language", inManagedObjectContext: managedObjectContext!) as! Language
+                newLanguage.name = language.key as! String//value.valueForKey("name") as String
                 languageDictionary.setObject(newLanguage, forKey:newLanguage.name)
-                let languageUpperCharacterArray = alphabetDictionary.valueForKeyPath("\(language.key as String).uppercase") as [String] //returns the array of strings
-                let languageLowerCharacterArray = alphabetDictionary.valueForKeyPath("\(language.key as String).lowercase") as [String]
+                let languageUpperCharacterArray = alphabetDictionary.valueForKeyPath("\(language.key as! String).uppercase") as! [String] //returns the array of strings
+                let languageLowerCharacterArray = alphabetDictionary.valueForKeyPath("\(language.key as! String).lowercase") as! [String]
                 for (var i = 0 ; i < languageUpperCharacterArray.count; i++) {
-                    var newCharacter = NSEntityDescription.insertNewObjectForEntityForName("Alphabet", inManagedObjectContext: managedObjectContext!) as Alphabet
+                    var newCharacter = NSEntityDescription.insertNewObjectForEntityForName("Alphabet", inManagedObjectContext: managedObjectContext!) as! Alphabet
                     newCharacter.uppercase = languageUpperCharacterArray[i]//value.valueForKey("character") as String
                     newCharacter.lowercase = languageLowerCharacterArray[i]
                     newCharacter.index = i
@@ -202,39 +206,42 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
         var fetchRequest = NSFetchRequest(entityName: "Word")
-        var fetchedObjects: NSArray = managedObjectContext?.executeFetchRequest(fetchRequest, error:error) as [Word]
+        var fetchedObjects: NSArray = managedObjectContext?.executeFetchRequest(fetchRequest, error:error) as! [Word]
         if fetchedObjects.count == 0 { //No word records found
             var wordInputArray = NSArray(contentsOfFile: NSBundle.mainBundle().pathForResource("Words", ofType:"plist")!)!
             for (var i = 0; i < wordInputArray.count; i++) { //iterate over word records
                 //create english words
-                var englishWord = NSEntityDescription.insertNewObjectForEntityForName("EnglishWord", inManagedObjectContext: managedObjectContext!) as EnglishWord
-                englishWord.word = wordInputArray[i].valueForKey("word") as String
-                englishWord.difficulty = wordInputArray[i].valueForKey("difficulty") as String
-                englishWord.inPhraseMode = wordInputArray[i].valueForKey("inPhraseMode") as Bool
+                var englishWord = NSEntityDescription.insertNewObjectForEntityForName("EnglishWord", inManagedObjectContext: managedObjectContext!) as! EnglishWord
+                englishWord.word = wordInputArray[i].valueForKey("word") as! String
+                englishWord.difficulty = wordInputArray[i].valueForKey("difficulty") as! String
+                englishWord.inPhraseMode = wordInputArray[i].valueForKey("inPhraseMode") as! Bool
                 println("Created English word record: \(englishWord.word), \(englishWord.difficulty)")
-                for language in userDefaults.stringArrayForKey("languages") as [String] {
+                for language in userDefaults.stringArrayForKey("languages") as! [String] {
                     //create foreign words and relate to languages
-                    var word: Word = NSEntityDescription.insertNewObjectForEntityForName("Word", inManagedObjectContext: managedObjectContext!) as Word
-                    word.word = wordInputArray[i].valueForKey(language) as String
+                    var word: Word = NSEntityDescription.insertNewObjectForEntityForName("Word", inManagedObjectContext: managedObjectContext!) as! Word
+                    word.word = wordInputArray[i].valueForKey(language) as! String
                     word.englishWord = englishWord
-                    word.language = languageDictionary.valueForKey(language) as Language
+                    word.language = languageDictionary.valueForKey(language) as! Language
                     println("Created Word record: \(word.word)")
                 }
             }
         }
     }
     
-    // MARK: Core Data Saving support
-    func saveContext () {
+    // MARK: - Core Data Saving support
+    func saveContext () -> Bool {
         if let moc = self.managedObjectContext {
             var error: NSError? = nil
             if moc.hasChanges && !moc.save(&error) {
                 // Replace this implementation with code to handle the error appropriately.
                 // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
                 NSLog("Unresolved error \(error), \(error!.userInfo)")
+//                return false
                 abort()
             }
+            return true
         }
+        return false
     }
 }
 

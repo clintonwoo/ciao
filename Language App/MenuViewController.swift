@@ -22,14 +22,15 @@ class MenuViewController: UIViewController, SettingsDelegate {
 
     //MARK: - Properties
     var game: LanguageGame!
-    var managedObjectContext: NSManagedObjectContext? = nil
+    var managedObjectContext: NSManagedObjectContext!
     let userDefaults = NSUserDefaults.standardUserDefaults()
+    var coreDataDelegate: CoreDataDelegate!
 
     //MARK: - View controller methods
     override func viewDidLoad() {
         super.viewDidLoad()
         setButtonCollectionStyle()
-        setGrammarButton(userDefaults.stringForKey("language")!)
+        setGrammarButtonTitle(userDefaults.stringForKey("language")!)
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -41,8 +42,9 @@ class MenuViewController: UIViewController, SettingsDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    //MARK: - Menu methods
-    internal func setGrammarButton (language: String) {
+    // MARK: - Methods
+    
+    func setGrammarButtonTitle (language: String) {
         grammarButton.setTitle(language + " " + NSLocalizedString("Grammar",comment: "Show wikipedia grammar page button on menu"), forState: UIControlState.Normal)
     }
     
@@ -56,9 +58,9 @@ class MenuViewController: UIViewController, SettingsDelegate {
         }
     }
     
-    //MARK: Language Setting Delegate
+    //MARK: - Language Setting Delegate
     func returnToSource(vc: UIViewController, language: String) {
-        setGrammarButton(language)
+        setGrammarButtonTitle(language)
     }
     
     //MARK: - Target action
@@ -75,42 +77,43 @@ class MenuViewController: UIViewController, SettingsDelegate {
 //        if self.managedObjectContext != nil {
             switch (segue.identifier!) {
                 case "Show Game":
-                    let destinationViewController = segue.destinationViewController as GameViewController
+                    let destinationViewController = segue.destinationViewController as! GameViewController
                     destinationViewController.managedObjectContext = self.managedObjectContext
+                    destinationViewController.coreDataDelegate = coreDataDelegate
                     destinationViewController.game = self.game
                     destinationViewController.game.controller = destinationViewController
 //                    destinationViewController.game.managedObjectContext = self.managedObjectContext
                     println("prepareForSegue: \(destinationViewController.description)")
                 case "Show Modes":
-                    let destinationViewController = segue.destinationViewController as ModesViewController
+                    let destinationViewController = segue.destinationViewController as! ModesViewController
                     destinationViewController.game = self.game
-                    //                    destinationViewController.game.managedObjectContext = self.managedObjectContext
                     println("prepareForSegue: \(destinationViewController.description)")
                 case "Show Alphabet Game":
-                    let destinationViewController = segue.destinationViewController as AlphabetGameViewController
+                    let destinationViewController = segue.destinationViewController as! AlphabetGameViewController
                     destinationViewController.managedObjectContext = self.managedObjectContext
+                    destinationViewController.coreDataDelegate = coreDataDelegate
                     destinationViewController.game = self.game
                     destinationViewController.game.controller = destinationViewController
-//                    destinationViewController.game.managedObjectContext = self.managedObjectContext
                     println("Segue to \(destinationViewController.description)")
                 case "Show Grammar":
-                    let destinationViewController = segue.destinationViewController as GrammarViewController
+                    let destinationViewController = segue.destinationViewController as! GrammarViewController
                     let dataPlistPath: String = NSBundle.mainBundle().pathForResource("WikipediaGrammarURL", ofType:"strings")!
                     let dataPlistDictionary = NSDictionary(contentsOfFile: dataPlistPath)!
-                    if let url = NSURL(string: dataPlistDictionary.valueForKey(userDefaults.stringForKey("language")!) as String) {
+                    if let url = NSURL(string: dataPlistDictionary.valueForKey(userDefaults.stringForKey("language")!) as! String) {
                         let urlRequest = NSURLRequest(URL: url)
                         destinationViewController.urlRequest = urlRequest
                     }
                     println("prepareForSegue: \(destinationViewController.description)")
                     //destinationViewController.webView?.loadRequest(urlRequest)
                 case "Show Statistics":
-                    let destinationViewController = segue.destinationViewController as StatisticsViewController
+                    let destinationViewController = segue.destinationViewController as! StatisticsViewController
                     destinationViewController.managedObjectContext = self.managedObjectContext
+                    destinationViewController.coreDataDelegate = coreDataDelegate
                     destinationViewController.game = self.game
                     println("prepareForSegue: \(destinationViewController.description)")
                 case "Show Settings":
-                    let navController = segue.destinationViewController as UINavigationController
-                    let destinationViewController = navController.topViewController as SettingsViewController
+                    let navController = segue.destinationViewController as! UINavigationController
+                    let destinationViewController = navController.topViewController as! SettingsViewController
                     destinationViewController.game = self.game
                     destinationViewController.delegate = self
 //                    destinationViewController.managedObjectContext = self.managedObjectContext

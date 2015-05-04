@@ -25,6 +25,7 @@ class StatisticsViewController: UIViewController {
     var game: LanguageGame!
     var model = Model()
     var managedObjectContext: NSManagedObjectContext? = nil
+    var coreDataDelegate: CoreDataDelegate!
     let userDefaults = NSUserDefaults.standardUserDefaults()
 
     //MARK: - Initialisers    
@@ -50,7 +51,7 @@ class StatisticsViewController: UIViewController {
         var error: NSErrorPointer = NSErrorPointer()
         var languageFetchRequest = NSFetchRequest(entityName: "Language")
         languageFetchRequest.predicate = NSPredicate(format: "attempts = max(attempts)")
-        var languages = managedObjectContext?.executeFetchRequest(languageFetchRequest, error: error) as [Language]
+        var languages = managedObjectContext?.executeFetchRequest(languageFetchRequest, error: error) as! [Language]
         //let sortedLanguageAttempts = languageAttempts.keysSortedByValueUsingSelector("compare:") as [String]
         var percentageCorrect: Double
         if model.attempts == 0 {
@@ -71,7 +72,7 @@ class StatisticsViewController: UIViewController {
             }
             let maxIncorrectAttemptsPredicate = NSPredicate(format: "incorrectAttempts = max(incorrectAttempts)")
             fetchRequest.predicate = maxIncorrectAttemptsPredicate
-            fetchResult = managedObjectContext?.executeFetchRequest(fetchRequest, error: error) as [Word]
+            fetchResult = managedObjectContext?.executeFetchRequest(fetchRequest, error: error) as! [Word]
             if (fetchResult[0].incorrectAttempts == 0 ) {
                 self.unsuccessfulWordLabel.text = NSLocalizedString("Most Unsuccessful Word:", comment: "Statistic label showing the number of words the user has attempted")
             } else {
@@ -93,7 +94,7 @@ class StatisticsViewController: UIViewController {
     }
     
     private func resetStats() {
-        let defaultsDictionary: Dictionary = NSDictionary(contentsOfFile: NSBundle.mainBundle().pathForResource("Defaults", ofType:"plist")!)!
+        let defaultsDictionary: Dictionary = NSDictionary(contentsOfFile: NSBundle.mainBundle().pathForResource("Defaults", ofType: "plist")!)! as Dictionary
         userDefaults.setInteger(0, forKey: Defaults.Attempts)
         userDefaults.setInteger(0, forKey: Defaults.CorrectAttempts)
         userDefaults.setInteger(0, forKey: Defaults.LongestStreak)

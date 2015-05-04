@@ -27,11 +27,7 @@ class GameViewController: GameMasterViewController, GameButtonDataSource {
     var wordNumbers: [Int] = [0,0,0,0]
     
     //MARK: - Initialisers
-    override init() {
-        super.init()
-    }
-    
-    required override init(coder: NSCoder) {
+    required init(coder: NSCoder) {
         super.init(coder: coder)
     }
     

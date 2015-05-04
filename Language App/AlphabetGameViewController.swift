@@ -19,12 +19,8 @@ class AlphabetGameViewController: GameMasterViewController {
     //MARK: - Properties
     var alphabet: [Alphabet]? = nil
     
-    //MARK: - Initialisers
-    override init() {
-        super.init()
-    }
-    
-    required override init(coder: NSCoder) {
+    //MARK: - Initialisers    
+    required init(coder: NSCoder) {
         super.init(coder: coder)
     }
     

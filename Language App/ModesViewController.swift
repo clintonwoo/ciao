@@ -16,12 +16,9 @@ class ModesViewController: UITableViewController, UITableViewDataSource, UITable
     //MARK: - Properties
     var game: LanguageGame!
     let userDefaults = NSUserDefaults.standardUserDefaults()
+    var coreDataDelegate: CoreDataDelegate!
     
     //MARK: - Initialisers
-    override init () {
-        super.init()
-    }
-
     required init (coder: NSCoder) {
         super.init(coder: coder)
     }

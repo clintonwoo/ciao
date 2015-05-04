@@ -22,14 +22,8 @@ class GrammarViewController: UIViewController, UIWebViewDelegate {
     var urlRequest: NSURLRequest? = nil
     var backButton: UIBarButtonItem? = nil
     var forwardButton: UIBarButtonItem? = nil
-    var switchWithTitle: SwitchWithTitle? = nil
-    var webCacheViewController: WebCacheViewController = WebCacheViewController()
     
     //MARK: - Initialisers
-    override init() {
-        super.init()
-    }
-
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         //fatalError("init(coder:) has not been implemented")
@@ -45,8 +39,8 @@ class GrammarViewController: UIViewController, UIWebViewDelegate {
         super.viewDidLoad()
         self.webView.delegate = self
 //        webView.st
-        self.backButton = UIBarButtonItem(title:"Back", style: UIBarButtonItemStyle.Bordered, target: self.webView, action: "goBack")
-        self.forwardButton = UIBarButtonItem(title:"Forward", style: UIBarButtonItemStyle.Bordered, target: self.webView, action: "goForward")
+        self.backButton = UIBarButtonItem(title:"Back", style: UIBarButtonItemStyle.Plain, target: self.webView, action: "goBack")
+        self.forwardButton = UIBarButtonItem(title:"Forward", style: UIBarButtonItemStyle.Plain, target: self.webView, action: "goForward")
         setForwardBackwardButton(false, canGoBack: false)
 //        addContainerViewController(webCacheViewController)
         //        var toolbar: UIToolbar = UIToolbar(frame: CGRectMake(0, 0, 90, 50))

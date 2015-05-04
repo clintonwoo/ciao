@@ -24,6 +24,7 @@ class GameMasterViewController: UIViewController, LanguageGameModelDelegate {
     //MARK: - Properties
     var game: LanguageGame!
     var managedObjectContext: NSManagedObjectContext? = nil
+    var coreDataDelegate: CoreDataDelegate!
     let userDefaults = NSUserDefaults.standardUserDefaults()
     
     //MARK: - Initialisers    
@@ -74,7 +75,7 @@ class GameMasterViewController: UIViewController, LanguageGameModelDelegate {
     
     //MARK: - Target Action
     @IBAction func tapWordLabel(sender: UITapGestureRecognizer) {
-        let label = sender.view as UILabel
+        let label = sender.view as! UILabel
         sayWord(label.text!, localWord: nil)
     }
     

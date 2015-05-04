@@ -55,7 +55,7 @@ class LanguageGame: Model {
         languageFetchRequest.entity = languageEntity
         languageFetchRequest.predicate = languagePredicate
         var error = NSErrorPointer()
-        let languageRecords = self.managedObjectContext.executeFetchRequest(languageFetchRequest, error: error) as [Language]
+        let languageRecords = self.managedObjectContext.executeFetchRequest(languageFetchRequest, error: error) as! [Language]
         return languageRecords[0]
     }
     var currentStreak: Int = 0
@@ -69,7 +69,7 @@ class LanguageGame: Model {
             let hiFetchRequest = NSFetchRequest(entityName: "Word")
             hiFetchRequest.predicate = NSPredicate(format: "language.name = %@ AND englishWord.word = %@", language, "Hi")
             var error = NSErrorPointer()
-            let temp = managedObjectContext.executeFetchRequest(hiFetchRequest, error: error) as [Word]
+            let temp = managedObjectContext.executeFetchRequest(hiFetchRequest, error: error) as! [Word]
             return temp[0].word
         }
     }
@@ -109,23 +109,23 @@ class LanguageGame: Model {
         case "Intro Mode":
             let fetchRequest = NSFetchRequest(entityName: "Word")
             fetchRequest.predicate = NSPredicate(format: "\(difficultyPredicateString) AND language = %@ AND englishWord.inPhraseMode = false", currentLanguageRecord)
-            self.foreignWords = managedObjectContext.executeFetchRequest(fetchRequest, error: error) as [Word]
+            self.foreignWords = managedObjectContext.executeFetchRequest(fetchRequest, error: error) as! [Word]
         case "Phrase Mode":
             let fetchRequest = NSFetchRequest(entityName: "Word")
             fetchRequest.predicate = NSPredicate(format: "\(difficultyPredicateString) AND language = %@ AND englishWord.inPhraseMode = true", currentLanguageRecord)
-            self.foreignWords = managedObjectContext.executeFetchRequest(fetchRequest, error: error) as [Word]
+            self.foreignWords = managedObjectContext.executeFetchRequest(fetchRequest, error: error) as! [Word]
         case "Grammar Mode":
             let fetchRequest = NSFetchRequest(entityName: "Word")
             fetchRequest.predicate = NSPredicate(format: "\(difficultyPredicateString) AND language = %@ AND englishWord.inPhraseMode = true", currentLanguageRecord)
-            self.foreignWords = managedObjectContext.executeFetchRequest(fetchRequest, error: error) as [Word]
+            self.foreignWords = managedObjectContext.executeFetchRequest(fetchRequest, error: error) as! [Word]
         case "Verb Mode":
             let fetchRequest = NSFetchRequest(entityName: "Word")
             fetchRequest.predicate = NSPredicate(format: "\(difficultyPredicateString) AND language = %@ AND englishWord.inPhraseMode = true", currentLanguageRecord)
-            self.foreignWords = managedObjectContext.executeFetchRequest(fetchRequest, error: error) as [Word]
+            self.foreignWords = managedObjectContext.executeFetchRequest(fetchRequest, error: error) as! [Word]
         case "Dictation Mode":
             var fetchRequest = NSFetchRequest(entityName: "Word")
             fetchRequest.predicate = NSPredicate(format: "\(difficultyPredicateString) AND language = %@ AND englishWord.inPhraseMode = true", currentLanguageRecord)
-            self.foreignWords = managedObjectContext.executeFetchRequest(fetchRequest, error: error) as [Word]
+            self.foreignWords = managedObjectContext.executeFetchRequest(fetchRequest, error: error) as! [Word]
         default:
             break
         }
