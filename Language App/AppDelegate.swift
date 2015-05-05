@@ -30,11 +30,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CoreDataDelegate {
         let menu = initialViewController.topViewController as! MenuViewController
         menu.coreDataDelegate = self
         
+        IMFClient.sharedInstance().initializeWithBackendRoute("https://ciao-game.mybluemix.net", backendGUID: "72a02879-45fc-4c33-a31f-3bc64e528468");
+        
+        IMFAuthorizationManager.sharedInstance().obtainAuthorizationHeaderWithCompletionHandler({
+            (response: IMFResponse?, error: NSError?) in
+            println(response)
+            println(error?.localizedDescription)
+        })
+        
+        IMFLogger.captureUncaughtExceptions()
+        IMFLogger.setLogLevel(.Debug)
+        IMFAnalytics.sharedInstance().startRecordingApplicationLifecycleEvents()
 //        let stack: DefaultCDStack = DefaultCDStack(databasePath: "Model.sqlite", model: managedObjectModel!, automigrating: true)
 //        SugarRecord.addStack(stack)
 //        SugarRecordLogger.currentLevel = SugarRecordLogger.logLevelVerbose
         
-        Manager.sharedInstance
+//        Manager.sharedInstance
         setupCoreData()
         
         if saveContext() {
@@ -46,17 +57,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CoreDataDelegate {
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
-        SugarRecord.applicationWillResignActive()
+//        SugarRecord.applicationWillResignActive()
     }
     
     func applicationDidEnterBackground(application: UIApplication) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+        IMFLogger.send()
+        IMFAnalytics.sharedInstance().sendPersistedLogs()
     }
     
     func applicationWillEnterForeground(application: UIApplication) {
         // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
-        SugarRecord.applicationWillEnterForeground()
+//        SugarRecord.applicationWillEnterForeground()
     }
     
     func applicationDidBecomeActive(application: UIApplication) {
@@ -65,7 +78,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CoreDataDelegate {
     
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-        SugarRecord.applicationWillTerminate()
+//        SugarRecord.applicationWillTerminate()
     }
     
     //MARK: - Core Data Stack

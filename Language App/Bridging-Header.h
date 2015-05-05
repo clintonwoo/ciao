@@ -11,5 +11,6 @@
 
 
 //#import <AFNetworking/AFNetworking.h>
+#import <IMFCore/IMFCore.h>
 
 #endif
