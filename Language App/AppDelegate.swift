@@ -9,7 +9,6 @@
 import UIKit
 import Alamofire
 import CoreData
-import SugarRecord
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, CoreDataDelegate {
