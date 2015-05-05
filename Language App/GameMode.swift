@@ -8,27 +8,27 @@
 
 import Foundation
 
-enum GameMode {
-    case IntroMode
-    case GrammarMode
-    case AlphabetMode
-    case PhraseMode
-    case VerbMode
-    case DictationMode
+enum GameMode: Int {
+    case IntroMode = 0
+    case GrammarMode = 1
+    case AlphabetMode = 2
+    case PhraseMode = 3
+    case VerbMode = 4
+    case DictationMode = 5
     
     init () {
-        switch (NSUserDefaults.standardUserDefaults().stringForKey(UserDefaults.GameMode)!) {
-            case GameMode.IntroMode.toString():
+        switch (NSUserDefaults.standardUserDefaults().integerForKey(UserDefaults.GameMode)) {
+            case GameMode.IntroMode.rawValue:
                 self = .IntroMode
-            case GameMode.GrammarMode.toString():
+            case GameMode.GrammarMode.rawValue:
                 self = .GrammarMode
-            case GameMode.AlphabetMode.toString():
+            case GameMode.AlphabetMode.rawValue:
                 self = .AlphabetMode
-            case GameMode.PhraseMode.toString():
+            case GameMode.PhraseMode.rawValue:
                 self = .PhraseMode
-            case GameMode.VerbMode.toString():
+            case GameMode.VerbMode.rawValue:
                 self = .VerbMode
-            case GameMode.DictationMode.toString():
+            case GameMode.DictationMode.rawValue:
                 self = .DictationMode
             default:
                 self = .IntroMode

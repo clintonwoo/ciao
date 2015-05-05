@@ -119,7 +119,6 @@
 		18C5EBA51AF79370004F928D /* Localization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Localization.swift; sourceTree = "<group>"; };
 		18C5EBA91AF7A6FE004F928D /* StatisticsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatisticsModel.swift; sourceTree = "<group>"; };
 		18E54CDC1A9830EC007E7287 /* GameMasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = GameMasterViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		18FB1F051A77CB8B00180515 /* v0.4 (5) Clinton.Language-App 2015-01-27 21.10.54.483.xcappdata */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "v0.4 (5) Clinton.Language-App 2015-01-27 21.10.54.483.xcappdata"; path = "v0.4 (5)/v0.4 (5) Clinton.Language-App 2015-01-27 21.10.54.483.xcappdata"; sourceTree = "<group>"; };
 		18FB1F071A77D03300180515 /* v0.4 (5) Clean Data Clinton.Language-App 2015-01-27 21.10.54.483.xcappdata */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "v0.4 (5) Clean Data Clinton.Language-App 2015-01-27 21.10.54.483.xcappdata"; path = "v0.4 (5)/Clean Launch/v0.4 (5) Clean Data Clinton.Language-App 2015-01-27 21.10.54.483.xcappdata"; sourceTree = "<group>"; };
 		3A3B966F93320A9083DCD993 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		7F0AD546944D7C0B76F8BCAE /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -182,13 +181,15 @@
 			name = Constants;
 			sourceTree = "<group>";
 		};
-		1880D9821AF7148500433928 /* Core Menu */ = {
+		1880D9821AF7148500433928 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				1880D9871AF714AF00433928 /* View */,
-				1880D9881AF714B400433928 /* Controller */,
+				1880D9931AF7176C00433928 /* AppDelegate */,
+				1806BD9D1A3CF23E00774709 /* Model */,
+				18CBB59F1AF869EA00E337DB /* Storyboards */,
+				1880D9871AF714AF00433928 /* Menu */,
 			);
-			name = "Core Menu";
+			name = Core;
 			sourceTree = "<group>";
 		};
 		1880D9831AF7148B00433928 /* Statistics */ = {
@@ -228,13 +229,12 @@
 			name = Game;
 			sourceTree = "<group>";
 		};
-		1880D9871AF714AF00433928 /* View */ = {
+		1880D9871AF714AF00433928 /* Menu */ = {
 			isa = PBXGroup;
 			children = (
-				181CCA321AD60DD40075E557 /* SecretStoryboard.storyboard */,
-				186DFC851A7377810014619F /* Main.storyboard */,
+				1880D9881AF714B400433928 /* Controller */,
 			);
-			name = View;
+			name = Menu;
 			sourceTree = "<group>";
 		};
 		1880D9881AF714B400433928 /* Controller */ = {
@@ -395,9 +395,7 @@
 		18BD536A1A33053300742D7F /* Language App */ = {
 			isa = PBXGroup;
 			children = (
-				1806BD9D1A3CF23E00774709 /* Model */,
-				1880D9821AF7148500433928 /* Core Menu */,
-				1880D9931AF7176C00433928 /* AppDelegate */,
+				1880D9821AF7148500433928 /* Core */,
 				1880D9861AF714A100433928 /* Game */,
 				1880D9851AF7149800433928 /* Grammar */,
 				1880D98B1AF7150F00433928 /* Modes */,
@@ -457,11 +455,19 @@
 			name = Controller;
 			sourceTree = "<group>";
 		};
+		18CBB59F1AF869EA00E337DB /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				186DFC851A7377810014619F /* Main.storyboard */,
+				181CCA321AD60DD40075E557 /* SecretStoryboard.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
 		18FB1F041A77CAE300180515 /* Test Data */ = {
 			isa = PBXGroup;
 			children = (
 				18FB1F071A77D03300180515 /* v0.4 (5) Clean Data Clinton.Language-App 2015-01-27 21.10.54.483.xcappdata */,
-				18FB1F051A77CB8B00180515 /* v0.4 (5) Clinton.Language-App 2015-01-27 21.10.54.483.xcappdata */,
 			);
 			name = "Test Data";
 			sourceTree = "<group>";

@@ -8,8 +8,12 @@
 
 import UIKit
 
+@IBDesignable
 class ModeTableViewCell: UITableViewCell {
 
+    // MARK: - Properties
+    @IBInspectable var gameModeIndex: Int = 0 // When optional, key compliant error
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

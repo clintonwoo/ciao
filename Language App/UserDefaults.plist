@@ -22,7 +22,7 @@
 	<key>language</key>
 	<string>Italian</string>
 	<key>gameMode</key>
-	<string>Intro Mode</string>
+	<real>0</real>
 	<key>willCacheGrammarPages</key>
 	<false/>
 	<key>difficulty</key>

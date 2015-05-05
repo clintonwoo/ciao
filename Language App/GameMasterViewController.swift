@@ -88,14 +88,14 @@ class GameMasterViewController: UIViewController {
             let IETFCodeDictionary = NSDictionary(contentsOfFile: dataPlistPath)!
             let synthesizer = AVSpeechSynthesizer()
             if ((localWord) != nil) {
-                var utteranceAnswer = AVSpeechUtterance(string: localWord!)
+                let utteranceAnswer = AVSpeechUtterance(string: localWord!)
                 //                var utteranceAnswer = AVSpeechUtterance(string: foreignWord)
                 utteranceAnswer.rate = self.game.speakingSpeed
                 println("Speaking local \(localWord!)")
                 synthesizer.speakUtterance(utteranceAnswer)
             }
             //utteranceAnswer.voice = AVSpeechSynthesisVoice(language: "en-AU")
-            var utteranceWord = AVSpeechUtterance(string: foreignWord)
+            let utteranceWord = AVSpeechUtterance(string: foreignWord)
             if let languageCode = IETFCodeDictionary.valueForKey(NSUserDefaults.standardUserDefaults().stringForKey(UserDefaults.Language)!) as? String {
                 utteranceWord.voice = AVSpeechSynthesisVoice(language: languageCode)
             }

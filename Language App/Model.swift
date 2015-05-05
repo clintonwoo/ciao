@@ -38,7 +38,7 @@ class Model: Statistics {
 
     var gameMode: GameMode = GameMode() {
         didSet {
-            userDefaults.setValue(gameMode.toString(), forKey: UserDefaults.GameMode)
+            userDefaults.setValue(gameMode.rawValue, forKey: UserDefaults.GameMode)
         }
     }
     

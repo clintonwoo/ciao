@@ -19,9 +19,9 @@ class GrammarViewController: UIViewController, UIWebViewDelegate {
     //MARK: - Properties
     let userDefaults = NSUserDefaults.standardUserDefaults()
     lazy var willCacheGrammarPages: Bool = {self.userDefaults.boolForKey(UserDefaults.WillCacheGrammarPages)}()
-    var urlRequest: NSURLRequest? = nil
-    var backButton: UIBarButtonItem? = nil
-    var forwardButton: UIBarButtonItem? = nil
+    var urlRequest: NSURLRequest?
+    var backButton: UIBarButtonItem?
+    var forwardButton: UIBarButtonItem?
     
     //MARK: - Initialisers
     required init(coder aDecoder: NSCoder) {

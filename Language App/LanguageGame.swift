@@ -17,11 +17,14 @@ class LanguageGame: Model {
     
     //MARK: - Initialisers
     
+    /**
+    Initialises an instance of LanguageGame with a reference to Core Data Delegate set.
+    
+    :returns: Instance of LanguageGame.
+    */
     init (delegate: CoreDataDelegate) {
         super.init()
         coreDataDelegate = delegate
-        //        var error = NSErrorPointer()
-        //        fetchData(error)
     }
     
     deinit {
@@ -35,13 +38,13 @@ class LanguageGame: Model {
     
     var foreignWords: [Word] = []
     var currentLanguageRecord: Language {
+        var error: NSError?
         let languageFetchRequest = NSFetchRequest()
         let languageEntity: NSEntityDescription = NSEntityDescription.entityForName(Entity.Language, inManagedObjectContext: coreDataDelegate.managedObjectContext!)!
         let languagePredicate = NSPredicate(format: "name = %@", self.language)
         languageFetchRequest.entity = languageEntity
         languageFetchRequest.predicate = languagePredicate
-        var error = NSErrorPointer()
-        let languageRecords = coreDataDelegate.managedObjectContext?.executeFetchRequest(languageFetchRequest, error: error) as! [Language]
+        let languageRecords = coreDataDelegate.managedObjectContext?.executeFetchRequest(languageFetchRequest, error: &error) as! [Language]
         return languageRecords[0]
     }
     var currentStreak: Int = 0
@@ -52,10 +55,10 @@ class LanguageGame: Model {
     }
     var foreignHi: String {
         get {
+            var error: NSError?
             let hiFetchRequest = NSFetchRequest(entityName: Entity.Word)
             hiFetchRequest.predicate = NSPredicate(format: "language.name = %@ AND englishWord.word = %@", language, "Hi")
-            var error = NSErrorPointer()
-            let temp = coreDataDelegate.managedObjectContext?.executeFetchRequest(hiFetchRequest, error: error) as! [Word]
+            let temp = coreDataDelegate.managedObjectContext?.executeFetchRequest(hiFetchRequest, error: &error) as! [Word]
             return temp[0].word
         }
     }

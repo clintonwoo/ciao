@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
    LastUpgradeVersion = "0610"
-   version = "1.8">
+   version = "1.7">
    <BuildAction
       parallelizeBuildables = "YES"
       buildImplicitDependencies = "YES">
@@ -85,7 +85,7 @@
       <AdditionalOptions>
       </AdditionalOptions>
       <DeviceAppData
-         resolvedPath = "../../Language App/v0.4 (5)/Clean Launch/v0.4 (5) Clean Data Clinton.Language-App 2015-01-27 21.10.54.483.xcappdata">
+         resolvedPath = "../Language App/v0.4 (5)/v0.4 (5) Clinton.Language-App 2015-01-27 21.10.54.483.xcappdata">
       </DeviceAppData>
    </LaunchAction>
    <ProfileAction

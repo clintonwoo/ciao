@@ -39,6 +39,7 @@ class SettingsViewController: UITableViewController, UITableViewDelegate, UITabl
     //MARK: - View Controller Methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.title = Localization.Settings.Title
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -65,9 +66,9 @@ class SettingsViewController: UITableViewController, UITableViewDelegate, UITabl
     }
     
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        let headerTitles = [Localization.Settings.GameSettings,
-            Localization.Settings.Sound,
-            Localization.Settings.About]
+        let headerTitles = [Localization.Settings.Headers.GameSettings,
+            Localization.Settings.Headers.Sound,
+            Localization.Settings.Headers.About]
         return headerTitles[section]
     }
     
@@ -86,12 +87,13 @@ class SettingsViewController: UITableViewController, UITableViewDelegate, UITabl
                 switch (indexPath.row) {
                     case 0:
                         let cell = tableView.dequeueReusableCellWithIdentifier(Cell.tvcLanguage, forIndexPath: indexPath) as! UITableViewCell
-                        let label = cell.viewWithTag(102) as! UILabel
-                        label.text = game.language
+                        (cell.viewWithTag(100) as! UILabel).text = Localization.Settings.Language
+                        (cell.viewWithTag(200) as! UILabel).text = game.language
                         return cell
                     case 1:
                         let cell = tableView.dequeueReusableCellWithIdentifier(Cell.tvcSegmented, forIndexPath: indexPath) as! UITableViewCell
-                        let segmentedControl = cell.viewWithTag(103) as! UISegmentedControl
+                        (cell.viewWithTag(101) as! UILabel).text = Localization.Settings.Difficulty
+                        let segmentedControl = cell.viewWithTag(201) as! UISegmentedControl
                         switch (game.difficulty) {
                             case .Easy:
                                 segmentedControl.selectedSegmentIndex = DifficultyIndex.Easy.rawValue
@@ -119,13 +121,13 @@ class SettingsViewController: UITableViewController, UITableViewDelegate, UITabl
                 switch (indexPath.row) {
                     case 0:
                         let cell = tableView.dequeueReusableCellWithIdentifier(Cell.tvcSwitch, forIndexPath: indexPath) as! UITableViewCell
-                        var switchControl = cell.viewWithTag(104) as! UISwitch
-                        switchControl.on = NSUserDefaults.standardUserDefaults().boolForKey(UserDefaults.HasSound)
+                        (cell.viewWithTag(102) as! UILabel).text = Localization.Settings.SoundEnabled
+                        (cell.viewWithTag(202) as! UISwitch).on = NSUserDefaults.standardUserDefaults().boolForKey(UserDefaults.HasSound)
                         return cell
                     case 1:
                         let cell = tableView.dequeueReusableCellWithIdentifier(Cell.tvcSlider, forIndexPath: indexPath) as! UITableViewCell
-                        var slider = cell.viewWithTag(105) as! UISlider
-                        slider.value = game.speakingSpeed
+                        (cell.viewWithTag(103) as! UILabel).text = Localization.Settings.SpeakingSpeed
+                        (cell.viewWithTag(203) as! UISlider).value = game.speakingSpeed
                         return cell
                     default:
                         let cell = tableView.dequeueReusableCellWithIdentifier(Cell.tvcSwitch, forIndexPath: indexPath) as! UITableViewCell
@@ -136,6 +138,11 @@ class SettingsViewController: UITableViewController, UITableViewDelegate, UITabl
                 switch (indexPath.row) {
                     case 0:
                         let cell = tableView.dequeueReusableCellWithIdentifier(Cell.tvcAbout, forIndexPath: indexPath) as! UITableViewCell
+//                        cell.detailTextLabel?.text = NSBundle.mainBundle().objectForInfoDictionaryKey(kCFBundleVersionKey as String) as? String
+                        let version = NSBundle.mainBundle().objectForInfoDictionaryKey("CFBundleShortVersionString") as! String
+                        let build = NSBundle.mainBundle().objectForInfoDictionaryKey(kCFBundleVersionKey as String) as! String
+                        cell.textLabel?.text = Localization.Settings.About
+                        cell.detailTextLabel?.text = "v\(version)" //(\(build)) "
                         return cell
                     default:
                         let cell = tableView.dequeueReusableCellWithIdentifier(Cell.tvcSwitch, forIndexPath: indexPath) as! UITableViewCell
@@ -153,7 +160,7 @@ class SettingsViewController: UITableViewController, UITableViewDelegate, UITabl
     private func setLanguageLabel (language: String) {
         let languageCellIndexPath: NSIndexPath = NSIndexPath(forRow: 0, inSection: 0)
         let languageCell = self.tableView.cellForRowAtIndexPath(languageCellIndexPath)! as UITableViewCell
-        var languageLabel = languageCell.viewWithTag(102) as! UILabel
+        let languageLabel = languageCell.viewWithTag(200) as! UILabel
         languageLabel.text = language
     }
     

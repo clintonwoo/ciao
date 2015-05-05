@@ -36,9 +36,20 @@ class MenuViewController: UIViewController, SettingsDelegate {
     //MARK: - View controller methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        game = LanguageGame(delegate: coreDataDelegate)
-        setButtonCollectionStyle()
+        
+        // Initialise localized button text
+        playGameButton.setTitle(Localization.Menu.PlayGame, forState: .Normal)
+        gameModeButton.setTitle(Localization.Menu.ChooseMode, forState: .Normal)
         setGrammarButtonTitle(NSUserDefaults.standardUserDefaults().stringForKey(UserDefaults.Language)!)
+        statisticsButton.setTitle(Localization.Menu.Statistics, forState: .Normal)
+        settingsButton.setTitle(Localization.Menu.Settings, forState: .Normal)
+        
+        // Create LanguageGame model
+        game = LanguageGame(delegate: coreDataDelegate)
+        
+        // Set button style
+        setButtonCollectionStyle()
+        
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -82,6 +93,7 @@ class MenuViewController: UIViewController, SettingsDelegate {
     }
     
     //MARK: - Segue
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         println(segue.identifier!)
         switch (segue.identifier!) {
@@ -110,27 +122,15 @@ class MenuViewController: UIViewController, SettingsDelegate {
                 destinationViewController.coreDataDelegate = coreDataDelegate
                 destinationViewController.game = game
             case SegueID.ShowSettings.rawValue:
-                let navController = segue.destinationViewController as! UINavigationController
-                let destinationViewController = navController.topViewController as! SettingsViewController
+//                let navController = segue.destinationViewController as! UINavigationController
+                let destinationViewController = segue.destinationViewController as! SettingsViewController
                 destinationViewController.delegate = self
                 destinationViewController.game = game
         default:
             println("prepareForSegue: \(segue.identifier!) not found.")
         }
     }
-    
-    override func performSegueWithIdentifier(identifier: String?, sender: AnyObject?) {
-        super.performSegueWithIdentifier(identifier, sender: sender)
-    }
 
-    /*@IBAction func clickSettings(sender: UIButton) {
-        self.presentViewController(SettingsController(), animated: true, completion: nil)
-    }*/
-    
-    //func pushViewController(viewController: UIViewController, animated: Bool) {
-        
-    //}
-    
     //MARK: - Language Setting Delegate
     
     func returnToSource(vc: UIViewController, language: String) {

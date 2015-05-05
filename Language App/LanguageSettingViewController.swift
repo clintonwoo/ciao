@@ -25,6 +25,7 @@ class LanguageSettingViewController: UITableViewController, UITableViewDelegate 
     // MARK: - View Controller
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.title = Localization.Settings.Language
         // Do any additional setup after loading the view, typically from a nib.
     }
     

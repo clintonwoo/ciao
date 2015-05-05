@@ -13,7 +13,7 @@ class AboutViewController: UIViewController {
     //MARK: - View controller methods
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        navigationItem.title = Localization.About.Title
         // Do any additional setup after loading the view.
     }
 
