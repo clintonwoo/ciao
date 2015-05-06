@@ -23,6 +23,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CoreDataDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         NSUserDefaults.standardUserDefaults().registerDefaults(NSDictionary(contentsOfFile: NSBundle.mainBundle().pathForResource(ResourceName.UserDefaults.rawValue, ofType: ResourceName.UserDefaults.Type)!)! as [NSObject : AnyObject])
+        
+        UIApplication.sharedApplication().applicationIconBadgeNumber = 0
+        UIApplication.sharedApplication().setMinimumBackgroundFetchInterval(UIApplicationBackgroundFetchIntervalMinimum)
+        UIApplication.sharedApplication().registerUserNotificationSettings(UIUserNotificationSettings(forTypes: UIUserNotificationType.Badge, categories: nil))
+        UIApplication.sharedApplication().isRegisteredForRemoteNotifications()
+        UIApplication.sharedApplication().registerForRemoteNotifications()
+        UIApplication.sharedApplication().applicationState // is active, inactive, background?
 
         // Core Data Delegate protocol implementation
         let initialViewController = self.window!.rootViewController as! UINavigationController
@@ -43,8 +50,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CoreDataDelegate {
 //        let stack: DefaultCDStack = DefaultCDStack(databasePath: "Model.sqlite", model: managedObjectModel!, automigrating: true)
 //        SugarRecord.addStack(stack)
 //        SugarRecordLogger.currentLevel = SugarRecordLogger.logLevelVerbose
-        
-//        Manager.sharedInstance
+
+//        Manager.sharedInstance.request()
         setupCoreData()
         
         if saveContext() {
@@ -52,6 +59,73 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CoreDataDelegate {
         }
         return false
     }
+    
+    
+    // MARK: - Remote notifications
+    // Registration callbacks
+    func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
+        //After you call the registerForRemoteNotifications method of the UIApplication object, the app calls this method when device registration completes successfully. In your implementation of this method, connect with your push notification server and give the token to it. APNs pushes notifications only to the device represented by the token.
+        //A token that identifies the device to APNs. The token is an opaque data type because that is the form that the provider needs to submit to the APNs servers when it sends a notification to a device. The APNs servers require a binary format for performance reasons.
+        // The size of a device token is 32 bytes.
+        // Note that the device token is different from the uniqueIdentifier property of UIDevice because, for security and privacy reasons, it must change when the device is wiped.
+    }
+    func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
+        // After you call the registerForRemoteNotifications method of the UIApplication object, the app calls this method when there is an error in the registration process.
+    }
+    // Handlers
+    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
+        // Tells the delegate that the running app received a remote notification.
+        // Implement the application:didReceiveRemoteNotification:fetchCompletionHandler: method instead of this one whenever possible. If your delegate implements both methods, the app object calls the application:didReceiveRemoteNotification:fetchCompletionHandler: method.
+    }
+    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject], fetchCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) {
+        //When a remote notification arrives, the system calls the application:didReceiveRemoteNotification:fetchCompletionHandler: method. Notifications usually signal the availability of new information. In your app delegate method, you might begin downloading new data from a server so that you can update your app’s data structures. You might also use the notification to update your user interface.
+    }
+    func application(application: UIApplication, handleActionWithIdentifier identifier: String?, forRemoteNotification userInfo: [NSObject : AnyObject], completionHandler: () -> Void) {
+        //When the user taps a custom action in the alert for a remote or local notification’s, the system calls the application:handleActionWithIdentifier:forRemoteNotification:completionHandler: or application:handleActionWithIdentifier:forLocalNotification:completionHandler: method in the background so that your app can perform the associated action.
+    }
+    
+    // MARK: - Local notifications
+    // Handler
+    func application(application: UIApplication, didReceiveLocalNotification notification: UILocalNotification) {
+        // When a local notification fires, the system calls the application:didReceiveLocalNotification: method. The app must be running (or recently launched) to receive this event.
+        // Local notifications are similar to remote notifications, but differ in that they are scheduled, displayed, and received entirely on the same device. An app can create and schedule a local notification, and the operating system then delivers it at the scheduled date and time. If the app is not active in the foreground when the notification fires, the system uses the information in the UILocalNotification object to determine whether it should display an alert, badge the app icon, or play a sound. If the app is running in the foreground, the system calls this method directly without alerting the user in any way.
+        println("didReceiveLocalNotification")
+    }
+    func application(application: UIApplication, handleActionWithIdentifier identifier: String?, forLocalNotification notification: UILocalNotification, completionHandler: () -> Void) {
+        //When the user taps a custom action in the alert for a remote or local notification’s, the system calls the application:handleActionWithIdentifier:forRemoteNotification:completionHandler: or application:handleActionWithIdentifier:forLocalNotification:completionHandler: method in the background so that your app can perform the associated action.
+        // The app calls this method when the user taps an action button in an alert displayed in response to a local notification. Local notifications that include a registered category name in their category property display buttons for the actions in that category. If the user taps one of those buttons, the system wakes up the app (launching it if needed) and calls this method in the background. Your implementation of this method should perform the action associated with the specified identifier and execute the block in the completionHandler parameter as soon as you are done. Failure to execute the completion handler block at the end of your implementation will cause your app to be terminated.
+    }
+    
+    // MARK: - User notifications
+    // Register
+    func application(application: UIApplication, didRegisterUserNotificationSettings notificationSettings: UIUserNotificationSettings) {
+        //
+    }
+    
+    // MARK: - Continuing User Activities
+//    func application(application: UIApplication, didFailToContinueUserActivityWithType userActivityType: String, error: NSError) {
+//        <#code#>
+//    }
+    
+    // MARK: - Background Mode
+    
+    func application(application: UIApplication, performFetchWithCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) {
+        //For apps that want to initiate background downloads, the system calls the application:performFetchWithCompletionHandler: method when the time is right for you to start those downloads.
+        // This method is used to perform a fetch in the background.
+        // Use it to fetch notifications and increment the app badge number.
+        // Turn on activity indicator
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+        println("performFetchWithCompletionHandler")
+        UIApplication.sharedApplication().applicationIconBadgeNumber++
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+    }
+    
+    func application(application: UIApplication, handleEventsForBackgroundURLSession identifier: String, completionHandler: () -> Void) {
+        //For apps that use the NSURLSession class to perform background downloads, the system calls the application:handleEventsForBackgroundURLSession:completionHandler: method when those downloads finished while the app was not running. You can use this method to process the downloaded files and update the affected view controllers.
+    }
+
+
+    // MARK: - Application Life Cycle
     
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -62,8 +136,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CoreDataDelegate {
     func applicationDidEnterBackground(application: UIApplication) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+        
+        let backgroundTask = UIApplication.sharedApplication().beginBackgroundTaskWithExpirationHandler { () -> Void in
+            // Handle if we've taken too long and iOS wants to kill the app
+        } // Begin background task that can cancel.
+        //Do  long running task
         IMFLogger.send()
         IMFAnalytics.sharedInstance().sendPersistedLogs()
+        UIApplication.sharedApplication().endBackgroundTask(backgroundTask)
     }
     
     func applicationWillEnterForeground(application: UIApplication) {
