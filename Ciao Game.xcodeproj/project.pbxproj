@@ -397,7 +397,7 @@
 			isa = PBXGroup;
 			children = (
 				1880D9941AF7177A00433928 /* Protocol */,
-				1880D9951AF7178000433928 /* Controller */,
+				18BD536D1A33053300742D7F /* AppDelegate.swift */,
 			);
 			name = AppDelegate;
 			sourceTree = "<group>";
@@ -408,14 +408,6 @@
 				1880D9961AF7179300433928 /* CoreDataDelegate.swift */,
 			);
 			name = Protocol;
-			sourceTree = "<group>";
-		};
-		1880D9951AF7178000433928 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				18BD536D1A33053300742D7F /* AppDelegate.swift */,
-			);
-			name = Controller;
 			sourceTree = "<group>";
 		};
 		1880D9981AF71FB000433928 /* Protocol */ = {
@@ -510,7 +502,6 @@
 		18BD536A1A33053300742D7F /* Language App */ = {
 			isa = PBXGroup;
 			children = (
-				184DE21F1B018DE00083852F /* Language App.entitlements */,
 				1880D9821AF7148500433928 /* Core */,
 				1880D9861AF714A100433928 /* Game */,
 				1880D9851AF7149800433928 /* Grammar */,
@@ -528,6 +519,7 @@
 			isa = PBXGroup;
 			children = (
 				18BD53741A33053300742D7F /* Images.xcassets */,
+				184DE21F1B018DE00083852F /* Language App.entitlements */,
 				18C0F1FA1A456E25007BEE49 /* Info.plist */,
 				18AC1C081A6FD66E00987D5F /* Words.plist */,
 				18867F001A7610C6005F8AD7 /* Alphabet.plist */,
@@ -708,6 +700,12 @@
 						DevelopmentTeam = DCX4D9WH5R;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
 								enabled = 1;
 							};
 						};

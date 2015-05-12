@@ -22,7 +22,7 @@ class StatisticsViewController: UIViewController {
     @IBOutlet weak var longestStreakLabel: UILabel!
     
     //MARK: - Properties
-    var game: LanguageGame!
+//    var game: LanguageGame!
     var statisticsModel = StatisticsModel()
     var coreDataDelegate: CoreDataDelegate! {
         didSet {
@@ -59,5 +59,6 @@ class StatisticsViewController: UIViewController {
     @IBAction func tapResetStatisticsButton(sender: UIButton) {
         statisticsModel.resetStatistics()
         loadStatistics()
+        NSUbiquitousKeyValueStore.defaultStore().synchronize()
     }
 }

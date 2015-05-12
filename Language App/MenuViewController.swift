@@ -63,10 +63,6 @@ class MenuViewController: UIViewController, SettingsDelegate {
     
     // MARK: - Initialisers
     
-    required init(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
-    
     // MARK: - Methods
     
     func setGrammarButtonTitle (language: String) {
@@ -95,7 +91,6 @@ class MenuViewController: UIViewController, SettingsDelegate {
     //MARK: - Segue
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        println(segue.identifier!)
         switch (segue.identifier!) {
             case SegueID.ShowGame.rawValue:
                 let destinationViewController = segue.destinationViewController as! GameViewController
@@ -115,14 +110,14 @@ class MenuViewController: UIViewController, SettingsDelegate {
                 if let url = NSURL(string: dataPlistDictionary.valueForKey(NSUserDefaults.standardUserDefaults().stringForKey(UserDefaults.Language)!) as! String) {
                     let urlRequest = NSURLRequest(URL: url)
                     destinationViewController.urlRequest = urlRequest
-                }
-                //destinationViewController.webView?.loadRequest(urlRequest)
+//                  destinationViewController.webView?.loadRequest(urlRequest)
+            }
             case SegueID.ShowStatistics.rawValue:
+                NSUbiquitousKeyValueStore.defaultStore().synchronize()
                 let destinationViewController = segue.destinationViewController as! StatisticsViewController
                 destinationViewController.coreDataDelegate = coreDataDelegate
-                destinationViewController.game = game
+//                destinationViewController.game = game
             case SegueID.ShowSettings.rawValue:
-//                let navController = segue.destinationViewController as! UINavigationController
                 let destinationViewController = segue.destinationViewController as! SettingsViewController
                 destinationViewController.delegate = self
                 destinationViewController.game = game

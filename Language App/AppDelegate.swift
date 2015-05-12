@@ -18,12 +18,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CoreDataDelegate {
     
     var window: UIWindow?
     var game: LanguageGame!
+    var backgroundTask: UIBackgroundTaskIdentifier = UIBackgroundTaskInvalid
+    var environment: String! // Development, Production
 
-    //MARK: - App Delegate
+    //MARK: - Launch
+    
+    func application(application: UIApplication, willFinishLaunchingWithOptions launchOptions: [NSObject : AnyObject]?) -> Bool {
+        
+        return true
+    }
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         NSUserDefaults.standardUserDefaults().registerDefaults(NSDictionary(contentsOfFile: NSBundle.mainBundle().pathForResource(ResourceName.UserDefaults.rawValue, ofType: ResourceName.UserDefaults.Type)!)! as [NSObject : AnyObject])
+        
+        // Register iCloud Key Value storage
+        NSNotificationCenter.defaultCenter().addObserver(
+            self,
+            selector: "updateKVStoreItems:",
+            name: NSUbiquitousKeyValueStoreDidChangeExternallyNotification,
+            object: NSUbiquitousKeyValueStore.defaultStore())
+        if NSUbiquitousKeyValueStore.defaultStore().synchronize() {
+            NSLog("Info: iCloud Key Value storage initial sync successful")
+        }
         
         // AFNetworking
         AFNetworkActivityIndicatorManager.sharedManager().enabled = true
@@ -68,8 +85,54 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CoreDataDelegate {
         return false
     }
     
+    // MARK: - Application Life Cycle
+    
+    func applicationWillResignActive(application: UIApplication) {
+        // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
+        // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
+        //        SugarRecord.applicationWillResignActive()
+    }
+    
+    func applicationDidEnterBackground(application: UIApplication) {
+        // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
+        // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+        
+        backgroundTask = UIApplication.sharedApplication().beginBackgroundTaskWithExpirationHandler { () -> Void in
+            // Handle if we've taken too long and iOS wants to kill the app
+            UIApplication.sharedApplication().endBackgroundTask(self.backgroundTask)
+            self.backgroundTask = UIBackgroundTaskInvalid
+        } // Begin background task that can cancel.
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
+            //Save your app state before moving to the background. During low-memory conditions, background apps may be purged from memory to free up space. Suspended apps are purged first, and no notice is given to the app before it is purged. As a result, apps should take advantage of the state preservation mechanism in iOS 6 and later t
+            // Do the work associated with the task, preferably in chunks.
+            //Do  long running task
+            //Remove sensitive information from views before moving to the background. When an app transitions to the background, the system takes a snapshot of the app’s main window, which it then presents briefly when transitioning your app back to the foreground. Before returning from your applicationDidEnterBackground: method, you should hide or obscure passwords and other sensitive personal information that might be captured as part of the snapshot.
+            IMFLogger.send()
+            IMFAnalytics.sharedInstance().sendPersistedLogs()
+            // Send any multi device information
+            UIApplication.sharedApplication().endBackgroundTask(self.backgroundTask)
+            self.backgroundTask = UIBackgroundTaskInvalid
+        })
+    }
+    
+    func applicationWillEnterForeground(application: UIApplication) {
+        // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+        UIApplication.sharedApplication().applicationIconBadgeNumber = 0
+        //        SugarRecord.applicationWillEnterForeground()
+    }
+    
+    func applicationDidBecomeActive(application: UIApplication) {
+        // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    }
+    
+    func applicationWillTerminate(application: UIApplication) {
+        // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+        // And in situations where the system needs to terminate apps to free even more memory, the app calls its delegate’s applicationWillTerminate: method to perform any final tasks before exiting.
+        //        SugarRecord.applicationWillTerminate()
+    }
     
     // MARK: - Remote notifications
+    
     // Registration callbacks
     func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
         //After you call the registerForRemoteNotifications method of the UIApplication object, the app calls this method when device registration completes successfully. In your implementation of this method, connect with your push notification server and give the token to it. APNs pushes notifications only to the device represented by the token.
@@ -87,9 +150,52 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CoreDataDelegate {
     }
     func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject], fetchCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) {
         //When a remote notification arrives, the system calls the application:didReceiveRemoteNotification:fetchCompletionHandler: method. Notifications usually signal the availability of new information. In your app delegate method, you might begin downloading new data from a server so that you can update your app’s data structures. You might also use the notification to update your user interface.
+        
+        //For a push notification to trigger a download operation, the notification’s payload must include the content-available key with its value set to 1. When that key is present, the system wakes the app in the background (or launches it into the background) and calls the app delegate’s application:didReceiveRemoteNotification:fetchCompletionHandler: method. Your implementation of that method should download the relevant content and integrate it into your app.
+        // When downloading any content, it is recommended that you use the NSURLSession class to initiate and manage your downloads.
+        completionHandler(UIBackgroundFetchResult.NewData)
     }
     func application(application: UIApplication, handleActionWithIdentifier identifier: String?, forRemoteNotification userInfo: [NSObject : AnyObject], completionHandler: () -> Void) {
         //When the user taps a custom action in the alert for a remote or local notification’s, the system calls the application:handleActionWithIdentifier:forRemoteNotification:completionHandler: or application:handleActionWithIdentifier:forLocalNotification:completionHandler: method in the background so that your app can perform the associated action.
+    }
+    
+    // MARK: - iCloud
+    
+    func updateKVStoreItems (notification: NSNotification) {
+        // Get the list of keys that changed.
+        let userInfo: NSDictionary  = notification.userInfo!
+        let reasonForChange = userInfo.objectForKey(NSUbiquitousKeyValueStoreChangeReasonKey) as? NSNumber
+//        var reason: Int = -1
+        
+        // If a reason could not be determined, do not update anything.
+        if (reasonForChange == nil) {
+            NSLog("Error. Reason for iCloud key value change could not be determined.")
+            println("Error.")
+            return
+        }
+        
+        func update () {
+            // If something is changing externally, get the changes and update the corresponding keys locally.
+            let changedKeys = userInfo.objectForKey(NSUbiquitousKeyValueStoreChangedKeysKey) as! [String]
+            // This loop assumes you are using the same key names in both the user defaults database and the iCloud key-value store
+            for key in changedKeys {
+                let value: AnyObject? = NSUbiquitousKeyValueStore.defaultStore().objectForKey(key)
+                NSUserDefaults.standardUserDefaults().setObject(value, forKey:key)
+            }
+        }
+        
+        switch (reasonForChange!.integerValue) {
+        case NSUbiquitousKeyValueStoreServerChange:
+            update()
+        case NSUbiquitousKeyValueStoreInitialSyncChange:
+            update()
+        case NSUbiquitousKeyValueStoreQuotaViolationChange:
+            NSLog("Error: Your app’s key-value store has exceeded its space quota on the iCloud server.")
+        case NSUbiquitousKeyValueStoreAccountChange:
+            NSLog("Warn: The user has changed the primary iCloud account. The keys and values in the local key-value store have been replaced with those from the new account, regardless of the relative timestamps.")
+        default:
+            NSLog("Warn: Unknown reason for iCloud key value update")
+        }
     }
     
     // MARK: - Local notifications
@@ -126,48 +232,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CoreDataDelegate {
         println("performFetchWithCompletionHandler")
         UIApplication.sharedApplication().applicationIconBadgeNumber++
         UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+        //As soon as you finish downloading the new content, you must execute the provided completion handler block, passing a result that indicates whether content was available. Executing this block tells the system that it can move your app back to the suspended state and evaluate its power usage. Apps that download small amounts of content quickly, and accurately reflect when they had content available to download, are more likely to receive execution time in the future than apps that take a long time to download their content or that claim content was available but then do not download anything.
+        completionHandler(UIBackgroundFetchResult.NewData)
     }
     
     func application(application: UIApplication, handleEventsForBackgroundURLSession identifier: String, completionHandler: () -> Void) {
         //For apps that use the NSURLSession class to perform background downloads, the system calls the application:handleEventsForBackgroundURLSession:completionHandler: method when those downloads finished while the app was not running. You can use this method to process the downloaded files and update the affected view controllers.
     }
 
-
-    // MARK: - Application Life Cycle
-    
-    func applicationWillResignActive(application: UIApplication) {
-        // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-        // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
-//        SugarRecord.applicationWillResignActive()
-    }
-    
-    func applicationDidEnterBackground(application: UIApplication) {
-        // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-        // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
-        
-        let backgroundTask = UIApplication.sharedApplication().beginBackgroundTaskWithExpirationHandler { () -> Void in
-            // Handle if we've taken too long and iOS wants to kill the app
-        } // Begin background task that can cancel.
-        //Do  long running task
-        IMFLogger.send()
-        IMFAnalytics.sharedInstance().sendPersistedLogs()
-        UIApplication.sharedApplication().endBackgroundTask(backgroundTask)
-    }
-    
-    func applicationWillEnterForeground(application: UIApplication) {
-        // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
-//        SugarRecord.applicationWillEnterForeground()
-    }
-    
-    func applicationDidBecomeActive(application: UIApplication) {
-        // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-    }
-    
-    func applicationWillTerminate(application: UIApplication) {
-        // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-//        SugarRecord.applicationWillTerminate()
-    }
-    
     //MARK: - Core Data Stack
 
     lazy var applicationDocumentsDirectory: NSURL = {

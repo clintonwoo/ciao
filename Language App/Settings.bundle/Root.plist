@@ -5,12 +5,6 @@
 	<key>PreferenceSpecifiers</key>
 	<array>
 		<dict>
-			<key>Title</key>
-			<string>Group</string>
-			<key>Type</key>
-			<string>PSGroupSpecifier</string>
-		</dict>
-		<dict>
 			<key>AutocapitalizationType</key>
 			<string>None</string>
 			<key>AutocorrectionType</key>
@@ -34,7 +28,7 @@
 			<key>Key</key>
 			<string>enabled_preference</string>
 			<key>Title</key>
-			<string>Enabled</string>
+			<string>Background App Refresh</string>
 			<key>Type</key>
 			<string>PSToggleSwitchSpecifier</string>
 		</dict>
@@ -54,6 +48,12 @@
 			<key>Type</key>
 			<string>PSSliderSpecifier</string>
 		</dict>
+        <dict>
+            <key>Title</key>
+            <string>Group</string>
+            <key>Type</key>
+            <string>PSGroupSpecifier</string>
+        </dict>
 	</array>
 	<key>StringsTable</key>
 	<string>Root</string>

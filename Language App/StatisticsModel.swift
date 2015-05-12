@@ -49,9 +49,9 @@ class StatisticsModel: Statistics {
     // MARK: - Model Behaviours
     
     func resetStatistics () {
-        NSUserDefaults.standardUserDefaults().setInteger(0, forKey: UserDefaults.Attempts)
-        NSUserDefaults.standardUserDefaults().setInteger(0, forKey: UserDefaults.CorrectAttempts)
-        NSUserDefaults.standardUserDefaults().setInteger(0, forKey: UserDefaults.LongestStreak)
+        attempts = 0
+        correctAttempts = 0
+        longestStreak = 0
         var error: NSError?
         //go through core data and clear all attempts on Word and Language entity to 0
         let wordBatchRequest = NSBatchUpdateRequest(entityName: Entity.Word)
