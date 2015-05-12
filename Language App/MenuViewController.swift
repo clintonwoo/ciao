@@ -35,6 +35,7 @@ class MenuViewController: UIViewController, SettingsDelegate {
 
     //MARK: - View controller methods
     override func viewDidLoad() {
+        // Do any additional setup after loading the view, typically from a nib.
         super.viewDidLoad()
         
         // Initialise localized button text
@@ -49,11 +50,18 @@ class MenuViewController: UIViewController, SettingsDelegate {
         
         // Set button style
         setButtonCollectionStyle()
-        
-        // Do any additional setup after loading the view, typically from a nib.
     }
     
     override func viewWillAppear(animated: Bool) {
+        // First Run
+        if NSUserDefaults.standardUserDefaults().boolForKey(UserDefaults.FirstRun) {
+            let vc = ViewLoaderHelper.loadViewController(
+                fromStoryBoard: StoryboardName.FirstRun,
+                withStoryboardId: StoryboardID.TutorialNavigationVC,
+                inBundle: nil) as UIViewController
+            modalPresentationStyle = UIModalPresentationStyle.FormSheet
+            presentViewController(vc, animated: false, completion: nil)
+        }
     }
     
     override func didReceiveMemoryWarning() {

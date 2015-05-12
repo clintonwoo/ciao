@@ -11,7 +11,7 @@
 		18032B311A75EB000021E6AD /* EnglishWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18032B301A75EB000021E6AD /* EnglishWord.swift */; };
 		18032B331A75EB000021E6AD /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18032B321A75EB000021E6AD /* Word.swift */; };
 		1806BDA51A3D4CFA00774709 /* LanguageSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1806BDA41A3D4CFA00774709 /* LanguageSettingViewController.swift */; };
-		181CCA301AD60DD40075E557 /* SecretStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 181CCA321AD60DD40075E557 /* SecretStoryboard.storyboard */; };
+		181CCA301AD60DD40075E557 /* FirstRun.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 181CCA321AD60DD40075E557 /* FirstRun.storyboard */; };
 		183799F41AA0A8FD00514FA1 /* Statistics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183799F31AA0A8FD00514FA1 /* Statistics.swift */; };
 		183799F61AA0A95900514FA1 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183799F51AA0A95900514FA1 /* Model.swift */; };
 		18384E4A1A58F49D006DA713 /* UserDefaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18384E491A58F49D006DA713 /* UserDefaults.plist */; };
@@ -60,6 +60,12 @@
 		18C5EBA61AF79370004F928D /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C5EBA51AF79370004F928D /* Localization.swift */; };
 		18C5EBAA1AF7A6FE004F928D /* StatisticsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C5EBA91AF7A6FE004F928D /* StatisticsModel.swift */; };
 		18E54CDD1A9830EC007E7287 /* GameMasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E54CDC1A9830EC007E7287 /* GameMasterViewController.swift */; };
+		18EE148F1B0206570004788F /* ViewLoaderHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EE148E1B0206570004788F /* ViewLoaderHelper.swift */; };
+		18EE14941B0208230004788F /* UIColor+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EE14931B0208230004788F /* UIColor+Theme.swift */; };
+		18EE14971B020D5F0004788F /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EE14961B020D5F0004788F /* TutorialViewController.swift */; };
+		18EE14991B020D7A0004788F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EE14981B020D7A0004788F /* LoginViewController.swift */; };
+		18EE149D1B0226540004788F /* TutorialItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EE149C1B0226540004788F /* TutorialItemViewController.swift */; };
+		18EE149F1B0229220004788F /* TutorialPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EE149E1B0229220004788F /* TutorialPageViewController.swift */; };
 		3CA2A1B9A8411B3C3C486776 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F0AD546944D7C0B76F8BCAE /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -107,9 +113,7 @@
 		18032B301A75EB000021E6AD /* EnglishWord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnglishWord.swift; sourceTree = "<group>"; };
 		18032B321A75EB000021E6AD /* Word.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
 		1806BDA41A3D4CFA00774709 /* LanguageSettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = LanguageSettingViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		181CCA311AD60DD40075E557 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/SecretStoryboard.storyboard; sourceTree = "<group>"; };
-		181CCA361AD60DDE0075E557 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/SecretStoryboard.strings; sourceTree = "<group>"; };
-		181CCA381AD60E260075E557 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/SecretStoryboard.strings; sourceTree = "<group>"; };
+		181CCA311AD60DD40075E557 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/FirstRun.storyboard; sourceTree = "<group>"; };
 		183799F31AA0A8FD00514FA1 /* Statistics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Statistics.swift; sourceTree = "<group>"; };
 		183799F51AA0A95900514FA1 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = Model.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		18384E491A58F49D006DA713 /* UserDefaults.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = UserDefaults.plist; sourceTree = "<group>"; };
@@ -164,15 +168,19 @@
 		18BDCE641A3410C500C08890 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = SettingsViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		18C0F1F61A456225007BEE49 /* StatisticsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = StatisticsViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		18C0F1FC1A457192007BEE49 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = en.lproj/Info.plist; sourceTree = "<group>"; };
-		18C0F2001A459ED7007BEE49 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
-		18C0F2021A459EE0007BEE49 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
-		18C0F2031A459EE2007BEE49 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		18C1F9481A4E3CA500531C44 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		18C330201A35CF460027A312 /* ModesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = ModesViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		18C5EBA51AF79370004F928D /* Localization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Localization.swift; sourceTree = "<group>"; };
 		18C5EBA91AF7A6FE004F928D /* StatisticsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatisticsModel.swift; sourceTree = "<group>"; };
 		18E54CDC1A9830EC007E7287 /* GameMasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = GameMasterViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		18E844A51AF8DE0F002A4090 /* Model 4.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Model 4.xcdatamodel"; sourceTree = "<group>"; };
+		18EE148E1B0206570004788F /* ViewLoaderHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewLoaderHelper.swift; sourceTree = "<group>"; };
+		18EE14931B0208230004788F /* UIColor+Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Theme.swift"; sourceTree = "<group>"; };
+		18EE14961B020D5F0004788F /* TutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
+		18EE14981B020D7A0004788F /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		18EE149B1B02198C0004788F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		18EE149C1B0226540004788F /* TutorialItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialItemViewController.swift; sourceTree = "<group>"; };
+		18EE149E1B0229220004788F /* TutorialPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialPageViewController.swift; sourceTree = "<group>"; };
 		18FB1F071A77D03300180515 /* v0.4 (5) Clean Data Clinton.Language-App 2015-01-27 21.10.54.483.xcappdata */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "v0.4 (5) Clean Data Clinton.Language-App 2015-01-27 21.10.54.483.xcappdata"; path = "v0.4 (5)/Clean Launch/v0.4 (5) Clean Data Clinton.Language-App 2015-01-27 21.10.54.483.xcappdata"; sourceTree = "<group>"; };
 		3A3B966F93320A9083DCD993 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		7F0AD546944D7C0B76F8BCAE /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -209,8 +217,6 @@
 			isa = PBXGroup;
 			children = (
 				183A41011A8A12A800619D1D /* Core Data */,
-				1880D9811AF7146500433928 /* Constants */,
-				1880D9A01AF73C4D00433928 /* Enums */,
 				18FB1F041A77CAE300180515 /* Test Data */,
 				183A41021A8A12E700619D1D /* LanguageGame.swift */,
 				183799F51AA0A95900514FA1 /* Model.swift */,
@@ -231,34 +237,11 @@
 			name = "Core Data";
 			sourceTree = "<group>";
 		};
-		184DE2191B018BD20083852F /* Settings */ = {
-			isa = PBXGroup;
-			children = (
-				184DE21B1B018C0F0083852F /* Settings.bundle */,
-				184DE21D1B018DC30083852F /* Settings-Watch.bundle */,
-			);
-			name = Settings;
-			sourceTree = "<group>";
-		};
-		1880D9811AF7146500433928 /* Constants */ = {
-			isa = PBXGroup;
-			children = (
-				1880D99B1AF7263800433928 /* Static.swift */,
-				185182A91A735A9500DA20FC /* WikipediaGrammarURL.strings */,
-				18867F021A761F31005F8AD7 /* WikipediaOrthography.strings */,
-				188B2C381A73888A00758929 /* IETFLanguageCode.strings */,
-			);
-			name = Constants;
-			sourceTree = "<group>";
-		};
 		1880D9821AF7148500433928 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				184DE2191B018BD20083852F /* Settings */,
-				1880D9931AF7176C00433928 /* AppDelegate */,
-				1806BD9D1A3CF23E00774709 /* Model */,
-				18CBB59F1AF869EA00E337DB /* Storyboards */,
-				1880D9871AF714AF00433928 /* Menu */,
+				186DFC851A7377810014619F /* Main.storyboard */,
+				18BDCE621A33F6B300C08890 /* MenuViewController.swift */,
 			);
 			name = Core;
 			sourceTree = "<group>";
@@ -277,7 +260,6 @@
 			children = (
 				1880D98E1AF7163000433928 /* View */,
 				1880D98F1AF7163500433928 /* Controller */,
-				1880D9981AF71FB000433928 /* Protocol */,
 			);
 			name = Settings;
 			sourceTree = "<group>";
@@ -293,27 +275,15 @@
 		1880D9861AF714A100433928 /* Game */ = {
 			isa = PBXGroup;
 			children = (
-				1880D99D1AF7350700433928 /* Protocol */,
 				1880D9891AF714DC00433928 /* View */,
 				1880D98A1AF714E100433928 /* Controller */,
+				1880D9851AF7149800433928 /* Grammar */,
+				1880D98B1AF7150F00433928 /* Modes */,
+				1880D9831AF7148B00433928 /* Statistics */,
+				1880D9841AF7149100433928 /* Settings */,
+				1880D98C1AF7153000433928 /* About */,
 			);
 			name = Game;
-			sourceTree = "<group>";
-		};
-		1880D9871AF714AF00433928 /* Menu */ = {
-			isa = PBXGroup;
-			children = (
-				1880D9881AF714B400433928 /* Controller */,
-			);
-			name = Menu;
-			sourceTree = "<group>";
-		};
-		1880D9881AF714B400433928 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				18BDCE621A33F6B300C08890 /* MenuViewController.swift */,
-			);
-			name = Controller;
 			sourceTree = "<group>";
 		};
 		1880D9891AF714DC00433928 /* View */ = {
@@ -393,39 +363,6 @@
 			name = View;
 			sourceTree = "<group>";
 		};
-		1880D9931AF7176C00433928 /* AppDelegate */ = {
-			isa = PBXGroup;
-			children = (
-				1880D9941AF7177A00433928 /* Protocol */,
-				18BD536D1A33053300742D7F /* AppDelegate.swift */,
-			);
-			name = AppDelegate;
-			sourceTree = "<group>";
-		};
-		1880D9941AF7177A00433928 /* Protocol */ = {
-			isa = PBXGroup;
-			children = (
-				1880D9961AF7179300433928 /* CoreDataDelegate.swift */,
-			);
-			name = Protocol;
-			sourceTree = "<group>";
-		};
-		1880D9981AF71FB000433928 /* Protocol */ = {
-			isa = PBXGroup;
-			children = (
-				1880D9991AF71FC200433928 /* SettingsDelegate.swift */,
-			);
-			name = Protocol;
-			sourceTree = "<group>";
-		};
-		1880D99D1AF7350700433928 /* Protocol */ = {
-			isa = PBXGroup;
-			children = (
-				1880D99E1AF7351E00433928 /* GameButtonDataSource.swift */,
-			);
-			name = Protocol;
-			sourceTree = "<group>";
-		};
 		1880D9A01AF73C4D00433928 /* Enums */ = {
 			isa = PBXGroup;
 			children = (
@@ -502,14 +439,13 @@
 		18BD536A1A33053300742D7F /* Language App */ = {
 			isa = PBXGroup;
 			children = (
+				18BD536D1A33053300742D7F /* AppDelegate.swift */,
+				18EE14871B0204030004788F /* First Run */,
+				1806BD9D1A3CF23E00774709 /* Model */,
 				1880D9821AF7148500433928 /* Core */,
 				1880D9861AF714A100433928 /* Game */,
-				1880D9851AF7149800433928 /* Grammar */,
-				1880D98B1AF7150F00433928 /* Modes */,
-				1880D9831AF7148B00433928 /* Statistics */,
-				1880D9841AF7149100433928 /* Settings */,
-				1880D98C1AF7153000433928 /* About */,
 				1880D98D1AF715CA00433928 /* Localization */,
+				18EE14901B02072C0004788F /* Utilities */,
 				18BD536B1A33053300742D7F /* Supporting Files */,
 			);
 			path = "Language App";
@@ -518,12 +454,13 @@
 		18BD536B1A33053300742D7F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				18EE149A1B020FC20004788F /* Strings */,
+				18EE148C1B02054F0004788F /* Data */,
+				184DE21B1B018C0F0083852F /* Settings.bundle */,
+				184DE21D1B018DC30083852F /* Settings-Watch.bundle */,
 				18BD53741A33053300742D7F /* Images.xcassets */,
 				184DE21F1B018DE00083852F /* Language App.entitlements */,
 				18C0F1FA1A456E25007BEE49 /* Info.plist */,
-				18AC1C081A6FD66E00987D5F /* Words.plist */,
-				18867F001A7610C6005F8AD7 /* Alphabet.plist */,
-				185182A71A7358B000DA20FC /* Languages.plist */,
 				18384E491A58F49D006DA713 /* UserDefaults.plist */,
 				18692D411AF7695600EF34C9 /* Bridging-Header.h */,
 			);
@@ -563,13 +500,98 @@
 			name = Controller;
 			sourceTree = "<group>";
 		};
-		18CBB59F1AF869EA00E337DB /* Storyboards */ = {
+		18EE14871B0204030004788F /* First Run */ = {
 			isa = PBXGroup;
 			children = (
-				186DFC851A7377810014619F /* Main.storyboard */,
-				181CCA321AD60DD40075E557 /* SecretStoryboard.storyboard */,
+				18EE14891B02041C0004788F /* Controller */,
+				18EE14881B0204160004788F /* Storyboard */,
 			);
-			name = Storyboards;
+			name = "First Run";
+			sourceTree = "<group>";
+		};
+		18EE14881B0204160004788F /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				181CCA321AD60DD40075E557 /* FirstRun.storyboard */,
+			);
+			name = Storyboard;
+			sourceTree = "<group>";
+		};
+		18EE14891B02041C0004788F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				18EE14961B020D5F0004788F /* TutorialViewController.swift */,
+				18EE149E1B0229220004788F /* TutorialPageViewController.swift */,
+				18EE149C1B0226540004788F /* TutorialItemViewController.swift */,
+				18EE14981B020D7A0004788F /* LoginViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		18EE148C1B02054F0004788F /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				18AC1C081A6FD66E00987D5F /* Words.plist */,
+				18867F001A7610C6005F8AD7 /* Alphabet.plist */,
+				185182A71A7358B000DA20FC /* Languages.plist */,
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
+		18EE148D1B0205DA0004788F /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				18EE148E1B0206570004788F /* ViewLoaderHelper.swift */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+		18EE14901B02072C0004788F /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				1880D99B1AF7263800433928 /* Static.swift */,
+				18EE14951B0208C70004788F /* Protocols */,
+				1880D9A01AF73C4D00433928 /* Enums */,
+				18EE14911B0207D10004788F /* Extensions */,
+				18EE148D1B0205DA0004788F /* Helpers */,
+				18EE14921B0207F10004788F /* Theme */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
+		18EE14911B0207D10004788F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		18EE14921B0207F10004788F /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				18EE14931B0208230004788F /* UIColor+Theme.swift */,
+			);
+			name = Theme;
+			sourceTree = "<group>";
+		};
+		18EE14951B0208C70004788F /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				1880D9961AF7179300433928 /* CoreDataDelegate.swift */,
+				1880D99E1AF7351E00433928 /* GameButtonDataSource.swift */,
+				1880D9991AF71FC200433928 /* SettingsDelegate.swift */,
+			);
+			name = Protocols;
+			sourceTree = "<group>";
+		};
+		18EE149A1B020FC20004788F /* Strings */ = {
+			isa = PBXGroup;
+			children = (
+				185182A91A735A9500DA20FC /* WikipediaGrammarURL.strings */,
+				18867F021A761F31005F8AD7 /* WikipediaOrthography.strings */,
+				188B2C381A73888A00758929 /* IETFLanguageCode.strings */,
+			);
+			name = Strings;
 			sourceTree = "<group>";
 		};
 		18FB1F041A77CAE300180515 /* Test Data */ = {
@@ -770,7 +792,7 @@
 				18867F011A7610C6005F8AD7 /* Alphabet.plist in Resources */,
 				18AC1C091A6FD66E00987D5F /* Words.plist in Resources */,
 				186DFC861A7377810014619F /* Main.storyboard in Resources */,
-				181CCA301AD60DD40075E557 /* SecretStoryboard.storyboard in Resources */,
+				181CCA301AD60DD40075E557 /* FirstRun.storyboard in Resources */,
 				185182A81A7358B000DA20FC /* Languages.plist in Resources */,
 				18867F031A761F31005F8AD7 /* WikipediaOrthography.strings in Resources */,
 				18BD53751A33053300742D7F /* Images.xcassets in Resources */,
@@ -858,12 +880,15 @@
 				184656561A57822D0095442D /* AboutViewController.swift in Sources */,
 				183A41071A8A274E00619D1D /* AlphabetGameViewController.swift in Sources */,
 				18C5EBAA1AF7A6FE004F928D /* StatisticsModel.swift in Sources */,
+				18EE14941B0208230004788F /* UIColor+Theme.swift in Sources */,
 				18032B251A75BBDC0021E6AD /* ModeTableViewCell.swift in Sources */,
 				18E54CDD1A9830EC007E7287 /* GameMasterViewController.swift in Sources */,
 				183799F61AA0A95900514FA1 /* Model.swift in Sources */,
 				18C5EBA61AF79370004F928D /* Localization.swift in Sources */,
+				18EE149F1B0229220004788F /* TutorialPageViewController.swift in Sources */,
 				183799F41AA0A8FD00514FA1 /* Statistics.swift in Sources */,
 				18BD53701A33053300742D7F /* GameViewController.swift in Sources */,
+				18EE148F1B0206570004788F /* ViewLoaderHelper.swift in Sources */,
 				1880D99F1AF7351E00433928 /* GameButtonDataSource.swift in Sources */,
 				18867F051A762031005F8AD7 /* Alphabet.swift in Sources */,
 				1880D9A21AF73F5F00433928 /* GameMode.swift in Sources */,
@@ -877,7 +902,10 @@
 				1880D9971AF7179300433928 /* CoreDataDelegate.swift in Sources */,
 				18C330211A35CF460027A312 /* ModesViewController.swift in Sources */,
 				186D02BE1A75B77500A960D8 /* Language.swift in Sources */,
+				18EE14991B020D7A0004788F /* LoginViewController.swift in Sources */,
+				18EE149D1B0226540004788F /* TutorialItemViewController.swift in Sources */,
 				185541F21A552B45002C3D15 /* GameButton.swift in Sources */,
+				18EE14971B020D5F0004788F /* TutorialViewController.swift in Sources */,
 				18C1F9491A4E3CA500531C44 /* Model.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -911,14 +939,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		181CCA321AD60DD40075E557 /* SecretStoryboard.storyboard */ = {
+		181CCA321AD60DD40075E557 /* FirstRun.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				181CCA311AD60DD40075E557 /* Base */,
-				181CCA361AD60DDE0075E557 /* en */,
-				181CCA381AD60E260075E557 /* it */,
 			);
-			name = SecretStoryboard.storyboard;
+			name = FirstRun.storyboard;
 			sourceTree = "<group>";
 		};
 		189719B21AF9E0C800129D52 /* Interface.storyboard */ = {
@@ -940,9 +966,7 @@
 		18C0F2011A459ED7007BEE49 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				18C0F2001A459ED7007BEE49 /* Base */,
-				18C0F2021A459EE0007BEE49 /* it */,
-				18C0F2031A459EE2007BEE49 /* en */,
+				18EE149B1B02198C0004788F /* en */,
 			);
 			name = Localizable.strings;
 			path = "Language App";

@@ -807,6 +807,7 @@
                         <outlet property="favouriteLanguage" destination="gxu-b4-iuf" id="CQj-aI-GfN"/>
                         <outlet property="favouriteLanguageLabel" destination="gxu-b4-iuf" id="sa5-Si-18x"/>
                         <outlet property="longestStreakLabel" destination="BcW-Jb-eKK" id="hfg-qr-FTd"/>
+                        <outlet property="paragraphTextView" destination="Nse-nJ-oSw" id="kEg-pc-Nub"/>
                         <outlet property="percentageCorrectLabel" destination="cAW-JA-BDw" id="RAj-YA-eFO"/>
                         <outlet property="successfulWordLabel" destination="fZg-Uf-O4A" id="UqZ-eA-D4b"/>
                         <outlet property="unsuccessfulWordLabel" destination="xXH-xD-gMp" id="SCz-ZH-88Z"/>

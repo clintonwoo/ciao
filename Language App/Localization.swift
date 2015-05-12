@@ -36,6 +36,7 @@ enum Localization {
         static let Forward = NSLocalizedString("ciao-game.grammar.Forward", comment: "Forward button to browse forwards in history")
     }
     enum Statistics {
+        static let Paragraph = NSLocalizedString("ciao-game.statistics.Paragraph", comment: "Your statistics for playing Ciao game are recorded here. You may reset them if you wish by pressing 'Reset Stats' at the bottom of this screen.")
         static let MostSuccessfulWord = NSLocalizedString("ciao-game.statistics.Most Successful Word:", comment: "Statistic label showing the number of words the user has attempted")
         static let MostUnsuccessfulWord = NSLocalizedString("ciao-game.statistics.Most Unsuccessful Word:", comment: "Statistic label showing the number of words the user has attempted")
         static let WordsAttempted = NSLocalizedString("ciao-game.statistics.Words Attempted:", comment: "Statistic label showing the number of words the user has attempted")

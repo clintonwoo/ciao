@@ -15,6 +15,8 @@ enum StoryboardName {
 enum StoryboardID {
     static let Login = "Login"
     static let Tutorial = "Tutorial"
+    static let TutorialNavigationVC = "TutorialNavigationViewController"
+    static let TutorialPageVC = "TutorialPageViewController"
 }
 
 enum UserDefaults {
@@ -30,6 +32,12 @@ enum UserDefaults {
     static let WillCacheGrammarPages = "willCacheGrammarPages"
     
     static let FirstRun = "firstRun"
+    static let isUserLoggedIn = "isUserLoggedIn"
+}
+
+enum ImageName {
+    static let TutorialImages = ["Twitter Logo", "LinkedIn Logo", "Twitter Logo", "LinkedIn Logo", "Twitter Logo"]
+    
 }
 
 enum NotificationCenter {

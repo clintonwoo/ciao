@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Alamofire
 import CoreData
 import AFNetworking
 
@@ -25,12 +24,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CoreDataDelegate {
     
     func application(application: UIApplication, willFinishLaunchingWithOptions launchOptions: [NSObject : AnyObject]?) -> Bool {
         
+        // Register User Defaults
+        NSUserDefaults.standardUserDefaults().registerDefaults(NSDictionary(contentsOfFile: NSBundle.mainBundle().pathForResource(ResourceName.UserDefaults.rawValue, ofType: ResourceName.UserDefaults.Type)!)! as [NSObject : AnyObject])
+        
         return true
     }
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-        NSUserDefaults.standardUserDefaults().registerDefaults(NSDictionary(contentsOfFile: NSBundle.mainBundle().pathForResource(ResourceName.UserDefaults.rawValue, ofType: ResourceName.UserDefaults.Type)!)! as [NSObject : AnyObject])
         
         // Register iCloud Key Value storage
         NSNotificationCenter.defaultCenter().addObserver(

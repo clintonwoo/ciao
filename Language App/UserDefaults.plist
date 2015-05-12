@@ -23,6 +23,10 @@
 	<string>Italian</string>
 	<key>gameMode</key>
 	<real>0</real>
+	<key>firstRun</key>
+	<true/>
+	<key>isUserLoggedIn</key>
+	<false/>
 	<key>willCacheGrammarPages</key>
 	<false/>
 	<key>difficulty</key>
