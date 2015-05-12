@@ -18,6 +18,8 @@
 		183A41031A8A12E700619D1D /* LanguageGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183A41021A8A12E700619D1D /* LanguageGame.swift */; };
 		183A41071A8A274E00619D1D /* AlphabetGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183A41061A8A274E00619D1D /* AlphabetGameViewController.swift */; };
 		184656561A57822D0095442D /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184656551A57822D0095442D /* AboutViewController.swift */; };
+		184DE21C1B018C0F0083852F /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 184DE21B1B018C0F0083852F /* Settings.bundle */; };
+		184DE21E1B018DC30083852F /* Settings-Watch.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 184DE21D1B018DC30083852F /* Settings-Watch.bundle */; };
 		185182A81A7358B000DA20FC /* Languages.plist in Resources */ = {isa = PBXBuildFile; fileRef = 185182A71A7358B000DA20FC /* Languages.plist */; };
 		185182AA1A735A9500DA20FC /* WikipediaGrammarURL.strings in Resources */ = {isa = PBXBuildFile; fileRef = 185182A91A735A9500DA20FC /* WikipediaGrammarURL.strings */; };
 		185541F21A552B45002C3D15 /* GameButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185541F11A552B45002C3D15 /* GameButton.swift */; };
@@ -114,6 +116,10 @@
 		183A41021A8A12E700619D1D /* LanguageGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = LanguageGame.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		183A41061A8A274E00619D1D /* AlphabetGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlphabetGameViewController.swift; sourceTree = "<group>"; };
 		184656551A57822D0095442D /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		184DE21B1B018C0F0083852F /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		184DE21D1B018DC30083852F /* Settings-Watch.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = "Settings-Watch.bundle"; sourceTree = "<group>"; };
+		184DE21F1B018DE00083852F /* Language App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Language App.entitlements"; sourceTree = "<group>"; };
+		184DE2201B01909E0083852F /* Language App WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Language App WatchKit Extension.entitlements"; sourceTree = "<group>"; };
 		185182A71A7358B000DA20FC /* Languages.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Languages.plist; sourceTree = "<group>"; };
 		185182A91A735A9500DA20FC /* WikipediaGrammarURL.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = WikipediaGrammarURL.strings; sourceTree = "<group>"; };
 		185541F11A552B45002C3D15 /* GameButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameButton.swift; sourceTree = "<group>"; };
@@ -225,6 +231,15 @@
 			name = "Core Data";
 			sourceTree = "<group>";
 		};
+		184DE2191B018BD20083852F /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				184DE21B1B018C0F0083852F /* Settings.bundle */,
+				184DE21D1B018DC30083852F /* Settings-Watch.bundle */,
+			);
+			name = Settings;
+			sourceTree = "<group>";
+		};
 		1880D9811AF7146500433928 /* Constants */ = {
 			isa = PBXGroup;
 			children = (
@@ -239,6 +254,7 @@
 		1880D9821AF7148500433928 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				184DE2191B018BD20083852F /* Settings */,
 				1880D9931AF7176C00433928 /* AppDelegate */,
 				1806BD9D1A3CF23E00774709 /* Model */,
 				18CBB59F1AF869EA00E337DB /* Storyboards */,
@@ -430,6 +446,7 @@
 		1897199D1AF9E0C800129D52 /* Language App WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				184DE2201B01909E0083852F /* Language App WatchKit Extension.entitlements */,
 				189719A11AF9E0C800129D52 /* InterfaceController.swift */,
 				189719A31AF9E0C800129D52 /* NotificationController.swift */,
 				189719A51AF9E0C800129D52 /* GlanceController.swift */,
@@ -493,6 +510,7 @@
 		18BD536A1A33053300742D7F /* Language App */ = {
 			isa = PBXGroup;
 			children = (
+				184DE21F1B018DE00083852F /* Language App.entitlements */,
 				1880D9821AF7148500433928 /* Core */,
 				1880D9861AF714A100433928 /* Game */,
 				1880D9851AF7149800433928 /* Grammar */,
@@ -676,6 +694,11 @@
 					1897199B1AF9E0C800129D52 = {
 						CreatedOnToolsVersion = 6.3.1;
 						DevelopmentTeam = DCX4D9WH5R;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					189719AA1AF9E0C800129D52 = {
 						CreatedOnToolsVersion = 6.3.1;
@@ -683,6 +706,11 @@
 					18BD53671A33053300742D7F = {
 						CreatedOnToolsVersion = 6.1;
 						DevelopmentTeam = DCX4D9WH5R;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					18BD537C1A33053400742D7F = {
 						CreatedOnToolsVersion = 6.1;
@@ -738,7 +766,9 @@
 				185182AA1A735A9500DA20FC /* WikipediaGrammarURL.strings in Resources */,
 				18C0F1FF1A459ED7007BEE49 /* Localizable.strings in Resources */,
 				188B2C391A73888A00758929 /* IETFLanguageCode.strings in Resources */,
+				184DE21E1B018DC30083852F /* Settings-Watch.bundle in Resources */,
 				18384E4A1A58F49D006DA713 /* UserDefaults.plist in Resources */,
+				184DE21C1B018C0F0083852F /* Settings.bundle in Resources */,
 				18867F011A7610C6005F8AD7 /* Alphabet.plist in Resources */,
 				18AC1C091A6FD66E00987D5F /* Words.plist in Resources */,
 				186DFC861A7377810014619F /* Main.storyboard in Resources */,
@@ -926,6 +956,7 @@
 		189719BA1AF9E0C800129D52 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "Language App WatchKit Extension/Language App WatchKit Extension.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -938,6 +969,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -945,6 +977,7 @@
 		189719BB1AF9E0C800129D52 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "Language App WatchKit Extension/Language App WatchKit Extension.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
@@ -954,6 +987,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
@@ -1080,6 +1114,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = "Language App/Language App.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
@@ -1098,6 +1133,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = "Language App/Language App.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;

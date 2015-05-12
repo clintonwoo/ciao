@@ -667,8 +667,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Words Attempted Placeholder Text: 1700" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t9q-gh-lYA">
-                                <rect key="frame" x="16" y="171" width="314" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Words Attempted Placeholder Text: 1700" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t9q-gh-lYA">
+                                <rect key="frame" x="16" y="171" width="288" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="Zgh-lH-05k"/>
                                 </constraints>
@@ -682,8 +682,8 @@
                                     <rect key="frame" x="26" y="87" width="182" height="17"/>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Most Successful Word Placeholder Text: Ciao" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fZg-Uf-O4A">
-                                <rect key="frame" x="16" y="258" width="349" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Most Successful Word Placeholder Text: Ciao" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fZg-Uf-O4A">
+                                <rect key="frame" x="16" y="258" width="288" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="1hq-KI-Ecf"/>
                                 </constraints>
@@ -694,8 +694,8 @@
                                     <rect key="frame" x="26" y="174" width="217.5" height="17"/>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Most Unsuccessful Word Placeholder Text: Mare" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xXH-xD-gMp">
-                                <rect key="frame" x="16" y="287" width="372" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Most Unsuccessful Word Placeholder Text: Mare" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xXH-xD-gMp">
+                                <rect key="frame" x="16" y="287" width="288" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="Du4-o4-IfF"/>
                                 </constraints>
@@ -706,8 +706,8 @@
                                     <rect key="frame" x="26" y="199" width="240" height="0.0"/>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Percentage Correct Placeholder Text: 67%" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cAW-JA-BDw">
-                                <rect key="frame" x="16" y="200" width="327" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Percentage Correct Placeholder Text: 67%" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cAW-JA-BDw">
+                                <rect key="frame" x="16" y="200" width="288" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="3Zd-vV-Llu"/>
                                 </constraints>
@@ -721,8 +721,8 @@
                                     <rect key="frame" x="26" y="116" width="195" height="0.0"/>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" tag="250" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Favourite Language Placeholder Text: Italian" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gxu-b4-iuf">
-                                <rect key="frame" x="16" y="229" width="339" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" tag="250" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Favourite Language Placeholder Text: Italian" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gxu-b4-iuf">
+                                <rect key="frame" x="16" y="229" width="288" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="xje-e3-hCs"/>
                                 </constraints>
