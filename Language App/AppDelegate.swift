@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import CoreData
+import AFNetworking
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, CoreDataDelegate {
@@ -24,6 +25,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CoreDataDelegate {
         // Override point for customization after application launch.
         NSUserDefaults.standardUserDefaults().registerDefaults(NSDictionary(contentsOfFile: NSBundle.mainBundle().pathForResource(ResourceName.UserDefaults.rawValue, ofType: ResourceName.UserDefaults.Type)!)! as [NSObject : AnyObject])
         
+        // AFNetworking
+        AFNetworkActivityIndicatorManager.sharedManager().enabled = true
+        
+        // Register for Local and Remote notifications
         UIApplication.sharedApplication().applicationIconBadgeNumber = 0
         UIApplication.sharedApplication().setMinimumBackgroundFetchInterval(UIApplicationBackgroundFetchIntervalMinimum)
         UIApplication.sharedApplication().registerUserNotificationSettings(UIUserNotificationSettings(forTypes: UIUserNotificationType.Badge, categories: nil))
@@ -35,6 +40,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CoreDataDelegate {
         let initialViewController = self.window!.rootViewController as! UINavigationController
         let menu = initialViewController.topViewController as! MenuViewController
         menu.coreDataDelegate = self
+        
+        //iCloud container for syncing core data. Do not call this method from your app’s main thread. Because this method might take a nontrivial amount of time to set up iCloud and return the requested URL, you should always call it from a secondary thread. To determine if iCloud is available, especially at launch time, check the value of the NSURLRelationship property instead.
+        //NSFileManager.defaultManager().URLForUbiquityContainerIdentifier(<#containerIdentifier: String?#>)
         
         IMFClient.sharedInstance().initializeWithBackendRoute("https://ciao-game.mybluemix.net", backendGUID: "72a02879-45fc-4c33-a31f-3bc64e528468");
         

@@ -10,7 +10,8 @@
 #define Ciao_Game_Bridging_Header_h
 
 
-//#import <AFNetworking/AFNetworking.h>
+#import <AFNetworking/AFNetworking.h>
+#import <AFNetworking/AFNetworkActivityIndicatorManager.h>
 #import <IMFCore/IMFCore.h>
 
 #endif

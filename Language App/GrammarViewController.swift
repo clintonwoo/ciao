@@ -7,15 +7,18 @@
 //
 
 import UIKit
+import AFNetworking
 
 class GrammarViewController: UIViewController, UIWebViewDelegate {
 
     //MARK: - Outlets
     @IBOutlet weak var webView: UIWebView!
-    @IBOutlet weak var titleView: UIView!
-    @IBOutlet weak var titleSwitch: UISwitch!
+//    @IBOutlet weak var titleView: UIView!
+//    @IBOutlet weak var titleSwitch: UISwitch!
+    @IBOutlet weak var progressView: UIProgressView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
+
     //MARK: - Properties
     let userDefaults = NSUserDefaults.standardUserDefaults()
     lazy var willCacheGrammarPages: Bool = {self.userDefaults.boolForKey(UserDefaults.WillCacheGrammarPages)}()
@@ -30,7 +33,8 @@ class GrammarViewController: UIViewController, UIWebViewDelegate {
     }
     
     deinit {
-        UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+        AFNetworkActivityIndicatorManager.sharedManager().decrementActivityCount()
+//        UIApplication.sharedApplication().networkActivityIndicatorVisible = false
     }
     
     //MARK: - View Controller
@@ -76,7 +80,18 @@ class GrammarViewController: UIViewController, UIWebViewDelegate {
     
     override func viewWillAppear(animated: Bool) {
         if ((urlRequest) != nil){
-            self.webView.loadRequest(urlRequest!)
+//            self.webView.loadRequest(urlRequest!)
+            self.webView.loadRequest(urlRequest!,
+                progress: { (bytesWritten: UInt, totalBytesWritten: Int64, totalBytesExpectedToWrite: Int64) -> Void in
+                    self.progressView.progress = Float(totalBytesWritten/totalBytesExpectedToWrite)
+                    return
+                },
+                success: { (response: NSHTTPURLResponse!, html: String!) -> String! in
+                    return html
+                },
+                failure: { (error: NSError!) -> Void in
+                    println()
+            })
         }
     }
     
@@ -115,13 +130,15 @@ class GrammarViewController: UIViewController, UIWebViewDelegate {
     //MARK: Delegate
     func webViewDidStartLoad(webView: UIWebView) {
         activityIndicator.hidden = false
-        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+        AFNetworkActivityIndicatorManager.sharedManager().incrementActivityCount()
+//        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
         println("Start webpage load.")
     }
     
     func webViewDidFinishLoad(webView: UIWebView) {
         activityIndicator.hidden = true
-        UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+        AFNetworkActivityIndicatorManager.sharedManager().decrementActivityCount()
+//        UIApplication.sharedApplication().networkActivityIndicatorVisible = false
         setForwardBackwardButton(webView.canGoForward, canGoBack: webView.canGoBack)
 //        var frame: CGRect = webView.frame
 //        frame.size.height = 1
