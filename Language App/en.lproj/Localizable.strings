@@ -6,5 +6,72 @@
   Copyright (c) 2014 Clinton D'Annolfo. All rights reserved.
 */
 
-/* Class = "IBUILabel"; text = "Favourite Language: Italian"; ObjectID = "gxu-b4-iuf"; */
-"Favourite Language: Italian mate!" = "Favourite Language: Italian";
+/* EXAMPLES OF USING LOCALISED STRINGS
+ 
+ Localised String:
+ self.favouriteLanguage.text = NSLocalizedString("gxu-b4-iuf.text", comment: "User's favourite language")
+ 
+ Localised string and localised number format:
+ 
+ var numberFormatter: NSNumberFormatter = NSNumberFormatter()
+ numberFormatter.numberStyle = NSNumberFormatterStyle.DecimalStyle
+ var numberString: String = numberFormatter.stringFromNumber(10_000_000)!
+ label.text = String.localizedStringWithFormat(NSLocalizedString("Yesterday you sold %s apps", comment: "Example off the internet"), numberString)
+ 
+ */
+
+// MARK: - Menu
+
+"ciao-game.menu.Play Game" = "Play Game"; // "comment: //"Menu Play Game button";
+"ciao-game.menu.Choose Mode" = "Choose Mode"; // "Menu Choose Mode button";
+"ciao-game.menu.Grammar" = "Grammar"; // "Menu /Italian etc/Grammar button";
+"ciao-game.menu.Statistics" = "Statistics"; // "Menu Statistics button";
+"ciao-game.menu.Settings" = "Settings"; // "Menu Settings button";
+
+// MARK: - Navigation Bar Titles
+
+"ciao-game.title.Modes" = "Modes";
+"ciao-game.title.Statistics" = "Statistics";
+"ciao-game.title.Settings" = "Settings";
+"ciao-game.title.About" = "About";
+
+// MARK: - Modes
+
+
+// MARK: - Game
+
+"ciao-game.game.Sound On" = "Sound On"; // "Button to turn the game sound on";
+"ciao-game.game.Sound Off" = "Sound Off"; // "Button to turn the game sound off";
+
+// MARK: - Grammar
+
+"ciao-game.grammar.Back" = "Back"; // "Back button to browse backwards";
+"ciao-game.grammar.Forward" = "Forward"; // "Forward button to browse forwards in history";
+
+// MARK: - Statistics
+
+"ciao-game.statistics.Paragraph" = "Your statistics for playing Ciao game are recorded here. You may reset them if you wish by pressing 'Reset Stats' at the bottom of this screen.";
+"ciao-game.statistics.Most Successful Word:" = "Most Successful Word:"; // "Statistic label showing the
+"ciao-game.statistics.Most Unsuccessful Word:" = "Most Unsuccessful Word:"; // "Statistic label showing the;
+"ciao-game.statistics.Words Attempted:" = "Words Attempted:"; // "Statistic label showing the number of
+"ciao-game.statistics.Correct Ratio:" = "Correct Ratio:"; // "Statistic label showing user's ratio of
+"ciao-game.statistics.Favourite Language:" = "Favourite Language:"; // "User's favourite language";
+"ciao-game.statistics.Longest Streak:" = "Longest Streak:"; // "Statistic label showing the user's longest;
+
+// MARK: - Settings
+
+"ciao-game.settings.Game Settings" = "Language"; // "Header title in settings";
+"ciao-game.settings.Sound Enabled" = "Sound Enabled"; // "Header title in settings";
+"ciao-game.settings.Language" = "Language"; // "Language setting name in settings";
+"ciao-game.settings.Difficulty" = "Difficulty"; // "Difficulty setting name in settings";
+"ciao-game.settings.Speaking Speed" = "Speaking Speed"; // "Speaking speed setting name in settings";
+"ciao-game.settings.About" = "About"; // "About in settings";
+
+// MARK: Section Headings
+"ciao-game.settings.headers.Game Settings" = "Game Settings"; // "Sound enabled setting name in settings";
+"ciao-game.settings.headers.Sound" = "Sound"; // "Speaking speed setting name in settings";
+"ciao-game.settings.headers.About" = "About"; // "About in settings";
+
+// MARK: - About
+
+"ciao-game.about.About" = "About"; // "Title of the about screen";

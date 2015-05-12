@@ -26,7 +26,7 @@ class ModesViewController: UITableViewController, UITableViewDataSource, UITable
     override func viewDidLoad() {
         super.viewDidLoad()
         setCheckedCell()
-        navigationItem.title = Localization.Modes.Title
+        navigationItem.title = Localization.Title.Modes
         //tableView.insertRowsAtIndexPaths(path, withRowAnimation: UITableViewRowAnimation.Right)
         // Do any additional setup after loading the view, typically from a nib.
     }

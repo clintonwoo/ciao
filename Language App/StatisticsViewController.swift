@@ -40,7 +40,7 @@ class StatisticsViewController: UIViewController {
     //MARK: - View Controller Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = Localization.Statistics.Title
+        navigationItem.title = Localization.Title.Statistics
         loadStatistics()
         // Do any additional setup after loading the view, typically from a nib.
     }

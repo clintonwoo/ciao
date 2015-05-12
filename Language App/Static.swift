@@ -8,6 +8,15 @@
 
 import Foundation
 
+enum StoryboardName {
+    static let FirstRun = "FirstRun"
+}
+
+enum StoryboardID {
+    static let Login = "Login"
+    static let Tutorial = "Tutorial"
+}
+
 enum UserDefaults {
     static let Attempts = "attempts"
     static let CorrectAttempts = "corectAttempts"
@@ -19,6 +28,8 @@ enum UserDefaults {
     static let HasSound = "hasSound"
     static let SpeakingSpeed = "speakingSpeed"
     static let WillCacheGrammarPages = "willCacheGrammarPages"
+    
+    static let FirstRun = "firstRun"
 }
 
 enum NotificationCenter {

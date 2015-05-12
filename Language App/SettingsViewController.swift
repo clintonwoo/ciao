@@ -39,7 +39,7 @@ class SettingsViewController: UITableViewController, UITableViewDelegate, UITabl
     //MARK: - View Controller Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = Localization.Settings.Title
+        navigationItem.title = Localization.Title.Settings
         // Do any additional setup after loading the view, typically from a nib.
     }
 

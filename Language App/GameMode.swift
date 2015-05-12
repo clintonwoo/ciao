@@ -9,6 +9,7 @@
 import Foundation
 
 enum GameMode: Int {
+    
     case IntroMode = 0
     case GrammarMode = 1
     case AlphabetMode = 2
