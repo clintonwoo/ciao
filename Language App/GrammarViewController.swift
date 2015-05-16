@@ -83,10 +83,14 @@ class GrammarViewController: UIViewController, UIWebViewDelegate {
 //            self.webView.loadRequest(urlRequest!)
             self.webView.loadRequest(urlRequest!,
                 progress: { (bytesWritten: UInt, totalBytesWritten: Int64, totalBytesExpectedToWrite: Int64) -> Void in
-                    self.progressView.progress = Float(totalBytesWritten/totalBytesExpectedToWrite)
+//                    self.progressView.hidden = false
+//                    let tbw = Float(totalBytesWritten)
+//                    let tbetw = Float(totalBytesExpectedToWrite)
+//                    self.progressView.setProgress(tbw/tbetw, animated: true)
                     return
                 },
                 success: { (response: NSHTTPURLResponse!, html: String!) -> String! in
+//                    self.progressView.hidden = true
                     return html
                 },
                 failure: { (error: NSError!) -> Void in
@@ -129,16 +133,16 @@ class GrammarViewController: UIViewController, UIWebViewDelegate {
     //MARK: - Web View
     //MARK: Delegate
     func webViewDidStartLoad(webView: UIWebView) {
-        activityIndicator.hidden = false
+        activityIndicator.startAnimating()
+        self.view.bringSubviewToFront(activityIndicator)
         AFNetworkActivityIndicatorManager.sharedManager().incrementActivityCount()
 //        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
         println("Start webpage load.")
     }
     
     func webViewDidFinishLoad(webView: UIWebView) {
-        activityIndicator.hidden = true
+        activityIndicator.stopAnimating()
         AFNetworkActivityIndicatorManager.sharedManager().decrementActivityCount()
-//        UIApplication.sharedApplication().networkActivityIndicatorVisible = false
         setForwardBackwardButton(webView.canGoForward, canGoBack: webView.canGoBack)
 //        var frame: CGRect = webView.frame
 //        frame.size.height = 1
