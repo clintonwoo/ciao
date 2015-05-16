@@ -11,7 +11,6 @@
 		18032B311A75EB000021E6AD /* EnglishWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18032B301A75EB000021E6AD /* EnglishWord.swift */; };
 		18032B331A75EB000021E6AD /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18032B321A75EB000021E6AD /* Word.swift */; };
 		1806BDA51A3D4CFA00774709 /* LanguageSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1806BDA41A3D4CFA00774709 /* LanguageSettingViewController.swift */; };
-		181CCA301AD60DD40075E557 /* FirstRun.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 181CCA321AD60DD40075E557 /* FirstRun.storyboard */; };
 		183799F41AA0A8FD00514FA1 /* Statistics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183799F31AA0A8FD00514FA1 /* Statistics.swift */; };
 		183799F61AA0A95900514FA1 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183799F51AA0A95900514FA1 /* Model.swift */; };
 		18384E4A1A58F49D006DA713 /* UserDefaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18384E491A58F49D006DA713 /* UserDefaults.plist */; };
@@ -27,6 +26,8 @@
 		1869787B1A61FC9D00A496D0 /* GrammarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1869787A1A61FC9D00A496D0 /* GrammarViewController.swift */; };
 		186D02BE1A75B77500A960D8 /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186D02BD1A75B77500A960D8 /* Language.swift */; };
 		186DFC861A7377810014619F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 186DFC851A7377810014619F /* Main.storyboard */; };
+		1874F23E1B076360000ADAD0 /* FirstRun.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1874F23D1B076360000ADAD0 /* FirstRun.storyboard */; };
+		1874F2401B076561000ADAD0 /* ciao-game.app in Resources */ = {isa = PBXBuildFile; fileRef = 189719AB1AF9E0C800129D52 /* ciao-game.app */; };
 		1880D9971AF7179300433928 /* CoreDataDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1880D9961AF7179300433928 /* CoreDataDelegate.swift */; };
 		1880D99A1AF71FC200433928 /* SettingsDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1880D9991AF71FC200433928 /* SettingsDelegate.swift */; };
 		1880D99C1AF7263800433928 /* Static.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1880D99B1AF7263800433928 /* Static.swift */; };
@@ -42,15 +43,14 @@
 		189719A41AF9E0C800129D52 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189719A31AF9E0C800129D52 /* NotificationController.swift */; };
 		189719A61AF9E0C800129D52 /* GlanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189719A51AF9E0C800129D52 /* GlanceController.swift */; };
 		189719A81AF9E0C800129D52 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 189719A71AF9E0C800129D52 /* Images.xcassets */; };
-		189719AC1AF9E0C800129D52 /* Language App WatchKit App.app in Resources */ = {isa = PBXBuildFile; fileRef = 189719AB1AF9E0C800129D52 /* Language App WatchKit App.app */; };
 		189719B41AF9E0C800129D52 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 189719B21AF9E0C800129D52 /* Interface.storyboard */; };
 		189719B61AF9E0C800129D52 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 189719B51AF9E0C800129D52 /* Images.xcassets */; };
-		189719B91AF9E0C800129D52 /* Language App WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 1897199C1AF9E0C800129D52 /* Language App WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		189719B91AF9E0C800129D52 /* ciao-game.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 1897199C1AF9E0C800129D52 /* ciao-game.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		18AC1C091A6FD66E00987D5F /* Words.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18AC1C081A6FD66E00987D5F /* Words.plist */; };
 		18BD536E1A33053300742D7F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BD536D1A33053300742D7F /* AppDelegate.swift */; };
 		18BD53701A33053300742D7F /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BD536F1A33053300742D7F /* GameViewController.swift */; };
 		18BD53751A33053300742D7F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18BD53741A33053300742D7F /* Images.xcassets */; };
-		18BD53841A33053400742D7F /* Language_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BD53831A33053400742D7F /* Language_AppTests.swift */; };
+		18BD53841A33053400742D7F /* ciao-gameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BD53831A33053400742D7F /* ciao-gameTests.swift */; };
 		18BDCE631A33F6B300C08890 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BDCE621A33F6B300C08890 /* MenuViewController.swift */; };
 		18BDCE651A3410C500C08890 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BDCE641A3410C500C08890 /* SettingsViewController.swift */; };
 		18C0F1F71A456225007BEE49 /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C0F1F61A456225007BEE49 /* StatisticsViewController.swift */; };
@@ -100,7 +100,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				189719B91AF9E0C800129D52 /* Language App WatchKit Extension.appex in Embed App Extensions */,
+				189719B91AF9E0C800129D52 /* ciao-game.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -113,7 +113,6 @@
 		18032B301A75EB000021E6AD /* EnglishWord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnglishWord.swift; sourceTree = "<group>"; };
 		18032B321A75EB000021E6AD /* Word.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
 		1806BDA41A3D4CFA00774709 /* LanguageSettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = LanguageSettingViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		181CCA311AD60DD40075E557 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/FirstRun.storyboard; sourceTree = "<group>"; };
 		183799F31AA0A8FD00514FA1 /* Statistics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Statistics.swift; sourceTree = "<group>"; };
 		183799F51AA0A95900514FA1 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = Model.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		18384E491A58F49D006DA713 /* UserDefaults.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = UserDefaults.plist; sourceTree = "<group>"; };
@@ -122,8 +121,8 @@
 		184656551A57822D0095442D /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		184DE21B1B018C0F0083852F /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		184DE21D1B018DC30083852F /* Settings-Watch.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = "Settings-Watch.bundle"; sourceTree = "<group>"; };
-		184DE21F1B018DE00083852F /* Language App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Language App.entitlements"; sourceTree = "<group>"; };
-		184DE2201B01909E0083852F /* Language App WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Language App WatchKit Extension.entitlements"; sourceTree = "<group>"; };
+		184DE21F1B018DE00083852F /* ciao-game.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "ciao-game.entitlements"; sourceTree = "<group>"; };
+		184DE2201B01909E0083852F /* ciao-game WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "ciao-game WatchKit Extension.entitlements"; sourceTree = "<group>"; };
 		185182A71A7358B000DA20FC /* Languages.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Languages.plist; sourceTree = "<group>"; };
 		185182A91A735A9500DA20FC /* WikipediaGrammarURL.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = WikipediaGrammarURL.strings; sourceTree = "<group>"; };
 		185541F11A552B45002C3D15 /* GameButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameButton.swift; sourceTree = "<group>"; };
@@ -132,6 +131,7 @@
 		1869787A1A61FC9D00A496D0 /* GrammarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GrammarViewController.swift; sourceTree = "<group>"; };
 		186D02BD1A75B77500A960D8 /* Language.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
 		186DFC851A7377810014619F /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		1874F23D1B076360000ADAD0 /* FirstRun.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = FirstRun.storyboard; sourceTree = "<group>"; };
 		1880D9961AF7179300433928 /* CoreDataDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataDelegate.swift; sourceTree = "<group>"; };
 		1880D9991AF71FC200433928 /* SettingsDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsDelegate.swift; sourceTree = "<group>"; };
 		1880D99B1AF7263800433928 /* Static.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = Static.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -145,29 +145,29 @@
 		188B2C371A7383CC00758929 /* Model 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Model 2.xcdatamodel"; sourceTree = "<group>"; };
 		188B2C381A73888A00758929 /* IETFLanguageCode.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = IETFLanguageCode.strings; sourceTree = "<group>"; };
 		188CA6061A77C21F009EB2D8 /* Model 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Model 3.xcdatamodel"; sourceTree = "<group>"; };
-		1897199C1AF9E0C800129D52 /* Language App WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Language App WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1897199C1AF9E0C800129D52 /* ciao-game.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "ciao-game.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1897199F1AF9E0C800129D52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		189719A01AF9E0C800129D52 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		189719A11AF9E0C800129D52 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
 		189719A31AF9E0C800129D52 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
 		189719A51AF9E0C800129D52 /* GlanceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlanceController.swift; sourceTree = "<group>"; };
 		189719A71AF9E0C800129D52 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		189719AB1AF9E0C800129D52 /* Language App WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Language App WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		189719AB1AF9E0C800129D52 /* ciao-game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ciao-game.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		189719B11AF9E0C800129D52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		189719B31AF9E0C800129D52 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		189719B51AF9E0C800129D52 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		18AC1C081A6FD66E00987D5F /* Words.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Words.plist; sourceTree = "<group>"; };
-		18BD53681A33053300742D7F /* Language App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Language App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		18BD53681A33053300742D7F /* ciao-game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ciao-game.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		18BD536D1A33053300742D7F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18BD536F1A33053300742D7F /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		18BD53741A33053300742D7F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		18BD537D1A33053400742D7F /* Language AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Language AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		18BD537D1A33053400742D7F /* ciao-game.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ciao-game.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		18BD53821A33053400742D7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		18BD53831A33053400742D7F /* Language_AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language_AppTests.swift; sourceTree = "<group>"; };
+		18BD53831A33053400742D7F /* ciao-gameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ciao-gameTests.swift"; sourceTree = "<group>"; };
+		18BD92051B07565C007BD807 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Base; path = Base.lproj/Info.plist; sourceTree = "<group>"; };
 		18BDCE621A33F6B300C08890 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		18BDCE641A3410C500C08890 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = SettingsViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		18C0F1F61A456225007BEE49 /* StatisticsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = StatisticsViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		18C0F1FC1A457192007BEE49 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = en.lproj/Info.plist; sourceTree = "<group>"; };
 		18C1F9481A4E3CA500531C44 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		18C330201A35CF460027A312 /* ModesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = ModesViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		18C5EBA51AF79370004F928D /* Localization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Localization.swift; sourceTree = "<group>"; };
@@ -372,17 +372,17 @@
 			name = Enums;
 			sourceTree = "<group>";
 		};
-		1897199D1AF9E0C800129D52 /* Language App WatchKit Extension */ = {
+		1897199D1AF9E0C800129D52 /* ciao-game WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
-				184DE2201B01909E0083852F /* Language App WatchKit Extension.entitlements */,
+				184DE2201B01909E0083852F /* ciao-game WatchKit Extension.entitlements */,
 				189719A11AF9E0C800129D52 /* InterfaceController.swift */,
 				189719A31AF9E0C800129D52 /* NotificationController.swift */,
 				189719A51AF9E0C800129D52 /* GlanceController.swift */,
 				189719A71AF9E0C800129D52 /* Images.xcassets */,
 				1897199E1AF9E0C800129D52 /* Supporting Files */,
 			);
-			path = "Language App WatchKit Extension";
+			path = "ciao-game WatchKit Extension";
 			sourceTree = "<group>";
 		};
 		1897199E1AF9E0C800129D52 /* Supporting Files */ = {
@@ -394,14 +394,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		189719AF1AF9E0C800129D52 /* Language App WatchKit App */ = {
+		189719AF1AF9E0C800129D52 /* ciao-game WatchKit App */ = {
 			isa = PBXGroup;
 			children = (
 				189719B21AF9E0C800129D52 /* Interface.storyboard */,
 				189719B51AF9E0C800129D52 /* Images.xcassets */,
 				189719B01AF9E0C800129D52 /* Supporting Files */,
 			);
-			path = "Language App WatchKit App";
+			path = "ciao-game WatchKit App";
 			sourceTree = "<group>";
 		};
 		189719B01AF9E0C800129D52 /* Supporting Files */ = {
@@ -415,10 +415,10 @@
 		18BD535F1A33053300742D7F = {
 			isa = PBXGroup;
 			children = (
-				18BD536A1A33053300742D7F /* Language App */,
-				18BD53801A33053400742D7F /* Language AppTests */,
-				1897199D1AF9E0C800129D52 /* Language App WatchKit Extension */,
-				189719AF1AF9E0C800129D52 /* Language App WatchKit App */,
+				18BD536A1A33053300742D7F /* ciao-game */,
+				18BD53801A33053400742D7F /* ciao-gameTests */,
+				1897199D1AF9E0C800129D52 /* ciao-game WatchKit Extension */,
+				189719AF1AF9E0C800129D52 /* ciao-game WatchKit App */,
 				18BD53691A33053300742D7F /* Products */,
 				7878183428B9A7285C624FC4 /* Pods */,
 				730B2261D1244A3C0DDF4E62 /* Frameworks */,
@@ -428,15 +428,15 @@
 		18BD53691A33053300742D7F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				18BD53681A33053300742D7F /* Language App.app */,
-				18BD537D1A33053400742D7F /* Language AppTests.xctest */,
-				1897199C1AF9E0C800129D52 /* Language App WatchKit Extension.appex */,
-				189719AB1AF9E0C800129D52 /* Language App WatchKit App.app */,
+				18BD53681A33053300742D7F /* ciao-game.app */,
+				18BD537D1A33053400742D7F /* ciao-game.xctest */,
+				1897199C1AF9E0C800129D52 /* ciao-game.appex */,
+				189719AB1AF9E0C800129D52 /* ciao-game.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		18BD536A1A33053300742D7F /* Language App */ = {
+		18BD536A1A33053300742D7F /* ciao-game */ = {
 			isa = PBXGroup;
 			children = (
 				18BD536D1A33053300742D7F /* AppDelegate.swift */,
@@ -448,7 +448,7 @@
 				18EE14901B02072C0004788F /* Utilities */,
 				18BD536B1A33053300742D7F /* Supporting Files */,
 			);
-			path = "Language App";
+			path = "ciao-game";
 			sourceTree = "<group>";
 		};
 		18BD536B1A33053300742D7F /* Supporting Files */ = {
@@ -459,7 +459,7 @@
 				184DE21B1B018C0F0083852F /* Settings.bundle */,
 				184DE21D1B018DC30083852F /* Settings-Watch.bundle */,
 				18BD53741A33053300742D7F /* Images.xcassets */,
-				184DE21F1B018DE00083852F /* Language App.entitlements */,
+				184DE21F1B018DE00083852F /* ciao-game.entitlements */,
 				18C0F1FA1A456E25007BEE49 /* Info.plist */,
 				18384E491A58F49D006DA713 /* UserDefaults.plist */,
 				18692D411AF7695600EF34C9 /* Bridging-Header.h */,
@@ -467,13 +467,13 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		18BD53801A33053400742D7F /* Language AppTests */ = {
+		18BD53801A33053400742D7F /* ciao-gameTests */ = {
 			isa = PBXGroup;
 			children = (
-				18BD53831A33053400742D7F /* Language_AppTests.swift */,
+				18BD53831A33053400742D7F /* ciao-gameTests.swift */,
 				18BD53811A33053400742D7F /* Supporting Files */,
 			);
-			path = "Language AppTests";
+			path = "ciao-gameTests";
 			sourceTree = "<group>";
 		};
 		18BD53811A33053400742D7F /* Supporting Files */ = {
@@ -512,7 +512,7 @@
 		18EE14881B0204160004788F /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
-				181CCA321AD60DD40075E557 /* FirstRun.storyboard */,
+				1874F23D1B076360000ADAD0 /* FirstRun.storyboard */,
 			);
 			name = Storyboard;
 			sourceTree = "<group>";
@@ -638,7 +638,7 @@
 			);
 			name = "Language App WatchKit Extension";
 			productName = "Language App WatchKit Extension";
-			productReference = 1897199C1AF9E0C800129D52 /* Language App WatchKit Extension.appex */;
+			productReference = 1897199C1AF9E0C800129D52 /* ciao-game.appex */;
 			productType = "com.apple.product-type.watchkit-extension";
 		};
 		189719AA1AF9E0C800129D52 /* Language App WatchKit App */ = {
@@ -653,7 +653,7 @@
 			);
 			name = "Language App WatchKit App";
 			productName = "Language App WatchKit App";
-			productReference = 189719AB1AF9E0C800129D52 /* Language App WatchKit App.app */;
+			productReference = 189719AB1AF9E0C800129D52 /* ciao-game.app */;
 			productType = "com.apple.product-type.application.watchapp";
 		};
 		18BD53671A33053300742D7F /* Language App */ = {
@@ -675,7 +675,7 @@
 			);
 			name = "Language App";
 			productName = "Language App";
-			productReference = 18BD53681A33053300742D7F /* Language App.app */;
+			productReference = 18BD53681A33053300742D7F /* ciao-game.app */;
 			productType = "com.apple.product-type.application";
 		};
 		18BD537C1A33053400742D7F /* Language AppTests */ = {
@@ -693,7 +693,7 @@
 			);
 			name = "Language AppTests";
 			productName = "Language AppTests";
-			productReference = 18BD537D1A33053400742D7F /* Language AppTests.xctest */;
+			productReference = 18BD537D1A33053400742D7F /* ciao-game.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -716,6 +716,7 @@
 					};
 					189719AA1AF9E0C800129D52 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = DCX4D9WH5R;
 					};
 					18BD53671A33053300742D7F = {
 						CreatedOnToolsVersion = 6.1;
@@ -738,13 +739,12 @@
 					};
 				};
 			};
-			buildConfigurationList = 18BD53631A33053300742D7F /* Build configuration list for PBXProject "Ciao Game" */;
+			buildConfigurationList = 18BD53631A33053300742D7F /* Build configuration list for PBXProject "ciao-game" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				Base,
-				it,
 				en,
 			);
 			mainGroup = 18BD535F1A33053300742D7F;
@@ -765,8 +765,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1874F2401B076561000ADAD0 /* ciao-game.app in Resources */,
 				189719A81AF9E0C800129D52 /* Images.xcassets in Resources */,
-				189719AC1AF9E0C800129D52 /* Language App WatchKit App.app in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -789,10 +789,10 @@
 				184DE21E1B018DC30083852F /* Settings-Watch.bundle in Resources */,
 				18384E4A1A58F49D006DA713 /* UserDefaults.plist in Resources */,
 				184DE21C1B018C0F0083852F /* Settings.bundle in Resources */,
+				1874F23E1B076360000ADAD0 /* FirstRun.storyboard in Resources */,
 				18867F011A7610C6005F8AD7 /* Alphabet.plist in Resources */,
 				18AC1C091A6FD66E00987D5F /* Words.plist in Resources */,
 				186DFC861A7377810014619F /* Main.storyboard in Resources */,
-				181CCA301AD60DD40075E557 /* FirstRun.storyboard in Resources */,
 				185182A81A7358B000DA20FC /* Languages.plist in Resources */,
 				18867F031A761F31005F8AD7 /* WikipediaOrthography.strings in Resources */,
 				18BD53751A33053300742D7F /* Images.xcassets in Resources */,
@@ -914,7 +914,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18BD53841A33053400742D7F /* Language_AppTests.swift in Sources */,
+				18BD53841A33053400742D7F /* ciao-gameTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -939,14 +939,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		181CCA321AD60DD40075E557 /* FirstRun.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				181CCA311AD60DD40075E557 /* Base */,
-			);
-			name = FirstRun.storyboard;
-			sourceTree = "<group>";
-		};
 		189719B21AF9E0C800129D52 /* Interface.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -958,7 +950,7 @@
 		18C0F1FA1A456E25007BEE49 /* Info.plist */ = {
 			isa = PBXVariantGroup;
 			children = (
-				18C0F1FC1A457192007BEE49 /* en */,
+				18BD92051B07565C007BD807 /* Base */,
 			);
 			name = Info.plist;
 			sourceTree = "<group>";
@@ -969,7 +961,7 @@
 				18EE149B1B02198C0004788F /* en */,
 			);
 			name = Localizable.strings;
-			path = "Language App";
+			path = "ciao-game";
 			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXVariantGroup section */
@@ -978,7 +970,7 @@
 		189719BA1AF9E0C800129D52 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = "Language App WatchKit Extension/Language App WatchKit Extension.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "ciao-game WatchKit Extension/ciao-game WatchKit Extension.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -987,10 +979,10 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "Language App WatchKit Extension/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/ciao-game WatchKit Extension/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_NAME = "${TARGET_NAME}";
+				PRODUCT_NAME = "ciao-game";
 				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 			};
@@ -999,16 +991,16 @@
 		189719BB1AF9E0C800129D52 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = "Language App WatchKit Extension/Language App WatchKit Extension.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "ciao-game WatchKit Extension/ciao-game WatchKit Extension.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Language App WatchKit Extension/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/ciao-game WatchKit Extension/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_NAME = "${TARGET_NAME}";
+				PRODUCT_NAME = "ciao-game";
 				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 			};
@@ -1018,16 +1010,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				IBSC_MODULE = Language_App_WatchKit_Extension;
-				INFOPLIST_FILE = "Language App WatchKit App/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				IBSC_MODULE = "ciao-game_WatchKit_Extension";
+				INFOPLIST_FILE = "ciao-game WatchKit App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				PRODUCT_NAME = "ciao-game";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
 				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
@@ -1038,13 +1033,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_NO_COMMON_BLOCKS = YES;
-				IBSC_MODULE = Language_App_WatchKit_Extension;
-				INFOPLIST_FILE = "Language App WatchKit App/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				IBSC_MODULE = "ciao-game_WatchKit_Extension";
+				INFOPLIST_FILE = "ciao-game WatchKit App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				PRODUCT_NAME = "ciao-game";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
 				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
@@ -1085,9 +1083,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1122,8 +1121,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -1136,14 +1136,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_ENTITLEMENTS = "Language App/Language App.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "$(PRODUCT_NAME)/ciao-game.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
-				INFOPLIST_FILE = "Language App/Info.plist";
+				INFOPLIST_FILE = "ciao-game/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "ciao-game";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(PRODUCT_NAME)/Bridging-Header.h";
 			};
@@ -1155,14 +1155,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_ENTITLEMENTS = "Language App/Language App.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "$(PRODUCT_NAME)/ciao-game.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
-				INFOPLIST_FILE = "Language App/Info.plist";
+				INFOPLIST_FILE = "ciao-game/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "ciao-game";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(PRODUCT_NAME)/Bridging-Header.h";
 			};
@@ -1180,10 +1180,10 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "Language AppTests/Info.plist";
+				INFOPLIST_FILE = "ciao-gameTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Language App.app/Language App";
+				PRODUCT_NAME = "ciao-game";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ciao-game.app/ciao-game";
 			};
 			name = Debug;
 		};
@@ -1195,10 +1195,10 @@
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "Language AppTests/Info.plist";
+				INFOPLIST_FILE = "ciao-gameTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Language App.app/Language App";
+				PRODUCT_NAME = "ciao-game";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ciao-game.app/ciao-game";
 			};
 			name = Release;
 		};
@@ -1223,7 +1223,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		18BD53631A33053300742D7F /* Build configuration list for PBXProject "Ciao Game" */ = {
+		18BD53631A33053300742D7F /* Build configuration list for PBXProject "ciao-game" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				18BD53851A33053400742D7F /* Debug */,

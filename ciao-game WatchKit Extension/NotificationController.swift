@@ -1,6 +1,6 @@
 //
 //  NotificationController.swift
-//  Language App WatchKit Extension
+//  ciao-game WatchKit Extension
 //
 //  Created by Clinton D'Annolfo on 6/05/2015.
 //  Copyright (c) 2015 Clinton D'Annolfo. All rights reserved.

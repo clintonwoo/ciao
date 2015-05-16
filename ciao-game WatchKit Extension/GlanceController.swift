@@ -1,6 +1,6 @@
 //
-//  InterfaceController.swift
-//  Language App WatchKit Extension
+//  GlanceController.swift
+//  ciao-game WatchKit Extension
 //
 //  Created by Clinton D'Annolfo on 6/05/2015.
 //  Copyright (c) 2015 Clinton D'Annolfo. All rights reserved.
@@ -10,7 +10,7 @@ import WatchKit
 import Foundation
 
 
-class InterfaceController: WKInterfaceController {
+class GlanceController: WKInterfaceController {
 
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)

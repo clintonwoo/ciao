@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  Language App
+//  ciao-game
 //
 //  Created by Clinton D'Annolfo on 6/12/2014.
 //  Copyright (c) 2014 Clinton D'Annolfo. All rights reserved.
