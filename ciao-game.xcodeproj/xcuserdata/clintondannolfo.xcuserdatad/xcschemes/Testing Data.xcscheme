@@ -29,7 +29,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "18BD537C1A33053400742D7F"
-               BuildableName = "Language AppTests.xctest"
+               BuildableName = "ciao-gameTests.xctest"
                BlueprintName = "Language AppTests"
                ReferencedContainer = "container:ciao-game.xcodeproj">
             </BuildableReference>
@@ -47,7 +47,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "18BD537C1A33053400742D7F"
-               BuildableName = "Language AppTests.xctest"
+               BuildableName = "ciao-gameTests.xctest"
                BlueprintName = "Language AppTests"
                ReferencedContainer = "container:ciao-game.xcodeproj">
             </BuildableReference>
