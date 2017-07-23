@@ -14,7 +14,7 @@ class LanguageSettingViewController: UITableViewController {
     //MARK: - Properties
     var game: LanguageGame!
     var delegate: SettingsDelegate!
-    var languages = Foundation.UserDefaults.standard.stringArray(forKey: UserDefaults.Languages) as! [String]
+    var languages = Foundation.UserDefaults.standard.stringArray(forKey: UserDefaults.Languages)!
     
     fileprivate enum Cells {
         static let tvcLanguage = "tvcLanguage"
@@ -52,12 +52,12 @@ class LanguageSettingViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath:  IndexPath) -> UITableViewCell {
-        var cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: Cells.tvcLanguage, for: indexPath) 
+        let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: Cells.tvcLanguage, for: indexPath)
         //set the current language with a tick accessory
         if (languages[indexPath.row] == game.language) {
             cell.accessoryType = UITableViewCellAccessoryType.checkmark
         }
-        var detailLabel = cell.viewWithTag(150) as! UILabel
+        let detailLabel = cell.viewWithTag(150) as! UILabel
         detailLabel.text = languages[indexPath.row] as String
         return cell
     }

@@ -67,8 +67,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CoreDataDelegate {
         
         IMFAuthorizationManager.sharedInstance().obtainAuthorizationHeader(completionHandler: {
             (response: IMFResponse?, error: Error?) in
-            print(response)
-            print(error?.localizedDescription)
+            
         })
         
         IMFLogger.captureUncaughtExceptions()
@@ -104,7 +103,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CoreDataDelegate {
             UIApplication.shared.endBackgroundTask(self.backgroundTask)
             self.backgroundTask = UIBackgroundTaskInvalid
         }) // Begin background task that can cancel.
-        DispatchQueue.global(priority: DispatchQueue.GlobalQueuePriority.default).async(execute: {
+        DispatchQueue.global(qos: .default).async(execute: {
             //Save your app state before moving to the background. During low-memory conditions, background apps may be purged from memory to free up space. Suspended apps are purged first, and no notice is given to the app before it is purged. As a result, apps should take advantage of the state preservation mechanism in iOS 6 and later t
             // Do the work associated with the task, preferably in chunks.
             //Do  long running task
@@ -267,14 +266,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CoreDataDelegate {
                 try NSPersistentStoreCoordinator.metadataForPersistentStore(ofType: NSSQLiteStoreType,
                                                                             at:url)
             var destinationModel  = coordinator?.managedObjectModel
-            if (destinationModel?.isConfiguration(withName: "Default", compatibleWithStoreMetadata: sourceMetadata) == nil) {
+            if (destinationModel?.isConfiguration(withName: "Default",
+                                                  compatibleWithStoreMetadata: sourceMetadata) == nil) {
                 //this also returns true if the versions are different but automatic migration can be run
                 
                 // retrieve the store URL
                 //            var storeURL: NSURL = self.managedObjectContext?.persistentStoreCoordinator?.URLForPersistentStore(self.managedObjectContext?.persistentStoreCoordinator?.persistentStores[0] as NSPersistentStore)
                 // lock the current context
-                self.managedObjectContext?.lock()
-                self.managedObjectContext?.reset()//to drop pending changes
+                // self.managedObjectContext?.lock()
+                // self.managedObjectContext?.reset()//to drop pending changes
                 
                 //                for store: NSPersistentStore in coordinator?.persistentStores as [NSPersistentStore] {
                 if FileManager.default.fileExists(atPath: url.path) {
@@ -306,7 +306,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CoreDataDelegate {
                 //                //recreate the store like in the  appDelegate method
                 //                self.managedObjectContext?.persistentStoreCoordinator?.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: storeURL, options: nil, error: error)
                 //                            }
-                self.managedObjectContext?.unlock()
+//                self.managedObjectContext?.unlock()
             }
         } catch {
             print(error)
@@ -385,7 +385,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CoreDataDelegate {
             
             //Nothing happens if automatic migration runs successfully
             return coordinator!
-            return nil
         } catch {
             // Report any error we got.
 //            var dict = [String: AnyObject]()
@@ -419,9 +418,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CoreDataDelegate {
     fileprivate func setupCoreData() {
         //create NSmanagedobjects from a plist file and store in persistent store
 //        var error: NSErrorPointer? = nil
-        var languageDictionary = NSMutableDictionary(contentsOfFile: Bundle.main.path(forResource: ResourceName.Languages.rawValue, ofType: ResourceName.Languages.ResourceFileType)!)!
-        var alphabetDictionary = NSMutableDictionary(contentsOfFile: Bundle.main.path(forResource: ResourceName.Alphabet.rawValue, ofType: ResourceName.Alphabet.ResourceFileType)!)!
-        var languageFetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: Entity.Language)
+        let languageDictionary = NSMutableDictionary(contentsOfFile: Bundle.main.path(forResource: ResourceName.Languages.rawValue, ofType: ResourceName.Languages.ResourceFileType)!)!
+        let alphabetDictionary = NSMutableDictionary(contentsOfFile: Bundle.main.path(forResource: ResourceName.Alphabet.rawValue, ofType: ResourceName.Alphabet.ResourceFileType)!)!
+        let languageFetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: Entity.Language)
         var fetchedLanguageObjects: [Language]
         do {
             fetchedLanguageObjects = try managedObjectContext?.fetch(languageFetchRequest) as! [Language]

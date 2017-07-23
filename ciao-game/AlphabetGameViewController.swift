@@ -72,7 +72,6 @@ class AlphabetGameViewController: GameMasterViewController {
                 difficultyPredicateString = "englishWord.difficulty in {'Easy', 'Medium'}"
             case .hard:
                 difficultyPredicateString = "englishWord.difficulty in {'Easy', 'Medium', 'Hard'}"
-            default: abort()
         }
         switch (game.gameMode) {
         case .alphabetMode:

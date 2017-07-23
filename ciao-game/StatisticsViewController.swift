@@ -55,9 +55,15 @@ class StatisticsViewController: UIViewController {
     func loadStatistics() {
         wordsAttemptedLabel.text = "\(Localization.Statistics.WordsAttempted) \(statisticsModel.attempts)"
         percentageCorrectLabel.text = "\(Localization.Statistics.CorrectRatio) \(ceil(statisticsModel.percentageCorrect))%"
-        favouriteLanguage.text = "\(Localization.Statistics.FavouriteLanguage) \(statisticsModel.favouriteLanguage)"
-        successfulWordLabel.text = "\(Localization.Statistics.MostSuccessfulWord) \(statisticsModel.mostSuccessfulWord)"
-        unsuccessfulWordLabel.text = "\(Localization.Statistics.MostUnsuccessfulWord) \(statisticsModel.mostUnsuccessfulWord)"
+        if ((statisticsModel.favouriteLanguage) != nil) {
+            favouriteLanguage.text = "\(Localization.Statistics.FavouriteLanguage) \(statisticsModel.favouriteLanguage!)"
+        }
+        if statisticsModel.mostSuccessfulWord != nil {
+            successfulWordLabel.text = "\(Localization.Statistics.MostSuccessfulWord) \(statisticsModel.mostSuccessfulWord!)"
+        }
+        if statisticsModel.mostUnsuccessfulWord != nil {
+            unsuccessfulWordLabel.text = "\(Localization.Statistics.MostUnsuccessfulWord) \(statisticsModel.mostUnsuccessfulWord!)"
+        }
         longestStreakLabel.text = "\(Localization.Statistics.LongestStreak) \(statisticsModel.longestStreak)"
     }
     

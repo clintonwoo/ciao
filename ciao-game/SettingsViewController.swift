@@ -196,12 +196,12 @@ class SettingsViewController: UITableViewController , SettingsDelegate {
 //        if self.managedObjectContext != nil {
             switch (segue.identifier!) {
                 case SegueID.ShowLanguage.rawValue:
-                    var destinationViewController = segue.destination as! LanguageSettingViewController
+                    let destinationViewController = segue.destination as! LanguageSettingViewController
                     destinationViewController.delegate = self
                     destinationViewController.game = game
                     print("Segue to \(destinationViewController.description)")
                 default:
-                    print("prepareForSegue: Unidentified segue on \(segue.identifier)")
+                    print("prepareForSegue: Unidentified segue on \(String(describing: segue.identifier))")
             }
 //        }
     }
