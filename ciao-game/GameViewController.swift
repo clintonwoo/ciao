@@ -20,7 +20,7 @@ class GameViewController: GameMasterViewController, GameButtonDataSource {
     @IBOutlet weak var gameButton4: GameButton!
     
     //MARK: - Properties
-    var wordNumbers: [Int] = [0,0,0,0]
+    var wordIndexes: [Int] = [0,0,0,0]
     var firstAttempt = true
     
     //MARK: - Initialisers
@@ -39,22 +39,23 @@ class GameViewController: GameMasterViewController, GameButtonDataSource {
     internal func refreshGame () {
         var index = 0
         repeat {
-            wordNumbers[index] = Int(arc4random_uniform(UInt32(game.foreignWords.count)))
+            wordIndexes[index] = Int(arc4random_uniform(UInt32(game.foreignWords.count)))
             if (index == 0) {
                 index += 1
-            } else if (!wordNumbers.contains(wordNumbers[index])) {
+            } else if (wordIndexes.contains(wordIndexes[index])) {
                 index += 1
             }
+             print("refreshgame")
         } while (index < 4)
         let correctButtonIndex = Int(arc4random_uniform(4))
         for gameButton in gameButtonCollection {
             if gameButton.gameButtonIndex == correctButtonIndex {
                 gameButton.correct = true
-                gameButton.setTitle(game.foreignWords[wordNumbers[gameButton.gameButtonIndex]].englishWord.word, for: UIControlState())
-                wordLabel.text = game.foreignWords[wordNumbers[gameButton.gameButtonIndex]].word
+                gameButton.setTitle(game.foreignWords[wordIndexes[gameButton.gameButtonIndex]].englishWord.word, for: UIControlState())
+                wordLabel.text = game.foreignWords[wordIndexes[gameButton.gameButtonIndex]].word
             } else {
                 gameButton.correct = false
-                gameButton.setTitle(game.foreignWords[wordNumbers[gameButton.gameButtonIndex]].englishWord.word, for: UIControlState())
+                gameButton.setTitle(game.foreignWords[wordIndexes[gameButton.gameButtonIndex]].englishWord.word, for: UIControlState())
             }
             UIView.animate(withDuration: 0.25, animations: {gameButton.alpha = 1})
         }
@@ -71,7 +72,7 @@ class GameViewController: GameMasterViewController, GameButtonDataSource {
         //create a new NSNumber to increment managed objects
         game.currentLanguageRecord?.attempts = NSNumber(value: (game.currentLanguageRecord?.attempts.int32Value)! + 1 as Int32)
         if !firstAttempt {
-            game.foreignWords[wordNumbers[sender.gameButtonIndex]].attempts = NSNumber(value: game.foreignWords[wordNumbers[sender.gameButtonIndex]].attempts.int32Value + 1 as Int32)
+            game.foreignWords[wordIndexes[sender.gameButtonIndex]].attempts = NSNumber(value: game.foreignWords[wordIndexes[sender.gameButtonIndex]].attempts.int32Value + 1 as Int32)
         }
         if (sender.correct) {
             // Attributed strings instead of normal title
@@ -81,15 +82,16 @@ class GameViewController: GameMasterViewController, GameButtonDataSource {
                 sayWord(wordLabel.text!, localWord: sender.currentTitle!)
             }
             if !firstAttempt {
-                game.foreignWords[wordNumbers[sender.gameButtonIndex]].correctAttempts = NSNumber(value: game.foreignWords[wordNumbers[sender.gameButtonIndex]].correctAttempts.int32Value + 1 as Int32)
+                game.foreignWords[wordIndexes[sender.gameButtonIndex]].correctAttempts = NSNumber(value: game.foreignWords[wordIndexes[sender.gameButtonIndex]].correctAttempts.int32Value + 1 as Int32)
             }
             game.currentStreak += 1
             game.correctAttempts += 1
             game.saveLongestStreak()
             refreshGame()
+            print("clickGameButton")
         } else {
             UIView.animate(withDuration: 0.25, animations: {sender.alpha = 0.25})
-            game.foreignWords[wordNumbers[sender.gameButtonIndex]].incorrectAttempts = NSNumber(value: game.foreignWords[wordNumbers[sender.gameButtonIndex]].incorrectAttempts.int32Value + 1 as Int32)
+            game.foreignWords[wordIndexes[sender.gameButtonIndex]].incorrectAttempts = NSNumber(value: game.foreignWords[wordIndexes[sender.gameButtonIndex]].incorrectAttempts.int32Value + 1 as Int32)
             game.saveLongestStreak()
             game.currentStreak = 0
             setStreakText()

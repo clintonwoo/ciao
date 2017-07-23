@@ -75,8 +75,6 @@ class LanguageGame: Model {
     
     //MARK: - Data Model
     internal func fetchData() {
-        // In swift, pass by reference (NSErrorPointer) by using &.
-//        var error: NSError?
         var difficultyPredicateString: String = ""
         switch (difficulty) {
         case .easy:

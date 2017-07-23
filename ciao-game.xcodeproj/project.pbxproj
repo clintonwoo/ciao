@@ -276,7 +276,7 @@
 			isa = PBXGroup;
 			children = (
 				1880D9891AF714DC00433928 /* View */,
-				1880D98A1AF714E100433928 /* Controller */,
+				1880D98A1AF714E100433928 /* GameViewController */,
 				1880D9851AF7149800433928 /* Grammar */,
 				1880D98B1AF7150F00433928 /* Modes */,
 				1880D9831AF7148B00433928 /* Statistics */,
@@ -294,14 +294,14 @@
 			name = View;
 			sourceTree = "<group>";
 		};
-		1880D98A1AF714E100433928 /* Controller */ = {
+		1880D98A1AF714E100433928 /* GameViewController */ = {
 			isa = PBXGroup;
 			children = (
 				18E54CDC1A9830EC007E7287 /* GameMasterViewController.swift */,
 				18BD536F1A33053300742D7F /* GameViewController.swift */,
 				183A41061A8A274E00619D1D /* AlphabetGameViewController.swift */,
 			);
-			name = Controller;
+			name = GameViewController;
 			sourceTree = "<group>";
 		};
 		1880D98B1AF7150F00433928 /* Modes */ = {

@@ -257,12 +257,61 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CoreDataDelegate {
         }()
     
     lazy var persistentStoreCoordinator: NSPersistentStoreCoordinator? = {
-//        // The persistent store coordinator for the application. This implementation creates and return a coordinator, having added the store for the application to it. This property is optional since there are legitimate error conditions that could cause the creation of the store to fail.
-//        // Create the coordinator and store
-//        var coordinator: NSPersistentStoreCoordinator? = NSPersistentStoreCoordinator(managedObjectModel: self.managedObjectModel!)
-//        let url: URL = self.applicationDocumentsDirectory.appendingPathComponent("Model.sqlite")
-//        var error: NSError? = nil
-//        
+        // The persistent store coordinator for the application. This implementation creates and return a coordinator, having added the store for the application to it. This property is optional since there are legitimate error conditions that could cause the creation of the store to fail.
+        // Create the coordinator and store
+        var coordinator: NSPersistentStoreCoordinator? = NSPersistentStoreCoordinator(managedObjectModel: self.managedObjectModel!)
+        let url: URL = self.applicationDocumentsDirectory.appendingPathComponent("Model.sqlite")
+        
+        do {
+            let sourceMetadata =
+                try NSPersistentStoreCoordinator.metadataForPersistentStore(ofType: NSSQLiteStoreType,
+                                                                            at:url)
+            var destinationModel  = coordinator?.managedObjectModel
+            if (destinationModel?.isConfiguration(withName: "Default", compatibleWithStoreMetadata: sourceMetadata) == nil) {
+                //this also returns true if the versions are different but automatic migration can be run
+                
+                // retrieve the store URL
+                //            var storeURL: NSURL = self.managedObjectContext?.persistentStoreCoordinator?.URLForPersistentStore(self.managedObjectContext?.persistentStoreCoordinator?.persistentStores[0] as NSPersistentStore)
+                // lock the current context
+                self.managedObjectContext?.lock()
+                self.managedObjectContext?.reset()//to drop pending changes
+                
+                //                for store: NSPersistentStore in coordinator?.persistentStores as [NSPersistentStore] {
+                if FileManager.default.fileExists(atPath: url.path) {
+                    do {
+                        try FileManager.default.removeItem(at: url)
+                    } catch {
+                        print(error)
+                    }
+                    print("Removed database at \(url) \(url.path)")
+                }
+                //                    coordinator?.removePersistentStore(store: store, error: error)
+                //                    let pscRemoved: Bool = coordinator?.removePersistentStore(store, error: error) as Bool
+                //                    if {
+                //                        print("Removed persistent store.")
+                //                    } else {
+                //                        print("Removing persistent store failed. \(error.localizedDescription)")
+                //                    }
+                //                   else {
+                //                    print("Application model is compatible with existing application database.")
+                //                }
+                
+                
+                
+                //            //delete the store from the current managedObjectContext
+                //                            if (self.managedObjectContext?.persistentStoreCoordinator?.removePersistentStore(self.managedObjectContext?.persistentStoreCoordinator?.persistentStores.lastObject, error:error))
+                //                            {
+                //                // remove the file containing the data
+                //                NSFileManager.defaultManager.removeItemAtURL(storeURL, error: error)
+                //                //recreate the store like in the  appDelegate method
+                //                self.managedObjectContext?.persistentStoreCoordinator?.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: storeURL, options: nil, error: error)
+                //                            }
+                self.managedObjectContext?.unlock()
+            }
+        } catch {
+            print(error)
+        }
+        
 //        if let sourceMetadata: NSDictionary =
 //            NSPersistentStoreCoordinator.metadataForPersistentStore(ofType: NSSQLiteStoreType,
 //                                                                    at:url) as NSDictionary? {
@@ -308,44 +357,49 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CoreDataDelegate {
 ////                            }
 //                            self.managedObjectContext?.unlock()
 //            }
-//            //that's it !
+            //that's it !
 //        }
-//       
-////            self.managedObjectContext?.reset()
-//////            for store: NSPersistentStore in coordinator?.persistentStores {
-////                if coordinator?.removePersistentStore(coordinator?.persistentStores, error: error) {
-////                    print("Removed persistent store.")
-////                } else {
-////                    print("Removing persistent store failed.")
-////                }
-//////            }
-////        } else {
-////            print("Application model is compatible with existing application database.")
-////        }
-//        
-//        var failureReason = "There was an error creating or loading the application's saved data."
-//        var options = NSDictionary(dictionaryLiteral:
-//            NSNumber(bool: true), NSInferMappingModelAutomaticallyOption,
+       
+//            self.managedObjectContext?.reset()
+////            for store: NSPersistentStore in coordinator?.persistentStores {
+//                if coordinator?.removePersistentStore(coordinator?.persistentStores, error: error) {
+//                    print("Removed persistent store.")
+//                } else {
+//                    print("Removing persistent store failed.")
+//                }
+////            }
+//        } else {
+//            print("Application model is compatible with existing application database.")
+//        }
+        
+        var failureReason = "There was an error creating or loading the application's saved data."
+//        var options = NSDictionary(
+////            NSInferMappingModelAutomaticallyOption,
+//            dictionaryLiteral: true, NSInferMappingModelAutomaticallyOption,
 //            //NSNumber(bool: true), NSInferMappingModelAutomaticallyOption,
-//            NSNumber(bool: true), NSMigratePersistentStoresAutomaticallyOption
+//            NSNumber(value: true), NSMigratePersistentStoresAutomaticallyOption
 //        )
-//        //do lightweight model migration here.
-//        if coordinator!.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: url, options: options as [AnyHashable: Any], error: &error) == nil {
-//            coordinator = nil
-//            // Report any error we got.
+        //do lightweight model migration here.
+        do {
+            try coordinator!.addPersistentStore(ofType: NSSQLiteStoreType, configurationName: nil, at: url, options: nil)
+            
+            //Nothing happens if automatic migration runs successfully
+            return coordinator!
+            return nil
+        } catch {
+            // Report any error we got.
 //            var dict = [String: AnyObject]()
 //            dict[NSLocalizedDescriptionKey] = "Failed to initialize the application's saved data" as AnyObject?
 //            dict[NSLocalizedFailureReasonErrorKey] = failureReason as AnyObject?
 //            dict[NSUnderlyingErrorKey] = error
-//            error = NSError(domain: "YOUR_ERROR_DOMAIN", code: 9999, userInfo: dict)
+//            
+//            var error = NSError(domain: "YOUR_ERROR_DOMAIN", code: 9999, userInfo: dict)
 //            // Replace this with code to handle the error appropriately.
 //            // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-//            NSLog("Unresolved error \(error), \(error!.userInfo)")
-//            abort()
-//        }
-//        //Nothing happens if automatic migration runs successfully
-//        return coordinator!
-        return nil
+//            NSLog("Unresolved error \(String(describing: error)), \(error.userInfo)")
+            print(error)
+            abort()
+        }
         }()
     
     lazy var managedObjectContext: NSManagedObjectContext? = {
@@ -363,61 +417,66 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CoreDataDelegate {
     //MARK: - Core Data setup
     
     fileprivate func setupCoreData() {
-//        //create NSmanagedobjects from a plist file and store in persistent store
-////        var error: NSErrorPointer? = nil
-//        var languageDictionary = NSMutableDictionary(contentsOfFile: Bundle.main.path(forResource: ResourceName.Languages.rawValue, ofType: ResourceName.Languages.ResourceFileType)!)!
-//        var alphabetDictionary = NSMutableDictionary(contentsOfFile: Bundle.main.path(forResource: ResourceName.Alphabet.rawValue, ofType: ResourceName.Alphabet.ResourceFileType)!)!
-//        var languageFetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: Entity.Language)
-//        var fetchedLanguageObjects: [Language]
-//        do {
-//            fetchedLanguageObjects = try managedObjectContext?.fetch(languageFetchRequest) as! [Language]
-//        } catch {
-//            print(error)
-//        }
-//        if fetchedLanguageObjects.count == 0 { //No language records found
-//            for language in languageDictionary { //iterate languages
-//                var newLanguage = NSEntityDescription.insertNewObject(forEntityName: Entity.Language, into: managedObjectContext!) as! Language
-//                newLanguage.name = language.key as! String//value.valueForKey("name") as String
-//                languageDictionary.setObject(newLanguage, forKey:newLanguage.name as NSCopying)
-//                let languageUpperCharacterArray = alphabetDictionary.value(forKeyPath: "\(language.key as! String).uppercase") as! [String] //returns the array of strings
-//                let languageLowerCharacterArray = alphabetDictionary.value(forKeyPath: "\(language.key as! String).lowercase") as! [String]
-//                for (i in 0  ..< languageUpperCharacterArray.count) {
-//                    var newCharacter = NSEntityDescription.insertNewObject(forEntityName: Entity.Alphabet, into: managedObjectContext!) as! Alphabet
-//                    newCharacter.uppercase = languageUpperCharacterArray[i]//value.valueForKey("character") as String
-//                    newCharacter.lowercase = languageLowerCharacterArray[i]
-//                    newCharacter.index = NSNumber(i)
-//                    newCharacter.language = newLanguage
-//                    print("Created alphabet character record: \(newCharacter.index) \(newCharacter.uppercase), \(newCharacter.lowercase)")
-//                }
-//                print("Created Language record: \(newLanguage.name)")
-//            }
-//        }
-//        var fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: Entity.Word)
-//        var fetchedObjects: [Word]
-//        do {
-//            fetchedObjects = try managedObjectContext?.fetch(fetchRequest) as! [Word]
-//        } catch {
-//            print(error)
-//        }
-//        if fetchedObjects.count == 0 { //No word records found
-//            var wordInputArray = NSArray(contentsOfFile: Bundle.main.path(forResource: ResourceName.Words.rawValue, ofType:ResourceName.Words.ResourceFileType)!)!
-//            for i in 0..<wordInputArray.count { //iterate over word records
-//                //create english words
-//                var englishWord = NSEntityDescription.insertNewObject(forEntityName: Entity.EnglishWord, into: managedObjectContext!) as! EnglishWord
-//                englishWord.word = (wordInputArray[i] as AnyObject).value(forKey: "word") as! String
-//                englishWord.difficulty = (wordInputArray[i] as AnyObject).value(forKey: "difficulty") as! String
-//                englishWord.inPhraseMode = (wordInputArray[i] as AnyObject).value(forKey: "inPhraseMode") as! Bool
-//                print("Created English word record: \(englishWord.word), \(englishWord.difficulty)")
-//                for language in Foundation.UserDefaults.standard.stringArray(forKey: UserDefaults.Languages) as! [String] {
-//                    //create foreign words and relate to languages
-//                    var word: Word = NSEntityDescription.insertNewObject(forEntityName: Entity.Word, into: managedObjectContext!) as! Word
-//                    word.word = wordInputArray[i].valueForKey(language) as! String
-//                    word.englishWord = englishWord
-//                    word.language = languageDictionary.valueForKey(language) as! Language
-//                    print("Created Word record: \(word.word)")
-//                }
-//            }
-//        }
+        //create NSmanagedobjects from a plist file and store in persistent store
+//        var error: NSErrorPointer? = nil
+        var languageDictionary = NSMutableDictionary(contentsOfFile: Bundle.main.path(forResource: ResourceName.Languages.rawValue, ofType: ResourceName.Languages.ResourceFileType)!)!
+        var alphabetDictionary = NSMutableDictionary(contentsOfFile: Bundle.main.path(forResource: ResourceName.Alphabet.rawValue, ofType: ResourceName.Alphabet.ResourceFileType)!)!
+        var languageFetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: Entity.Language)
+        var fetchedLanguageObjects: [Language]
+        do {
+            fetchedLanguageObjects = try managedObjectContext?.fetch(languageFetchRequest) as! [Language]
+            if fetchedLanguageObjects.count == 0 { //No language records found
+                for language in languageDictionary { //iterate languages
+                    let newLanguage = NSEntityDescription.insertNewObject(forEntityName: Entity.Language, into: managedObjectContext!) as! Language
+                    newLanguage.name = language.key as! String//value.valueForKey("name") as String
+                    languageDictionary.setObject(newLanguage, forKey:newLanguage.name as NSCopying)
+                    let languageUpperCharacterArray = alphabetDictionary.value(forKeyPath: "\(language.key as! String).uppercase") as! [String] //returns the array of strings
+                    let languageLowerCharacterArray = alphabetDictionary.value(forKeyPath: "\(language.key as! String).lowercase") as! [String]
+                    for i in 0..<languageUpperCharacterArray.count {
+                        let newCharacter = NSEntityDescription.insertNewObject(forEntityName: Entity.Alphabet, into: managedObjectContext!) as! Alphabet
+                        newCharacter.uppercase = languageUpperCharacterArray[i]//value.valueForKey("character") as String
+                        newCharacter.lowercase = languageLowerCharacterArray[i]
+                        //                    newCharacter.index = NSNumber(i)
+                        newCharacter.index = NSNumber(value: i)
+                        newCharacter.language = newLanguage
+                        print("Created alphabet character record: \(newCharacter.index) \(newCharacter.uppercase), \(newCharacter.lowercase)")
+                    }
+                    print("Created Language record: \(newLanguage.name)")
+                }
+            }
+
+        } catch {
+            print(error)
+        }
+                let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: Entity.Word)
+        var fetchedObjects: [Word]
+        do {
+            fetchedObjects = try managedObjectContext?.fetch(fetchRequest) as! [Word]
+            if fetchedObjects.count == 0 { //No word records found
+                var wordInputArray: [Dictionary] = NSArray(contentsOfFile: Bundle.main.path(forResource: ResourceName.Words.rawValue, ofType:ResourceName.Words.ResourceFileType)!)! as! [Dictionary<String, Any>]
+                for i in 0..<wordInputArray.count { //iterate over word records
+                    //create english words
+                    let englishWord = NSEntityDescription.insertNewObject(forEntityName: Entity.EnglishWord, into: managedObjectContext!) as! EnglishWord
+                    englishWord.word = wordInputArray[i]["word"] as! String
+                    englishWord.difficulty = (wordInputArray[i] as AnyObject).value(forKey: "difficulty") as! String
+                    print("inphrasemode")
+                    print(wordInputArray[i]["inPhraseMode"]!)
+                    englishWord.inPhraseMode = wordInputArray[i]["inPhraseMode"] as! NSNumber
+                    print("Created English word record: \(englishWord.word), \(englishWord.difficulty)")
+                    for language in Foundation.UserDefaults.standard.stringArray(forKey: UserDefaults.Languages)! {
+                        //create foreign words and relate to languages
+                        let word: Word = NSEntityDescription.insertNewObject(forEntityName: Entity.Word, into: managedObjectContext!) as! Word
+                        word.word = wordInputArray[i][language]! as! String
+                        word.englishWord = englishWord
+                        word.language = languageDictionary.value(forKey: language) as! Language
+                        print("Created Word record: \(word.word)")
+                    }
+                }
+            }
+
+        } catch {
+            print(error)
+        }
     }
     
     // MARK: - Core Data Saving support
