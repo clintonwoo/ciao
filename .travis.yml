@@ -4,10 +4,5 @@ osx_image: xcode8.3
 # xcode_scheme: ciao-game
 # xcode_sdk: iphonesimulator10.3
 
-branches:
-	only:
-    - development
-    - master
-
 script:
   - xcodebuild -workspace Ciao\ Game.xcworkspace -scheme ciao-game -sdk iphonesimulator10.3
