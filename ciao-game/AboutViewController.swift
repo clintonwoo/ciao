@@ -25,12 +25,12 @@ class AboutViewController: UIViewController {
     //MARK: - About methods
     //MARK: Target action
     
-    @IBAction func followOnTwitter(sender: UIButton) {
-        UIApplication.sharedApplication().openURL(NSURL(string: "https://twitter.com/ClintonDAnnolfo")!)
+    @IBAction func followOnTwitter(_ sender: UIButton) {
+        UIApplication.shared.openURL(URL(string: "https://twitter.com/ClintonDAnnolfo")!)
     }
     
-    @IBAction func connectOnLinkedIn(sender: UIButton) {
-        UIApplication.sharedApplication().openURL(NSURL(string: "https://au.linkedin.com/in/clintondannolfo")!)
+    @IBAction func connectOnLinkedIn(_ sender: UIButton) {
+        UIApplication.shared.openURL(URL(string: "https://au.linkedin.com/in/clintondannolfo")!)
     }
     
     

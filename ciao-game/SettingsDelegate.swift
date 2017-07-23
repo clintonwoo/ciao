@@ -10,5 +10,5 @@ import Foundation
 import UIKit
 
 protocol SettingsDelegate {
-    func returnToSource(vc: UIViewController, language: String )
+    func returnToSource(_ vc: UIViewController, language: String )
 }

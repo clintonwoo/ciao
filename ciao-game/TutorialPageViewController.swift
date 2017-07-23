@@ -16,7 +16,7 @@ class TutorialPageViewController: TutorialItemViewController {
     
     // MARK: - View Controller Lifecycle
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.imageView.image = UIImage(named: ImageName.TutorialImages[index])
     }

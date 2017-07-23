@@ -9,9 +9,9 @@
 import Foundation
 
 class ViewLoaderHelper {
-    class func loadViewController(fromStoryBoard storyboard: String, withStoryboardId id: String, inBundle bundle: NSBundle?) -> UIViewController {
+    class func loadViewController(fromStoryBoard storyboard: String, withStoryboardId id: String, inBundle bundle: Bundle?) -> UIViewController {
         let storyboard = UIStoryboard(name: storyboard, bundle: bundle)
-        let viewController = storyboard.instantiateViewControllerWithIdentifier(id) as! UIViewController!
-        return viewController
+        let viewController = storyboard.instantiateViewController(withIdentifier: id) as UIViewController!
+        return viewController!
     }
 }

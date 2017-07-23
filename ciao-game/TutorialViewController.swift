@@ -16,7 +16,7 @@ class TutorialViewController: UIPageViewController, UIPageViewControllerDataSour
     
     // MARK: - View Controller Life Cycle
     
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         dataSource = self
         delegate = self
@@ -33,31 +33,31 @@ class TutorialViewController: UIPageViewController, UIPageViewControllerDataSour
         //        self.view.insertSubview(visualEffectView, atIndex: 0)
         
         // Initialise the first view controller
-        setViewControllers([viewControllerForIndex(0)], direction: UIPageViewControllerNavigationDirection.Forward, animated: true, completion: nil)
+        setViewControllers([viewControllerForIndex(0)], direction: UIPageViewControllerNavigationDirection.forward, animated: true, completion: nil)
         
         // Set an appearance for the page control at the bottom
         let pagecontrol = UIPageControl.appearance()
-        pagecontrol.pageIndicatorTintColor = UIColor.grayColor() //UIColor.appGrey1Color()
-        pagecontrol.currentPageIndicatorTintColor = UIColor.blueColor() //UIColor.appBlueColor()
-        pagecontrol.backgroundColor = UIColor.whiteColor()
+        pagecontrol.pageIndicatorTintColor = UIColor.gray //UIColor.appGrey1Color()
+        pagecontrol.currentPageIndicatorTintColor = UIColor.blue //UIColor.appBlueColor()
+        pagecontrol.backgroundColor = UIColor.white
         
         // Set the nav bar to transparent and page view controller background to white
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
-        self.navigationController?.navigationBar.translucent = true
-        self.navigationController?.navigationBar.backgroundColor = UIColor.clearColor()
-        self.navigationController?.view.backgroundColor = UIColor.whiteColor()
+        self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.navigationBar.backgroundColor = UIColor.clear
+        self.navigationController?.view.backgroundColor = UIColor.white
     }
     
     // MARK: - Page View Controller
     
-    func pageViewController(pageViewController: UIPageViewController, willTransitionToViewControllers pendingViewControllers: [AnyObject]) {
+    @objc(pageViewController:willTransitionToViewControllers:) func pageViewController(_ pageViewController: UIPageViewController, willTransitionTo pendingViewControllers: [AnyObject]) {
         // If the user aborts the navigation gesture, the transition doesn’t complete and the view controllers stay the same.
     }
     
     // MARK: - Page View Controller Data Source
     
-    func pageViewController (pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
+    @objc func pageViewController (_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         if let vc = viewController as? TutorialItemViewController {
             if vc.index > 0 {
                 return viewControllerForIndex(vc.index - 1)
@@ -66,8 +66,8 @@ class TutorialViewController: UIPageViewController, UIPageViewControllerDataSour
         return nil
     }
     
-    func pageViewController (pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
-        if NSUserDefaults.standardUserDefaults().boolForKey(UserDefaults.isUserLoggedIn) {
+    func pageViewController (_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
+        if Foundation.UserDefaults.standard.bool(forKey: UserDefaults.isUserLoggedIn) {
             if let vc = viewController as? LoginViewController {
                 if vc.index + 1 < ImageName.TutorialImages.count {
                     return viewControllerForIndex(vc.index + 1)
@@ -84,7 +84,7 @@ class TutorialViewController: UIPageViewController, UIPageViewControllerDataSour
         return nil
     }
     
-    func viewControllerForIndex (index: Int) -> TutorialItemViewController {
+    func viewControllerForIndex (_ index: Int) -> TutorialItemViewController {
         switch index {
         case 0:
             let vc = ViewLoaderHelper.loadViewController(
@@ -104,23 +104,23 @@ class TutorialViewController: UIPageViewController, UIPageViewControllerDataSour
         
     }
     
-    func presentationCountForPageViewController(pageViewController: UIPageViewController) -> Int {
+    func presentationCount(for pageViewController: UIPageViewController) -> Int {
         return ImageName.TutorialImages.count
     }
     
-    func presentationIndexForPageViewController(pageViewController: UIPageViewController) -> Int {
+    func presentationIndex(for pageViewController: UIPageViewController) -> Int {
         // The presentation index for the page view controller. Called whenever setViewControllers is run on the page view controller.
-        if pageViewController.viewControllers.count != 0 {
-            return (pageViewController.viewControllers[0] as! TutorialItemViewController).index
+        if pageViewController.viewControllers?.count != 0 {
+            return (pageViewController.viewControllers![0] as! TutorialItemViewController).index
         }
         return 0
     }
     
     // MARK: - Target Action
     
-    @IBAction func tapDoneButton(sender: UIBarButtonItem) {
-        NSUserDefaults.standardUserDefaults().setBool(false, forKey: UserDefaults.FirstRun)
-        self.navigationController?.dismissViewControllerAnimated(true, completion: nil)
+    @IBAction func tapDoneButton(_ sender: UIBarButtonItem) {
+        Foundation.UserDefaults.standard.set(false, forKey: UserDefaults.FirstRun)
+        self.navigationController?.dismiss(animated: true, completion: nil)
     }
 }
 

@@ -60,21 +60,21 @@ enum ResourceName: String {
     case Languages = "Languages"
     case Alphabet = "Alphabet"
     
-    var Type: String {
+    var ResourceFileType: String {
         switch self {
-        case UserDefaults:
+        case .UserDefaults:
             return "plist"
-        case WikipediaGrammarURL:
+        case .WikipediaGrammarURL:
             return "strings"
-        case WikipediaOrthography:
+        case .WikipediaOrthography:
             return "strings"
-        case IETFLanguageCode:
+        case .IETFLanguageCode:
             return "strings"
-        case Words:
+        case .Words:
             return "plist"
-        case Languages:
+        case .Languages:
             return "plist"
-        case Alphabet:
+        case .Alphabet:
             return "plist"
         }
     }

@@ -11,5 +11,5 @@ import Foundation
 //protocol GameButtonDelegate.. implements target action delegate methods
 //protocol GameButtonDataSource.. implements data source methods or computed properties which fetch data from the model
 protocol GameButtonDataSource: class {
-    func getIntegerData(sender: GameButton) -> Int
+    func getIntegerData(_ sender: GameButton) -> Int
 }

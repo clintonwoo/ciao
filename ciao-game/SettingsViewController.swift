@@ -9,20 +9,20 @@
 import UIKit
 import CoreData
 
-class SettingsViewController: UITableViewController, UITableViewDelegate, UITableViewDataSource, SettingsDelegate {
+class SettingsViewController: UITableViewController , SettingsDelegate {
     
     //MARK: - Properties
     var game: LanguageGame!
     var delegate: SettingsDelegate!
 
-    private enum DifficultyIndex: Int {
+    fileprivate enum DifficultyIndex: Int {
         //maps the difficulty to the segment in the segmented control
-            case Easy = 0
-            case Medium = 1
-            case Hard = 2
+            case easy = 0
+            case medium = 1
+            case hard = 2
     }
     
-    private enum Cell {
+    fileprivate enum Cell {
         static let tvcLanguage = "tvcLanguage"
         static let tvcSegmented = "tvcSegmented"
         static let tvcSwitch = "tvcSwitch"
@@ -30,7 +30,7 @@ class SettingsViewController: UITableViewController, UITableViewDelegate, UITabl
         static let tvcAbout = "tvcAbout"
     }
     
-    private enum SegueID: String {
+    fileprivate enum SegueID: String {
         case ShowLanguage = "Show Language"
     }
 
@@ -43,7 +43,7 @@ class SettingsViewController: UITableViewController, UITableViewDelegate, UITabl
         // Do any additional setup after loading the view, typically from a nib.
     }
 
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setLanguageLabel(game.language)
     }
@@ -53,7 +53,7 @@ class SettingsViewController: UITableViewController, UITableViewDelegate, UITabl
         // Dispose of any resources that can be recreated.
     }
 
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         if ((delegate) != nil){
             self.delegate?.returnToSource(self, language: game.language)
         }
@@ -61,18 +61,18 @@ class SettingsViewController: UITableViewController, UITableViewDelegate, UITabl
 
     //MARK: - Data Source Delegate
     //Functions only required for dynamically loaded tables
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         return 3
     }
     
-    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         let headerTitles = [Localization.Settings.Headers.GameSettings,
             Localization.Settings.Headers.Sound,
             Localization.Settings.Headers.About]
         return headerTitles[section]
     }
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection: Int) -> Int {
         switch (numberOfRowsInSection) {
             case 0: return 2
             case 1: return 2
@@ -81,26 +81,26 @@ class SettingsViewController: UITableViewController, UITableViewDelegate, UITabl
         }
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath:  NSIndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath:  IndexPath) -> UITableViewCell {
         switch (indexPath.section) {
             case 0:
                 switch (indexPath.row) {
                     case 0:
-                        let cell = tableView.dequeueReusableCellWithIdentifier(Cell.tvcLanguage, forIndexPath: indexPath) as! UITableViewCell
+                        let cell = tableView.dequeueReusableCell(withIdentifier: Cell.tvcLanguage, for: indexPath) 
                         (cell.viewWithTag(100) as! UILabel).text = Localization.Settings.Language
                         (cell.viewWithTag(200) as! UILabel).text = game.language
                         return cell
                     case 1:
-                        let cell = tableView.dequeueReusableCellWithIdentifier(Cell.tvcSegmented, forIndexPath: indexPath) as! UITableViewCell
+                        let cell = tableView.dequeueReusableCell(withIdentifier: Cell.tvcSegmented, for: indexPath) 
                         (cell.viewWithTag(101) as! UILabel).text = Localization.Settings.Difficulty
                         let segmentedControl = cell.viewWithTag(201) as! UISegmentedControl
                         switch (game.difficulty) {
-                            case .Easy:
-                                segmentedControl.selectedSegmentIndex = DifficultyIndex.Easy.rawValue
-                            case .Medium:
-                                segmentedControl.selectedSegmentIndex = DifficultyIndex.Medium.rawValue
-                            case .Hard:
-                                segmentedControl.selectedSegmentIndex = DifficultyIndex.Hard.rawValue
+                            case .easy:
+                                segmentedControl.selectedSegmentIndex = DifficultyIndex.easy.rawValue
+                            case .medium:
+                                segmentedControl.selectedSegmentIndex = DifficultyIndex.medium.rawValue
+                            case .hard:
+                                segmentedControl.selectedSegmentIndex = DifficultyIndex.hard.rawValue
                             default:
                                 break
                         }
@@ -113,95 +113,95 @@ class SettingsViewController: UITableViewController, UITableViewDelegate, UITabl
 //                        label.text = NSLocalizedString("Use Latin-Based Alphabet", comment: "The label for the setting to always use Latin characters instead of language native alphabet")
 //                        return cell
                     default:
-                        let cell = tableView.dequeueReusableCellWithIdentifier(Cell.tvcSegmented, forIndexPath: indexPath) as! UITableViewCell
-                        println("tableView:cellForRowAtIndexPath: row switch case defaulted")
+                        let cell = tableView.dequeueReusableCell(withIdentifier: Cell.tvcSegmented, for: indexPath) 
+                        print("tableView:cellForRowAtIndexPath: row switch case defaulted")
                     return cell
                 }
             case 1:
                 switch (indexPath.row) {
                     case 0:
-                        let cell = tableView.dequeueReusableCellWithIdentifier(Cell.tvcSwitch, forIndexPath: indexPath) as! UITableViewCell
+                        let cell = tableView.dequeueReusableCell(withIdentifier: Cell.tvcSwitch, for: indexPath) 
                         (cell.viewWithTag(102) as! UILabel).text = Localization.Settings.SoundEnabled
-                        (cell.viewWithTag(202) as! UISwitch).on = NSUserDefaults.standardUserDefaults().boolForKey(UserDefaults.HasSound)
+                        (cell.viewWithTag(202) as! UISwitch).isOn = Foundation.UserDefaults.standard.bool(forKey: UserDefaults.HasSound)
                         return cell
                     case 1:
-                        let cell = tableView.dequeueReusableCellWithIdentifier(Cell.tvcSlider, forIndexPath: indexPath) as! UITableViewCell
+                        let cell = tableView.dequeueReusableCell(withIdentifier: Cell.tvcSlider, for: indexPath) 
                         (cell.viewWithTag(103) as! UILabel).text = Localization.Settings.SpeakingSpeed
                         (cell.viewWithTag(203) as! UISlider).value = game.speakingSpeed
                         return cell
                     default:
-                        let cell = tableView.dequeueReusableCellWithIdentifier(Cell.tvcSwitch, forIndexPath: indexPath) as! UITableViewCell
-                        println("tableView:cellForRowAtIndexPath: row switch case defaulted")
+                        let cell = tableView.dequeueReusableCell(withIdentifier: Cell.tvcSwitch, for: indexPath) 
+                        print("tableView:cellForRowAtIndexPath: row switch case defaulted")
                         return cell
                 }
             case 2:
                 switch (indexPath.row) {
                     case 0:
-                        let cell = tableView.dequeueReusableCellWithIdentifier(Cell.tvcAbout, forIndexPath: indexPath) as! UITableViewCell
+                        let cell = tableView.dequeueReusableCell(withIdentifier: Cell.tvcAbout, for: indexPath) 
 //                        cell.detailTextLabel?.text = NSBundle.mainBundle().objectForInfoDictionaryKey(kCFBundleVersionKey as String) as? String
-                        let version = NSBundle.mainBundle().objectForInfoDictionaryKey("CFBundleShortVersionString") as! String
-                        let build = NSBundle.mainBundle().objectForInfoDictionaryKey(kCFBundleVersionKey as String) as! String
+                        let version = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as! String
+                        let build = Bundle.main.object(forInfoDictionaryKey: kCFBundleVersionKey as String) as! String
                         cell.textLabel?.text = Localization.Settings.About
                         cell.detailTextLabel?.text = "v\(version)" //(\(build)) "
                         return cell
                     default:
-                        let cell = tableView.dequeueReusableCellWithIdentifier(Cell.tvcSwitch, forIndexPath: indexPath) as! UITableViewCell
-                        println("tableView:cellForRowAtIndexPath: section 3 row switch case defaulted")
+                        let cell = tableView.dequeueReusableCell(withIdentifier: Cell.tvcSwitch, for: indexPath) 
+                        print("tableView:cellForRowAtIndexPath: section 3 row switch case defaulted")
                         return cell
                 }
             default:
-                let cell = tableView.dequeueReusableCellWithIdentifier(Cell.tvcLanguage, forIndexPath: indexPath) as! UITableViewCell
-                println("tableView:cellForRowAtIndexPath: section switch case defaulted")
+                let cell = tableView.dequeueReusableCell(withIdentifier: Cell.tvcLanguage, for: indexPath) 
+                print("tableView:cellForRowAtIndexPath: section switch case defaulted")
                 return cell
         }
     }
     
     //MARK: - Settings methods
-    private func setLanguageLabel (language: String) {
-        let languageCellIndexPath: NSIndexPath = NSIndexPath(forRow: 0, inSection: 0)
-        let languageCell = self.tableView.cellForRowAtIndexPath(languageCellIndexPath)! as UITableViewCell
+    fileprivate func setLanguageLabel (_ language: String) {
+        let languageCellIndexPath: IndexPath = IndexPath(row: 0, section: 0)
+        let languageCell = self.tableView.cellForRow(at: languageCellIndexPath)! as UITableViewCell
         let languageLabel = languageCell.viewWithTag(200) as! UILabel
         languageLabel.text = language
     }
     
     //MARK: Target action methods
-    @IBAction func switchClicked(sender: UISwitch) {
-        NSUserDefaults.standardUserDefaults().setBool(sender.on, forKey: UserDefaults.HasSound)
+    @IBAction func switchClicked(_ sender: UISwitch) {
+        Foundation.UserDefaults.standard.set(sender.isOn, forKey: UserDefaults.HasSound)
     }
     
-    @IBAction func segmentedClicked(sender: UISegmentedControl) {
+    @IBAction func segmentedClicked(_ sender: UISegmentedControl) {
         switch (sender.selectedSegmentIndex) {
-        case DifficultyIndex.Easy.rawValue:
-            game.difficulty = .Easy
-        case DifficultyIndex.Medium.rawValue:
-            game.difficulty = .Medium
-        case DifficultyIndex.Hard.rawValue:
-            game.difficulty = .Hard
+        case DifficultyIndex.easy.rawValue:
+            game.difficulty = .easy
+        case DifficultyIndex.medium.rawValue:
+            game.difficulty = .medium
+        case DifficultyIndex.hard.rawValue:
+            game.difficulty = .hard
         default:
-            println("Difficulty segmented control clicked but no action taken")
+            print("Difficulty segmented control clicked but no action taken")
         }
     }
     
-    @IBAction func sliderClicked(sender: UISlider) {
+    @IBAction func sliderClicked(_ sender: UISlider) {
         game.speakingSpeed = sender.value
     }
     
     //MARK: Language Setting Delegate
-    func returnToSource(vc: UIViewController, language: String) {
+    func returnToSource(_ vc: UIViewController, language: String) {
         game.language = language
     }
     
     //MARK: - Segue
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 //        if self.managedObjectContext != nil {
             switch (segue.identifier!) {
                 case SegueID.ShowLanguage.rawValue:
-                    var destinationViewController = segue.destinationViewController as! LanguageSettingViewController
+                    var destinationViewController = segue.destination as! LanguageSettingViewController
                     destinationViewController.delegate = self
                     destinationViewController.game = game
-                    println("Segue to \(destinationViewController.description)")
+                    print("Segue to \(destinationViewController.description)")
                 default:
-                    println("prepareForSegue: Unidentified segue on \(segue.identifier)")
+                    print("prepareForSegue: Unidentified segue on \(segue.identifier)")
             }
 //        }
     }

@@ -10,45 +10,45 @@ import Foundation
 
 enum GameMode: Int {
     
-    case IntroMode = 0
-    case GrammarMode = 1
-    case AlphabetMode = 2
-    case PhraseMode = 3
-    case VerbMode = 4
-    case DictationMode = 5
+    case introMode = 0
+    case grammarMode = 1
+    case alphabetMode = 2
+    case phraseMode = 3
+    case verbMode = 4
+    case dictationMode = 5
     
     init () {
-        switch (NSUserDefaults.standardUserDefaults().integerForKey(UserDefaults.GameMode)) {
-            case GameMode.IntroMode.rawValue:
-                self = .IntroMode
-            case GameMode.GrammarMode.rawValue:
-                self = .GrammarMode
-            case GameMode.AlphabetMode.rawValue:
-                self = .AlphabetMode
-            case GameMode.PhraseMode.rawValue:
-                self = .PhraseMode
-            case GameMode.VerbMode.rawValue:
-                self = .VerbMode
-            case GameMode.DictationMode.rawValue:
-                self = .DictationMode
+        switch (Foundation.UserDefaults.standard.integer(forKey: UserDefaults.GameMode)) {
+            case GameMode.introMode.rawValue:
+                self = .introMode
+            case GameMode.grammarMode.rawValue:
+                self = .grammarMode
+            case GameMode.alphabetMode.rawValue:
+                self = .alphabetMode
+            case GameMode.phraseMode.rawValue:
+                self = .phraseMode
+            case GameMode.verbMode.rawValue:
+                self = .verbMode
+            case GameMode.dictationMode.rawValue:
+                self = .dictationMode
             default:
-                self = .IntroMode
+                self = .introMode
         }
     }
     
     func toString () -> String {
         switch self {
-            case .IntroMode:
+            case .introMode:
                 return "Intro Mode"
-            case .GrammarMode:
+            case .grammarMode:
                 return "Grammar Mode"
-            case .AlphabetMode:
+            case .alphabetMode:
                 return "Alphabet Mode"
-            case .PhraseMode:
+            case .phraseMode:
                 return "Phrase Mode"
-            case .VerbMode:
+            case .verbMode:
                 return "Verb Mode"
-            case .DictationMode:
+            case .dictationMode:
                 return "Dictation Mode"
         }
     }

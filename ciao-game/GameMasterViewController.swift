@@ -28,7 +28,7 @@ class GameMasterViewController: UIViewController {
     //MARK: - Initialisers    
     deinit {
         if coreDataDelegate.saveContext() {
-            println("Managed Object Context save successful on \(self) deinit")
+            print("Managed Object Context save successful on \(self) deinit")
         }
     }
     
@@ -38,7 +38,7 @@ class GameMasterViewController: UIViewController {
         game.currentStreak = 0
         game.fetchData()
         // Set sound button text
-        if (NSUserDefaults.standardUserDefaults().boolForKey(UserDefaults.HasSound)) {
+        if (Foundation.UserDefaults.standard.bool(forKey: UserDefaults.HasSound)) {
             soundButton.title = Localization.Game.SoundOn
         } else {
             soundButton.title = Localization.Game.SoundOff
@@ -47,11 +47,11 @@ class GameMasterViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         //
     }
     
-    override func willRotateToInterfaceOrientation(toInterfaceOrientation: UIInterfaceOrientation, duration: NSTimeInterval) {
+    override func willRotate(to toInterfaceOrientation: UIInterfaceOrientation, duration: TimeInterval) {
         //
     }
     
@@ -60,48 +60,48 @@ class GameMasterViewController: UIViewController {
     internal func setButtonCollectionStyle () {
         for gameButton in gameButtonCollection {
             gameButton.layer.cornerRadius = CGFloat(2)
-            gameButton.titleLabel?.textAlignment = NSTextAlignment.Center
+            gameButton.titleLabel?.textAlignment = NSTextAlignment.center
         }
     }
     
     // MARK: - Target Action
     
-    @IBAction func tapWordLabel(sender: UITapGestureRecognizer) {
+    @IBAction func tapWordLabel(_ sender: UITapGestureRecognizer) {
         let label = sender.view as! UILabel
         sayWord(label.text!, localWord: nil)
     }
     
-    @IBAction func tapSoundButton(sender: UIBarButtonItem?) {
-        if (NSUserDefaults.standardUserDefaults().boolForKey(UserDefaults.HasSound)) {
-            NSUserDefaults.standardUserDefaults().setBool(false, forKey: UserDefaults.HasSound)
+    @IBAction func tapSoundButton(_ sender: UIBarButtonItem?) {
+        if (Foundation.UserDefaults.standard.bool(forKey: UserDefaults.HasSound)) {
+            Foundation.UserDefaults.standard.set(false, forKey: UserDefaults.HasSound)
             soundButton.title = Localization.Game.SoundOff
         } else {
-            NSUserDefaults.standardUserDefaults().setBool(true, forKey: UserDefaults.HasSound)
+            Foundation.UserDefaults.standard.set(true, forKey: UserDefaults.HasSound)
             soundButton.title = Localization.Game.SoundOn
         }
     }
     
     //MARK: - Text to speech
-    internal func sayWord (foreignWord: String, localWord: String?) {
-        if NSUserDefaults.standardUserDefaults().boolForKey(UserDefaults.HasSound) {
-            let dataPlistPath: String = NSBundle.mainBundle().pathForResource(ResourceName.IETFLanguageCode.rawValue, ofType:ResourceName.IETFLanguageCode.Type)!
+    internal func sayWord (_ foreignWord: String, localWord: String?) {
+        if Foundation.UserDefaults.standard.bool(forKey: UserDefaults.HasSound) {
+            let dataPlistPath: String = Bundle.main.path(forResource: ResourceName.IETFLanguageCode.rawValue, ofType:ResourceName.IETFLanguageCode.ResourceFileType)!
             let IETFCodeDictionary = NSDictionary(contentsOfFile: dataPlistPath)!
             let synthesizer = AVSpeechSynthesizer()
             if ((localWord) != nil) {
                 let utteranceAnswer = AVSpeechUtterance(string: localWord!)
                 //                var utteranceAnswer = AVSpeechUtterance(string: foreignWord)
                 utteranceAnswer.rate = self.game.speakingSpeed
-                println("Speaking local \(localWord!)")
-                synthesizer.speakUtterance(utteranceAnswer)
+                print("Speaking local \(localWord!)")
+                synthesizer.speak(utteranceAnswer)
             }
             //utteranceAnswer.voice = AVSpeechSynthesisVoice(language: "en-AU")
             let utteranceWord = AVSpeechUtterance(string: foreignWord)
-            if let languageCode = IETFCodeDictionary.valueForKey(NSUserDefaults.standardUserDefaults().stringForKey(UserDefaults.Language)!) as? String {
+            if let languageCode = IETFCodeDictionary.value(forKey: Foundation.UserDefaults.standard.string(forKey: UserDefaults.Language)!) as? String {
                 utteranceWord.voice = AVSpeechSynthesisVoice(language: languageCode)
             }
             utteranceWord.rate = self.game.speakingSpeed
-            println("Speaking foreign \(foreignWord)")
-            synthesizer.speakUtterance(utteranceWord)
+            print("Speaking foreign \(foreignWord)")
+            synthesizer.speak(utteranceWord)
         }
     }
 

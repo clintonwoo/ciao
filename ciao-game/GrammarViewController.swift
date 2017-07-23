@@ -20,20 +20,20 @@ class GrammarViewController: UIViewController, UIWebViewDelegate {
     
 
     //MARK: - Properties
-    let userDefaults = NSUserDefaults.standardUserDefaults()
-    lazy var willCacheGrammarPages: Bool = {self.userDefaults.boolForKey(UserDefaults.WillCacheGrammarPages)}()
-    var urlRequest: NSURLRequest?
+    let userDefaults = Foundation.UserDefaults.standard
+    lazy var willCacheGrammarPages: Bool = {self.userDefaults.bool(forKey: UserDefaults.WillCacheGrammarPages)}()
+    var urlRequest: URLRequest?
     var backButton: UIBarButtonItem?
     var forwardButton: UIBarButtonItem?
     
     //MARK: - Initialisers
     required init(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
+        super.init(coder: aDecoder)!
         //fatalError("init(coder:) has not been implemented")
     }
     
     deinit {
-        AFNetworkActivityIndicatorManager.sharedManager().decrementActivityCount()
+        AFNetworkActivityIndicatorManager.shared().decrementActivityCount()
 //        UIApplication.sharedApplication().networkActivityIndicatorVisible = false
     }
     
@@ -43,8 +43,8 @@ class GrammarViewController: UIViewController, UIWebViewDelegate {
         super.viewDidLoad()
         self.webView.delegate = self
 //        webView.st
-        self.backButton = UIBarButtonItem(title: Localization.Grammar.Back, style: UIBarButtonItemStyle.Plain, target: self.webView, action: "goBack")
-        self.forwardButton = UIBarButtonItem(title: Localization.Grammar.Forward, style: UIBarButtonItemStyle.Plain, target: self.webView, action: "goForward")
+        self.backButton = UIBarButtonItem(title: Localization.Grammar.Back, style: UIBarButtonItemStyle.plain, target: self.webView, action: #selector(UIWebView.goBack))
+        self.forwardButton = UIBarButtonItem(title: Localization.Grammar.Forward, style: UIBarButtonItemStyle.plain, target: self.webView, action: #selector(UIWebView.goForward))
         setForwardBackwardButton(false, canGoBack: false)
 //        addContainerViewController(webCacheViewController)
         //        var toolbar: UIToolbar = UIToolbar(frame: CGRectMake(0, 0, 90, 50))
@@ -78,7 +78,7 @@ class GrammarViewController: UIViewController, UIWebViewDelegate {
         // Do any additional setup after loading the view.
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         if ((urlRequest) != nil){
 //            self.webView.loadRequest(urlRequest!)
             self.webView.loadRequest(urlRequest!,
@@ -89,12 +89,12 @@ class GrammarViewController: UIViewController, UIWebViewDelegate {
 //                    self.progressView.setProgress(tbw/tbetw, animated: true)
                     return
                 },
-                success: { (response: NSHTTPURLResponse!, html: String!) -> String! in
+                success: { (response: HTTPURLResponse!, html: String!) -> String! in
 //                    self.progressView.hidden = true
                     return html
                 },
-                failure: { (error: NSError!) -> Void in
-                    println()
+                failure: { (error: Error?) -> Void in
+                    print()
             })
         }
     }
@@ -105,9 +105,9 @@ class GrammarViewController: UIViewController, UIWebViewDelegate {
     }
     
     //MARK: Container
-    func addContainerViewController (viewController: UIViewController) {
+    func addContainerViewController (_ viewController: UIViewController) {
 //        self.addChildViewController(viewController)
-        println("Running method to add Container view controller")
+        print("Running method to add Container view controller")
         self.addChildViewController(viewController)
         viewController.view.frame = CGRect(x: 100, y: 70, width: 600, height: 200)
         self.view.addSubview(viewController.view)
@@ -116,33 +116,36 @@ class GrammarViewController: UIViewController, UIWebViewDelegate {
 //        label.text = "Cache"
         let cacheSwitch = UISwitch(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
 //        label.addConstraint(NSLayoutConstraint(item: label, attribute: .Trailing, relatedBy: .Equal, toItem: cacheSwitch, attribute: NSLayoutAttribute.Leading, multiplier: 0, constant: 8))
-        label.setTranslatesAutoresizingMaskIntoConstraints(false)
-        cacheSwitch.setTranslatesAutoresizingMaskIntoConstraints(false)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        cacheSwitch.translatesAutoresizingMaskIntoConstraints = false
         let views = ["label":label, "switch":cacheSwitch]
         let metrics = ["padding":8]
         viewController.view.addSubview(cacheSwitch)
         viewController.view.addSubview(label)
-        viewController.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("|-padding-[label]-padding-[switch]->=padding-|", options: nil, metrics: metrics, views: views))
-        viewController.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|-padding-[label]", options: nil, metrics: metrics, views: views))
-        viewController.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|-padding-[switch]", options: nil, metrics: metrics, views: views))
+        NSLayoutConstraint.activate(NSLayoutConstraint.constraints(withVisualFormat: "|-padding-[label]-padding-[switch]->=padding-|", options: NSLayoutFormatOptions.alignAllCenterY, metrics: metrics, views: views))
+        NSLayoutConstraint.activate(NSLayoutConstraint.constraints(withVisualFormat: "V:|-padding-[label]", options: .alignAllCenterY, metrics: metrics, views: views))
+        NSLayoutConstraint.activate(NSLayoutConstraint.constraints(withVisualFormat: "V:|-padding-[switch]", options: .alignAllCenterY, metrics: metrics, views: views))
+//        viewController.view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "|-padding-[label]-padding-[switch]->=padding-|", options: NSLayoutFormatOptions.alignAllCenterY, metrics: metrics, views: views))
+//        viewController.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|-padding-[label]", options: nil, metrics: metrics, views: views))
+//        viewController.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|-padding-[switch]", options: nil, metrics: metrics, views: views))
 //        self.navigationItem.titleView = viewController.view
-        viewController.didMoveToParentViewController(self)
+        viewController.didMove(toParentViewController: self)
         //        self.webCacheViewController = viewController as? WebCacheViewController
     }
     
     //MARK: - Web View
     //MARK: Delegate
-    func webViewDidStartLoad(webView: UIWebView) {
+    func webViewDidStartLoad(_ webView: UIWebView) {
         activityIndicator.startAnimating()
-        self.view.bringSubviewToFront(activityIndicator)
-        AFNetworkActivityIndicatorManager.sharedManager().incrementActivityCount()
+        self.view.bringSubview(toFront: activityIndicator)
+        AFNetworkActivityIndicatorManager.shared().incrementActivityCount()
 //        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
-        println("Start webpage load.")
+        print("Start webpage load.")
     }
     
-    func webViewDidFinishLoad(webView: UIWebView) {
+    func webViewDidFinishLoad(_ webView: UIWebView) {
         activityIndicator.stopAnimating()
-        AFNetworkActivityIndicatorManager.sharedManager().decrementActivityCount()
+        AFNetworkActivityIndicatorManager.shared().decrementActivityCount()
         setForwardBackwardButton(webView.canGoForward, canGoBack: webView.canGoBack)
 //        var frame: CGRect = webView.frame
 //        frame.size.height = 1
@@ -152,21 +155,21 @@ class GrammarViewController: UIViewController, UIWebViewDelegate {
 //        webView.frame = frame
 //        var rect: CGRect = UIScreen.mainScreen().bounds
 //        self.webView.frame = rect
-        //println("size: \(fittingSize.width), \(fittingSize.height)")
-        println("Finished webpage load.")
+        //print("size: \(fittingSize.width), \(fittingSize.height)")
+        print("Finished webpage load.")
     }
     
     //MARK: Methods
-    private func setForwardBackwardButton(canGoForward:Bool, canGoBack:Bool){
+    fileprivate func setForwardBackwardButton(_ canGoForward:Bool, canGoBack:Bool){
         if (canGoBack) {
-            self.backButton?.enabled = true
+            self.backButton?.isEnabled = true
         } else {
-            self.backButton?.enabled = false
+            self.backButton?.isEnabled = false
         }
         if (canGoForward) {
-            self.forwardButton?.enabled = true
+            self.forwardButton?.isEnabled = true
         } else {
-            self.forwardButton?.enabled = false
+            self.forwardButton?.isEnabled = false
         }
     }
   

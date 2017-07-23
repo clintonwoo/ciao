@@ -24,7 +24,7 @@ class MenuViewController: UIViewController, SettingsDelegate {
     var coreDataDelegate: CoreDataDelegate!
     var game: LanguageGame!
     
-    private enum SegueID: String {
+    fileprivate enum SegueID: String {
         case ShowGame = "Show Game"
         case ShowAlphabetGame = "Show Alphabet Game"
         case ShowModes = "Show Modes"
@@ -39,11 +39,11 @@ class MenuViewController: UIViewController, SettingsDelegate {
         super.viewDidLoad()
         
         // Initialise localized button text
-        playGameButton.setTitle(Localization.Menu.PlayGame, forState: .Normal)
-        gameModeButton.setTitle(Localization.Menu.ChooseMode, forState: .Normal)
-        setGrammarButtonTitle(NSUserDefaults.standardUserDefaults().stringForKey(UserDefaults.Language)!)
-        statisticsButton.setTitle(Localization.Menu.Statistics, forState: .Normal)
-        settingsButton.setTitle(Localization.Menu.Settings, forState: .Normal)
+        playGameButton.setTitle(Localization.Menu.PlayGame, for: UIControlState())
+        gameModeButton.setTitle(Localization.Menu.ChooseMode, for: UIControlState())
+        setGrammarButtonTitle(Foundation.UserDefaults.standard.string(forKey: UserDefaults.Language)!)
+        statisticsButton.setTitle(Localization.Menu.Statistics, for: UIControlState())
+        settingsButton.setTitle(Localization.Menu.Settings, for: UIControlState())
         
         // Create LanguageGame model
         game = LanguageGame(delegate: coreDataDelegate)
@@ -52,15 +52,15 @@ class MenuViewController: UIViewController, SettingsDelegate {
         setButtonCollectionStyle()
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         // First Run
-        if NSUserDefaults.standardUserDefaults().boolForKey(UserDefaults.FirstRun) {
+        if Foundation.UserDefaults.standard.bool(forKey: UserDefaults.FirstRun) {
             let vc = ViewLoaderHelper.loadViewController(
                 fromStoryBoard: StoryboardName.FirstRun,
                 withStoryboardId: StoryboardID.TutorialNavigationVC,
                 inBundle: nil) as UIViewController
-            modalPresentationStyle = UIModalPresentationStyle.FormSheet
-            presentViewController(vc, animated: false, completion: nil)
+            modalPresentationStyle = UIModalPresentationStyle.formSheet
+            present(vc, animated: false, completion: nil)
         }
     }
     
@@ -73,8 +73,8 @@ class MenuViewController: UIViewController, SettingsDelegate {
     
     // MARK: - Methods
     
-    func setGrammarButtonTitle (language: String) {
-        grammarButton.setTitle(language + " " + Localization.Menu.Grammar, forState: UIControlState.Normal)
+    func setGrammarButtonTitle (_ language: String) {
+        grammarButton.setTitle(language + " " + Localization.Menu.Grammar, for: UIControlState())
     }
     
     internal func setButtonCollectionStyle () {
@@ -82,61 +82,61 @@ class MenuViewController: UIViewController, SettingsDelegate {
             //CALayer class properties
             button.layer.cornerRadius = CGFloat(6)
             button.layer.borderWidth = CGFloat(1)
-            button.layer.borderColor = button.tintColor?.CGColor
+            button.layer.borderColor = button.tintColor?.cgColor
             //UIColor.blueColor().CGColor
         }
     }
     
     //MARK: - Target action
-    @IBAction func tapPlayGame(sender: UIButton) {
-        if game.gameMode == .AlphabetMode {
-            performSegueWithIdentifier(SegueID.ShowAlphabetGame.rawValue, sender: sender)
+    @IBAction func tapPlayGame(_ sender: UIButton) {
+        if game.gameMode == .alphabetMode {
+            performSegue(withIdentifier: SegueID.ShowAlphabetGame.rawValue, sender: sender)
         } else {
-            performSegueWithIdentifier(SegueID.ShowGame.rawValue, sender: sender)
+            performSegue(withIdentifier: SegueID.ShowGame.rawValue, sender: sender)
         }
     }
     
     //MARK: - Segue
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch (segue.identifier!) {
             case SegueID.ShowGame.rawValue:
-                let destinationViewController = segue.destinationViewController as! GameViewController
+                let destinationViewController = segue.destination as! GameViewController
                 destinationViewController.coreDataDelegate = coreDataDelegate
                 destinationViewController.game = game
             case SegueID.ShowModes.rawValue:
-                let destinationViewController = segue.destinationViewController as! ModesViewController
+                let destinationViewController = segue.destination as! ModesViewController
                 destinationViewController.game = game
             case SegueID.ShowAlphabetGame.rawValue:
-                let destinationViewController = segue.destinationViewController as! AlphabetGameViewController
+                let destinationViewController = segue.destination as! AlphabetGameViewController
                 destinationViewController.game = game
                 destinationViewController.coreDataDelegate = coreDataDelegate
             case SegueID.ShowGrammar.rawValue:
-                let destinationViewController = segue.destinationViewController as! GrammarViewController
-                let dataPlistPath: String = NSBundle.mainBundle().pathForResource(ResourceName.WikipediaGrammarURL.rawValue, ofType:ResourceName.WikipediaGrammarURL.Type)!
+                let destinationViewController = segue.destination as! GrammarViewController
+                let dataPlistPath: String = Bundle.main.path(forResource: ResourceName.WikipediaGrammarURL.rawValue, ofType:ResourceName.WikipediaGrammarURL.ResourceFileType)!
                 let dataPlistDictionary = NSDictionary(contentsOfFile: dataPlistPath)!
-                if let url = NSURL(string: dataPlistDictionary.valueForKey(NSUserDefaults.standardUserDefaults().stringForKey(UserDefaults.Language)!) as! String) {
-                    let urlRequest = NSURLRequest(URL: url)
+                if let url = URL(string: dataPlistDictionary.value(forKey: Foundation.UserDefaults.standard.string(forKey: UserDefaults.Language)!) as! String) {
+                    let urlRequest = URLRequest(url: url)
                     destinationViewController.urlRequest = urlRequest
 //                  destinationViewController.webView?.loadRequest(urlRequest)
             }
             case SegueID.ShowStatistics.rawValue:
-                NSUbiquitousKeyValueStore.defaultStore().synchronize()
-                let destinationViewController = segue.destinationViewController as! StatisticsViewController
+                NSUbiquitousKeyValueStore.default().synchronize()
+                let destinationViewController = segue.destination as! StatisticsViewController
                 destinationViewController.coreDataDelegate = coreDataDelegate
 //                destinationViewController.game = game
             case SegueID.ShowSettings.rawValue:
-                let destinationViewController = segue.destinationViewController as! SettingsViewController
+                let destinationViewController = segue.destination as! SettingsViewController
                 destinationViewController.delegate = self
                 destinationViewController.game = game
         default:
-            println("prepareForSegue: \(segue.identifier!) not found.")
+            print("prepareForSegue: \(segue.identifier!) not found.")
         }
     }
 
     //MARK: - Language Setting Delegate
     
-    func returnToSource(vc: UIViewController, language: String) {
+    func returnToSource(_ vc: UIViewController, language: String) {
         setGrammarButtonTitle(language)
     }
 }

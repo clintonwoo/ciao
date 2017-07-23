@@ -10,30 +10,30 @@ import Foundation
 
 enum Difficulty {
     
-    case Easy
-    case Medium
-    case Hard
+    case easy
+    case medium
+    case hard
     
     init () {
-        switch (NSUserDefaults.standardUserDefaults().stringForKey(UserDefaults.Difficulty)!) {
-        case Difficulty.Easy.toString():
-            self = .Easy
-        case Difficulty.Medium.toString():
-            self = .Medium
-        case Difficulty.Hard.toString():
-            self = .Hard
+        switch (Foundation.UserDefaults.standard.string(forKey: UserDefaults.Difficulty)!) {
+        case Difficulty.easy.toString():
+            self = .easy
+        case Difficulty.medium.toString():
+            self = .medium
+        case Difficulty.hard.toString():
+            self = .hard
         default:
-            self = .Easy
+            self = .easy
         }
     }
     
     func toString () -> String {
         switch self {
-        case Easy:
+        case .easy:
             return "Easy"
-        case Medium:
+        case .medium:
             return "Medium"
-        case Hard:
+        case .hard:
             return "Hard"
         }
     }

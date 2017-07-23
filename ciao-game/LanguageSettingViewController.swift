@@ -9,14 +9,14 @@
 import Foundation
 import UIKit
 
-class LanguageSettingViewController: UITableViewController, UITableViewDelegate {
+class LanguageSettingViewController: UITableViewController {
     
     //MARK: - Properties
     var game: LanguageGame!
     var delegate: SettingsDelegate!
-    var languages = NSUserDefaults.standardUserDefaults().stringArrayForKey(UserDefaults.Languages) as! [String]
+    var languages = Foundation.UserDefaults.standard.stringArray(forKey: UserDefaults.Languages) as! [String]
     
-    private enum Cells {
+    fileprivate enum Cells {
         static let tvcLanguage = "tvcLanguage"
     }
     
@@ -29,33 +29,33 @@ class LanguageSettingViewController: UITableViewController, UITableViewDelegate 
         // Do any additional setup after loading the view, typically from a nib.
     }
     
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         if ((delegate) != nil){
             delegate?.returnToSource(self, language: game.language)
         }
     }
     
     // MARK: - Table View Delegate
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let label = tableView.cellForRowAtIndexPath(indexPath)?.viewWithTag(150) as! UILabel
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let label = tableView.cellForRow(at: indexPath)?.viewWithTag(150) as! UILabel
         game.language = label.text!
-        self.navigationController?.popViewControllerAnimated(true)
+        self.navigationController?.popViewController(animated: true)
     }
     
     // MARK: Table View Data Source
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection: Int) -> Int {
         return languages.count
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath:  NSIndexPath) -> UITableViewCell {
-        var cell: UITableViewCell = tableView.dequeueReusableCellWithIdentifier(Cells.tvcLanguage, forIndexPath: indexPath) as! UITableViewCell
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath:  IndexPath) -> UITableViewCell {
+        var cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: Cells.tvcLanguage, for: indexPath) 
         //set the current language with a tick accessory
         if (languages[indexPath.row] == game.language) {
-            cell.accessoryType = UITableViewCellAccessoryType.Checkmark
+            cell.accessoryType = UITableViewCellAccessoryType.checkmark
         }
         var detailLabel = cell.viewWithTag(150) as! UILabel
         detailLabel.text = languages[indexPath.row] as String

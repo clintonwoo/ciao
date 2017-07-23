@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class ModesViewController: UITableViewController, UITableViewDataSource, UITableViewDelegate {
+class ModesViewController: UITableViewController {
     
     // MARK: - Outlets
     
@@ -42,27 +42,27 @@ class ModesViewController: UITableViewController, UITableViewDataSource, UITable
     //Grammar Mode: Learn the intricacies of Grammar
     //Counting Mode: Learn to count
     //Ultimate Mode: All the words are in it
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let cell = tableView.cellForRowAtIndexPath(indexPath) as! ModeTableViewCell
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath) as! ModeTableViewCell
         switch cell.gameModeIndex {
-        case GameMode.IntroMode.rawValue:
-            game.gameMode = .IntroMode
-        case GameMode.GrammarMode.rawValue:
-            game.gameMode = .GrammarMode
-        case GameMode.AlphabetMode.rawValue:
-            game.gameMode = .AlphabetMode
-        case GameMode.PhraseMode.rawValue:
-            game.gameMode = .PhraseMode
-        case GameMode.VerbMode.rawValue:
-            game.gameMode = .VerbMode
-        case GameMode.DictationMode.rawValue:
-            game.gameMode = .DictationMode
+        case GameMode.introMode.rawValue:
+            game.gameMode = .introMode
+        case GameMode.grammarMode.rawValue:
+            game.gameMode = .grammarMode
+        case GameMode.alphabetMode.rawValue:
+            game.gameMode = .alphabetMode
+        case GameMode.phraseMode.rawValue:
+            game.gameMode = .phraseMode
+        case GameMode.verbMode.rawValue:
+            game.gameMode = .verbMode
+        case GameMode.dictationMode.rawValue:
+            game.gameMode = .dictationMode
         default:
-            game.gameMode = .IntroMode
+            game.gameMode = .introMode
         }
 //        setGameMode(cell?.textLabel?.text as String!)
         setCheckedCell()
-        self.navigationController?.popViewControllerAnimated(true)
+        self.navigationController?.popViewController(animated: true)
     }
     
     //MARK: - Mode methods
@@ -81,19 +81,19 @@ class ModesViewController: UITableViewController, UITableViewDataSource, UITable
 //        case GameMode.DictationMode.toString():
 //            game.gameMode = .DictationMode
 //        default:
-//            println("Error: game mode not found")
+//            print("Error: game mode not found")
 //            game.gameMode = .IntroMode
 //        }
 ////        userDefaults.setValue(mode, forKey: UserDefaults.GameMode)
-////        println("Set game mode to \(mode)")
+////        print("Set game mode to \(mode)")
 //    }
     
     func setCheckedCell () {
         for cell in modeTableViewCells {
             if game.gameMode.rawValue == cell.gameModeIndex {
-                cell.accessoryType = UITableViewCellAccessoryType.Checkmark
+                cell.accessoryType = UITableViewCellAccessoryType.checkmark
             } else {
-                cell.accessoryType = UITableViewCellAccessoryType.None
+                cell.accessoryType = UITableViewCellAccessoryType.none
             }
         }
     }

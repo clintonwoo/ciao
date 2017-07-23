@@ -25,25 +25,38 @@ class StatisticsModel: Statistics {
         }
     }
     
-    var favouriteLanguage: String {
-        var error: NSError?
-        let languageFetchRequest: NSFetchRequest! = coreDataDelegate.managedObjectModel?.fetchRequestTemplateForName("favouriteLanguage")
-        let languages = coreDataDelegate.managedObjectContext?.executeFetchRequest(languageFetchRequest, error: &error) as! [Language]
-        return languages[0].attempts == 0 ? "" : languages[0].name
+    var favouriteLanguage: String? {
+        
+        let languageFetchRequest: NSFetchRequest! = coreDataDelegate.managedObjectModel?.fetchRequestTemplate(forName: "favouriteLanguage")
+        do {
+            let languages = try coreDataDelegate.managedObjectContext!.fetch(languageFetchRequest) as! [Language]
+            return languages[0].attempts == 0 ? "" : languages[0].name
+        } catch {
+            print(error)
+            return nil
+        }
     }
     
-    var mostSuccessfulWord: String {
-        var error: NSError?
-        let mostSuccessfulWordFetchRequest: NSFetchRequest! = coreDataDelegate.managedObjectModel?.fetchRequestTemplateForName("mostSuccessfulWord")
-        let fetchResult = coreDataDelegate.managedObjectContext?.executeFetchRequest(mostSuccessfulWordFetchRequest, error: &error) as? [Word]
-        return fetchResult?[0].correctAttempts == 0 ? "" : fetchResult![0].word
+    var mostSuccessfulWord: String? {
+        let mostSuccessfulWordFetchRequest: NSFetchRequest! = coreDataDelegate.managedObjectModel?.fetchRequestTemplate(forName: "mostSuccessfulWord")
+        do {
+            let fetchResult = try coreDataDelegate.managedObjectContext!.fetch(mostSuccessfulWordFetchRequest) as? [Word]
+            return fetchResult?[0].correctAttempts == 0 ? "" : fetchResult![0].word
+        } catch {
+            print(error)
+            return nil
+        }
     }
     
-    var mostUnsuccessfulWord: String {
-        var error: NSError?
-        let mostUnsuccessfulWordFetchRequest: NSFetchRequest! = coreDataDelegate.managedObjectModel?.fetchRequestTemplateForName("mostUnsuccessfulWord")
-        let fetchResult = coreDataDelegate.managedObjectContext?.executeFetchRequest(mostUnsuccessfulWordFetchRequest, error: &error) as? [Word]
-        return fetchResult![0].incorrectAttempts == 0 ? "" : fetchResult![0].word
+    var mostUnsuccessfulWord: String? {
+        let mostUnsuccessfulWordFetchRequest: NSFetchRequest! = coreDataDelegate.managedObjectModel?.fetchRequestTemplate(forName: "mostUnsuccessfulWord")
+        do {
+            let fetchResult = try coreDataDelegate.managedObjectContext!.fetch(mostUnsuccessfulWordFetchRequest) as? [Word]
+            return fetchResult![0].incorrectAttempts == 0 ? "" : fetchResult![0].word
+        } catch {
+            print(error)
+            return nil
+        }
     }
     
     // MARK: - Model Behaviours
@@ -52,24 +65,24 @@ class StatisticsModel: Statistics {
         attempts = 0
         correctAttempts = 0
         longestStreak = 0
-        var error: NSError?
         //go through core data and clear all attempts on Word and Language entity to 0
         let wordBatchRequest = NSBatchUpdateRequest(entityName: Entity.Word)
-        let zero = NSNumber(int: 0)
+        let zero = NSNumber(value: 0 as Int32)
         wordBatchRequest.propertiesToUpdate = [ "incorrectAttempts": zero, "correctAttempts": zero, "attempts": zero]
-        wordBatchRequest.resultType = .UpdatedObjectsCountResultType
-        if let results = coreDataDelegate.managedObjectContext?.executeRequest(wordBatchRequest, error: &error) {
-            println("Updated \(results)")
-        } else {
-            println(error.debugDescription)
+        wordBatchRequest.resultType = .updatedObjectsCountResultType
+        do {
+            let results = try coreDataDelegate.managedObjectContext?.execute(wordBatchRequest)
+            print("Updated \(String(describing: results))")
+        } catch {
+            print(error)
         }
         let languageBatchRequest = NSBatchUpdateRequest(entityName: Entity.Language)
         languageBatchRequest.propertiesToUpdate = ["attempts": zero]
-        languageBatchRequest.resultType = .UpdatedObjectsCountResultType
-        if let results = coreDataDelegate.managedObjectContext?.executeRequest(languageBatchRequest, error: &error) {
-            println("Updated \(results)")
-        } else {
-            println(error.debugDescription)
+        languageBatchRequest.resultType = .updatedObjectsCountResultType
+        do {
+            let results = try coreDataDelegate.managedObjectContext?.execute(languageBatchRequest)
+        } catch {
+            print(error)
         }
     }
 }

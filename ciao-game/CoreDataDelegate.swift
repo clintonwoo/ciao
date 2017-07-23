@@ -13,7 +13,7 @@ protocol CoreDataDelegate {
     
     // MARK: - Core Data Stack
     
-    var applicationDocumentsDirectory: NSURL { mutating get }
+    var applicationDocumentsDirectory: URL { mutating get }
     var managedObjectModel: NSManagedObjectModel? { mutating get }
     var persistentStoreCoordinator: NSPersistentStoreCoordinator? { mutating get }
     var managedObjectContext: NSManagedObjectContext? { mutating get }

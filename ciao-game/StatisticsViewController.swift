@@ -37,7 +37,7 @@ class StatisticsViewController: UIViewController {
     
     deinit {
         if coreDataDelegate.saveContext() {
-            println("Managed Object Context save successful on StatisticsViewController deinit")
+            print("Managed Object Context save successful on StatisticsViewController deinit")
         }
     }
     
@@ -70,9 +70,9 @@ class StatisticsViewController: UIViewController {
     
     // MARK: Target action methods
     
-    @IBAction func tapResetStatisticsButton(sender: UIButton) {
+    @IBAction func tapResetStatisticsButton(_ sender: UIButton) {
         statisticsModel.resetStatistics()
         loadStatistics()
-        NSUbiquitousKeyValueStore.defaultStore().synchronize()
+        NSUbiquitousKeyValueStore.default().synchronize()
     }
 }

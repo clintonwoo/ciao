@@ -128,7 +128,7 @@
 		185541F11A552B45002C3D15 /* GameButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameButton.swift; sourceTree = "<group>"; };
 		18692D411AF7695600EF34C9 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		18692D421AF7780B00EF34C9 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		1869787A1A61FC9D00A496D0 /* GrammarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GrammarViewController.swift; sourceTree = "<group>"; };
+		1869787A1A61FC9D00A496D0 /* GrammarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = GrammarViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		186D02BD1A75B77500A960D8 /* Language.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
 		186DFC851A7377810014619F /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		1874F23D1B076360000ADAD0 /* FirstRun.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = FirstRun.storyboard; sourceTree = "<group>"; };
@@ -160,13 +160,13 @@
 		189719B51AF9E0C800129D52 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		18AC1C081A6FD66E00987D5F /* Words.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Words.plist; sourceTree = "<group>"; };
 		18BD53681A33053300742D7F /* ciao-game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ciao-game.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		18BD536D1A33053300742D7F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		18BD536D1A33053300742D7F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = AppDelegate.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		18BD536F1A33053300742D7F /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		18BD53741A33053300742D7F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		18BD537D1A33053400742D7F /* ciao-gameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ciao-gameTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		18BD53821A33053400742D7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18BD53831A33053400742D7F /* ciao-gameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ciao-gameTests.swift"; sourceTree = "<group>"; };
-		18BDCE621A33F6B300C08890 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		18BDCE621A33F6B300C08890 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = MenuViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		18BDCE641A3410C500C08890 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = SettingsViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		18C0F1F61A456225007BEE49 /* StatisticsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = StatisticsViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		18C1F9481A4E3CA500531C44 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
@@ -708,6 +708,7 @@
 					1897199B1AF9E0C800129D52 = {
 						CreatedOnToolsVersion = 6.3.1;
 						DevelopmentTeam = DCX4D9WH5R;
+						LastSwiftMigration = 0820;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
@@ -721,6 +722,7 @@
 					18BD53671A33053300742D7F = {
 						CreatedOnToolsVersion = 6.1;
 						DevelopmentTeam = DCX4D9WH5R;
+						LastSwiftMigration = 0820;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
@@ -735,6 +737,7 @@
 					};
 					18BD537C1A33053400742D7F = {
 						CreatedOnToolsVersion = 6.1;
+						LastSwiftMigration = 0820;
 						TestTargetID = 18BD53671A33053300742D7F;
 					};
 				};
@@ -967,6 +970,7 @@
 				PRODUCT_NAME = "ciao-game WatchKit Extension";
 				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -985,6 +989,7 @@
 				PRODUCT_NAME = "ciao-game WatchKit Extension";
 				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -1128,6 +1133,7 @@
 				PRODUCT_NAME = "ciao-game";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(PRODUCT_NAME)/Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -1147,6 +1153,7 @@
 				PRODUCT_NAME = "ciao-game";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(PRODUCT_NAME)/Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -1165,6 +1172,7 @@
 				INFOPLIST_FILE = "ciao-gameTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "ciao-gameTests";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ciao-game.app/ciao-game";
 			};
 			name = Debug;
@@ -1180,6 +1188,7 @@
 				INFOPLIST_FILE = "ciao-gameTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "ciao-gameTests";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ciao-game.app/ciao-game";
 			};
 			name = Release;

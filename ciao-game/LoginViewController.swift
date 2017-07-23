@@ -11,12 +11,12 @@ import Foundation
 class LoginViewController: TutorialItemViewController {
     
     
-    @IBAction func tapSkipLoginButton(sender: UIButton) {
-        NSUserDefaults.standardUserDefaults().setBool(true, forKey: UserDefaults.isUserLoggedIn)
-        if let vc = parentViewController as? TutorialViewController {
+    @IBAction func tapSkipLoginButton(_ sender: UIButton) {
+        Foundation.UserDefaults.standard.set(true, forKey: UserDefaults.isUserLoggedIn)
+        if let vc = parent as? TutorialViewController {
             vc.setViewControllers(
                 [vc.viewControllerForIndex(1)],
-                direction: UIPageViewControllerNavigationDirection.Forward,
+                direction: UIPageViewControllerNavigationDirection.forward,
                 animated: true,
                 completion: nil)
             

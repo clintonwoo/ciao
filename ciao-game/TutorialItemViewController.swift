@@ -18,9 +18,9 @@ class TutorialItemViewController: UIViewController {
     
     // MARK: - View Controller Lifecycle
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         // Set the page background to white
-        self.view.backgroundColor = UIColor.whiteColor()
+        self.view.backgroundColor = UIColor.white
     }
 }

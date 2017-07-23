@@ -14,16 +14,16 @@ class Model: Statistics {
     
     var speakingSpeed: Float {
         get {
-            return userDefaults.floatForKey(UserDefaults.SpeakingSpeed)
+            return userDefaults.float(forKey: UserDefaults.SpeakingSpeed)
         }
         set {
-            userDefaults.setFloat(newValue, forKey: UserDefaults.SpeakingSpeed)
+            userDefaults.set(newValue, forKey: UserDefaults.SpeakingSpeed)
         }
     }
 
     var language: String {
         get {
-            return userDefaults.stringForKey(UserDefaults.Language)!
+            return userDefaults.string(forKey: UserDefaults.Language)!
         }
         set {
             userDefaults.setValue(newValue, forKey: UserDefaults.Language)
