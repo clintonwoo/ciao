@@ -27,7 +27,6 @@
 		186D02BE1A75B77500A960D8 /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186D02BD1A75B77500A960D8 /* Language.swift */; };
 		186DFC861A7377810014619F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 186DFC851A7377810014619F /* Main.storyboard */; };
 		1874F23E1B076360000ADAD0 /* FirstRun.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1874F23D1B076360000ADAD0 /* FirstRun.storyboard */; };
-		1874F2401B076561000ADAD0 /* ciao-game WatchKit App.app in Resources */ = {isa = PBXBuildFile; fileRef = 189719AB1AF9E0C800129D52 /* ciao-game WatchKit App.app */; };
 		187A6ABB1B07735C00412C15 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 187A6ABA1B07735C00412C15 /* Localizable.strings */; };
 		1880D9971AF7179300433928 /* CoreDataDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1880D9961AF7179300433928 /* CoreDataDelegate.swift */; };
 		1880D99A1AF71FC200433928 /* SettingsDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1880D9991AF71FC200433928 /* SettingsDelegate.swift */; };
@@ -40,13 +39,6 @@
 		18867F031A761F31005F8AD7 /* WikipediaOrthography.strings in Resources */ = {isa = PBXBuildFile; fileRef = 18867F021A761F31005F8AD7 /* WikipediaOrthography.strings */; };
 		18867F051A762031005F8AD7 /* Alphabet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18867F041A762031005F8AD7 /* Alphabet.swift */; };
 		188B2C391A73888A00758929 /* IETFLanguageCode.strings in Resources */ = {isa = PBXBuildFile; fileRef = 188B2C381A73888A00758929 /* IETFLanguageCode.strings */; };
-		189719A21AF9E0C800129D52 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189719A11AF9E0C800129D52 /* InterfaceController.swift */; };
-		189719A41AF9E0C800129D52 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189719A31AF9E0C800129D52 /* NotificationController.swift */; };
-		189719A61AF9E0C800129D52 /* GlanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189719A51AF9E0C800129D52 /* GlanceController.swift */; };
-		189719A81AF9E0C800129D52 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 189719A71AF9E0C800129D52 /* Images.xcassets */; };
-		189719B41AF9E0C800129D52 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 189719B21AF9E0C800129D52 /* Interface.storyboard */; };
-		189719B61AF9E0C800129D52 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 189719B51AF9E0C800129D52 /* Images.xcassets */; };
-		189BB3971F25572E00455B0F /* ciao-game WatchKit Extension.appex in Resources */ = {isa = PBXBuildFile; fileRef = 1897199C1AF9E0C800129D52 /* ciao-game WatchKit Extension.appex */; };
 		18AC1C091A6FD66E00987D5F /* Words.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18AC1C081A6FD66E00987D5F /* Words.plist */; };
 		18BD536E1A33053300742D7F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BD536D1A33053300742D7F /* AppDelegate.swift */; };
 		18BD53701A33053300742D7F /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BD536F1A33053300742D7F /* GameViewController.swift */; };
@@ -70,20 +62,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		189719AD1AF9E0C800129D52 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 18BD53601A33053300742D7F /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 189719AA1AF9E0C800129D52;
-			remoteInfo = "Language App WatchKit App";
-		};
-		189719B71AF9E0C800129D52 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 18BD53601A33053300742D7F /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 1897199B1AF9E0C800129D52;
-			remoteInfo = "Language App WatchKit Extension";
-		};
 		18BD537E1A33053400742D7F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 18BD53601A33053300742D7F /* Project object */;
@@ -121,7 +99,6 @@
 		184DE21B1B018C0F0083852F /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		184DE21D1B018DC30083852F /* Settings-Watch.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = "Settings-Watch.bundle"; sourceTree = "<group>"; };
 		184DE21F1B018DE00083852F /* ciao-game.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "ciao-game.entitlements"; sourceTree = "<group>"; };
-		184DE2201B01909E0083852F /* ciao-game WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "ciao-game WatchKit Extension.entitlements"; sourceTree = "<group>"; };
 		185182A71A7358B000DA20FC /* Languages.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Languages.plist; sourceTree = "<group>"; };
 		185182A91A735A9500DA20FC /* WikipediaGrammarURL.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = WikipediaGrammarURL.strings; sourceTree = "<group>"; };
 		185541F11A552B45002C3D15 /* GameButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameButton.swift; sourceTree = "<group>"; };
@@ -146,17 +123,6 @@
 		188B2C371A7383CC00758929 /* Model 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Model 2.xcdatamodel"; sourceTree = "<group>"; };
 		188B2C381A73888A00758929 /* IETFLanguageCode.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = IETFLanguageCode.strings; sourceTree = "<group>"; };
 		188CA6061A77C21F009EB2D8 /* Model 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Model 3.xcdatamodel"; sourceTree = "<group>"; };
-		1897199C1AF9E0C800129D52 /* ciao-game WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "ciao-game WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		1897199F1AF9E0C800129D52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		189719A01AF9E0C800129D52 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
-		189719A11AF9E0C800129D52 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
-		189719A31AF9E0C800129D52 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
-		189719A51AF9E0C800129D52 /* GlanceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlanceController.swift; sourceTree = "<group>"; };
-		189719A71AF9E0C800129D52 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		189719AB1AF9E0C800129D52 /* ciao-game WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ciao-game WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		189719B11AF9E0C800129D52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		189719B31AF9E0C800129D52 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
-		189719B51AF9E0C800129D52 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		18AC1C081A6FD66E00987D5F /* Words.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Words.plist; sourceTree = "<group>"; };
 		18BD53681A33053300742D7F /* ciao-game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ciao-game.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		18BD536D1A33053300742D7F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = AppDelegate.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -186,13 +152,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		189719991AF9E0C800129D52 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		18BD53651A33053300742D7F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -371,53 +330,11 @@
 			name = Enums;
 			sourceTree = "<group>";
 		};
-		1897199D1AF9E0C800129D52 /* ciao-game WatchKit Extension */ = {
-			isa = PBXGroup;
-			children = (
-				184DE2201B01909E0083852F /* ciao-game WatchKit Extension.entitlements */,
-				189719A11AF9E0C800129D52 /* InterfaceController.swift */,
-				189719A31AF9E0C800129D52 /* NotificationController.swift */,
-				189719A51AF9E0C800129D52 /* GlanceController.swift */,
-				189719A71AF9E0C800129D52 /* Images.xcassets */,
-				1897199E1AF9E0C800129D52 /* Supporting Files */,
-			);
-			path = "ciao-game WatchKit Extension";
-			sourceTree = "<group>";
-		};
-		1897199E1AF9E0C800129D52 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				1897199F1AF9E0C800129D52 /* Info.plist */,
-				189719A01AF9E0C800129D52 /* PushNotificationPayload.apns */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		189719AF1AF9E0C800129D52 /* ciao-game WatchKit App */ = {
-			isa = PBXGroup;
-			children = (
-				189719B21AF9E0C800129D52 /* Interface.storyboard */,
-				189719B51AF9E0C800129D52 /* Images.xcassets */,
-				189719B01AF9E0C800129D52 /* Supporting Files */,
-			);
-			path = "ciao-game WatchKit App";
-			sourceTree = "<group>";
-		};
-		189719B01AF9E0C800129D52 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				189719B11AF9E0C800129D52 /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 		18BD535F1A33053300742D7F = {
 			isa = PBXGroup;
 			children = (
 				18BD536A1A33053300742D7F /* ciao-game */,
 				18BD53801A33053400742D7F /* ciao-gameTests */,
-				1897199D1AF9E0C800129D52 /* ciao-game WatchKit Extension */,
-				189719AF1AF9E0C800129D52 /* ciao-game WatchKit App */,
 				18BD53691A33053300742D7F /* Products */,
 				7878183428B9A7285C624FC4 /* Pods */,
 				730B2261D1244A3C0DDF4E62 /* Frameworks */,
@@ -429,8 +346,6 @@
 			children = (
 				18BD53681A33053300742D7F /* ciao-game.app */,
 				18BD537D1A33053400742D7F /* ciao-gameTests.xctest */,
-				1897199C1AF9E0C800129D52 /* ciao-game WatchKit Extension.appex */,
-				189719AB1AF9E0C800129D52 /* ciao-game WatchKit App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -622,39 +537,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1897199B1AF9E0C800129D52 /* Language App WatchKit Extension */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 189719BF1AF9E0C800129D52 /* Build configuration list for PBXNativeTarget "Language App WatchKit Extension" */;
-			buildPhases = (
-				189719981AF9E0C800129D52 /* Sources */,
-				189719991AF9E0C800129D52 /* Frameworks */,
-				1897199A1AF9E0C800129D52 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				189719AE1AF9E0C800129D52 /* PBXTargetDependency */,
-			);
-			name = "Language App WatchKit Extension";
-			productName = "Language App WatchKit Extension";
-			productReference = 1897199C1AF9E0C800129D52 /* ciao-game WatchKit Extension.appex */;
-			productType = "com.apple.product-type.watchkit-extension";
-		};
-		189719AA1AF9E0C800129D52 /* Language App WatchKit App */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 189719BE1AF9E0C800129D52 /* Build configuration list for PBXNativeTarget "Language App WatchKit App" */;
-			buildPhases = (
-				189719A91AF9E0C800129D52 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "Language App WatchKit App";
-			productName = "Language App WatchKit App";
-			productReference = 189719AB1AF9E0C800129D52 /* ciao-game WatchKit App.app */;
-			productType = "com.apple.product-type.application.watchapp";
-		};
 		18BD53671A33053300742D7F /* Language App */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 18BD53871A33053400742D7F /* Build configuration list for PBXNativeTarget "Language App" */;
@@ -670,7 +552,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				189719B81AF9E0C800129D52 /* PBXTargetDependency */,
 			);
 			name = "Language App";
 			productName = "Language App";
@@ -704,20 +585,6 @@
 				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = "Clinton D'Annolfo";
 				TargetAttributes = {
-					1897199B1AF9E0C800129D52 = {
-						CreatedOnToolsVersion = 6.3.1;
-						DevelopmentTeam = DCX4D9WH5R;
-						LastSwiftMigration = 0820;
-						SystemCapabilities = {
-							com.apple.ApplicationGroups.iOS = {
-								enabled = 1;
-							};
-						};
-					};
-					189719AA1AF9E0C800129D52 = {
-						CreatedOnToolsVersion = 6.3.1;
-						DevelopmentTeam = DCX4D9WH5R;
-					};
 					18BD53671A33053300742D7F = {
 						CreatedOnToolsVersion = 6.1;
 						DevelopmentTeam = DCX4D9WH5R;
@@ -755,31 +622,11 @@
 			targets = (
 				18BD53671A33053300742D7F /* Language App */,
 				18BD537C1A33053400742D7F /* Language AppTests */,
-				1897199B1AF9E0C800129D52 /* Language App WatchKit Extension */,
-				189719AA1AF9E0C800129D52 /* Language App WatchKit App */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		1897199A1AF9E0C800129D52 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1874F2401B076561000ADAD0 /* ciao-game WatchKit App.app in Resources */,
-				189719A81AF9E0C800129D52 /* Images.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		189719A91AF9E0C800129D52 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				189719B41AF9E0C800129D52 /* Interface.storyboard in Resources */,
-				189719B61AF9E0C800129D52 /* Images.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		18BD53661A33053300742D7F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -795,7 +642,6 @@
 				18AC1C091A6FD66E00987D5F /* Words.plist in Resources */,
 				186DFC861A7377810014619F /* Main.storyboard in Resources */,
 				185182A81A7358B000DA20FC /* Languages.plist in Resources */,
-				189BB3971F25572E00455B0F /* ciao-game WatchKit Extension.appex in Resources */,
 				18867F031A761F31005F8AD7 /* WikipediaOrthography.strings in Resources */,
 				18BD53751A33053300742D7F /* Images.xcassets in Resources */,
 			);
@@ -859,16 +705,6 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		189719981AF9E0C800129D52 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				189719A41AF9E0C800129D52 /* NotificationController.swift in Sources */,
-				189719A21AF9E0C800129D52 /* InterfaceController.swift in Sources */,
-				189719A61AF9E0C800129D52 /* GlanceController.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		18BD53641A33053300742D7F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -923,16 +759,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		189719AE1AF9E0C800129D52 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 189719AA1AF9E0C800129D52 /* Language App WatchKit App */;
-			targetProxy = 189719AD1AF9E0C800129D52 /* PBXContainerItemProxy */;
-		};
-		189719B81AF9E0C800129D52 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 1897199B1AF9E0C800129D52 /* Language App WatchKit Extension */;
-			targetProxy = 189719B71AF9E0C800129D52 /* PBXContainerItemProxy */;
-		};
 		18BD537F1A33053400742D7F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 18BD53671A33053300742D7F /* Language App */;
@@ -940,102 +766,7 @@
 		};
 /* End PBXTargetDependency section */
 
-/* Begin PBXVariantGroup section */
-		189719B21AF9E0C800129D52 /* Interface.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				189719B31AF9E0C800129D52 /* Base */,
-			);
-			name = Interface.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
 /* Begin XCBuildConfiguration section */
-		189719BA1AF9E0C800129D52 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = "ciao-game WatchKit Extension/ciao-game WatchKit Extension.entitlements";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "$(SRCROOT)/ciao-game WatchKit Extension/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_NAME = "ciao-game WatchKit Extension";
-				PROVISIONING_PROFILE = "";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
-			};
-			name = Debug;
-		};
-		189719BB1AF9E0C800129D52 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = "ciao-game WatchKit Extension/ciao-game WatchKit Extension.entitlements";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "$(SRCROOT)/ciao-game WatchKit Extension/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_NAME = "ciao-game WatchKit Extension";
-				PROVISIONING_PROFILE = "";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
-			};
-			name = Release;
-		};
-		189719BC1AF9E0C800129D52 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				IBSC_MODULE = "ciao-game_WatchKit_Extension";
-				INFOPLIST_FILE = "ciao-game WatchKit App/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
-				PRODUCT_NAME = "ciao-game WatchKit App";
-				PROVISIONING_PROFILE = "";
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = 4;
-				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
-			};
-			name = Debug;
-		};
-		189719BD1AF9E0C800129D52 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				GCC_NO_COMMON_BLOCKS = YES;
-				IBSC_MODULE = "ciao-game_WatchKit_Extension";
-				INFOPLIST_FILE = "ciao-game WatchKit App/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
-				PRODUCT_NAME = "ciao-game WatchKit App";
-				PROVISIONING_PROFILE = "";
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = 4;
-				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
-			};
-			name = Release;
-		};
 		18BD53851A33053400742D7F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1070,13 +801,14 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				WATCHOS_DEPLOYMENT_TARGET = 3.2;
 			};
 			name = Debug;
 		};
@@ -1108,12 +840,13 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 3.2;
 			};
 			name = Release;
 		};
@@ -1134,6 +867,7 @@
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(PRODUCT_NAME)/Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
+				WATCHOS_DEPLOYMENT_TARGET = 3.2;
 			};
 			name = Debug;
 		};
@@ -1154,6 +888,7 @@
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(PRODUCT_NAME)/Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
+				WATCHOS_DEPLOYMENT_TARGET = 3.2;
 			};
 			name = Release;
 		};
@@ -1196,24 +931,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		189719BE1AF9E0C800129D52 /* Build configuration list for PBXNativeTarget "Language App WatchKit App" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				189719BC1AF9E0C800129D52 /* Debug */,
-				189719BD1AF9E0C800129D52 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		189719BF1AF9E0C800129D52 /* Build configuration list for PBXNativeTarget "Language App WatchKit Extension" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				189719BA1AF9E0C800129D52 /* Debug */,
-				189719BB1AF9E0C800129D52 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		18BD53631A33053300742D7F /* Build configuration list for PBXProject "ciao-game" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

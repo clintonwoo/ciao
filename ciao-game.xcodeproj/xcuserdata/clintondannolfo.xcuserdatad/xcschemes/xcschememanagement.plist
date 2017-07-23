@@ -4,33 +4,12 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Glance - ciao-game WatchKit App.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<true/>
-			<key>orderHint</key>
-			<integer>6</integer>
-		</dict>
-		<key>Notification - ciao-game WatchKit App.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<true/>
-			<key>orderHint</key>
-			<integer>5</integer>
-		</dict>
 		<key>Testing Data.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<true/>
 			<key>orderHint</key>
 			<integer>1</integer>
-		</dict>
-		<key>ciao-game WatchKit App.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<true/>
-			<key>orderHint</key>
-			<integer>4</integer>
 		</dict>
 		<key>ciao-game.xcscheme_^#shared#^_</key>
 		<dict>
