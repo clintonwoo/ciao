@@ -1,0 +1,5 @@
+language: objective-c
+osx_image: xcode8.3
+xcode_project: ciao-game.xcodeproj
+xcode_scheme: ciao-game
+xcode_sdk: iphonesimulator10.3
