@@ -12,6 +12,6 @@
 
 #import <AFNetworking/AFNetworking.h>
 #import <AFNetworking/AFNetworkActivityIndicatorManager.h>
-#import <IMFCore/IMFCore.h>
+//#import <IMFCore/IMFCore.h>
 
 #endif

@@ -63,16 +63,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CoreDataDelegate {
         //iCloud container for syncing core data. Do not call this method from your app’s main thread. Because this method might take a nontrivial amount of time to set up iCloud and return the requested URL, you should always call it from a secondary thread. To determine if iCloud is available, especially at launch time, check the value of the NSURLRelationship property instead.
         //NSFileManager.defaultManager().URLForUbiquityContainerIdentifier(<#containerIdentifier: String?#>)
         
-        IMFClient.sharedInstance().initialize(withBackendRoute: "https://ciao-game.mybluemix.net", backendGUID: "72a02879-45fc-4c33-a31f-3bc64e528468");
+//        IMFClient.sharedInstance().initialize(withBackendRoute: "https://ciao-game.mybluemix.net", backendGUID: "72a02879-45fc-4c33-a31f-3bc64e528468");
+//        
+//        IMFAuthorizationManager.sharedInstance().obtainAuthorizationHeader(completionHandler: {
+//            (response: IMFResponse?, error: Error?) in
+//            
+//        })
         
-        IMFAuthorizationManager.sharedInstance().obtainAuthorizationHeader(completionHandler: {
-            (response: IMFResponse?, error: Error?) in
-            
-        })
-        
-        IMFLogger.captureUncaughtExceptions()
-        IMFLogger.setLogLevel(.debug)
-        IMFAnalytics.sharedInstance().startRecordingApplicationLifecycleEvents()
+//        IMFLogger.captureUncaughtExceptions()
+//        IMFLogger.setLogLevel(.debug)
+//        IMFAnalytics.sharedInstance().startRecordingApplicationLifecycleEvents()
 //        let stack: DefaultCDStack = DefaultCDStack(databasePath: "Model.sqlite", model: managedObjectModel!, automigrating: true)
 //        SugarRecord.addStack(stack)
 //        SugarRecordLogger.currentLevel = SugarRecordLogger.logLevelVerbose
@@ -108,8 +108,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CoreDataDelegate {
             // Do the work associated with the task, preferably in chunks.
             //Do  long running task
             //Remove sensitive information from views before moving to the background. When an app transitions to the background, the system takes a snapshot of the app’s main window, which it then presents briefly when transitioning your app back to the foreground. Before returning from your applicationDidEnterBackground: method, you should hide or obscure passwords and other sensitive personal information that might be captured as part of the snapshot.
-            IMFLogger.send()
-            IMFAnalytics.sharedInstance().sendPersistedLogs()
+//            IMFLogger.send()
+//            IMFAnalytics.sharedInstance().sendPersistedLogs()
             // Send any multi device information
             UIApplication.shared.endBackgroundTask(self.backgroundTask)
             self.backgroundTask = UIBackgroundTaskInvalid
