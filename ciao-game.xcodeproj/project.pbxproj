@@ -46,7 +46,7 @@
 		189719A81AF9E0C800129D52 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 189719A71AF9E0C800129D52 /* Images.xcassets */; };
 		189719B41AF9E0C800129D52 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 189719B21AF9E0C800129D52 /* Interface.storyboard */; };
 		189719B61AF9E0C800129D52 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 189719B51AF9E0C800129D52 /* Images.xcassets */; };
-		189719B91AF9E0C800129D52 /* ciao-game WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 1897199C1AF9E0C800129D52 /* ciao-game WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		189BB3971F25572E00455B0F /* ciao-game WatchKit Extension.appex in Resources */ = {isa = PBXBuildFile; fileRef = 1897199C1AF9E0C800129D52 /* ciao-game WatchKit Extension.appex */; };
 		18AC1C091A6FD66E00987D5F /* Words.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18AC1C081A6FD66E00987D5F /* Words.plist */; };
 		18BD536E1A33053300742D7F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BD536D1A33053300742D7F /* AppDelegate.swift */; };
 		18BD53701A33053300742D7F /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BD536F1A33053300742D7F /* GameViewController.swift */; };
@@ -100,7 +100,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				189719B91AF9E0C800129D52 /* ciao-game WatchKit Extension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -796,6 +795,7 @@
 				18AC1C091A6FD66E00987D5F /* Words.plist in Resources */,
 				186DFC861A7377810014619F /* Main.storyboard in Resources */,
 				185182A81A7358B000DA20FC /* Languages.plist in Resources */,
+				189BB3971F25572E00455B0F /* ciao-game WatchKit Extension.appex in Resources */,
 				18867F031A761F31005F8AD7 /* WikipediaOrthography.strings in Resources */,
 				18BD53751A33053300742D7F /* Images.xcassets in Resources */,
 			);

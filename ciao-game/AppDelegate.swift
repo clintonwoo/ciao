@@ -26,7 +26,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CoreDataDelegate {
         
         // Register User Defaults
         Foundation.UserDefaults.standard.register(defaults: NSDictionary(contentsOfFile: Bundle.main.path(forResource: ResourceName.UserDefaults.rawValue, ofType: ResourceName.UserDefaults.ResourceFileType)!)! as! [AnyHashable : Any] as [AnyHashable: Any] as! [String : Any])
-        
         return true
     }
     
