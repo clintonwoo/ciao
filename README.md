@@ -1,3 +1,7 @@
+## Ciao
+
+iOS game to learn new languages for people who respond well to repetition. Including Italian, French, Chinese, German, Polish, Portuguese, Russian & Spanish.
+
 ## Features
 - Multiple game modes (Intro, Phrase Mode, Alphabet Mode)
 - In-game voice can speak words to improve pronunciation skills
