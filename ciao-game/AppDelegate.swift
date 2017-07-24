@@ -8,7 +8,6 @@
 
 import UIKit
 import CoreData
-import AFNetworking
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, CoreDataDelegate {
@@ -43,7 +42,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CoreDataDelegate {
         }
         
         // AFNetworking
-        AFNetworkActivityIndicatorManager.shared().isEnabled = true
+//        AFNetworkActivityIndicatorManager.shared().isEnabled = true
         
         // Register for Local and Remote notifications
         UIApplication.shared.applicationIconBadgeNumber = 0

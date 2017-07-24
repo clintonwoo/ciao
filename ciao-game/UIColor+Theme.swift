@@ -6,6 +6,8 @@
 //  Copyright (c) 2015 Clinton D'Annolfo. All rights reserved.
 //
 
+import UIKit
+
 extension UIColor {
     // Insert the colours that will be used.
     

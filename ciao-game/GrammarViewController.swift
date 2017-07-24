@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import AFNetworking
 
 class GrammarViewController: UIViewController, UIWebViewDelegate {
 
@@ -33,7 +32,7 @@ class GrammarViewController: UIViewController, UIWebViewDelegate {
     }
     
     deinit {
-        AFNetworkActivityIndicatorManager.shared().decrementActivityCount()
+//        AFNetworkActivityIndicatorManager.shared().decrementActivityCount()
 //        UIApplication.sharedApplication().networkActivityIndicatorVisible = false
     }
     
