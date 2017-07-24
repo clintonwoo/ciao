@@ -864,7 +864,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = EA23383E002E173E9796315E /* Pods-Language App.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = "$(PRODUCT_NAME)/ciao-game.entitlements";
@@ -886,7 +886,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CFAF686B3113DC0B69E0BA5E /* Pods-Language App.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = "$(PRODUCT_NAME)/ciao-game.entitlements";
