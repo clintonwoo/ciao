@@ -7,15 +7,15 @@
 //
 
 import UIKit
+import WebKit
 
-class GrammarViewController: UIViewController, UIWebViewDelegate {
+class GrammarViewController: UIViewController, WKNavigationDelegate {
 
     //MARK: - Outlets
-    @IBOutlet weak var webView: UIWebView!
+    var webView: WKWebView!
 //    @IBOutlet weak var titleView: UIView!
 //    @IBOutlet weak var titleSwitch: UISwitch!
-    @IBOutlet weak var progressView: UIProgressView!
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet var progressView: UIProgressView!
     
 
     //MARK: - Properties
@@ -28,7 +28,6 @@ class GrammarViewController: UIViewController, UIWebViewDelegate {
     //MARK: - Initialisers
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
-        //fatalError("init(coder:) has not been implemented")
     }
     
     deinit {
@@ -40,7 +39,11 @@ class GrammarViewController: UIViewController, UIWebViewDelegate {
     //MARK: Protocol
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.webView.delegate = self
+        let webConfiguration = WKWebViewConfiguration()
+        self.webView = WKWebView(frame: .zero, configuration: webConfiguration)
+        self.webView.navigationDelegate = self
+        self.view = self.webView
+        
 //        webView.st
         self.backButton = UIBarButtonItem(title: Localization.Grammar.Back, style: UIBarButtonItemStyle.plain, target: self.webView, action: #selector(UIWebView.goBack))
         self.forwardButton = UIBarButtonItem(title: Localization.Grammar.Forward, style: UIBarButtonItemStyle.plain, target: self.webView, action: #selector(UIWebView.goForward))
@@ -68,10 +71,10 @@ class GrammarViewController: UIViewController, UIWebViewDelegate {
         //        self.navigationItem.titleView = placeholderView
         
         //        self.navigationItem.titleView = titleView
-        //self.navigationItem.titleView?.frameForAlignmentRect(CGRectA)
+        // self.navigationItem.titleView?.frameForAlignmentRect(CGRectA)
         
-        //self.switchWithTitle?.switchView.on = self.willCacheGrammarPages
-        //self.navigationItem.titleView = self.switchWithTitle
+        // self.switchWithTitle?.switchView.on = self.willCacheGrammarPages
+        // self.navigationItem.titleView = self.switchWithTitle
         //        self.navigationItem.titleView = toolbar
         self.navigationItem.rightBarButtonItems = [self.forwardButton!, self.backButton!]
         // Do any additional setup after loading the view.
@@ -80,21 +83,22 @@ class GrammarViewController: UIViewController, UIWebViewDelegate {
     override func viewWillAppear(_ animated: Bool) {
         if ((urlRequest) != nil){
 //            self.webView.loadRequest(urlRequest!)
-            self.webView.loadRequest(urlRequest!,
-                progress: { (bytesWritten: UInt, totalBytesWritten: Int64, totalBytesExpectedToWrite: Int64) -> Void in
-//                    self.progressView.hidden = false
-//                    let tbw = Float(totalBytesWritten)
-//                    let tbetw = Float(totalBytesExpectedToWrite)
-//                    self.progressView.setProgress(tbw/tbetw, animated: true)
-                    return
-                },
-                success: { (response: HTTPURLResponse!, html: String!) -> String! in
-//                    self.progressView.hidden = true
-                    return html
-                },
-                failure: { (error: Error?) -> Void in
-                    print()
-            })
+            self.webView.load(urlRequest!)
+//            self.webView.loadRequest(urlRequest!,
+//                progress: { (bytesWritten: UInt, totalBytesWritten: Int64, totalBytesExpectedToWrite: Int64) -> Void in
+////                    self.progressView.hidden = false
+////                    let tbw = Float(totalBytesWritten)
+////                    let tbetw = Float(totalBytesExpectedToWrite)
+////                    self.progressView.setProgress(tbw/tbetw, animated: true)
+//                    return
+//                },
+//                success: { (response: HTTPURLResponse!, html: String!) -> String! in
+////                    self.progressView.hidden = true
+//                    return html
+//                },
+//                failure: { (error: Error?) -> Void in
+//                    print()
+//            })
         }
     }
     
@@ -134,26 +138,26 @@ class GrammarViewController: UIViewController, UIWebViewDelegate {
     
     //MARK: - Web View
     //MARK: Delegate
-    func webViewDidStartLoad(_ webView: UIWebView) {
-        activityIndicator.startAnimating()
-        self.view.bringSubview(toFront: activityIndicator)
-        AFNetworkActivityIndicatorManager.shared().incrementActivityCount()
-//        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+    func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+//        self.view.bringSubview(toFront: activityIndicator)
+        //        AFNetworkActivityIndicatorManager.shared().incrementActivityCount()
+        //        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
         print("Start webpage load.")
     }
     
-    func webViewDidFinishLoad(_ webView: UIWebView) {
-        activityIndicator.stopAnimating()
-        AFNetworkActivityIndicatorManager.shared().decrementActivityCount()
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        UIApplication.shared.isNetworkActivityIndicatorVisible = false
+        //        AFNetworkActivityIndicatorManager.shared().decrementActivityCount()
         setForwardBackwardButton(webView.canGoForward, canGoBack: webView.canGoBack)
-//        var frame: CGRect = webView.frame
-//        frame.size.height = 1
-//        webView.frame = frame
-//        var fittingSize: CGSize = webView.sizeThatFits(CGSizeZero)
-//        frame.size = fittingSize
-//        webView.frame = frame
-//        var rect: CGRect = UIScreen.mainScreen().bounds
-//        self.webView.frame = rect
+        //        var frame: CGRect = webView.frame
+        //        frame.size.height = 1
+        //        webView.frame = frame
+        //        var fittingSize: CGSize = webView.sizeThatFits(CGSizeZero)
+        //        frame.size = fittingSize
+        //        webView.frame = frame
+        //        var rect: CGRect = UIScreen.mainScreen().bounds
+        //        self.webView.frame = rect
         //print("size: \(fittingSize.width), \(fittingSize.height)")
         print("Finished webpage load.")
     }

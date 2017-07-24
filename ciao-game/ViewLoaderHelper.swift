@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class ViewLoaderHelper {
     class func loadViewController(fromStoryBoard storyboard: String, withStoryboardId id: String, inBundle bundle: Bundle?) -> UIViewController {
